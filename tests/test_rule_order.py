@@ -24,6 +24,7 @@ RAW_ENGINE_SAMPLES = {
     'Espetero': 'Espetero 0.1.2', 'Paiton': 'Paiton（vLLM 插件）',
     'Halowin Bubo': 'Halowin Bubo（Gufo 分支）', 'Janas-LLM': 'Janas-LLM（纯 C）', 'Strim': 'Strim（Swift + MLX）', 'Magnitude': 'Magnitude',
     'QEngine': 'QEngine 1.3.1（自编 sm_120）', 'PXA': 'PXA 4.0（llama.cpp 分支）', 'Betelgeuse': 'Betelgeuse（llama.cpp 分支）',
+    'SGLang (Penny Royal fork)': 'Penny Royal 3.1.4（SGLang 分支）', 'llama.cpp (tandem.cpp fork)': 'tandem.cpp（llama.cpp 补丁集）', 'Speedy': 'Speedy（Strata 衍生）',
     'Front_Eagle739 streaming stack': 'Front_Eagle739 streaming stack（作者自研）', 'Unspecified': '未注明（EXL3 权重）',
 }
 

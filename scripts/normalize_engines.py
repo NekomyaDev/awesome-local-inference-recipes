@@ -50,6 +50,9 @@ RULES = [
     (r'^QEngine', 'QEngine'),
     (r'^PXA', 'PXA'),
     (r'^Betelgeuse', 'Betelgeuse'),
+    (r'^Penny Royal', 'SGLang (Penny Royal fork)'),
+    (r'^tandem\.cpp', 'llama.cpp (tandem.cpp fork)'),
+    (r'^Speedy', 'Speedy'),
     (r'^未注明', 'Unspecified'),
 ]
 INFER = [
