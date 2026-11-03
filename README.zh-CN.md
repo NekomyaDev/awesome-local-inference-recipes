@@ -1,10 +1,10 @@
 <h1 align="center">本地推理配方精选 <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a></h1>
 
-<p align="center">你的硬件到底能跑多快？715 条有出处的本地 AI 配方，从 405 美元的显卡到 3 万美元的整机。</p>
+<p align="center">你的硬件到底能跑多快？745 条有出处的本地 AI 配方，从 405 美元的显卡到 3 万美元的整机。</p>
 
 <p align="center"><a href="README.md">English</a> · <b>简体中文</b> · <a href="README.ja.md">日本語</a></p>
 
-<p align="center"><a href="https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=zh-CN"><img src="https://img.shields.io/badge/recipes-715-0891B2?style=flat-square" alt="715 recipes"></a> <img src="https://img.shields.io/badge/data%20as%20of-2026--11--02-4B5563?style=flat-square" alt="data as of 2026-11-02"> <a href="https://github.com/raytone-lab/awesome-local-inference-recipes/actions/workflows/validate.yml"><img src="https://img.shields.io/github/actions/workflow/status/raytone-lab/awesome-local-inference-recipes/validate.yml?branch=main&style=flat-square&label=validate" alt="validate"></a> <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-22C55E?style=flat-square" alt="MIT"></a> <a href="LICENSE-DATA"><img src="https://img.shields.io/badge/data-CC%20BY%204.0-22C55E?style=flat-square" alt="CC BY 4.0"></a> <a href="https://github.com/raytone-lab/awesome-local-inference-recipes/stargazers"><img src="https://img.shields.io/github/stars/raytone-lab/awesome-local-inference-recipes?style=flat-square" alt="GitHub stars"></a> <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-7C3AED?style=flat-square" alt="PRs welcome"></a></p>
+<p align="center"><a href="https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=zh-CN"><img src="https://img.shields.io/badge/recipes-745-0891B2?style=flat-square" alt="745 recipes"></a> <img src="https://img.shields.io/badge/data%20as%20of-2026--11--03-4B5563?style=flat-square" alt="data as of 2026-11-03"> <a href="https://github.com/raytone-lab/awesome-local-inference-recipes/actions/workflows/validate.yml"><img src="https://img.shields.io/github/actions/workflow/status/raytone-lab/awesome-local-inference-recipes/validate.yml?branch=main&style=flat-square&label=validate" alt="validate"></a> <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-22C55E?style=flat-square" alt="MIT"></a> <a href="LICENSE-DATA"><img src="https://img.shields.io/badge/data-CC%20BY%204.0-22C55E?style=flat-square" alt="CC BY 4.0"></a> <a href="https://github.com/raytone-lab/awesome-local-inference-recipes/stargazers"><img src="https://img.shields.io/github/stars/raytone-lab/awesome-local-inference-recipes?style=flat-square" alt="GitHub stars"></a> <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-7C3AED?style=flat-square" alt="PRs welcome"></a></p>
 
 <p align="center"><a href="https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=zh-CN"><b>在线配方库</b></a> · <a href="recipes/README.zh-CN.md"><b>配方指南</b></a> · <a href="docs/getting-started.zh-CN.md"><b>入门指南</b></a> · <a href="https://raytone-lab.github.io/awesome-local-inference-recipes/submit.html?lang=zh-CN"><b>提交配方</b></a></p>
 
@@ -16,7 +16,7 @@
 
 <p align="center">同一段回答、真实 Qwen3 token，以 10 / 20 / 50 / 100 / 200 / 500 tok/s（对数间隔）输出，对比默读速度（英文约 5 tok/s，Brysbaert 2019）和云端 API 中位速度（Artificial Analysis）。 <a href="https://raytone-lab.github.io/awesome-local-inference-recipes/speed.html?lang=zh-CN"><b>在线互动体验 →</b></a></p>
 
-**715 条配方**（文字 674 · 图像 15 · 影音 26）· **6 类硬件** · **95 种引擎** · **16 个模型系列** · 每个数字都有出处 · 预算 **3 万美元以内**
+**745 条配方**（文字 704 · 图像 15 · 影音 26）· **6 类硬件** · **98 种引擎** · **17 个模型系列** · 每个数字都有出处 · 预算 **3 万美元以内**
 
 ### 亮点数据
 
@@ -79,7 +79,7 @@
 
 ## 快速问答
 
-数据截至 2026-11-02。每条回答取数据集中最快的单路文字生成结果，并标注来源等级；✅ = 发帖人实测。不同回答的模型不同。
+数据截至 2026-11-03。每条回答取数据集中最快的单路文字生成结果，并标注来源等级；✅ = 发帖人实测。不同回答的模型不同。
 
 **单张 RTX 5090 跑本地大模型有多快？**  
 实测最快：**351.5 tok/s**，LFM2.5-24B-A2B · llama.cpp，硬件 RTX 5090 32GB（✅ 实测，2026-10-15，[来源](https://x.com/niklaslenz_ai/status/2110469931011612895)）。该硬件共 49 条配方，其中实测 27 条。
@@ -94,10 +94,10 @@
 实测最快：**130 tok/s**，Qwen3.8-Flash-Next · TensorFold，硬件 Mac Studio M3 Ultra（✅ 实测，日期未注明，[来源](https://x.com/ivanfioravanti/status/2104183112611614780)）。该硬件共 23 条配方，其中实测 7 条。
 
 **一台 NVIDIA DGX Spark 跑本地大模型有多快？**  
-实测最快：**130.1 tok/s**，Qwen3.8-Flash-Next · TensorFold，硬件 1× DGX Spark（✅ 实测，2026-10-28，[来源](https://x.com/Leoskie_L/status/2115262189506535697)）。该硬件共 60 条配方，其中实测 39 条。
+实测最快：**130.1 tok/s**，Qwen3.8-Flash-Next · TensorFold，硬件 1× DGX Spark（✅ 实测，2026-10-28，[来源](https://x.com/Leoskie_L/status/2115262189506535697)）。该硬件共 61 条配方，其中实测 40 条。
 
 **AMD Strix Halo（Ryzen AI Max+ 395）跑本地大模型有多快？**  
-实测最快：**98 tok/s**，Recursive Flint 40B-A2.5B · Halogen，硬件 AMD Ryzen AI Max+ 395 128GB（✅ 实测，2026-10-23，[来源](https://www.reddit.com/r/StrixHalo/comments/1xcxjpv/)）。该硬件共 23 条配方，其中实测 11 条。
+实测最快：**98 tok/s**，Recursive Flint 40B-A2.5B · Halogen，硬件 AMD Ryzen AI Max+ 395 128GB（✅ 实测，2026-10-23，[来源](https://www.reddit.com/r/StrixHalo/comments/1xcxjpv/)）。该硬件共 24 条配方，其中实测 12 条。
 
 **2500 美元以内实测最快的配置是什么？**  
 实测最快：**190 tok/s**，Qwen3.8-27B · Geezuz，硬件 2× RTX 3090（280W，PCIe，无 NVLink）（✅ 实测，2026-10-20，[来源](https://github.com/ohgeebtw/geezuz-qwen3.8-27b-dual-gpu)）。该预算内共 61 条配方，其中实测 32 条。
@@ -122,35 +122,36 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 
 | 类别              | 设备（配方数 · ⚡ 实测最快 tok/s）                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| NVIDIA&nbsp;RTX | [RTX 5090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/rtx-5090.html) (94 · ⚡**538.1**) &nbsp;·&nbsp; [RTX 3090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/rtx-3090.html) (42 · ⚡**384**) &nbsp;·&nbsp; [RTX 4090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/rtx-4090.html) (25 · ⚡**179.4**) &nbsp;·&nbsp; [RTX 5060 Ti](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/rtx-5060-ti.html) (18 · ⚡**162**) &nbsp;·&nbsp; [RTX 5070 / 5070 Ti](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=RTX%205070&lang=zh-CN) (16 · ⚡**108.7**) &nbsp;·&nbsp; [RTX 3060](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=RTX%203060&lang=zh-CN) (15 · ⚡**244**)        |
-| Apple&nbsp;芯片   | [M5 Pro / M5 Max](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/mac-m5.html) (55 · ⚡**157**) &nbsp;·&nbsp; [M3 Ultra](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/mac-studio-m3-ultra.html) (30 · ⚡**130**) &nbsp;·&nbsp; [M4 Pro](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=M4%20Pro&lang=zh-CN) (30 · ⚡**127.9**) &nbsp;·&nbsp; [M5 Ultra](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=M5%20Ultra&lang=zh-CN) (30 · ⚡**141**) &nbsp;·&nbsp; [M4 Max](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/mac-m4-max.html) (19 · ⚡**78.7**) &nbsp;·&nbsp; [M2 Ultra](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=M2%20Ultra&lang=zh-CN) (2 · ⚡**59.9**) |
-| DGX&nbsp;Spark  | [DGX Spark](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/dgx-spark.html) (139 · ⚡**130.1**)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| AMD             | [Radeon R9700 / RX 7900](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/amd-radeon.html) (41 · ⚡**100**) &nbsp;·&nbsp; [Strix Halo](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/strix-halo.html) (21 · ⚡**78**) &nbsp;·&nbsp; [Instinct MI50](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=MI50&lang=zh-CN) (5 · ⚡**36.8**)                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 多卡及其他           | [多卡组合](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=multi-GPU&lang=zh-CN) (172 · ⚡**370**) &nbsp;·&nbsp; [Tesla V100](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=V100&lang=zh-CN) (17 · ⚡**74.7**) &nbsp;·&nbsp; [CMP 170HX](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=CMP&lang=zh-CN) (6) &nbsp;·&nbsp; [iPhone](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=iPhone&lang=zh-CN) (4)                                                                                                                                                                                                                                                                                                         |
+| NVIDIA&nbsp;RTX | [RTX 5090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/rtx-5090.html) (95 · ⚡**538.1**) &nbsp;·&nbsp; [RTX 3090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/rtx-3090.html) (47 · ⚡**384**) &nbsp;·&nbsp; [RTX 4090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/rtx-4090.html) (25 · ⚡**179.4**) &nbsp;·&nbsp; [RTX 5060 Ti](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/rtx-5060-ti.html) (20 · ⚡**162**) &nbsp;·&nbsp; [RTX 5070 / 5070 Ti](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=RTX%205070&lang=zh-CN) (19 · ⚡**108.7**) &nbsp;·&nbsp; [RTX 3060](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=RTX%203060&lang=zh-CN) (15 · ⚡**244**)        |
+| Apple&nbsp;芯片   | [M5 Pro / M5 Max](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/mac-m5.html) (55 · ⚡**157**) &nbsp;·&nbsp; [M3 Ultra](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/mac-studio-m3-ultra.html) (31 · ⚡**130**) &nbsp;·&nbsp; [M4 Pro](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=M4%20Pro&lang=zh-CN) (30 · ⚡**127.9**) &nbsp;·&nbsp; [M5 Ultra](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=M5%20Ultra&lang=zh-CN) (30 · ⚡**141**) &nbsp;·&nbsp; [M4 Max](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/mac-m4-max.html) (19 · ⚡**78.7**) &nbsp;·&nbsp; [M2 Ultra](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=M2%20Ultra&lang=zh-CN) (2 · ⚡**59.9**) |
+| DGX&nbsp;Spark  | [DGX Spark](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/dgx-spark.html) (142 · ⚡**130.1**)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| AMD             | [Radeon R9700 / RX 7900](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/amd-radeon.html) (45 · ⚡**109.9**) &nbsp;·&nbsp; [Strix Halo](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/strix-halo.html) (23 · ⚡**78**) &nbsp;·&nbsp; [Instinct MI50](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=MI50&lang=zh-CN) (6 · ⚡**36.8**)                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 多卡及其他           | [多卡组合](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=multi-GPU&lang=zh-CN) (187 · ⚡**370**) &nbsp;·&nbsp; [Tesla V100](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=V100&lang=zh-CN) (20 · ⚡**74.7**) &nbsp;·&nbsp; [CMP 170HX](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=CMP&lang=zh-CN) (6) &nbsp;·&nbsp; [iPhone](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=iPhone&lang=zh-CN) (4)                                                                                                                                                                                                                                                                                                         |
 
 ## 按模型系列浏览
 
-点击系列名即可打开已筛选的配方库。标签：[`MoE`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=MoE&lang=zh-CN) 475, [`long-context`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=long-context&lang=zh-CN) 271, [`speculative`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=speculative&lang=zh-CN) 258, [`4bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=4bit&lang=zh-CN) 248, [`dense`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=dense&lang=zh-CN) 192, [`multi-GPU`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=multi-GPU&lang=zh-CN) 172, [`MTP`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=MTP&lang=zh-CN) 141, [`3bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=3bit&lang=zh-CN) 104, [`2bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=2bit&lang=zh-CN) 97, [`offload`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=offload&lang=zh-CN) 78, [`8bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=8bit&lang=zh-CN) 51, [`1bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=1bit&lang=zh-CN) 26, [`ternary`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=ternary&lang=zh-CN) 26, [`few-step`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=few-step&lang=zh-CN) 12, [`bf16`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=bf16&lang=zh-CN) 11, [`abliterated`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=abliterated&lang=zh-CN) 10, [`6bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=6bit&lang=zh-CN) 8, [`5bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=5bit&lang=zh-CN) 1。
+点击系列名即可打开已筛选的配方库。标签：[`MoE`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=MoE&lang=zh-CN) 498, [`long-context`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=long-context&lang=zh-CN) 285, [`speculative`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=speculative&lang=zh-CN) 269, [`4bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=4bit&lang=zh-CN) 257, [`dense`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=dense&lang=zh-CN) 197, [`multi-GPU`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=multi-GPU&lang=zh-CN) 187, [`MTP`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=MTP&lang=zh-CN) 146, [`3bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=3bit&lang=zh-CN) 112, [`2bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=2bit&lang=zh-CN) 102, [`offload`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=offload&lang=zh-CN) 80, [`8bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=8bit&lang=zh-CN) 51, [`1bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=1bit&lang=zh-CN) 26, [`ternary`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=ternary&lang=zh-CN) 26, [`few-step`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=few-step&lang=zh-CN) 12, [`bf16`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=bf16&lang=zh-CN) 11, [`abliterated`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=abliterated&lang=zh-CN) 10, [`6bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=6bit&lang=zh-CN) 8, [`5bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=5bit&lang=zh-CN) 2。
 
 | 系列                                                                                                                      | 配方数 | 文字  | 图像  | 影音  |
 | ----------------------------------------------------------------------------------------------------------------------- | --- | --- | --- | --- |
-| [Qwen](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Qwen&lang=zh-CN)               | 384 | 384 |     |     |
-| [DeepSeek](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=DeepSeek&lang=zh-CN)       | 110 | 110 |     |     |
-| [GLM](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=GLM&lang=zh-CN)                 | 37  | 37  |     |     |
+| [Qwen](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Qwen&lang=zh-CN)               | 402 | 402 |     |     |
+| [DeepSeek](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=DeepSeek&lang=zh-CN)       | 116 | 116 |     |     |
+| [GLM](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=GLM&lang=zh-CN)                 | 38  | 38  |     |     |
 | [Bonsai](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Bonsai&lang=zh-CN)           | 33  | 33  |     |     |
 | [MiniMax H3](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=MiniMax%20H3&lang=zh-CN) | 18  |     |     | 18  |
 | [Qwen-Image](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Qwen-Image&lang=zh-CN)   | 13  |     | 13  |     |
 | [Gemma](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Gemma&lang=zh-CN)             | 8   | 8   |     |     |
 | [LTX](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=LTX&lang=zh-CN)                 | 4   |     |     | 4   |
 | [MiniMax](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=MiniMax&lang=zh-CN)         | 4   | 4   |     |     |
-| [Mistral](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Mistral&lang=zh-CN)         | 3   | 3   |     |     |
+| [Mistral](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Mistral&lang=zh-CN)         | 4   | 4   |     |     |
 | [gpt-oss](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=gpt-oss&lang=zh-CN)         | 3   | 3   |     |     |
 | [ACE-Step](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=ACE-Step&lang=zh-CN)       | 2   |     |     | 2   |
 | [Edge0](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Edge0&lang=zh-CN)             | 2   | 2   |     |     |
 | [Wan](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Wan&lang=zh-CN)                 | 2   |     |     | 2   |
 | [Z-Image](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Z-Image&lang=zh-CN)         | 2   |     | 2   |     |
+| [Kimi](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Kimi&lang=zh-CN)               | 1   | 1   |     |     |
 | [Llama](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Llama&lang=zh-CN)             | 1   | 1   |     |     |
-| [Other](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Other&lang=zh-CN)             | 89  | 89  |     |     |
+| [Other](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Other&lang=zh-CN)             | 92  | 92  |     |     |
 
 ## 按引擎浏览
 
@@ -158,31 +159,31 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 
 | 引擎                                                                                                                                                                                                          | 配方数 |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| [Strata](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Strata&lang=zh-CN)                                                                                               | 140 |
+| [Strata](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Strata&lang=zh-CN)                                                                                               | 152 |
 | [llama.cpp](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=llama.cpp&lang=zh-CN)                                                                                         | 77  |
-| [TensorFold](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=TensorFold&lang=zh-CN)                                                                                       | 64  |
-| [vLLM](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=vLLM&lang=zh-CN)                                                                                                   | 55  |
+| [TensorFold](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=TensorFold&lang=zh-CN)                                                                                       | 69  |
+| [vLLM](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=vLLM&lang=zh-CN)                                                                                                   | 56  |
 | [oMLX](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=oMLX&lang=zh-CN)                                                                                                   | 36  |
-| [MLX](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=MLX&lang=zh-CN)                                                                                                     | 31  |
+| [MLX](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=MLX&lang=zh-CN)                                                                                                     | 32  |
 | [SGLang](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=SGLang&lang=zh-CN)                                                                                               | 20  |
 | [llama.cpp (PrismML fork)](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=llama.cpp%20%28PrismML%20fork%29&lang=zh-CN)                                                   | 14  |
 | [ComfyUI](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=ComfyUI&lang=zh-CN)                                                                                             | 12  |
 | [Splash](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Splash&lang=zh-CN)                                                                                               | 12  |
 | [MTPLX](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=MTPLX&lang=zh-CN)                                                                                                 | 11  |
 | [ExLlama](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=ExLlama&lang=zh-CN)                                                                                             | 9   |
+| [Project Maya](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Project%20Maya&lang=zh-CN)                                                                                 | 8   |
 | [mlx-serve](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=mlx-serve&lang=zh-CN)                                                                                         | 8   |
 | [DFlash](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=DFlash&lang=zh-CN)                                                                                               | 7   |
 | [Ollama](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Ollama&lang=zh-CN)                                                                                               | 7   |
-| [Project Maya](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Project%20Maya&lang=zh-CN)                                                                                 | 7   |
 | [Radiance](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Radiance&lang=zh-CN)                                                                                           | 7   |
 | [Kapitsa](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Kapitsa&lang=zh-CN)                                                                                             | 5   |
 | [ds4 (DwarfStar)](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=ds4%20%28DwarfStar%29&lang=zh-CN)                                                                       | 5   |
 | [Basalt](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Basalt&lang=zh-CN)                                                                                               | 4   |
+| [Halogen](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Halogen&lang=zh-CN)                                                                                             | 4   |
 | [NVIDIA Flare](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=NVIDIA%20Flare&lang=zh-CN)                                                                                 | 4   |
 | [Radiance (fork)](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Radiance%20%28fork%29&lang=zh-CN)                                                                       | 4   |
 | [mirai-s-ada](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=mirai-s-ada&lang=zh-CN)                                                                                     | 4   |
 | [ninfer](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=ninfer&lang=zh-CN)                                                                                               | 4   |
-| [Halogen](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Halogen&lang=zh-CN)                                                                                             | 3   |
 | [Rapid-MLX](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Rapid-MLX&lang=zh-CN)                                                                                         | 3   |
 | [TabbyAPI](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=TabbyAPI&lang=zh-CN)                                                                                           | 3   |
 | [TandemLLM](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=TandemLLM&lang=zh-CN)                                                                                         | 3   |
@@ -190,6 +191,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 | [llama.cpp (agentionai fork)](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=llama.cpp%20%28agentionai%20fork%29&lang=zh-CN)                                             | 3   |
 | [BitRun](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=BitRun&lang=zh-CN)                                                                                               | 2   |
 | [Espetero](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Espetero&lang=zh-CN)                                                                                           | 2   |
+| [FreeToken](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=FreeToken&lang=zh-CN)                                                                                         | 2   |
 | [Front_Eagle739 streaming stack](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Front_Eagle739%20streaming%20stack&lang=zh-CN)                                           | 2   |
 | [Infernix](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Infernix&lang=zh-CN)                                                                                           | 2   |
 | [MLX Swift](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=MLX%20Swift&lang=zh-CN)                                                                                       | 2   |
@@ -205,7 +207,6 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 | [tqLLM](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=tqLLM&lang=zh-CN)                                                                                                 | 2   |
 | [Betelgeuse](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Betelgeuse&lang=zh-CN)                                                                                       | 1   |
 | [BigMoeOnEdge](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=BigMoeOnEdge&lang=zh-CN)                                                                                   | 1   |
-| [FreeToken](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=FreeToken&lang=zh-CN)                                                                                         | 1   |
 | [Geezuz](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Geezuz&lang=zh-CN)                                                                                               | 1   |
 | [Halowin Bubo](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Halowin%20Bubo&lang=zh-CN)                                                                                 | 1   |
 | [IronMLX](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=IronMLX&lang=zh-CN)                                                                                             | 1   |
@@ -218,6 +219,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 | [NInferno](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=NInferno&lang=zh-CN)                                                                                           | 1   |
 | [NVIDIA Sol](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=NVIDIA%20Sol&lang=zh-CN)                                                                                     | 1   |
 | [Osaurus](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Osaurus&lang=zh-CN)                                                                                             | 1   |
+| [PLI](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=PLI&lang=zh-CN)                                                                                                     | 1   |
 | [PXA](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=PXA&lang=zh-CN)                                                                                                     | 1   |
 | [Paiton](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Paiton&lang=zh-CN)                                                                                               | 1   |
 | [Pithos](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Pithos&lang=zh-CN)                                                                                               | 1   |
@@ -248,12 +250,14 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 | [moe-cache](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=moe-cache&lang=zh-CN)                                                                                         | 1   |
 | [moex](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=moex&lang=zh-CN)                                                                                                   | 1   |
 | [pulsar-inference-stack](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=pulsar-inference-stack&lang=zh-CN)                                                               | 1   |
+| [qwen38-megakernel](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=qwen38-megakernel&lang=zh-CN)                                                                         | 1   |
 | [rec](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=rec&lang=zh-CN)                                                                                                     | 1   |
 | [spark-ds41f](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=spark-ds41f&lang=zh-CN)                                                                                     | 1   |
 | [spark-engine](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=spark-engine&lang=zh-CN)                                                                                   | 1   |
 | [sparkinfer](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=sparkinfer&lang=zh-CN)                                                                                       | 1   |
 | [sushi](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=sushi&lang=zh-CN)                                                                                                 | 1   |
-| [Unspecified](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Unspecified&lang=zh-CN)                                                                                     | 70  |
+| [webyIQ](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=webyIQ&lang=zh-CN)                                                                                               | 1   |
+| [Unspecified](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?engine=Unspecified&lang=zh-CN)                                                                                     | 75  |
 
 <p align="center"><img src="docs/budget-tiers.zh-CN.png" width="860" alt="条形图：各预算档最快的实测与宣称文字配置"></p>
 
@@ -294,7 +298,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 
 ## 第 2 档 · 2,500–7,000 美元
 
-*单张 RTX 5090、单台 DGX Spark、Mac Studio Max* · 共 169 条
+*单张 RTX 5090、单台 DGX Spark、Mac Studio Max* · 共 170 条
 
 
 **📝 文字**
@@ -309,7 +313,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 - **Qwen3.8-Flash-Next** · Strata `ISTA-DASLab GSQ-RCO IQ3_S（M…` — RTX 5090 32GB + 121GB DDR5 → **240 tok/s** ✅ [来源](https://x.com/lyesbahi/status/2113602136051458520)
 - **Qwen3.8-Flash-Next** · vLLM `Intel W4A16-AutoRound + 原生 …` — 2× CMP 170HX（各暴露 64GB，PCIe Gen2 x4，无 x16 改装）+ 93GB RAM + NV… → **226.2 tok/s** ✅ [来源](https://github.com/AlexBrandes/cmp170hx-qwen38-flash-next)
 - **MiniCPM-V 4.7 35B-A3B** · llama.cpp `Q4_K_M` — RTX 5090 → **208 tok/s** ✅ [来源](https://x.com/Blackwellboy/status/2110717843121881380)
-- *……另有 141 条，见 [配方库](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=zh-CN)。*
+- *……另有 142 条，见 [配方库](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=zh-CN)。*
 
 **🖼️ 图像**
 
@@ -337,22 +341,22 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 
 ## 第 3 档 · 7,000–14,000 美元
 
-*双 Spark、Mac Studio Ultra* · 共 61 条
+*双 Spark、Mac Studio Ultra* · 共 63 条
 
 
 **📝 文字**
 
+- **Qwen3.8-27B** · TensorFold `预填用 NVFP4（cuBLASLt），生成用 3.0…` — 2× DGX Spark（双机张量并行） → **190 tok/s** ✅ [来源](https://x.com/BHCC2025/status/2117272695637443025)
 - **Qwen3.8-27B** · vLLM `NVFP4` — 2× RTX 5090（P2P 驱动） → **160 tok/s** 📣 [来源](https://www.reddit.com/r/LocalLLM/comments/1x5u4yf/comment/pgqv4uy/)
 - **Qwen3.8-Flash-Next** · oMLX `unsloth UD-Q6_K_XL` — Mac Studio M5 Ultra 256GB → **141 tok/s** ✅ [来源](https://www.reddit.com/r/LocalLLaMA/comments/1xdp654/)
 - **Qwen3.8-Flash-Next 4/8-bit** · mlx-serve `4/8-bit mixed` — Mac Studio M5 Ultra 256GB → **126 tok/s** ✅ [来源](https://x.com/LocalSilicon/status/2106175358160793817)
 - **DeepSeek-V4.1-Flash** · TensorFold — 2× DGX Spark → **95 tok/s** ✅ [来源](https://x.com/Urthoo/status/2106426248759005362)
 - **Qwen3.8-Flash-Next** · vLLM `nvidia FP4-Local + MTP 4` — 2× DGX Spark（QSFP 直连，TP2） → **95 tok/s** 🏛️ [来源](https://github.com/atakann/dgx-spark-recipes/blob/8a15075/recipes/llm/qwen3.8-flash-next-fp4-vllm-tp2.yaml)
 - **DeepSeek-V4.1-Flash-1017** · TensorFold `MiaAI EXL3 2.9bpw（v1）+ DSpa…` — 2× DGX Spark（QSFP 直连） → **88.7 tok/s** ✅ [来源](https://x.com/atasrb/status/2113681338532253775)
+- **GLM-5.3-Flash（320B/18B 激活）** · TensorFold `MiaAI_lab EXL3 4 bpw` — 2× DGX Spark → **83 tok/s** ✅ [来源](https://x.com/atasrb/status/2117267112464925027)
 - **DeepSeek-V4-Flash (0731 GA)** `官方 FP8 权重` — 2× DGX Spark → **82 tok/s** ✅ [来源](https://x.com/MiaAI_lab/status/2083326111144906836)
 - **Ling-3.0-flash** · SGLang `FP8 + FP8 lm_head + MTP3（不用…` — 2× DGX Spark → **82 tok/s** ✅ [来源](https://x.com/atasrb/status/2116085996965990514)
-- **DeepSeek-V4.1-Flash-1017** · TensorFold `Mia-AiLab EXL3-EAQv1 2.9bpw…` — 2× DGX Spark（GB10，CX7） → **74.9 tok/s** ✅ [来源](https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-1017-2x-DGX-Sparks)
-- **DeepSeek-V4.1-Flash-1017** · TensorFold `bertholomus EXL3 2.5bpw` — 2× DGX Spark（其中一台 ASUS GX10；QSFP 直连，TP2） → **70.5 tok/s** ✅ [来源](https://x.com/niklaslenz_ai/status/2114094357020385570)
-- *……另有 51 条，见 [配方库](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=zh-CN)。*
+- *……另有 53 条，见 [配方库](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=zh-CN)。*
 
 ## 第 4 档 · 14,000–30,000 美元
 
@@ -375,9 +379,10 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 
 ## 价格未公开
 
-按张计价的多卡组合、未注明内存（因而无法定价）的 Mac 以及其他没有单一公开价格的配方 · 共 379 条。按 tok/s 排名靠前的文字配方：
+按张计价的多卡组合、未注明内存（因而无法定价）的 Mac 以及其他没有单一公开价格的配方 · 共 406 条。按 tok/s 排名靠前的文字配方：
 
 - **Qwen3.6-35B-A3B** · SGLang `NVFP4` — 1× RTX 5090 → **626 tok/s** 🏛️ [来源](https://github.com/jhsmith409/sglang-elsa)
+- **Qwen3.5-2B** · webyIQ `int4 GPTQ（group 32），约 1.1GB` — RTX 5080（Chrome 156，WebGPU） → **620 tok/s** 📣 [来源](https://www.reddit.com/r/LocalLLM/comments/1xmcqkb/)
 - **Qwen3.8-27B** · TensorFold `z-lab DFlash2 草稿（BobClawbla…` — 1× RTX 5090 → **538.1 tok/s** ✅ [来源](https://x.com/BobClawblaw/status/2114570274511405354)
 - **Gemma 4 31B** · Radiance `W4A8 + DFlash2 block-16 草稿（…` — 4× Radeon AI PRO R9700 32GB → **445.8 tok/s** 📣 [来源](https://codeberg.org/StillDeadcode/radiance/issues/248)
 - **LFM3-1.7B** · llama.cpp `未注明` — RTX 3090 24GB → **384 tok/s** ✅ [来源](https://x.com/Layton_Gott/status/2115244678056464384)
@@ -388,8 +393,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 - **Qwen3.8-Flash-Next** · vLLM `nvidia FP4-Local（NVFP4），FP8…` — 1× RTX PRO 6000 Blackwell 96GB（限 450W） → **287 tok/s** ✅ [来源](https://www.reddit.com/r/LocalLLM/comments/1xj9ura/)
 - **Qwen3.8-Flash-Next** · Strata `Q2_0（另测 IQ3_S）` — RTX 5090 + Ryzen 9 9950X（Windows） → **270.7 tok/s** ✅ [来源](https://github.com/Niko1221/Strata/issues/4166)
 - **Qwen3.8-27B** · TensorFold `MLX 4-bit + z-lab DFlash2 草稿` — 1× RTX 5090 32GB → **268.2 tok/s** ✅ [来源](https://x.com/niklaslenz_ai/status/2114219401679376809)
-- **Qwen3.6-35B-A3B** · IronMLX `4-bit + DFlash2` — MacBook Pro M5 Max 128GB（40 核 GPU） → **267.4 tok/s** 📣 [来源](https://www.reddit.com/r/LocalLLM/comments/1xlm898/)
-- *……全部 379 条见 [配方库](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=zh-CN)。*
+- *……全部 406 条见 [配方库](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=zh-CN)。*
 
 
 ## 引擎与工具
