@@ -23788,7 +23788,7 @@
       "hardware_cost_text": "Not priced",
       "concurrency": "single stream (aggregate separate)",
       "source_note": "Strata v0.2.10 release notes (engine 0.1.56). This is a benchmark by the engine team, not an independent measurement",
-      "engine_note": "Strata 0.2.8, engine 0.1.54"
+      "engine_note": "Strata 0.2.10, engine 0.1.56"
     },
     "streams": [
       {
@@ -27725,41 +27725,6 @@
       "source_note": "GitHub issue by the tester, with raw data and method; full launch flags in the issue"
     },
     "source_id": "src-d91251df4c"
-  },
-  {
-    "id": "comm-245",
-    "category": "text",
-    "model": "Qwen3.8-Flash-Next",
-    "quant": "IQ2_XS",
-    "engine": "Strata",
-    "hardware": "1× Tesla V100-SXM2-32GB（SXM2 转 PCIe 转接，台式机）+ i5-8400 + 23GB RAM",
-    "hardware_family": "二手数据中心卡",
-    "hardware_cost_text": "未核价",
-    "hardware_cost_usd": null,
-    "context": "64K",
-    "launch_command": null,
-    "source_url": "https://github.com/Niko1221/Strata/issues/5003",
-    "source_level": "实测",
-    "date": "2026-11-02",
-    "measured_by": "xingyun618",
-    "metric": "Strata 0.1.42：约 4K 提示单流 decode 68.4，65,536 上下文",
-    "metric_en": "Strata 0.1.42: single-stream decode 68.4 at about 4K prompt tokens, 65,536 context",
-    "tok_s": 68.4,
-    "concurrency": "单流",
-    "source_note": "GitHub issue，测试者本人，原始输出在 bench/results/2026-10-11-community-v100-sm70-iq2xs/；issue 没写转接方式，i5-8400 是台式机平台，按转接卡处理",
-    "model_family": "Qwen",
-    "tags": [
-      "2bit",
-      "MoE"
-    ],
-    "en": {
-      "quant": "IQ2_XS",
-      "hardware": "1× Tesla V100-SXM2-32GB (SXM2-to-PCIe adapter, desktop) + i5-8400 + 23GB RAM",
-      "hardware_cost_text": "Not priced",
-      "concurrency": "single stream",
-      "source_note": "GitHub issue by the tester, raw output in bench/results/2026-10-11-community-v100-sm70-iq2xs/; the issue does not name the adapter; the i5-8400 is a desktop platform, so this entry treats it as an adapter card"
-    },
-    "source_id": "src-de77ce0455"
   },
   {
     "id": "comm-246",
