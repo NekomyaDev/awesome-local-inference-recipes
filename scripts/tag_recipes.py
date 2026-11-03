@@ -29,6 +29,7 @@ _DT = r'(?:[\w.]*\d[\w.\-]*|bf16|fp16)'
 # A cache dtype is the dtype after 'KV' (or 'KV cache'); a dtype before 'KV' counts only when no dtype follows.
 KV_OR_SOURCE = (r'\bKV(?:[\s-]*cache)?[\s:=]*' + _DT + r'|' + _DT + r'[\s-]*KV\b(?![\s-]*(?:cache)?[\s:=]*' + _DT + r')(?:[\s-]*cache)?'
                 r'|自\s*BF16\s*量化|from BF16')
+GPU_UNLOCK = r'gpu-unlock|解除\s*(?:LHR\s*)?(?:FP16|BF16|LHR)[^，；）]*限速'
 SPEC = r'MTP|投机|DFlash|DSpark|草稿|draft|n-gram|\bEAGLE|speculative'
 MULTI = r'(?<![\d.])(?:[2-9]|1\d)\s*[×x✕]\s|双|\bTP\s*=?\s*[2-9]|集群|cluster|[2-9]\s*张|[2-9]\s*台|\+\s*RTX'
 def family(model):
@@ -61,6 +62,9 @@ def tags(r):
     if re.search(r'卸载|offload|NVMe|SSD(?! ?前缀)|闪存|流式读取|放内存|系统内存|RAM 卸载', off, re.I) or re.search(r'流式|stream', mq, re.I): t.append('offload')
     if r['category'] != 'text' and re.search(r'Turbo|蒸馏|distill|\b[1-8]\s*步', mq, re.I): t.append('few-step')
     if re.search(r'Abliterated|去拒答', r['model'], re.I): t.append('abliterated')
+    # Firmware/driver unlock on a stock GPU (not a hardware mod, e.g. not a memory-changed CMP 170HX).
+    unl = ' '.join(str(r.get(k) or '') for k in ('hardware', 'source_note', 'metric', 'quant'))
+    if re.search(GPU_UNLOCK, unl, re.I): t.append('gpu-unlock')
     return t
 def apply(recipes):
     for r in recipes:

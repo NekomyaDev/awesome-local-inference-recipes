@@ -4,7 +4,7 @@ const S=JSON.parse(fs.readFileSync(new URL('../schema/recipe.schema.json',import
 const D=JSON.parse(fs.readFileSync(new URL('../data/recipes.json',import.meta.url)));
 let err=0;const ids=new Set();
 const typeOk=(v,t)=>[].concat(t).some(x=>x==='null'?v===null:x==='number'?typeof v==='number':x==='array'?Array.isArray(v):typeof v===x);
-const TAGS=new Set(['1bit','ternary','2bit','3bit','4bit','5bit','6bit','8bit','bf16','MoE','dense','long-context','speculative','MTP','multi-GPU','offload','few-step','abliterated']);
+const TAGS=new Set(['1bit','ternary','2bit','3bit','4bit','5bit','6bit','8bit','bf16','MoE','dense','long-context','speculative','MTP','multi-GPU','offload','few-step','abliterated','gpu-unlock']);
 for(const r of D){
   const e=m=>{err++;console.error(`[${r.id}] ${m}`)};
   if(ids.has(r.id))e('duplicate id');ids.add(r.id);

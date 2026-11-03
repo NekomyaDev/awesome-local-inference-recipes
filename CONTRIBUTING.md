@@ -11,7 +11,7 @@ This list is for setups that one person, a home or office desktop user, or a sma
 - It runs on ordinary home or office power: about 2 kW in total, from up to two ordinary outlets, with no special wiring. If you use two outlets, put them on separate circuits. One US 120 V / 15 A circuit gives about 1.44 kW continuous. One Japanese 100 V / 15 A outlet is rated at about 1.5 kW.
 - It uses no rack, no SXM or HGX server board, no custom liquid-cooling loop and no server liquid cooling. A DIY SXM2-to-PCIe adapter build that fits in a desktop is in scope. A consumer GPU with a factory all-in-one (AIO) liquid cooler is in scope.
 - It uses at most one desktop-class network switch.
-- It uses no modded GPU. For now, a GPU with changed memory or unlocked firmware is out of scope. Examples are an RTX 4090D with 48GB memory and an unlocked CMP 170HX. Recipes for modded GPUs that are already in the list stay until a later review.
+- It uses no modded GPU. A modded GPU has changed hardware, for example changed memory. Examples are an RTX 4090D with 48GB memory and a CMP 170HX with changed memory. Recipes for modded GPUs that are already in the list stay until a later review. A stock GPU with a firmware or driver unlock is in scope, for example the gpu-unlock kernel module that removes the FP16 limit on Ampere cards. These recipes get the `gpu-unlock` tag.
 
 A setup that fails one condition is out of scope, even when it costs less than $30,000. We record the price on the date that we add the recipe. When the price goes up later, we update only the price note (`hardware_cost_text`). We do not remove the recipe.
 
@@ -37,7 +37,7 @@ A setup that fails one condition is out of scope, even when it costs less than $
 - GPU 或整机合计不超过 4 个。每张 GPU 算 1 个；没有独立 GPU 的整机每台算 1 个。例如：一台 PC 装 4 张卡算 4 个，4 台 DGX Spark 算 4 个，4 台 DGX Spark 加一台装 RTX 5090 的 PC 算 5 个。
 - 用普通家用或办公室电源即可运行：总功率约 2 kW 以内，最多分接两个普通插座，不需要专门布线。用两个插座时，两个插座要在不同电路上。美国一路 120 V / 15 A 电路持续供电约 1.44 kW；日本一个 100 V / 15 A 插座额定约 1.5 kW。
 - 不用机架，不用 SXM 或 HGX 服务器主板，不用分体式水冷或服务器液冷。装得进桌面机箱的 DIY SXM2 转 PCIe 转接方案可以收录。出厂自带一体式水冷（AIO）的消费级显卡可以收录。
-- 暂不收录魔改显卡，即改过显存或解锁过固件的显卡，例如 48GB 显存的 RTX 4090D、解锁的 CMP 170HX。库里已有的魔改显卡条目暂时保留，以后再复核。
+- 暂不收录魔改显卡，即改过硬件（例如改过显存）的显卡，例如 48GB 显存的 RTX 4090D、改过显存的 CMP 170HX。库里已有的魔改显卡条目暂时保留，以后再复核。原厂显卡只用固件或驱动解锁时可以收录，例如解除 Ampere 卡 FP16 限速的 gpu-unlock 内核模块。这类条目加 `gpu-unlock` 标签。
 - 最多用一台桌面级网络交换机。
 
 不满足任一条件的配置不收录，即使总价低于 3 万美元。价格按收录当天记录。之后涨价时，只更新价格说明（`hardware_cost_text`），不删除条目。
@@ -66,7 +66,7 @@ Maintainers: Hugging Face candidate ingestion is described in [docs/sources.md](
 - GPU 4 枚またはマシン 4 台まで。GPU は 1 枚ずつ、独立 GPU のないマシンは 1 台ずつ数えます。例：PC 1 台に GPU 4 枚は 4、DGX Spark 4 台は 4、DGX Spark 4 台と RTX 5090 搭載 PC 1 台は 5。
 - 一般的な家庭用・オフィス用の電源で動く：合計約 2 kW 以内で、ふつうのコンセント 2 口までに分けてよく、専用の配線工事は不要。2 口を使うときは、別々の回路のコンセントにする。米国の 120 V / 15 A 回路 1 本は連続で約 1.44 kW、日本の 100 V / 15 A コンセント 1 口は定格で約 1.5 kW。
 - ラック、SXM / HGX サーバーボード、カスタムループ水冷、サーバー用液冷を使わない。デスクトップに収まる DIY の SXM2→PCIe 変換構成は対象。メーカー出荷時から簡易水冷（AIO）付きのコンシューマー GPU も対象。
-- 改造 GPU は当面対象外。メモリを変更した GPU、またはファームウェアをアンロックした GPU のことです。例：48GB メモリの RTX 4090D、アンロック済みの CMP 170HX。リストにすでにある改造 GPU のレシピは、後の見直しまで残します。
+- 改造 GPU は当面対象外。ハードウェアを変更した GPU（例：メモリを変更した GPU）のことです。例：48GB メモリの RTX 4090D、メモリを変更した CMP 170HX。リストにすでにある改造 GPU のレシピは、後の見直しまで残します。市販の GPU にファームウェアまたはドライバーのロック解除だけを使った構成は対象です。例：Ampere カードの FP16 制限を外す gpu-unlock カーネルモジュール。このレシピには `gpu-unlock` タグを付けます。
 - ネットワークスイッチはデスクトップ型 1 台まで。
 
 1 つでも満たさない構成は、3 万ドル未満でも対象外です。価格は収録日の価格を記録します。後で値上がりしても、価格メモ（`hardware_cost_text`）だけを更新し、レシピは削除しません。
