@@ -16547,7 +16547,8 @@
     "tags": [
       "dense",
       "long-context",
-      "multi-GPU"
+      "multi-GPU",
+      "gpu-unlock"
     ],
     "en": {
       "quant": "Not stated (dense)",
@@ -26271,7 +26272,8 @@
       "MoE",
       "speculative",
       "MTP",
-      "offload"
+      "offload",
+      "gpu-unlock"
     ],
     "en": {
       "quant": "IndrasMirror XQ / GSQ V2 + FP4 KV + Engram tables on NVMe",
@@ -26306,7 +26308,8 @@
     "model_family": "Qwen",
     "tags": [
       "4bit",
-      "MoE"
+      "MoE",
+      "gpu-unlock"
     ],
     "en": {
       "quant": "pack-qfn45 (4-bit intermediate format)",
@@ -26487,7 +26490,8 @@
     "model_family": "Qwen",
     "tags": [
       "MoE",
-      "multi-GPU"
+      "multi-GPU",
+      "gpu-unlock"
     ],
     "engine_raw": "Speedy（DevDock-AI，Strata 衍生）",
     "engine_note": "Speedy（DevDock-AI，Strata 衍生）",

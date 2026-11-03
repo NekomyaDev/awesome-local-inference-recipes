@@ -41,6 +41,13 @@ class TestTags(unittest.TestCase):
         self.assertEqual(t, ['4bit', 'dense'])
         t = T.tags(rec(category='image', model='Z-Image Turbo', quant='int8 · 25 步', engine='ComfyUI'))
         self.assertEqual(t, ['8bit', 'few-step'])
+    def test_gpu_unlock(self):
+        t = T.tags(rec(model='Qwen3.8-27B', quant='Q4', engine='vLLM', hardware='4× RTX 3090 24GB（gpu-unlock 解锁 fp32 累加）'))
+        self.assertIn('gpu-unlock', t)
+        t = T.tags(rec(model='Qwen3.8-27B', quant='Q4', engine='vLLM', hardware='2× RTX 3080（解除 LHR FP16 限速）'))
+        self.assertIn('gpu-unlock', t)
+        t = T.tags(rec(model='Qwen3.8-27B', quant='Q4', engine='vLLM', hardware='CMP 170HX（解锁 64GB 矿卡）'))
+        self.assertNotIn('gpu-unlock', t)
     def test_bpw_and_bit_suffixes(self):
         t = T.tags(rec(model='DeepSeek-V4.1-Flash', quant='EXL3 3bpw', engine='vLLM'))
         self.assertIn('3bit', t)
