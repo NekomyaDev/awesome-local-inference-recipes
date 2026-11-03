@@ -16731,16 +16731,16 @@
     "hardware_family": "二手数据中心卡",
     "hardware_cost_text": "≈$810（2×$405 eBay 挂牌中位，2026-10，计算值，仅显卡）",
     "hardware_cost_usd": 810,
-    "metric": "Strata 0.2.3 单流 46；2 用户每人约 42；NUMA 内存池 +15%；2026-11-01 同一作者新帖约 55（x.com/lyesbahi/status/2116857341991952414）；STRATA_LOOKUP 补丁（PR #4928）下复制代码类请求持续 71.1，普通混合请求约 55–57（x.com/lyesbahi/status/2116953415980916766）；2026-11-03 Strata 0.2.10：文本复制类 41 → 55（+32%）（x.com/lyesbahi/status/2117545259358196187）",
-    "metric_en": "Strata 0.2.3 single stream 46; about 42 per user with 2 users; NUMA pool +15%; a new post by the same tester on 2026-11-01 gives about 55 (x.com/lyesbahi/status/2116857341991952414); with the STRATA_LOOKUP patch (PR #4928), code-recopy requests sustain 71.1, mixed requests about 55–57 (x.com/lyesbahi/status/2116953415980916766); 2026-11-03 Strata 0.2.10: text-copy requests 41 → 55 (+32%) (x.com/lyesbahi/status/2117545259358196187)",
-    "tok_s": 46,
+    "metric": "单流约 55（2026-11-01 新帖，x.com/lyesbahi/status/2116857341991952414；2026-11-03 Strata 0.2.10 文本复制类 41 → 55（+32%），x.com/lyesbahi/status/2117545259358196187）；STRATA_LOOKUP 补丁（PR #4928）下复制代码类请求持续 71.1，普通混合请求约 55–57（x.com/lyesbahi/status/2116953415980916766）；历史：Strata 0.2.3 单流 46，2 用户每人约 42，NUMA 内存池 +15%（x.com/lyesbahi/status/2113593434355507686）",
+    "metric_en": "Single stream about 55 (new post on 2026-11-01, x.com/lyesbahi/status/2116857341991952414; 2026-11-03 Strata 0.2.10 text-copy requests 41 → 55 (+32%), x.com/lyesbahi/status/2117545259358196187); with the STRATA_LOOKUP patch (PR #4928), code-recopy requests sustain 71.1, mixed requests about 55–57 (x.com/lyesbahi/status/2116953415980916766); history: Strata 0.2.3 single stream 46, about 42 per user with 2 users, NUMA pool +15% (x.com/lyesbahi/status/2113593434355507686)",
+    "tok_s": 55,
     "concurrency": "单流（另测 2 用户）",
     "context": "256K",
     "launch_command": null,
-    "source_url": "https://x.com/lyesbahi/status/2113593434355507686",
+    "source_url": "https://x.com/lyesbahi/status/2117545259358196187",
     "source_note": "X 帖文（附截图）",
     "source_level": "实测",
-    "date": "2026-10-23",
+    "date": "2026-11-03",
     "measured_by": "lyesbahi",
     "model_family": "Qwen",
     "tags": [
@@ -16756,7 +16756,7 @@
       "source_note": "X post (with screenshot)",
       "hardware_cost_text": "≈$810 (2×$405 eBay listing median, 2026-10, computed, cards only)"
     },
-    "source_id": "src-1ce5130c8e"
+    "source_id": "src-7f5a3fccd9"
   },
   {
     "id": "comm-077",
