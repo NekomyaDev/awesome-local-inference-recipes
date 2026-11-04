@@ -21509,13 +21509,13 @@
     "hardware_cost_usd": null,
     "context": "256K",
     "launch_command": null,
-    "source_url": "https://x.com/lyesbahi/status/2114858533984629107",
+    "source_url": "https://x.com/lyesbahi/status/2117672208592220602",
     "source_level": "实测",
-    "date": "2026-10-27",
+    "date": "2026-11-03",
     "measured_by": "lyesbahi",
-    "metric": "长生成平均约 50–51（2.2K token 测试，256K 上下文）；预填 1,350。数字取自帖文，截图未核；Strata 0.2.10（2026-11-03）：散文 decode 35–38，复制/agent 68；10–36K 预填 890–2,264（x.com/lyesbahi/status/2117672208592220602）",
-    "metric_en": "Long-generation average about 50–51 (2.2K-token test, 256K context); prefill 1,350. The numbers come from the post text; the screenshot was not checked; Strata 0.2.10 (2026-11-03): prose decode 35–38, copy/agent 68; prefill 890–2,264 at 10–36K (x.com/lyesbahi/status/2117672208592220602)",
-    "tok_s": 50,
+    "metric": "Strata 0.2.10 主值 35（散文 decode 35–38，取下限）；历史：长生成平均约 50–51（2.2K token 测试，256K 上下文）；预填 1,350。数字取自帖文，截图未核；Strata 0.2.10（2026-11-03）：散文 decode 35–38，复制/agent 68；10–36K 预填 890–2,264（x.com/lyesbahi/status/2117672208592220602）",
+    "metric_en": "Strata 0.2.10 main value 35 (prose decode 35–38, low end); history: Long-generation average about 50–51 (2.2K-token test, 256K context); prefill 1,350. The numbers come from the post text; the screenshot was not checked; Strata 0.2.10 (2026-11-03): prose decode 35–38, copy/agent 68; prefill 890–2,264 at 10–36K (x.com/lyesbahi/status/2117672208592220602)",
+    "tok_s": 35,
     "concurrency": "单流",
     "source_note": "X 帖，测试者本人（@lyesbahi）；Strata 版本、量化来源和启动命令未给",
     "model_family": "DeepSeek",
@@ -21532,7 +21532,7 @@
       "source_note": "X post by the tester (@lyesbahi); the Strata version, the quant source and the launch command are not stated",
       "context": "256K"
     },
-    "source_id": "src-cc4f9f7176"
+    "source_id": "src-0fc1100f26"
   },
   {
     "id": "x-167",
@@ -22756,16 +22756,16 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "未核价",
     "hardware_cost_usd": null,
-    "metric": "strata bench run 标准协议（自定义配置）：decode 短 61.6 / 4K 51.0 / 16K 56.7；预填 4K 904.5 / 16K 1,792.3；12/12 检查通过；0.2.10（github.com/Niko1221/Strata/issues/5206，n=4 中位）：MTP 散文 80.8 / 代码 84.5 / 20K 摘要 56.9；DFlash2（conf 0.5）代码 87.8、散文 77.8、摘要 55.2；预填 20K/32K/69K DFlash2 1,918/2,244/2,461",
-    "metric_en": "strata bench run standard protocol (custom setup): decode short 61.6 / 4K 51.0 / 16K 56.7; prefill 4K 904.5 / 16K 1,792.3; 12/12 checks pass; 0.2.10 (github.com/Niko1221/Strata/issues/5206, median of n=4): MTP prose 80.8 / code 84.5 / 20K summary 56.9; DFlash2 (conf 0.5) code 87.8, prose 77.8, summary 55.2; prefill 20K/32K/69K with DFlash2 1,918/2,244/2,461",
-    "tok_s": 61.6,
+    "metric": "0.2.10 主值 80.8（MTP 散文，n=4 中位，github.com/Niko1221/Strata/issues/5206）；历史：strata bench run 标准协议（自定义配置）：decode 短 61.6 / 4K 51.0 / 16K 56.7；预填 4K 904.5 / 16K 1,792.3；12/12 检查通过；0.2.10（github.com/Niko1221/Strata/issues/5206，n=4 中位）：MTP 散文 80.8 / 代码 84.5 / 20K 摘要 56.9；DFlash2（conf 0.5）代码 87.8、散文 77.8、摘要 55.2；预填 20K/32K/69K DFlash2 1,918/2,244/2,461",
+    "metric_en": "0.2.10 main value 80.8 (MTP prose, median of n=4, github.com/Niko1221/Strata/issues/5206); history: strata bench run standard protocol (custom setup): decode short 61.6 / 4K 51.0 / 16K 56.7; prefill 4K 904.5 / 16K 1,792.3; 12/12 checks pass; 0.2.10 (github.com/Niko1221/Strata/issues/5206, median of n=4): MTP prose 80.8 / code 84.5 / 20K summary 56.9; DFlash2 (conf 0.5) code 87.8, prose 77.8, summary 55.2; prefill 20K/32K/69K with DFlash2 1,918/2,244/2,461",
+    "tok_s": 80.8,
     "concurrency": "单流",
     "context": "262K",
     "launch_command": null,
-    "source_url": "https://github.com/Niko1221/Strata/issues/4595",
+    "source_url": "https://github.com/Niko1221/Strata/issues/5206",
     "source_note": "GitHub benchmark issue，测试者本人；没有同机默认配置对照",
     "source_level": "实测",
-    "date": "2026-10-29",
+    "date": "2026-11-04",
     "measured_by": "fioruccione",
     "model_family": "Qwen",
     "tags": [
@@ -22786,7 +22786,7 @@
     },
     "engine_raw": "Strata v0.2.7.1（自构建）",
     "engine_note": "Strata v0.2.7.1（自构建）",
-    "source_id": "src-98e8530555"
+    "source_id": "src-b059f0ed0e"
   },
   {
     "id": "x-174",
