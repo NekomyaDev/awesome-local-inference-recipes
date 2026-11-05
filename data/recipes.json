@@ -9015,13 +9015,13 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11）",
     "hardware_cost_usd": 6950,
-    "metric": "1 流 58.3 tok/s（prose）；2 流 108.5；8 流 220；TensorFold 1.2.2（niklaslenz，2026-11-05）：代码 49.0 / 散文 45.6；2K 预填 889（1.2.1 为 354），128K 预填 660；8 流合计 108.8（x.com/niklaslenz_ai/status/2118316147686654429）。主值仍用本条散文 58.3",
-    "tok_s": 58.3,
-    "concurrency": null,
+    "metric": "TensorFold 1.2.2（niklaslenz，2026-11-05）：代码 49.0 / 散文 45.6；2K 预填 889（1.2.1 为 354），128K 预填 660；8 流合计 108.8（x.com/niklaslenz_ai/status/2118316147686654429）。历史：同作者更早 TensorFold 散文单流 58.3 / 2 流 108.5 / 8 流 220。tok_s 取 1.2.2 散文 45.6",
+    "tok_s": 45.6,
+    "concurrency": "单流",
     "context": null,
     "launch_command": null,
-    "source_url": "https://x.com/ashxhart/status/2105745818137280545",
-    "source_note": "@ashxhart on X",
+    "source_url": "https://x.com/niklaslenz_ai/status/2118316147686654429",
+    "source_note": "X 帖，测试者本人，附方法与原始数字",
     "source_level": "实测",
     "date": "2026-11-05",
     "x_post": {
@@ -9039,25 +9039,23 @@
     "streams": [
       {
         "n": 1,
-        "tok_s": 58.3
-      },
-      {
-        "n": 2,
-        "tok_s": 108.5
+        "tok_s": 45.6
       },
       {
         "n": 8,
-        "tok_s": 220
+        "tok_s": 108.8
       }
     ],
-    "measured_by": "ashxhart",
-    "source_id": "src-233f5276ae",
+    "measured_by": "niklaslenz_ai",
+    "source_id": "src-33ce09ec33",
     "engine_raw": "TensorFold + DFlash2（MiaAI_lab recipe）",
     "engine_note": "TensorFold + DFlash2（MiaAI_lab recipe）",
-    "metric_en": "1 stream 58.3 tok/s (prose); 2 streams 108.5; 8 streams 220; TensorFold 1.2.2 (niklaslenz, 2026-11-05): code 49.0 / prose 45.6; 2K prefill 889 (was 354 on 1.2.1), 128K prefill 660; 8 streams 108.8 aggregate (x.com/niklaslenz_ai/status/2118316147686654429). Main value stays on this row's prose 58.3",
+    "metric_en": "TensorFold 1.2.2 (niklaslenz, 2026-11-05): code 49.0 / prose 45.6; 2K prefill 889 (was 354 on 1.2.1), 128K prefill 660; 8 streams 108.8 aggregate (x.com/niklaslenz_ai/status/2118316147686654429). History: the same author's earlier TensorFold prose was 58.3 single-stream / 108.5 at 2 streams / 220 at 8 streams. tok_s uses 1.2.2 prose 45.6",
     "en": {
       "engine_note": "TensorFold + DFlash2 (MiaAI_lab recipe)",
-      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)"
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "concurrency": "single stream",
+      "source_note": "X post by the tester with method and raw numbers"
     }
   },
   {
