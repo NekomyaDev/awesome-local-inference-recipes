@@ -8560,7 +8560,7 @@
     "en": {
       "quant": "EXL3 4bpw (MiaAI 1104 recipe, dense/head q8, FP8 KV, DFlash2)",
       "hardware": "2× DGX Spark",
-      "hardware_cost_text": "Not priced",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
       "concurrency": "single stream",
       "context": "1M (about 2.7–2.9M KV pool shared across 4 streams)",
       "source_note": "X post by the tester with method and raw numbers; two other independent reproductions"
@@ -9015,7 +9015,7 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11）",
     "hardware_cost_usd": 6950,
-    "metric": "TensorFold 1.2.2（niklaslenz，2026-11-05）：代码 49.0 / 散文 45.6；2K 预填 889（1.2.1 为 354），128K 预填 660；8 流合计 108.8（x.com/niklaslenz_ai/status/2118316147686654429）。历史：同作者更早 TensorFold 散文单流 58.3 / 2 流 108.5 / 8 流 220。tok_s 取 1.2.2 散文 45.6",
+    "metric": "TensorFold 1.2.2（niklaslenz，2026-11-05）：代码 49.0 / 散文 45.6；2K 预填 889（1.2.1 为 354），128K 预填 660；8 流合计 108.8（x.com/niklaslenz_ai/status/2118316147686654429）。历史：ashxhart 更早 TensorFold 散文单流 58.3 / 2 流 108.5 / 8 流 220（https://x.com/ashxhart/status/2105745818137280545）。tok_s 取 1.2.2 散文 45.6",
     "tok_s": 45.6,
     "concurrency": "单流",
     "context": null,
@@ -9050,7 +9050,7 @@
     "source_id": "src-33ce09ec33",
     "engine_raw": "TensorFold + DFlash2（MiaAI_lab recipe）",
     "engine_note": "TensorFold + DFlash2（MiaAI_lab recipe）",
-    "metric_en": "TensorFold 1.2.2 (niklaslenz, 2026-11-05): code 49.0 / prose 45.6; 2K prefill 889 (was 354 on 1.2.1), 128K prefill 660; 8 streams 108.8 aggregate (x.com/niklaslenz_ai/status/2118316147686654429). History: the same author's earlier TensorFold prose was 58.3 single-stream / 108.5 at 2 streams / 220 at 8 streams. tok_s uses 1.2.2 prose 45.6",
+    "metric_en": "TensorFold 1.2.2 (niklaslenz, 2026-11-05): code 49.0 / prose 45.6; 2K prefill 889 (was 354 on 1.2.1), 128K prefill 660; 8 streams 108.8 aggregate (x.com/niklaslenz_ai/status/2118316147686654429). History: ashxhart earlier TensorFold prose was 58.3 single-stream / 108.5 at 2 streams / 220 at 8 streams (https://x.com/ashxhart/status/2105745818137280545). tok_s uses 1.2.2 prose 45.6",
     "en": {
       "engine_note": "TensorFold + DFlash2 (MiaAI_lab recipe)",
       "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
