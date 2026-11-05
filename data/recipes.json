@@ -28699,15 +28699,15 @@
     "hardware_cost_usd": null,
     "context": null,
     "launch_command": null,
-    "source_url": "https://x.com/ViC305/status/2118028345615229131",
+    "source_url": "https://x.com/AgentSparko/status/2117905472506212614",
     "source_level": "宣称",
-    "date": "2026-11-05",
+    "date": "2026-11-04",
     "measured_by": "AgentSparko",
-    "metric": "ViC305 更新配方仓库：AgentSparko 在单台 Spark 上 decode 40、预填 1,020（此前 x-252 记真实 Hermes 请求 30.3，短 prompt 35–40）。tok_s 取新测 decode 40",
-    "metric_en": "ViC305 updated the recipe repo: AgentSparko reports decode 40 and prefill 1,020 on one Spark (x-252 previously recorded 30.3 on real Hermes requests, 35–40 on short prompts). tok_s uses the new decode 40",
-    "tok_s": 40,
+    "metric": "基于 ViC305 的 vLLM 运行时，视觉开：真实 17–21K token Hermes 请求 decode 30.3；短 prompt 35–40；32K–128K 预填约 910–1,020；ViC305 转发 AgentSparko 新测称 decode 40、预填 1,020（x.com/ViC305/status/2118028345615229131，属转述，未改主值）",
+    "metric_en": "Based on the ViC305 vLLM runtime, vision on: decode 30.3 on real 17–21K-token Hermes requests; 35–40 on short prompts; prefill about 910–1,020 at 32K–128K; ViC305 relayed AgentSparko claiming decode 40 and prefill 1,020 (x.com/ViC305/status/2118028345615229131; relayed, main value unchanged)",
+    "tok_s": 30.3,
     "concurrency": "单流",
-    "source_note": "X 帖文（量化作者转发测试者数字，无原始数据）",
+    "source_note": "X 帖文（作者本人，无原始数据）",
     "model_family": "DeepSeek",
     "tags": [
       "MoE",
@@ -28718,9 +28718,9 @@
       "hardware": "1× DGX Spark (cold experts on the SSD)",
       "hardware_cost_text": "Not priced",
       "concurrency": "single stream",
-      "source_note": "X post by the quant author relaying the tester (no raw data)"
+      "source_note": "X post by the author (no raw data)"
     },
-    "source_id": "src-a66441840a"
+    "source_id": "src-834005504f"
   },
   {
     "id": "x-253",
@@ -29712,42 +29712,6 @@
     "source_note": "GitHub issue/PR，测试者本人，附标准协议原始数据",
     "model_family": "Qwen",
     "source_id": "src-464df9b7e2"
-  },
-  {
-    "category": "text",
-    "hardware_cost_text": "未核价",
-    "hardware_cost_usd": null,
-    "context": null,
-    "launch_command": null,
-    "concurrency": "单流",
-    "date": "2026-11-05",
-    "tags": [
-      "MoE",
-      "speculative",
-      "MTP"
-    ],
-    "en": {
-      "quant": "Unspecified GGUF + MTP n=2",
-      "hardware": "1× Tesla P40 24GB",
-      "hardware_cost_text": "Not priced",
-      "concurrency": "single stream",
-      "source_note": "GitHub issue by the tester with raw logs; also records the Strata 0.2.10 regression on P40"
-    },
-    "id": "comm-268",
-    "model": "Qwen3.6-35B-A3B",
-    "quant": "未注明 GGUF + MTP n=2",
-    "engine": "llama.cpp",
-    "hardware": "1× Tesla P40 24GB",
-    "hardware_family": "二手数据中心卡",
-    "source_url": "https://github.com/Niko1221/Strata/issues/5268",
-    "source_level": "实测",
-    "measured_by": "sarge18",
-    "metric": "llama.cpp v0.9.0（`--spec-type draft-mtp --spec-draft-n-max 2`）同卡同 GGUF：decode 稳定 69–78；不开 draft 42–46。同帖对照：Strata 0.2.10 自研 qwen35moe 路径短 prompt 67，但 4K 50.7 / 12K 21.1 / 16K 13.0 / 24K 10.9（随上下文陡降）。tok_s 取 llama.cpp 下限 69",
-    "metric_en": "llama.cpp v0.9.0 (`--spec-type draft-mtp --spec-draft-n-max 2`) on the same card and GGUF: decode holds 69–78; without drafting 42–46. Same issue: Strata 0.2.10 own qwen35moe path is 67 on a short prompt but falls to 50.7 at 4K / 21.1 at 12K / 13.0 at 16K / 10.9 at 24K. tok_s uses llama.cpp low end 69",
-    "tok_s": 69,
-    "source_note": "GitHub issue，测试者本人，附原始日志；同时记录 Strata 0.2.10 在 P40 上的回归",
-    "model_family": "Qwen",
-    "source_id": "src-264c29e12c"
   },
   {
     "category": "text",
