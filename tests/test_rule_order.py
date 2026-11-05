@@ -13,6 +13,7 @@ RAW_ENGINE_SAMPLES = {
     'llama.cpp': 'llama.cpp b10434',
     'strata-mlx': 'strata-mlx 0.4.1',
     'Strata (Strata-DS fork)': 'Strata-DS（Strata 分支，自带 DeepSeek 引擎 ds41_serve）',
+    'Strata (Strata-rdna3 fork)': 'Strata-rdna3（7900 XTX fork）',
     'Strata': 'Strata v0.1.42',
     'oMLX': 'oMLX 0.3', 'TensorFold': 'TensorFold beta', 'DFlash': 'DFlash spec', 'MTPLX': 'MTPLX 2.11.3 serve',
     'mlx-serve': 'mlx-serve 26.8.11', 'MLX Swift': 'MLX Swift 0.21', 'MLX': 'mlx-lm 0.30.7', 'edge0': 'edge0 runtime',
@@ -25,6 +26,7 @@ RAW_ENGINE_SAMPLES = {
     'Halowin Bubo': 'Halowin Bubo（Gufo 分支）', 'Janas-LLM': 'Janas-LLM（纯 C）', 'Strim': 'Strim（Swift + MLX）', 'Magnitude': 'Magnitude',
     'QEngine': 'QEngine 1.3.1（自编 sm_120）', 'PXA': 'PXA 4.0（llama.cpp 分支）', 'Betelgeuse': 'Betelgeuse（llama.cpp 分支）',
     'SGLang (Penny Royal fork)': 'Penny Royal 3.1.4（SGLang 分支）', 'llama.cpp (tandem.cpp fork)': 'tandem.cpp（llama.cpp 补丁集）', 'Speedy': 'Speedy（Strata 衍生）',
+    'RustingStrata': 'RustingStrata（纯 Rust）', 'libosmos': 'libosmos 0.1', 'JITEngine': 'JITEngine SSD offload',
     'Front_Eagle739 streaming stack': 'Front_Eagle739 streaming stack（作者自研）', 'Unspecified': '未注明（EXL3 权重）',
 }
 

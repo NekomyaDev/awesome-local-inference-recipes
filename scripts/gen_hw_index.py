@@ -24,7 +24,7 @@ CHIPS = [
  ('Tesla P40', r'P40\b', 24, 'gpu'), ('Tesla P100', r'P100', 16, 'gpu'), ('V100', r'V100', 32, 'gpu'), ('A100', r'A100', 80, 'gpu'),
  ('CMP 170HX', r'CMP ?170', 8, 'gpu'), ('MI50', r'MI50', 32, 'gpu'), ('MI60', r'MI60', 32, 'gpu'),
  ('RX 6800 XT', r'6800 ?XT', 16, 'gpu'), ('RX 6800', r'RX 6800', 16, 'gpu'), ('RX Vega 64', r'Vega 64', 8, 'gpu'),
- ('RX 7900 XTX', r'7900 ?XTX', 24, 'gpu'), ('RX 7900 XT', r'7900 ?XT', 20, 'gpu'), ('RX 9070 XT', r'9070 ?XT', 16, 'gpu'), ('R9700', r'R9700', 32, 'gpu'),
+ ('RX 7900 XTX', r'7900 ?XTX', 24, 'gpu'), ('RX 7900 XT', r'7900 ?XT', 20, 'gpu'), ('RX 5700 XT', r'5700 ?XT', 8, 'gpu'), ('RX 9070 XT', r'9070 ?XT', 16, 'gpu'), ('R9700', r'R9700', 32, 'gpu'),
  ('Arc B580', r'B580', 12, 'gpu'), ('Arc A770', r'A770', 16, 'gpu'),
  ('DGX Spark', r'DGX Spark|GB10|Spark', None, 'unified'), ('Strix Halo', r'Strix Halo|AI Max\+? ?3\d\d|Ryzen AI Max', None, 'unified'), ('Jetson Thor', r'Jetson (AGX )?Thor', None, 'unified'),
  ('M5 Ultra', r'M5 Ultra', None, 'unified'), ('M5 Max', r'M5 Max', None, 'unified'), ('M5 Pro', r'M5 Pro', None, 'unified'), ('M5', r'\bM5\b', None, 'unified'),

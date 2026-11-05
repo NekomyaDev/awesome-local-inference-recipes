@@ -18,6 +18,7 @@ RULES = [
     (r'^llama\.cpp', 'llama.cpp'),
     (r'^strata-mlx', 'strata-mlx'),
     (r'^Strata-DS', 'Strata (Strata-DS fork)'),
+    (r'^Strata-rdna3', 'Strata (Strata-rdna3 fork)'),
     (r'^Strata', 'Strata'),
     (r'^oMLX', 'oMLX'),
     (r'^TensorFold', 'TensorFold'),
@@ -53,6 +54,9 @@ RULES = [
     (r'^Penny Royal', 'SGLang (Penny Royal fork)'),
     (r'^tandem\.cpp', 'llama.cpp (tandem.cpp fork)'),
     (r'^Speedy', 'Speedy'),
+    (r'^RustingStrata', 'RustingStrata'),
+    (r'^libosmos', 'libosmos'),
+    (r'^JITEngine', 'JITEngine'),
     (r'^未注明', 'Unspecified'),
 ]
 INFER = [
