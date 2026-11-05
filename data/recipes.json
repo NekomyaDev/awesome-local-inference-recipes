@@ -2150,7 +2150,7 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
     "hardware_cost_usd": 13900,
-    "metric": "散文 60.4；结构化 114.7；4 流合计 108.8；8K 54.9 → 874K 44.6",
+    "metric": "散文 60.4；结构化 114.7；4 流合计 108.8；8K 54.9 → 874K 44.6；2026-11-05 MiaAI 1104 配方见 x-017（独立复现散文 38.7）",
     "tok_s": null,
     "concurrency": "4 流",
     "context": "1M（KV 池 2.9M token）",
@@ -2166,7 +2166,7 @@
       "multi-GPU"
     ],
     "source_id": "src-5e67752577",
-    "metric_en": "Prose 60.4; structured 114.7; 4 streams total 108.8; 8K 54.9 → 874K 44.6",
+    "metric_en": "Prose 60.4; structured 114.7; 4 streams total 108.8; 8K 54.9 → 874K 44.6; 2026-11-05 MiaAI 1104 recipe is on x-017 (independent reproduction prose 38.7)",
     "en": {
       "quant": "Mia EXL3 + TensorFold (TP=2)",
       "context": "1M (KV pool 2.9M tokens)",
@@ -8508,22 +8508,22 @@
   {
     "id": "x-017",
     "category": "text",
-    "model": "GLM-5.3-Flash EXL3 4-bit",
-    "quant": "EXL3 4-bit",
+    "model": "GLM-5.3-Flash",
+    "quant": "EXL3 4bpw（MiaAI 1104 配方，dense/head q8，FP8 KV，DFlash2）",
     "engine": "TensorFold",
     "hardware": "2× DGX Spark",
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
     "hardware_cost_usd": 13900,
-    "metric": "1 流 60.4 tok/s（mia-ai.net；帖文只写约 60）；4 流合计 108.8；32k 预填充 1,978.9 tok/s（mia-ai.net）",
-    "tok_s": 60.4,
-    "concurrency": null,
+    "metric": "MiaAI 1104 配方（TensorFold，1M 上下文，8 slot，GPU 锁 2200 MHz）。niklaslenz：散文 38.7 / 代码 42.4（思考关，512 token，2 次中位数）；用 Mia 自带测试方法复现 47.8（思考开），4 流合计 87.7，128K 预填 1,787。jmurillocode：散文单流思考关 33.7 / 开 40.3，8 流 89.9 / 101.1，预填约 1,747（x.com/jmurillocode/status/2118322418523480496）。JASONMCNAB：与 Mia 公布值差 ≤5%，1 流 50.3 vs 47.8（x.com/JASONMCNAB/status/2118312375732367487）。Mia 原帖自报约 48 / 4 流约 87（x.com/MiaAI_lab/status/2118005417494155664）。历史：同作者更早 EXL3 配方单流约 60.4 / 4 流 108.8（x.com/MiaAI_lab/status/2105598458547646875）。tok_s 取 niklaslenz 散文 38.7",
+    "tok_s": 38.7,
+    "concurrency": "单流",
     "context": "1M（4 路共享约 2.7–2.9M KV 池）",
     "launch_command": null,
-    "source_url": "https://x.com/MiaAI_lab/status/2105598458547646875",
-    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取；单流 tok/s 取自 mia-ai.net，帖文中没有这个精确值）",
+    "source_url": "https://x.com/niklaslenz_ai/status/2118066082204242326",
+    "source_note": "X 帖，测试者本人，附方法与原始数字；另有两家独立复现",
     "source_level": "实测",
-    "date": "2026-10-01",
+    "date": "2026-11-05",
     "x_post": {
       "author": "MiaAI_lab",
       "likes": 683,
@@ -8532,7 +8532,7 @@
     },
     "model_family": "GLM",
     "tags": [
-      "4bit",
+      "8bit",
       "MoE",
       "long-context",
       "speculative",
@@ -8541,22 +8541,29 @@
     "streams": [
       {
         "n": 1,
-        "tok_s": 60.4
+        "tok_s": 38.7
       },
       {
         "n": 4,
-        "tok_s": 108.8
+        "tok_s": 87.7
+      },
+      {
+        "n": 8,
+        "tok_s": 80.0
       }
     ],
-    "measured_by": "MiaAI_lab",
-    "source_id": "src-3950f578b9",
+    "measured_by": "niklaslenz_ai",
+    "source_id": "src-0e30e37e2f",
     "engine_raw": "TensorFold + DFlash2",
     "engine_note": "TensorFold + DFlash2",
-    "metric_en": "1 stream 60.4 tok/s (mia-ai.net; the post says about 60); 4 streams 108.8 total; 32k prefill 1,978.9 tok/s (mia-ai.net)",
+    "metric_en": "MiaAI 1104 recipe (TensorFold, 1M context, 8 slots, GPU clock capped at 2200 MHz). niklaslenz: prose 38.7 / code 42.4 (thinking off, 512 tokens, median of 2); with Mia's own harness he matches 47.8 (thinking on), 4 streams 87.7 aggregate, 128K prefill 1,787. jmurillocode: prose single-stream thinking off 33.7 / on 40.3, 8 streams 89.9 / 101.1, prefill about 1,747 (x.com/jmurillocode/status/2118322418523480496). JASONMCNAB: within 5% of Mia's published values, 1 stream 50.3 vs 47.8 (x.com/JASONMCNAB/status/2118312375732367487). Mia's own post reports about 48 / about 87 at 4 streams (x.com/MiaAI_lab/status/2118005417494155664). History: the author's earlier EXL3 recipe was about 60.4 single-stream / 108.8 at 4 streams (x.com/MiaAI_lab/status/2105598458547646875). tok_s uses niklaslenz prose 38.7",
     "en": {
-      "context": "1M (4 streams share a ~2.7–2.9M KV pool)",
-      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
-      "source_note": "@MiaAI_lab post + mia-ai.net/models (fetched 10/14; single-stream tok/s taken from mia-ai.net, the post does not have this exact value)"
+      "quant": "EXL3 4bpw (MiaAI 1104 recipe, dense/head q8, FP8 KV, DFlash2)",
+      "hardware": "2× DGX Spark",
+      "hardware_cost_text": "Not priced",
+      "concurrency": "single stream",
+      "context": "1M (about 2.7–2.9M KV pool shared across 4 streams)",
+      "source_note": "X post by the tester with method and raw numbers; two other independent reproductions"
     }
   },
   {
@@ -9008,7 +9015,7 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11）",
     "hardware_cost_usd": 6950,
-    "metric": "1 流 58.3 tok/s（prose）；2 流 108.5；8 流 220",
+    "metric": "1 流 58.3 tok/s（prose）；2 流 108.5；8 流 220；TensorFold 1.2.2（niklaslenz，2026-11-05）：代码 49.0 / 散文 45.6；2K 预填 889（1.2.1 为 354），128K 预填 660；8 流合计 108.8（x.com/niklaslenz_ai/status/2118316147686654429）。主值仍用本条散文 58.3",
     "tok_s": 58.3,
     "concurrency": null,
     "context": null,
@@ -9016,7 +9023,7 @@
     "source_url": "https://x.com/ashxhart/status/2105745818137280545",
     "source_note": "@ashxhart on X",
     "source_level": "实测",
-    "date": "2026-10-01",
+    "date": "2026-11-05",
     "x_post": {
       "author": "ashxhart",
       "likes": 77,
@@ -9047,7 +9054,7 @@
     "source_id": "src-233f5276ae",
     "engine_raw": "TensorFold + DFlash2（MiaAI_lab recipe）",
     "engine_note": "TensorFold + DFlash2（MiaAI_lab recipe）",
-    "metric_en": "1 stream 58.3 tok/s (prose); 2 streams 108.5; 8 streams 220",
+    "metric_en": "1 stream 58.3 tok/s (prose); 2 streams 108.5; 8 streams 220; TensorFold 1.2.2 (niklaslenz, 2026-11-05): code 49.0 / prose 45.6; 2K prefill 889 (was 354 on 1.2.1), 128K prefill 660; 8 streams 108.8 aggregate (x.com/niklaslenz_ai/status/2118316147686654429). Main value stays on this row's prose 58.3",
     "en": {
       "engine_note": "TensorFold + DFlash2 (MiaAI_lab recipe)",
       "hardware_cost_text": "$6,950 (128GB, 2026-10-11)"
@@ -28948,57 +28955,6 @@
     "concurrency": "单流",
     "date": "2026-11-05",
     "tags": [
-      "8bit",
-      "MoE",
-      "speculative",
-      "multi-GPU"
-    ],
-    "en": {
-      "quant": "EXL3 4bpw (MiaAI 1104 recipe, dense/head q8, FP8 KV, DFlash2)",
-      "hardware": "2× DGX Spark",
-      "hardware_cost_text": "Not priced",
-      "concurrency": "single stream",
-      "source_note": "X post by the tester with method and raw numbers; two other independent reproductions"
-    },
-    "id": "x-256",
-    "model": "GLM-5.3-Flash",
-    "quant": "EXL3 4bpw（MiaAI 1104 配方，dense/head q8，FP8 KV，DFlash2）",
-    "engine": "TensorFold",
-    "hardware": "2× DGX Spark",
-    "hardware_family": "DGX Spark",
-    "source_url": "https://x.com/niklaslenz_ai/status/2118066082204242326",
-    "source_level": "实测",
-    "measured_by": "niklaslenz_ai",
-    "metric": "MiaAI 1104 配方（TensorFold，1M 上下文，8 slot，GPU 锁 2200 MHz）。niklaslenz：散文 38.7 / 代码 42.4（思考关，512 token，2 次中位数）；用 Mia 自带测试方法复现 47.8（思考开），4 流合计 87.7，128K 预填 1,787。jmurillocode：散文单流思考关 33.7 / 开 40.3，8 流 89.9 / 101.1，预填约 1,747（x.com/jmurillocode/status/2118322418523480496）。JASONMCNAB：与 Mia 公布值差 ≤5%，1 流 50.3 vs 47.8（x.com/JASONMCNAB/status/2118312375732367487）。Mia 原帖自报约 48 / 4 流约 87（x.com/MiaAI_lab/status/2118005417494155664）。tok_s 取 niklaslenz 散文 38.7",
-    "metric_en": "MiaAI 1104 recipe (TensorFold, 1M context, 8 slots, GPU clock capped at 2200 MHz). niklaslenz: prose 38.7 / code 42.4 (thinking off, 512 tokens, median of 2); with Mia's own harness he matches 47.8 (thinking on), 4 streams 87.7 aggregate, 128K prefill 1,787. jmurillocode: prose single-stream thinking off 33.7 / on 40.3, 8 streams 89.9 / 101.1, prefill about 1,747 (x.com/jmurillocode/status/2118322418523480496). JASONMCNAB: within 5% of Mia's published values, 1 stream 50.3 vs 47.8 (x.com/JASONMCNAB/status/2118312375732367487). Mia's own post reports about 48 / about 87 at 4 streams (x.com/MiaAI_lab/status/2118005417494155664). tok_s uses niklaslenz prose 38.7",
-    "tok_s": 38.7,
-    "source_note": "X 帖，测试者本人，附方法与原始数字；另有两家独立复现",
-    "streams": [
-      {
-        "n": 1,
-        "tok_s": 38.7
-      },
-      {
-        "n": 4,
-        "tok_s": 87.7
-      },
-      {
-        "n": 8,
-        "tok_s": 80.0
-      }
-    ],
-    "model_family": "GLM",
-    "source_id": "src-0e30e37e2f"
-  },
-  {
-    "category": "text",
-    "hardware_cost_text": "未核价",
-    "hardware_cost_usd": null,
-    "context": null,
-    "launch_command": null,
-    "concurrency": "单流",
-    "date": "2026-11-05",
-    "tags": [
       "MoE",
       "speculative",
       "MTP"
@@ -29891,52 +29847,5 @@
     "source_note": "X 帖文（作者本人，无原始数据）",
     "model_family": "Qwen",
     "source_id": "src-fe9fada091"
-  },
-  {
-    "category": "text",
-    "hardware_cost_text": "未核价",
-    "hardware_cost_usd": null,
-    "context": "131K",
-    "launch_command": null,
-    "concurrency": "单流",
-    "date": "2026-11-05",
-    "tags": [
-      "4bit",
-      "dense",
-      "long-context",
-      "speculative"
-    ],
-    "en": {
-      "quant": "EXL3 4.00bpw + DFlash2",
-      "hardware": "1× DGX Spark",
-      "hardware_cost_text": "Not priced",
-      "concurrency": "single stream",
-      "source_note": "X post by the tester with method and raw numbers"
-    },
-    "id": "x-274",
-    "model": "Qwen3.8-27B",
-    "quant": "EXL3 4.00bpw + DFlash2",
-    "engine": "TensorFold",
-    "hardware": "1× DGX Spark",
-    "hardware_family": "DGX Spark",
-    "source_url": "https://x.com/niklaslenz_ai/status/2118316147686654429",
-    "source_level": "实测",
-    "measured_by": "niklaslenz_ai",
-    "metric": "TensorFold 1.2.2：代码 49.0 / 散文 45.6；2K 预填 889（1.2.1 为 354），128K 预填 660；8 流合计 108.8。512 token，思考关，2–4 次中位数。tok_s 取散文 45.6",
-    "metric_en": "TensorFold 1.2.2: code 49.0 / prose 45.6; 2K prefill 889 (was 354 on 1.2.1), 128K prefill 660; 8 streams 108.8 aggregate. 512 tokens, thinking off, median of 2–4. tok_s uses prose 45.6",
-    "tok_s": 45.6,
-    "source_note": "X 帖，测试者本人，附方法与原始数字",
-    "streams": [
-      {
-        "n": 1,
-        "tok_s": 45.6
-      },
-      {
-        "n": 8,
-        "tok_s": 108.8
-      }
-    ],
-    "model_family": "Qwen",
-    "source_id": "src-33ce09ec33"
   }
 ]
