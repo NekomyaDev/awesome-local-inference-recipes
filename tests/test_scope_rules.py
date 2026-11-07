@@ -42,9 +42,10 @@ class Violations(unittest.TestCase):
     def test_each_condition(self):
         self.assertEqual(S.violations(row('RTX 5090', 5400)), [])
         self.assertEqual(S.violations(row('4× DGX Spark', 27800)), [])
+        self.assertEqual(S.violations(row('5× RTX 3090')), [])  # GPU count has no hard cap; budget is the main limit
+        self.assertEqual(S.violations(row('2 台各 4× RTX 3060')), [])
         self.assertIn('cost over $30,000', S.violations(row('2× RTX PRO 6000', 32000)))
         self.assertIn('cost over $30,000', S.violations(row('2× RTX PRO 6000', None, '≈$33,000 ⚠️超$30k')))
-        self.assertIn('5 GPUs or machines (max 4)', S.violations(row('5× RTX 3090')))
         self.assertTrue(S.violations(row('4× V100 SXM2')))
         self.assertTrue(S.violations(row('RTX 5090（液冷）')))
         self.assertTrue(S.violations(row('4U server + 2× RTX 3090')))
