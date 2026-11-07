@@ -20,4 +20,19 @@ class TestForkAndTags(unittest.TestCase):
         self.assertIn('offload', T.tags(rec(hardware='RTX 5090 32GB + 系统内存（部分卸载）')))
         self.assertIn('offload', T.tags(rec(metric='超过一半模型从 NVMe 流式读取')))
         self.assertNotIn('offload', T.tags(rec(metric='29 tok/s（SSD 前缀缓存 ~85%）')))
+    def test_qualification_note_does_not_add_speculative(self):
+        # Regression caveats that mention DFlash2/MTP about other builds must not tag this row.
+        metric = (
+            'engine 0.1.55 hip-rdna2：短提示 decode 49.0；'
+            '限定：Strata 0.2.10 起 Auto 默认改用 DFlash2；双卡 decode 可能弱于 MTP'
+        )
+        self.assertNotIn('speculative', T.tags(rec(metric=metric, quant='IQ3_XXS')))
+        self.assertNotIn('MTP', T.tags(rec(metric=metric, quant='IQ3_XXS')))
+    def test_own_mtp_before_qualification_still_tags(self):
+        metric = (
+            'Strata 0.1.48.1，--spec 4 --mtp rt：短对话 117.5；'
+            '限定：Strata 0.2.10 起 Auto 默认改用 DFlash2；双卡 decode 可能弱于 MTP'
+        )
+        self.assertIn('speculative', T.tags(rec(metric=metric, quant='unsloth UD-IQ4_XS')))
+        self.assertIn('MTP', T.tags(rec(metric=metric, quant='unsloth UD-IQ4_XS')))
 if __name__ == '__main__': unittest.main()
