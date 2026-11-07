@@ -45,7 +45,10 @@ def ctx_k(s):
     return best
 def tags(r):
     mq = ' '.join(filter(None, [r['model'], r.get('quant')]))
-    allf = ' '.join(filter(None, [mq, r['engine'], r.get('engine_note'), r.get('metric')]))
+    # Caveat notes about other builds/regressions must not drive speculative/MTP tags.
+    metric = r.get('metric') or ''
+    metric_for_spec = re.split(r'限定：|qualification\s*:', metric, maxsplit=1, flags=re.I)[0]
+    allf = ' '.join(filter(None, [mq, r['engine'], r.get('engine_note'), metric_for_spec]))
     allf = re.sub(r'MTP\s*(关|off)|无投机|无草稿(模型)?|不开 MTP|无 ?(?:MTP|DFlash)(?:/(?:MTP|DFlash))*', '', allf, flags=re.I)
     # Quant tags describe the weights: ignore KV-cache dtypes and the source precision of a conversion.
     mq_w = re.sub(KV_OR_SOURCE, '', mq, flags=re.I)
@@ -56,7 +59,7 @@ def tags(r):
         elif re.search(r'\b\d+B\b', r['model']): t.append('dense')
         if ctx_k(r.get('context')) >= 128: t.append('long-context')
     if re.search(SPEC, allf, re.I): t.append('speculative')
-    if re.search(r'MTP', allf): t.append('MTP')
+    if re.search(r'MTP', allf, re.I): t.append('MTP')
     if re.search(MULTI, (r.get('hardware') or '') + ' ' + (r.get('quant') or ''), re.I): t.append('multi-GPU')
     off = ' '.join(filter(None, [mq, r.get('hardware'), r.get('metric')]))
     if re.search(r'卸载|offload|NVMe|SSD(?! ?前缀)|闪存|流式读取|放内存|系统内存|RAM 卸载', off, re.I) or re.search(r'流式|stream', mq, re.I): t.append('offload')

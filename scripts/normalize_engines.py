@@ -20,6 +20,8 @@ RULES = [
     (r'^Strata-DS', 'Strata (Strata-DS fork)'),
     (r'^Strata-rdna3', 'Strata (Strata-rdna3 fork)'),
     (r'^Strata', 'Strata'),
+    (r'^Foundry Local', 'Foundry Local'),
+    (r'^WHIRL', 'WHIRL'),
     (r'^oMLX', 'oMLX'),
     (r'^TensorFold', 'TensorFold'),
     (r'^DFlash', 'DFlash'),

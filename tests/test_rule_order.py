@@ -15,6 +15,8 @@ RAW_ENGINE_SAMPLES = {
     'Strata (Strata-DS fork)': 'Strata-DS（Strata 分支，自带 DeepSeek 引擎 ds41_serve）',
     'Strata (Strata-rdna3 fork)': 'Strata-rdna3（7900 XTX fork）',
     'Strata': 'Strata v0.1.42',
+    'Foundry Local': 'Foundry Local ≥0.13.0',
+    'WHIRL': 'WHIRL 0.2.5.1 balance',
     'oMLX': 'oMLX 0.3', 'TensorFold': 'TensorFold beta', 'DFlash': 'DFlash spec', 'MTPLX': 'MTPLX 2.11.3 serve',
     'mlx-serve': 'mlx-serve 26.8.11', 'MLX Swift': 'MLX Swift 0.21', 'MLX': 'mlx-lm 0.30.7', 'edge0': 'edge0 runtime',
     'SGLang': 'SGLang 0.5', 'vLLM': 'vLLM 0.11', 'Splash': 'Splash 1.2', 'Project Maya': 'Project Maya alpha',
