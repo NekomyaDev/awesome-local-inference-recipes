@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parent.parent
 MAX_DEVICES = 4
 MAX_COST_USD = BUDGET_TIER_BOUNDS_USD[-1][1]
 OVER_BUDGET_MARK = f'⚠️超${MAX_COST_USD // 1000}k'
-MANUAL_CHECKS = ('total power about 2 kW from at most two ordinary outlets on separate circuits, with no special wiring', 'at most one desktop-class network switch')
+MANUAL_CHECKS = ('at most 4 machines', 'total power about 2 kW from at most two ordinary outlets on separate circuits, with no special wiring', 'at most one desktop-class network switch')
 DEVICE = re.compile(
     r'RTX|GTX|Radeon|\bRX ?\d|R9700|Instinct|\bMI\d{2,3}|Tesla|\b[VPAHLB](?:\d{2}|[1-9]00)S?s?(?![A-Za-z0-9])|\bA\d{4}s?(?![A-Za-z0-9])|\b(?:A(?:310|380|580|750|770)|B5[78]0|P10[246])s?(?![A-Za-z0-9])|CMP|DGX|Spark|GB10|Ascent|AI TOP'
     r'|Strix Halo|Ryzen AI Max|Framework Desktop|\bMac\b|MacBook|\bM\d (?:Pro|Max|Ultra)\b|\bArc\b|(?<![A-Za-z])GPU'
@@ -60,9 +60,7 @@ def violations(r):
     usd = r.get('hardware_cost_usd')
     if (usd is not None and usd > MAX_COST_USD) or OVER_BUDGET_MARK in (r.get('hardware_cost_text') or ''):
         out.append(f'cost over ${MAX_COST_USD:,}')
-    n = device_count(r['hardware'])
-    if n > MAX_DEVICES:
-        out.append(f'{n} GPUs or machines (max {MAX_DEVICES})')
+    # Budget is the main limit. Machine count (at most 4) is checked by hand; GPU count has no hard cap.
     if server_only(r['hardware']):
         out.append('out-of-scope hardware type (rack, server board, SXM/HGX, custom-loop or server liquid cooling)')
     return out

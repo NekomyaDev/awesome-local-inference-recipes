@@ -435,7 +435,7 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "≈$2,412–2,998（2×3090，仅显卡）",
     "hardware_cost_usd": 2412,
-    "metric": "100+ tok/s；900–1,200 PP",
+    "metric": "100+ tok/s；900–1,200 PP；限定：Strata 0.2.10 起 Auto 默认改用 DFlash2；双卡 decode 可能弱于 MTP 或弱于单卡（Strata #5206 双 4060 Ti 上 DFlash2≈MTP；#5172 双 RX 9070 比单卡慢 10–50%）",
     "tok_s": null,
     "concurrency": null,
     "context": "256K KV",
@@ -449,10 +449,12 @@
       "3bit",
       "MoE",
       "long-context",
+      "speculative",
+      "MTP",
       "multi-GPU"
     ],
     "source_id": "src-c3a764e860",
-    "metric_en": "100+ tok/s; 900–1,200 PP",
+    "metric_en": "100+ tok/s; 900–1,200 PP; qualification: from Strata 0.2.10, Auto defaults to DFlash2; dual-card decode can lag MTP or a single card (Strata #5206: DFlash2≈MTP on 2× 4060 Ti; #5172: dual RX 9070 10–50% slower than one card)",
     "en": {
       "hardware": "2× RTX 3090 + 80GB DDR4 (used HP Z840)",
       "hardware_cost_text": "≈$2,412–2,998 (2×3090, card only)"
@@ -560,7 +562,8 @@
       "hardware": "2× Tesla V100 32GB (used)",
       "hardware_cost_text": "≈$1,300–1,400 (2 cards, card only)",
       "source_note": "@yume_arasaki relaying ryu15"
-    }
+    },
+    "metric_en": ""
   },
   {
     "id": "text-018",
@@ -673,7 +676,7 @@
     "hardware_family": "二手数据中心卡",
     "hardware_cost_text": "≈$405（eBay 挂牌中位，2026-10）",
     "hardware_cost_usd": 405,
-    "metric": "30–33 tok/s 解码；217–374 PP",
+    "metric": "30–33 tok/s 解码；217–374 PP；限定（Strata #5268，0.2.10）：同卡上 qwen35moe（Qwen3.6-35B-A3B）路径短提示 decode 约 67，24K 提示降到 10.9；同一 GGUF 在 llama.cpp 上保持 69–78。本条模型是 Flash-Next，数字来自 OLDER_GPUS.md",
     "tok_s": 30.0,
     "concurrency": null,
     "context": null,
@@ -688,7 +691,7 @@
       "MoE"
     ],
     "source_id": "src-f55421a83d",
-    "metric_en": "30–33 tok/s decode; 217–374 PP",
+    "metric_en": "30–33 tok/s decode; 217–374 PP; qualification (Strata #5268, 0.2.10): on the same card the qwen35moe (Qwen3.6-35B-A3B) path decodes at about 67 on a short prompt and falls to 10.9 at a 24K prompt; the same GGUF on llama.cpp holds 69–78. This entry is Flash-Next; its numbers come from OLDER_GPUS.md",
     "en": {
       "quant": "Strata · IQ3_S (engine 0.1.30)",
       "hardware": "Tesla P40 24GB (used)",
@@ -16026,8 +16029,8 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "≈$4,428（2 张二手 eBay 成交，仅显卡，2026-10-06）",
     "hardware_cost_usd": 4428,
-    "metric": "单流解码平均约 200（峰值约 271）；4 路平均约 253；prefill 峰值约 6,553；解码专家缓存命中 99.5–99.8%",
-    "metric_en": "single-stream decode average about 200 (peak about 271); 4 streams average about 253; prefill peak about 6,553; decode expert cache hit 99.5–99.8%",
+    "metric": "单流解码平均约 200（峰值约 271）；4 路平均约 253；prefill 峰值约 6,553；解码专家缓存命中 99.5–99.8%；限定：Strata 0.2.10 起 Auto 默认改用 DFlash2；双卡 decode 可能弱于 MTP 或弱于单卡（Strata #5206 双 4060 Ti 上 DFlash2≈MTP；#5172 双 RX 9070 比单卡慢 10–50%）",
+    "metric_en": "single-stream decode average about 200 (peak about 271); 4 streams average about 253; prefill peak about 6,553; decode expert cache hit 99.5–99.8%; qualification: from Strata 0.2.10, Auto defaults to DFlash2; dual-card decode can lag MTP or a single card (Strata #5206: DFlash2≈MTP on 2× 4060 Ti; #5172: dual RX 9070 10–50% slower than one card)",
     "tok_s": 200,
     "concurrency": "单流（另测 4 路平均约 253）",
     "context": "262,144",
@@ -16700,16 +16703,16 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
-    "metric": "Strata 0.2.3（engine 0.1.48）单流 240；2 用户每人 115；作者称此卡无提速（x-091 旧版 185 为不同测法）；2026-11-03 Strata 0.2.10：聊天 decode 152 → 227（+49%），首 token 0.27 → 0.17 秒（x.com/lyesbahi/status/2117545259358196187）",
-    "metric_en": "Strata 0.2.3 (engine 0.1.48) single stream 240; 115 per user with 2 users; author says no speed change on this card (x-091 older 185 used a different test); 2026-11-03 Strata 0.2.10: chat decode 152 → 227 (+49%), first token 0.27 → 0.17 s (x.com/lyesbahi/status/2117545259358196187)",
-    "tok_s": 240,
+    "metric": "Strata 0.2.10 主值 227（聊天 decode；同帖对比旧版聊天 152 → 227，+49%，首 token 0.27 → 0.17 秒；x.com/lyesbahi/status/2117545259358196187）。历史：Strata 0.2.3（engine 0.1.48）单流 240，2 用户每人 115；测法与 0.2.10 聊天 decode 不同，不可直接比；作者称此卡无提速（x-091 旧版 185 为不同测法）；来源帖 x.com/lyesbahi/status/2113602136051458520",
+    "metric_en": "Strata 0.2.10 main value 227 (chat decode; same post: chat 152 → 227, +49%, first token 0.27 → 0.17 s; x.com/lyesbahi/status/2117545259358196187). History: Strata 0.2.3 (engine 0.1.48) single stream 240, 115 per user with 2 users; that method differs from the 0.2.10 chat decode, so do not compare them directly; author says no speed change on this card (x-091 older 185 used a different test); source post x.com/lyesbahi/status/2113602136051458520",
+    "tok_s": 227,
     "concurrency": "单流（另测 2 用户）",
     "context": "256K",
     "launch_command": null,
-    "source_url": "https://x.com/lyesbahi/status/2113602136051458520",
+    "source_url": "https://x.com/lyesbahi/status/2117545259358196187",
     "source_note": "X 帖文（附截图）",
     "source_level": "实测",
-    "date": "2026-10-23",
+    "date": "2026-11-03",
     "measured_by": "lyesbahi",
     "model_family": "Qwen",
     "tags": [
@@ -16724,7 +16727,7 @@
       "source_note": "X post (with screenshot)",
       "hardware_cost_text": "$5,400–6,995 (new street price, 2026-10-11; MSRP $1,999)"
     },
-    "source_id": "src-c11ac8e52f"
+    "source_id": "src-7f5a3fccd9"
   },
   {
     "id": "x-121",
@@ -16811,8 +16814,8 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "未核价",
     "hardware_cost_usd": null,
-    "metric": "strata_bench short chat 50.9（46.6–68.1）；prefill 4K 831 / 16K 1,172；Strata 0.1.47",
-    "metric_en": "strata_bench short chat 50.9 (46.6–68.1); prefill 4K 831 / 16K 1,172; Strata 0.1.47",
+    "metric": "strata_bench short chat 50.9（46.6–68.1）；prefill 4K 831 / 16K 1,172；Strata 0.1.47；限定：Strata 0.2.10 起 Auto 默认改用 DFlash2；双卡 decode 可能弱于 MTP 或弱于单卡（Strata #5206 双 4060 Ti 上 DFlash2≈MTP；#5172 双 RX 9070 比单卡慢 10–50%）",
+    "metric_en": "strata_bench short chat 50.9 (46.6–68.1); prefill 4K 831 / 16K 1,172; Strata 0.1.47; qualification: from Strata 0.2.10, Auto defaults to DFlash2; dual-card decode can lag MTP or a single card (Strata #5206: DFlash2≈MTP on 2× 4060 Ti; #5172: dual RX 9070 10–50% slower than one card)",
     "tok_s": 50.9,
     "concurrency": "单流",
     "context": "262K",
@@ -16827,6 +16830,8 @@
       "3bit",
       "MoE",
       "long-context",
+      "speculative",
+      "MTP",
       "multi-GPU"
     ],
     "en": {
@@ -17533,8 +17538,8 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "未核价",
     "hardware_cost_usd": null,
-    "metric": "Strata 0.1.48.1 @7ddc17a3（engine 0.1.48），--spec 4 --mtp rt：短对话 117.5（85.9–134.7，9 次中位数）；预填 4K 1,292 / 16K 2,416；agent 续轮 120.8",
-    "metric_en": "Strata 0.1.48.1 @7ddc17a3 (engine 0.1.48), --spec 4 --mtp rt: short chat 117.5 (85.9–134.7, median of 9); prefill 4K 1,292 / 16K 2,416; agent follow-up turns 120.8",
+    "metric": "Strata 0.1.48.1 @7ddc17a3（engine 0.1.48），--spec 4 --mtp rt：短对话 117.5（85.9–134.7，9 次中位数）；预填 4K 1,292 / 16K 2,416；agent 续轮 120.8；限定：Strata 0.2.10 起 Auto 默认改用 DFlash2；双卡 decode 可能弱于 MTP 或弱于单卡（Strata #5206 双 4060 Ti 上 DFlash2≈MTP；#5172 双 RX 9070 比单卡慢 10–50%）",
+    "metric_en": "Strata 0.1.48.1 @7ddc17a3 (engine 0.1.48), --spec 4 --mtp rt: short chat 117.5 (85.9–134.7, median of 9); prefill 4K 1,292 / 16K 2,416; agent follow-up turns 120.8; qualification: from Strata 0.2.10, Auto defaults to DFlash2; dual-card decode can lag MTP or a single card (Strata #5206: DFlash2≈MTP on 2× 4060 Ti; #5172: dual RX 9070 10–50% slower than one card)",
     "tok_s": 117.5,
     "concurrency": "单流",
     "context": "131K",
@@ -17550,6 +17555,7 @@
       "MoE",
       "long-context",
       "speculative",
+      "MTP",
       "multi-GPU"
     ],
     "en": {
@@ -21676,8 +21682,8 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "未核价",
     "hardware_cost_usd": null,
-    "metric": "standard-v1，双卡 --gpus 0,1：IQ3_S 短 decode 129.4 / 16K decode 116.2，预填 4K 2,322 / 16K 3,823；UD-IQ4_XS 81.9 / 87.6，预填 16K 3,734；12/12 sanity",
-    "metric_en": "standard-v1, two cards --gpus 0,1: IQ3_S short decode 129.4 / 16K decode 116.2, prefill 4K 2,322 / 16K 3,823; UD-IQ4_XS 81.9 / 87.6, prefill 16K 3,734; 12/12 sanity",
+    "metric": "standard-v1，双卡 --gpus 0,1：IQ3_S 短 decode 129.4 / 16K decode 116.2，预填 4K 2,322 / 16K 3,823；UD-IQ4_XS 81.9 / 87.6，预填 16K 3,734；12/12 sanity；限定：Strata 0.2.10 起 Auto 默认改用 DFlash2；双卡 decode 可能弱于 MTP 或弱于单卡（Strata #5206 双 4060 Ti 上 DFlash2≈MTP；#5172 双 RX 9070 比单卡慢 10–50%）",
+    "metric_en": "standard-v1, two cards --gpus 0,1: IQ3_S short decode 129.4 / 16K decode 116.2, prefill 4K 2,322 / 16K 3,823; UD-IQ4_XS 81.9 / 87.6, prefill 16K 3,734; 12/12 sanity; qualification: from Strata 0.2.10, Auto defaults to DFlash2; dual-card decode can lag MTP or a single card (Strata #5206: DFlash2≈MTP on 2× 4060 Ti; #5172: dual RX 9070 10–50% slower than one card)",
     "tok_s": 129.4,
     "concurrency": "单流",
     "context": "262K",
@@ -21693,6 +21699,8 @@
       "4bit",
       "MoE",
       "long-context",
+      "speculative",
+      "MTP",
       "multi-GPU"
     ],
     "en": {
@@ -22761,8 +22769,8 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "未核价",
     "hardware_cost_usd": null,
-    "metric": "0.2.10 主值 80.8（MTP 散文，n=4 中位，github.com/Niko1221/Strata/issues/5206）；历史：strata bench run 标准协议（自定义配置）：decode 短 61.6 / 4K 51.0 / 16K 56.7；预填 4K 904.5 / 16K 1,792.3；12/12 检查通过；0.2.10（github.com/Niko1221/Strata/issues/5206，n=4 中位）：MTP 散文 80.8 / 代码 84.5 / 20K 摘要 56.9；DFlash2（conf 0.5）代码 87.8、散文 77.8、摘要 55.2；预填 20K/32K/69K DFlash2 1,918/2,244/2,461",
-    "metric_en": "0.2.10 main value 80.8 (MTP prose, median of n=4, github.com/Niko1221/Strata/issues/5206); history: strata bench run standard protocol (custom setup): decode short 61.6 / 4K 51.0 / 16K 56.7; prefill 4K 904.5 / 16K 1,792.3; 12/12 checks pass; 0.2.10 (github.com/Niko1221/Strata/issues/5206, median of n=4): MTP prose 80.8 / code 84.5 / 20K summary 56.9; DFlash2 (conf 0.5) code 87.8, prose 77.8, summary 55.2; prefill 20K/32K/69K with DFlash2 1,918/2,244/2,461",
+    "metric": "0.2.10 主值 80.8（MTP 散文，n=4 中位，github.com/Niko1221/Strata/issues/5206）；历史：strata bench run 标准协议（自定义配置）：decode 短 61.6 / 4K 51.0 / 16K 56.7；预填 4K 904.5 / 16K 1,792.3；12/12 检查通过；0.2.10（github.com/Niko1221/Strata/issues/5206，n=4 中位）：MTP 散文 80.8 / 代码 84.5 / 20K 摘要 56.9；DFlash2（conf 0.5）代码 87.8、散文 77.8、摘要 55.2；预填 20K/32K/69K DFlash2 1,918/2,244/2,461；限定：0.2.10 起 Auto 默认 DFlash2；本机 DFlash2 与 MTP 接近（见上表），不是大回退",
+    "metric_en": "0.2.10 main value 80.8 (MTP prose, median of n=4, github.com/Niko1221/Strata/issues/5206); history: strata bench run standard protocol (custom setup): decode short 61.6 / 4K 51.0 / 16K 56.7; prefill 4K 904.5 / 16K 1,792.3; 12/12 checks pass; 0.2.10 (github.com/Niko1221/Strata/issues/5206, median of n=4): MTP prose 80.8 / code 84.5 / 20K summary 56.9; DFlash2 (conf 0.5) code 87.8, prose 77.8, summary 55.2; prefill 20K/32K/69K with DFlash2 1,918/2,244/2,461; qualification: from 0.2.10 Auto defaults to DFlash2; on this box DFlash2 stays close to MTP (table above), not a large regression",
     "tok_s": 80.8,
     "concurrency": "单流",
     "context": "262K",
@@ -23950,8 +23958,8 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "未核价",
     "hardware_cost_usd": null,
-    "metric": "短对话 decode 79.6；agent 轮次 92.4；预填 4K 696.5 / 16K 1,133.3 / 32K 1,371.8；会话缓存命中 69.3%；每项 3 次",
-    "metric_en": "Short-chat decode 79.6; agent turns 92.4; prefill 4K 696.5 / 16K 1,133.3 / 32K 1,371.8; conversation cache hit 69.3%; 3 runs each",
+    "metric": "短对话 decode 79.6；agent 轮次 92.4；预填 4K 696.5 / 16K 1,133.3 / 32K 1,371.8；会话缓存命中 69.3%；每项 3 次；限定：Strata 0.2.10 起 Auto 默认改用 DFlash2；双卡 decode 可能弱于 MTP 或弱于单卡（Strata #5206 双 4060 Ti 上 DFlash2≈MTP；#5172 双 RX 9070 比单卡慢 10–50%）",
+    "metric_en": "Short-chat decode 79.6; agent turns 92.4; prefill 4K 696.5 / 16K 1,133.3 / 32K 1,371.8; conversation cache hit 69.3%; 3 runs each; qualification: from Strata 0.2.10, Auto defaults to DFlash2; dual-card decode can lag MTP or a single card (Strata #5206: DFlash2≈MTP on 2× 4060 Ti; #5172: dual RX 9070 10–50% slower than one card)",
     "tok_s": 79.6,
     "concurrency": "单流",
     "context": "262K",
@@ -25654,8 +25662,8 @@
     "source_level": "实测",
     "date": "2026-10-31",
     "measured_by": "Expired-Pasta",
-    "metric": "engine 0.1.55 hip-rdna2：短提示 decode 49.0",
-    "metric_en": "engine 0.1.55 hip-rdna2: short-prompt decode 49.0",
+    "metric": "engine 0.1.55 hip-rdna2：短提示 decode 49.0；限定：Strata 0.2.10 起 Auto 默认改用 DFlash2；双卡 decode 可能弱于 MTP 或弱于单卡（Strata #5206 双 4060 Ti 上 DFlash2≈MTP；#5172 双 RX 9070 比单卡慢 10–50%）",
+    "metric_en": "engine 0.1.55 hip-rdna2: short-prompt decode 49.0; qualification: from Strata 0.2.10, Auto defaults to DFlash2; dual-card decode can lag MTP or a single card (Strata #5206: DFlash2≈MTP on 2× 4060 Ti; #5172: dual RX 9070 10–50% slower than one card)",
     "tok_s": 49.0,
     "concurrency": "单流",
     "source_note": "GitHub issue，测试者本人",
@@ -25663,6 +25671,8 @@
     "tags": [
       "3bit",
       "MoE",
+      "speculative",
+      "MTP",
       "multi-GPU"
     ],
     "en": {
@@ -26756,8 +26766,8 @@
     "source_level": "实测",
     "date": "2026-11-01",
     "measured_by": "ozoooooo001",
-    "metric": "Windows HIP engine 0.1.48：短对话 decode 41.2；agent 会话 54.0；预填 32K 886",
-    "metric_en": "Windows HIP engine 0.1.48: short chat decode 41.2; agent session 54.0; prefill at 32K 886",
+    "metric": "Windows HIP engine 0.1.48：短对话 decode 41.2；agent 会话 54.0；预填 32K 886；限定：Strata 0.2.10 起 Auto 默认改用 DFlash2；双卡 decode 可能弱于 MTP 或弱于单卡（Strata #5206 双 4060 Ti 上 DFlash2≈MTP；#5172 双 RX 9070 比单卡慢 10–50%）",
+    "metric_en": "Windows HIP engine 0.1.48: short chat decode 41.2; agent session 54.0; prefill at 32K 886; qualification: from Strata 0.2.10, Auto defaults to DFlash2; dual-card decode can lag MTP or a single card (Strata #5206: DFlash2≈MTP on 2× 4060 Ti; #5172: dual RX 9070 10–50% slower than one card)",
     "tok_s": 41.2,
     "concurrency": "单流",
     "source_note": "GitHub issue，测试者本人，附原始数据（strata_bench）",
@@ -26765,6 +26775,8 @@
     "tags": [
       "3bit",
       "MoE",
+      "speculative",
+      "MTP",
       "multi-GPU"
     ],
     "en": {
@@ -26828,8 +26840,8 @@
     "source_level": "实测",
     "date": "2026-11-02",
     "measured_by": "alexlucaci",
-    "metric": "2 个 agent 并行（每卡 1 个，共用内存中一份 47GB 模型）：每个约 52；绑核 51+51，不绑 31+33；预填新提示约 1,000。同机 Qwen3.8-27B 双卡 47 / 51 / 58（散文 / 代码 / 推理）",
-    "metric_en": "2 agents in parallel (1 per card, sharing one 47 GB copy in RAM): about 52 each; pinned 51+51, unpinned 31+33; fresh prompt prefill about 1,000. Same machine Qwen3.8-27B on 2 cards 47 / 51 / 58 (prose / code / reasoning)",
+    "metric": "2 个 agent 并行（每卡 1 个，共用内存中一份 47GB 模型）：每个约 52；绑核 51+51，不绑 31+33；预填新提示约 1,000。同机 Qwen3.8-27B 双卡 47 / 51 / 58（散文 / 代码 / 推理）；限定：Strata 0.2.10 起 Auto 默认改用 DFlash2；双卡 decode 可能弱于 MTP 或弱于单卡（Strata #5206 双 4060 Ti 上 DFlash2≈MTP；#5172 双 RX 9070 比单卡慢 10–50%）",
+    "metric_en": "2 agents in parallel (1 per card, sharing one 47 GB copy in RAM): about 52 each; pinned 51+51, unpinned 31+33; fresh prompt prefill about 1,000. Same machine Qwen3.8-27B on 2 cards 47 / 51 / 58 (prose / code / reasoning); qualification: from Strata 0.2.10, Auto defaults to DFlash2; dual-card decode can lag MTP or a single card (Strata #5206: DFlash2≈MTP on 2× 4060 Ti; #5172: dual RX 9070 10–50% slower than one card)",
     "tok_s": 52,
     "concurrency": "每个 agent 单流（2 个并行）",
     "source_note": "Reddit 帖，测试者本人",
@@ -26838,6 +26850,8 @@
       "3bit",
       "MoE",
       "long-context",
+      "speculative",
+      "MTP",
       "multi-GPU"
     ],
     "en": {
@@ -28211,8 +28225,8 @@
     "source_level": "宣称",
     "date": "2026-11-04",
     "measured_by": "nabe2030",
-    "metric": "Strata 0.2.10 all-cards split（双卡同时算每一层）加补丁，专家放系统内存：短 prompt 51–60（MTP）。补丁和步骤见 github.com/Niko1221/Strata/issues/5187。tok_s 取下限",
-    "metric_en": "Strata 0.2.10 all-cards split (both cards compute every layer) with patches, experts in system RAM: 51–60 on short prompts (MTP). Patches and steps: github.com/Niko1221/Strata/issues/5187. tok_s uses the low end",
+    "metric": "Strata 0.2.10 all-cards split（双卡同时算每一层）加补丁，专家放系统内存：短 prompt 51–60（MTP）。补丁和步骤见 github.com/Niko1221/Strata/issues/5187。tok_s 取下限；限定：Strata 0.2.10 起 Auto 默认改用 DFlash2；双卡 decode 可能弱于 MTP 或弱于单卡（Strata #5206 双 4060 Ti 上 DFlash2≈MTP；#5172 双 RX 9070 比单卡慢 10–50%）",
+    "metric_en": "Strata 0.2.10 all-cards split (both cards compute every layer) with patches, experts in system RAM: 51–60 on short prompts (MTP). Patches and steps: github.com/Niko1221/Strata/issues/5187. tok_s uses the low end; qualification: from Strata 0.2.10, Auto defaults to DFlash2; dual-card decode can lag MTP or a single card (Strata #5206: DFlash2≈MTP on 2× 4060 Ti; #5172: dual RX 9070 10–50% slower than one card)",
     "tok_s": 51,
     "concurrency": "单流",
     "source_note": "X 帖文（作者本人，无原始数据）；GitHub issue 有补丁和步骤",
@@ -29491,6 +29505,8 @@
     "tags": [
       "4bit",
       "MoE",
+      "speculative",
+      "MTP",
       "multi-GPU"
     ],
     "en": {
@@ -29509,8 +29525,8 @@
     "source_url": "https://www.reddit.com/r/LocalLLaMA/comments/1xobvm7/",
     "source_level": "宣称",
     "measured_by": "nicejunjie",
-    "metric": "双卡散文 127（Q4）；预填 7,000+。单卡见 comm-262",
-    "metric_en": "Dual-card prose 127 (Q4); prefill 7,000+. Single-card row is comm-262",
+    "metric": "双卡散文 127（Q4）；预填 7,000+。单卡见 comm-262；限定：Strata 0.2.10 起 Auto 默认改用 DFlash2；双卡 decode 可能弱于 MTP 或弱于单卡（Strata #5206 双 4060 Ti 上 DFlash2≈MTP；#5172 双 RX 9070 比单卡慢 10–50%）",
+    "metric_en": "Dual-card prose 127 (Q4); prefill 7,000+. Single-card row is comm-262; qualification: from Strata 0.2.10, Auto defaults to DFlash2; dual-card decode can lag MTP or a single card (Strata #5206: DFlash2≈MTP on 2× 4060 Ti; #5172: dual RX 9070 10–50% slower than one card)",
     "tok_s": 127,
     "source_note": "Reddit 帖文（fork 作者本人，无原始数据）；附仓库",
     "model_family": "Qwen",
@@ -29845,5 +29861,40 @@
     "source_note": "X 帖文（作者本人，无原始数据）",
     "model_family": "Qwen",
     "source_id": "src-fe9fada091"
+  },
+  {
+    "id": "comm-270",
+    "category": "text",
+    "model": "GLM-5.3-Flash",
+    "quant": "Maya-S24",
+    "engine": "Project Maya",
+    "hardware": "2 台台式机各 4× RTX 3060 12GB（PCIe 3.0，无 P2P，经 1 GbE 双机 layer split）+ 20GB/32GB RAM",
+    "hardware_family": "NVIDIA 消费级",
+    "hardware_cost_text": "未核价（8× 二手 3060 + 2 台旧台式机，预算内）",
+    "hardware_cost_usd": null,
+    "context": "64K",
+    "launch_command": null,
+    "source_url": "https://github.com/0xluk/project-maya/pull/1",
+    "source_level": "实测",
+    "date": "2026-11-05",
+    "measured_by": "0xluk",
+    "metric": "双机 Maya two-box split（PR #1，已合并）：短 decode 38–42（tok_s 取下限 38）；约 30K 上下文 decode 33–37；预填 2K 300–350 / 30K 约 1,100–1,170；agent 轮次约 6–7 秒；编码 agent 基准 48/48。对照：同 8×3060 装进单机 42–45。复现步骤见 docs/TWO-BOX-SPLIT.md",
+    "metric_en": "Two-box Maya split (PR #1, merged): short decode 38–42 (tok_s uses the floor 38); decode at about 30K context 33–37; prefill 2K 300–350 / 30K about 1,100–1,170; agent turn about 6–7 s; coding-agent benchmark 48/48. Reference: same 8× 3060 in one box 42–45. Reproduction steps in docs/TWO-BOX-SPLIT.md",
+    "tok_s": 38,
+    "concurrency": "单流",
+    "source_note": "GitHub PR 由引擎作者发布，含测速表与复现步骤；搜索报告另引 reddit u/alexlucaci（1xnv3s3 / 1xnu4e4），本条以 PR 为一手来源",
+    "model_family": "GLM",
+    "tags": [
+      "MoE",
+      "multi-GPU"
+    ],
+    "en": {
+      "quant": "Maya-S24",
+      "hardware": "2 desktop PCs with 4× RTX 3060 12GB each (PCIe 3.0, no P2P, two-box layer split over 1 GbE) + 20GB/32GB RAM",
+      "hardware_cost_text": "Not priced (8× used 3060 + 2 used desktops, under budget)",
+      "concurrency": "single stream",
+      "source_note": "GitHub PR by the engine author, with a speed table and reproduction steps; the search report also cites reddit u/alexlucaci (1xnv3s3 / 1xnu4e4); this entry uses the PR as the first-hand source"
+    },
+    "source_id": "src-f9ab31712c"
   }
 ]
