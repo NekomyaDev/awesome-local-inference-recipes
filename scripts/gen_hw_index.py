@@ -32,7 +32,7 @@ CHIPS = [
  ('M3 Ultra', r'M3 Ultra', None, 'unified'), ('M3 Max', r'M3 Max', None, 'unified'), ('M3 Pro', r'M3 Pro', None, 'unified'), ('M3', r'\bM3\b', None, 'unified'),
  ('M2 Ultra', r'M2 Ultra', None, 'unified'), ('M2 Max', r'M2 Max', None, 'unified'), ('M2 Pro', r'M2 Pro', None, 'unified'), ('M2', r'\bM2\b', None, 'unified'),
  ('M1 Ultra', r'M1 Ultra', None, 'unified'), ('M1 Max', r'M1 Max', None, 'unified'), ('M1', r'\bM1\b', None, 'unified'),
- ('Apple Silicon', r'Mac|Apple Silicon', None, 'unified'),
+ ('Apple Silicon', r'MacBook|iMac|Mac Studio|Mac [Mm]ini|Mac Pro|Apple Silicon|\bMac\b', None, 'unified'),
  ('Intel Arc iGPU', r'Arc B3\d\d|集成 ?Arc|integrated Arc|核显|Core Ultra \S+ ?\d{3}H', None, 'unified'),
  ('Intel Arc', r'Arc( Pro)? [AB]\d{2,3}', None, 'gpu'), ('RTX PRO', r'RTX PRO \d{4}', None, 'gpu'), ('RTX Ada', r'RTX \d000 Ada', None, 'gpu'),
  ('Quadro', r'Quadro', None, 'gpu'), ('GeForce', r'(RTX|GTX) ?\d{3,4}', None, 'gpu'), ('Radeon', r'RX ?\d{4}|Radeon', None, 'gpu'),
