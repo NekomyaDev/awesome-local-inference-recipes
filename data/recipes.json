@@ -32002,7 +32002,7 @@
     "context": null,
     "launch_command": null,
     "source_url": "https://github.com/internet-projects/dspine-hybrid-mlx",
-    "source_level": "实测",
+    "source_level": "宣称",
     "date": "2026-11-09",
     "measured_by": "internet-projects / ParisMichalas",
     "metric": "dspine-hybrid-mlx v0.2.0（8b3fad6bc）。thinking on、512 新 token、10 题：4-bit 目标 64.7（对照 plain mlx-lm 31.9）；thinking off 68.8 / --adaptive 71.0。长提示测到 33K（峰值内存 29GB）时 57.3。README 表 + pip 安装与命令；引擎作者实测。上下文上限未写死，不填默认。",
