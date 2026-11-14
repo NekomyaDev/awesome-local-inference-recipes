@@ -8,7 +8,7 @@ body:
       value: "Only fill what the source shows. Unknown → leave blank (null). 只填来源写明的内容，未知留空。"
   - type: markdown
     attributes:
-      value: "Focus: add new models and new hardware in the first few weeks after launch. Add non-mainstream combinations too (multi-GPU, multi-machine, AMD and Apple mixes, budget builds). A routine repeat recipe is not a new entry. It is a new result for a model × engine × hardware combination that is already in the list. Merge it into the existing entry and replace its numbers, source and date. 收录重点：新模型和新硬件发布后几周内的配方，以及非主流组合（多卡、多机、AMD 与 Apple 混搭、预算受限的配置）。常规重复配方（库里已有的「模型 × 引擎 × 硬件」组合）不作为新条目，会合并进已有条目并替换其数字、来源和日期。"
+      value: "Focus: add new models and new hardware in the first few weeks after launch. Add non-mainstream combinations too (multi-GPU, multi-machine, AMD and Apple mixes, budget builds). Merge a new result into an existing entry only when the tester, machine, model and engine are all the same: the newest reliable value becomes the main value, and older values and sources go in the notes. A routine repeat by a different tester (a model × engine × hardware combination that is already in the list) stays a separate entry. 收录重点：新模型和新硬件发布后几周内的配方，以及非主流组合（多卡、多机、AMD 与 Apple 混搭、预算受限的配置）。只有测试者、机器、模型和引擎都相同时才合并进已有条目：最新的可靠数值作主值，旧数值和来源写进备注。其他测试者的常规重复配方（库里已有的「模型 × 引擎 × 硬件」组合）单独成条。"
   - type: input
     id: source_url
     attributes: { label: Source URL / 来源链接, placeholder: "https://x.com/... or HF model card" }

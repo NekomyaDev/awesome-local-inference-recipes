@@ -31,11 +31,11 @@ llama-server -hf byteshape/Qwen3.8-27B-GGUF:<tag> --spec-type draft-mtp --spec-d
 
 - 上下文: —
 - 并发: 单流（-np 1）
-- 标签: `2bit`, `dense`
+- 标签: `2bit`, `dense`, `speculative`
 
 ## 预期速度
 
-- 119.0 tok/s 生成 (📣 宣称)
+- 119.0 tok/s 生成。同卡其他档：GPU-2（2.88 bpw）111、GPU-3（3.01 bpw）108、GPU-4（3.23 bpw）104、GPU-5（3.84 bpw）94；开 DFlash2（7 draft，仅文本）后 GPU-1 176、GPU-5 167 (📣 宣称)
 
 ## 注意事项
 

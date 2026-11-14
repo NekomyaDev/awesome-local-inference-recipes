@@ -35,7 +35,7 @@ llama-cli ... -ngl 99 -fa on -c 32768（需 PrismML llama.cpp fork，原生 llam
 
 ## 预期速度
 
-- 129.9 tok/s 生成；3893 tok/s 读入 (📣 宣称)
+- 129.9 tok/s 生成；3893 tok/s 读入；PTQ1_0 120.5 tok/s 生成，1805 tok/s 读入 (📣 宣称)
 
 ## 注意事项
 

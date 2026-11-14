@@ -31,11 +31,11 @@ Excerpt from the source (includes `...` or placeholders). See the source for ful
 
 - Context: —
 - Concurrency: single stream (-np 1)
-- Tags: `2bit`, `dense`
+- Tags: `2bit`, `dense`, `speculative`
 
 ## Expected speed
 
-- 119.0 tok/s decode (📣 Claimed)
+- 119.0 tok/s decode. Other tiers on the same card: GPU-2 (2.88 bpw) 111, GPU-3 (3.01 bpw) 108, GPU-4 (3.23 bpw) 104, GPU-5 (3.84 bpw) 94; with DFlash2 (7 drafts, text only) GPU-1 176 and GPU-5 167 (📣 Claimed)
 
 ## Caveats
 
