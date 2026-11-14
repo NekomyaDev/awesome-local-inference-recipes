@@ -35,7 +35,7 @@ Excerpt from the source (includes `...` or placeholders). See the source for ful
 
 ## Expected speed
 
-- 129.9 tok/s decode; 3893 tok/s prefill (📣 Claimed)
+- 129.9 tok/s decode; 3893 tok/s prefill; PTQ1_0 120.5 tok/s decode, 1805 tok/s prefill (📣 Claimed)
 
 ## Caveats
 
