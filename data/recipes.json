@@ -3815,6 +3815,39 @@
     }
   },
   {
+    "id": "image-006",
+    "category": "image",
+    "model": "Qwen-Image 2.1",
+    "quant": "int8 · 25 步 · 1MP",
+    "engine": "Unspecified",
+    "hardware": "RTX 5090 32GB（功耗上限 455W）",
+    "hardware_family": "NVIDIA 消费级",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
+    "hardware_cost_usd": 5400,
+    "metric": "Qwen-Image 2.1 基础模型，int8，25 步，1MP：每张 5.2 s（最近 200 张的中位数），约 687 张/小时；功耗 399 W（nvidia-smi 60 s 平均）；能耗 0.58 Wh/张",
+    "tok_s": null,
+    "concurrency": "单卡独立队列",
+    "context": "1MP",
+    "launch_command": null,
+    "source_url": "https://x.com/MoonlitMaven/status/2109206953507291214",
+    "source_note": "@MoonlitMaven",
+    "source_level": "实测",
+    "date": "2026-10-11",
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen-Image",
+    "tags": [
+      "8bit"
+    ],
+    "source_id": "src-28caffdc0c",
+    "metric_en": "Qwen-Image 2.1 base model, int8, 25 steps, 1MP: 5.2 s per image (median of the last 200 images), about 687 images per hour; power 399 W (nvidia-smi 60 s average); energy 0.58 Wh per image",
+    "en": {
+      "quant": "int8 · 25 steps · 1MP",
+      "hardware": "RTX 5090 32GB (455W power limit)",
+      "concurrency": "Own queue per card",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
+  },
+  {
     "id": "image-007",
     "category": "image",
     "model": "Qwen-Image 2.1",
@@ -7002,7 +7035,7 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）",
     "hardware_cost_usd": 5400,
-    "metric": "119.0 tok/s 生成。同卡其他档：GPU-2（2.88 bpw）111、GPU-3（3.01 bpw）108、GPU-4（3.23 bpw）104、GPU-5（3.84 bpw）94；开 DFlash2（7 个草稿 token，仅文本）后 GPU-1 176、GPU-5 167",
+    "metric": "119.0 tok/s 生成。同卡其他档：GPU-2（2.88 bpw）111、GPU-3（3.01 bpw）108、GPU-4（3.23 bpw）104、GPU-5（3.84 bpw）94。限定：开 DFlash2（7 个草稿 token，仅文本）后 GPU-1 176、GPU-5 167，不作主值",
     "tok_s": 119.0,
     "concurrency": "单流（-np 1）",
     "context": null,
@@ -7011,14 +7044,13 @@
     "source_note": "HF 模型卡（作者自报）; 思考模式采样；混合 coding/math/IF/常识 prompt; 单流、无投机; 原文: | GPU-1 | 2.56 | 119 | 164 (1.38x) | 176 (1.47x) |",
     "source_level": "宣称",
     "date": "2026-08-18",
-    "metric_en": "119.0 tok/s decode. Other tiers on the same card: GPU-2 (2.88 bpw) 111, GPU-3 (3.01 bpw) 108, GPU-4 (3.23 bpw) 104, GPU-5 (3.84 bpw) 94; with DFlash2 (7 drafts, text only) GPU-1 176 and GPU-5 167",
+    "metric_en": "119.0 tok/s decode. Other tiers on the same card: GPU-2 (2.88 bpw) 111, GPU-3 (3.01 bpw) 108, GPU-4 (3.23 bpw) 104, GPU-5 (3.84 bpw) 94. Qualification: with DFlash2 (7 drafts, text only) GPU-1 176 and GPU-5 167, not the headline",
     "engine_raw": "llama.cpp（-np 1 -fa on）",
     "engine_note": "llama.cpp（-np 1 -fa on）",
     "model_family": "Qwen",
     "tags": [
       "2bit",
-      "dense",
-      "speculative"
+      "dense"
     ],
     "source_id": "src-5eaf91bb06",
     "en": {
@@ -17543,8 +17575,8 @@
     "source_level": "官方",
     "date": "2026-10-25",
     "measured_by": "Niko1221",
-    "metric": "code 76.6/77.0→84.7/84.7，agent 74.2→83.3（0.2.5→0.2.6）；RAM 须容下全部 CPU 侧专家并余 8GiB；0.2.4 旧值（2026-10-24，strata-dsv41 0.1.49，IQ2_XXS 2.00bpw GGUF，https://github.com/Niko1221/Strata/releases/tag/v0.2.4 ）：输出约 31（开 DSpark 55–69），提示读入 8K 约 505、32K 约 818",
-    "metric_en": "code 76.6/77.0→84.7/84.7, agent 74.2→83.3 (0.2.5→0.2.6); RAM must hold all CPU-side experts with 8 GiB free; older 0.2.4 values (2026-10-24, strata-dsv41 0.1.49, IQ2_XXS 2.00bpw GGUF, https://github.com/Niko1221/Strata/releases/tag/v0.2.4 ): output about 31 (55–69 with DSpark), prompt about 505 at 8K and about 818 at 32K",
+    "metric": "code 76.6/77.0→84.7/84.7，agent 74.2→83.3（0.2.5→0.2.6）；RAM 须容下全部 CPU 侧专家并余 8GiB；0.2.4 旧值（2026-10-24，strata-dsv41 0.1.49，IQ2_XXS 2.00bpw GGUF，https://github.com/Niko1221/Strata/releases/tag/v0.2.4 ）：输出约 31，提示读入 8K 约 505、32K 约 818。限定：0.2.4 开 DSpark 时输出 55–69，不作主值",
+    "metric_en": "code 76.6/77.0→84.7/84.7, agent 74.2→83.3 (0.2.5→0.2.6); RAM must hold all CPU-side experts with 8 GiB free; older 0.2.4 values (2026-10-24, strata-dsv41 0.1.49, IQ2_XXS 2.00bpw GGUF, https://github.com/Niko1221/Strata/releases/tag/v0.2.4 ): output about 31, prompt about 505 at 8K and about 818 at 32K. Qualification: 0.2.4 output with DSpark 55–69, not the headline",
     "tok_s": 84.7,
     "concurrency": "单流",
     "source_note": "Strata 项目方（Niko1221）0.2.6 发布说明测试表。Strata 0.2.9 官方发布说明（2026-10-31，https://github.com/Niko1221/Strata/releases/tag/v0.2.9）：0.2.9 之前不带 --gpu 的 strata launch 在四卡机器上只用一张卡（2,371 / 15,360 个专家上卡，decode 7.8 和 25.7）；0.2.9 默认用满四卡（12,147 / 15,360，每 token 5 个专家，decode 57.7–103.7）。用 0.2.8 或更早版本时要写 --gpu 指定四卡",
@@ -17552,7 +17584,6 @@
     "tags": [
       "2bit",
       "MoE",
-      "speculative",
       "multi-GPU"
     ],
     "engine_raw": "Strata 0.2.6（DeepSeek 引擎 0.1.51）",
