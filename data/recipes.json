@@ -12130,7 +12130,7 @@
     "launch_command": null,
     "source_url": "https://llm-speed.com/r/r_dwp5fgdapmw",
     "source_note": "llm-speed 2026-10-17.3 签名跑分（workload=chat-short，llama.cpp 1268eda；同模型另有较早 5090 行未收录（2026-07-01，9850X3D 主机））",
-    "source_level": "实测",
+    "source_level": "宣称",
     "date": "2026-10-17",
     "measured_by": "llm-speed",
     "metric_en": "chat-short decode 324.2 tok/s; prefill 586.8 (166-token prompt); TTFT 282.9 ms (suite-v1, batch=1; same run chat-long prefill 12,638)",
@@ -12164,7 +12164,7 @@
     "launch_command": null,
     "source_url": "https://llm-speed.com/r/r_vsype4pm1ko",
     "source_note": "llm-speed 2026-10-17.3 签名跑分（workload=chat-short，llama.cpp 1268eda；同模型另有较早 5090 行未收录（2026-07-01，9850X3D 主机））",
-    "source_level": "实测",
+    "source_level": "宣称",
     "date": "2026-10-17",
     "measured_by": "llm-speed",
     "metric_en": "chat-short decode 304.9 tok/s; prefill 514.5 (110-token prompt); TTFT 213.8 ms (suite-v1, batch=1; same run chat-long prefill 8,353)",
@@ -13922,8 +13922,8 @@
     "context": "8K",
     "launch_command": null,
     "source_url": "https://llm-speed.com/m/flint-40b-a2-5b",
-    "source_note": "llm-speed 租用硬件实测（运行 ID r_0i0a9uq6fdx；X 帖 @llmspeed/status/2113115152140656822）",
-    "source_level": "实测",
+    "source_note": "llm-speed 租用硬件测试，签名跑分页无每次运行的原始数据（运行 ID r_0i0a9uq6fdx；X 帖 @llmspeed/status/2113115152140656822）",
+    "source_level": "宣称",
     "date": "2026-10-22",
     "measured_by": "llmspeed",
     "en": {
@@ -13931,7 +13931,7 @@
       "engine_note": "llama.cpp b11803 (commit a37cc4610, all layers on the GPU)",
       "hardware_cost_text": "≈$2,214 (used, eBay sales, 2026-10-06)",
       "concurrency": "Single stream",
-      "source_note": "llm-speed measured on rented hardware (run ID r_0i0a9uq6fdx; X post @llmspeed/status/2113115152140656822)"
+      "source_note": "llm-speed test on rented hardware; the signed-run page has no raw data for each run (run ID r_0i0a9uq6fdx; X post @llmspeed/status/2113115152140656822)"
     },
     "model_family": "Other",
     "tags": [
@@ -13959,15 +13959,15 @@
     "context": "8K / 16K",
     "launch_command": null,
     "source_url": "https://llm-speed.com/m/flint-40b-a2-5b",
-    "source_note": "llm-speed 租用硬件实测（运行 ID r_-yeg4qnhjp7；X 帖 @llmspeed/status/2113115152140656822）",
-    "source_level": "实测",
+    "source_note": "llm-speed 租用硬件测试，签名跑分页无每次运行的原始数据（运行 ID r_-yeg4qnhjp7；X 帖 @llmspeed/status/2113115152140656822）",
+    "source_level": "宣称",
     "date": "2026-10-22",
     "measured_by": "llmspeed",
     "en": {
       "hardware_cost_text": "$1,206–1,499 (used sales, 2026-10-06/12)",
       "concurrency": "Single stream",
       "engine_note": "llama.cpp b11803 (commit a37cc4610, all layers on the GPU)",
-      "source_note": "llm-speed measured on rented hardware (run ID r_-yeg4qnhjp7; X post @llmspeed/status/2113115152140656822)"
+      "source_note": "llm-speed test on rented hardware; the signed-run page has no raw data for each run (run ID r_-yeg4qnhjp7; X post @llmspeed/status/2113115152140656822)"
     },
     "model_family": "Other",
     "tags": [
@@ -13995,14 +13995,14 @@
     "context": "8K / 16K",
     "launch_command": null,
     "source_url": "https://llm-speed.com/m/flint-40b-a2-5b",
-    "source_note": "llm-speed 租用硬件实测（运行 ID r_e8r7fxw1ke9；X 帖 @llmspeed/status/2113115152140656822）",
-    "source_level": "实测",
+    "source_note": "llm-speed 租用硬件测试，签名跑分页无每次运行的原始数据（运行 ID r_e8r7fxw1ke9；X 帖 @llmspeed/status/2113115152140656822）",
+    "source_level": "宣称",
     "date": "2026-10-22",
     "measured_by": "llmspeed",
     "en": {
       "concurrency": "Single stream",
       "engine_note": "llama.cpp b11803 (commit a37cc4610, all layers on the GPU)",
-      "source_note": "llm-speed measured on rented hardware (run ID r_e8r7fxw1ke9; X post @llmspeed/status/2113115152140656822)"
+      "source_note": "llm-speed test on rented hardware; the signed-run page has no raw data for each run (run ID r_e8r7fxw1ke9; X post @llmspeed/status/2113115152140656822)"
     },
     "model_family": "Other",
     "tags": [
@@ -23638,7 +23638,7 @@
     "context": "32K",
     "launch_command": null,
     "source_url": "https://llm-speed.com/r/r_9yhg3wvngab",
-    "source_level": "实测",
+    "source_level": "宣称",
     "date": "2026-10-31",
     "measured_by": "llmspeed",
     "metric": "llama.cpp b12017，draft-mtp n=3：decode 43.1 → 75.3（短提示）；预填 440 → 275",

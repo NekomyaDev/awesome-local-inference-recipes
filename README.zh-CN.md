@@ -82,13 +82,13 @@
 数据截至 2026-11-14。每条回答取数据集中最快的单路文字生成结果，并标注来源等级；✅ = 发帖人实测。不同回答的模型不同。
 
 **单张 RTX 5090 跑本地大模型有多快？**  
-实测最快：**351.5 tok/s**，LFM2.5-24B-A2B · llama.cpp，硬件 RTX 5090 32GB（✅ 实测，2026-10-15，[来源](https://x.com/niklaslenz_ai/status/2110469931011612895)）。该硬件共 42 条配方，其中实测 28 条。
+实测最快：**351.5 tok/s**，LFM2.5-24B-A2B · llama.cpp，硬件 RTX 5090 32GB（✅ 实测，2026-10-15，[来源](https://x.com/niklaslenz_ai/status/2110469931011612895)）。该硬件共 42 条配方，其中实测 26 条。
 
 **单张 RTX 4090 跑本地大模型有多快？**  
-实测最快：**179.4 tok/s**，Recursive Flint 40B-A2.5B · llama.cpp，硬件 RTX 4090 24GB（✅ 实测，2026-10-22，[来源](https://llm-speed.com/m/flint-40b-a2-5b)）。该硬件共 13 条配方，其中实测 5 条。
+实测最快：**121 tok/s**，Qwen3.8-27B · DFlash，硬件 RTX 4090 24GB（✅ 实测，日期未注明，[来源](https://x.com/yume_arasaki/status/2100595901006008791)）。该硬件共 13 条配方，其中实测 4 条。
 
 **单张 RTX 3090 跑本地大模型有多快？**  
-实测最快：**384 tok/s**，LFM3-1.7B · llama.cpp，硬件 RTX 3090 24GB（✅ 实测，2026-10-28，[来源](https://x.com/Layton_Gott/status/2115244678056464384)）。该硬件共 21 条配方，其中实测 10 条。
+实测最快：**384 tok/s**，LFM3-1.7B · llama.cpp，硬件 RTX 3090 24GB（✅ 实测，2026-10-28，[来源](https://x.com/Layton_Gott/status/2115244678056464384)）。该硬件共 21 条配方，其中实测 9 条。
 
 **Mac Studio M3 Ultra 跑本地大模型有多快？**  
 实测最快：**130 tok/s**，Qwen3.8-Flash-Next · TensorFold，硬件 Mac Studio M3 Ultra（✅ 实测，日期未注明，[来源](https://x.com/ivanfioravanti/status/2104183112611614780)）。该硬件共 27 条配方，其中实测 7 条。
@@ -100,7 +100,7 @@
 实测最快：**108.7 tok/s**，Ornith-1.5-35B-A3B · WHIRL，硬件 Radeon 8060S（Ryzen AI Max+ 395，ASUS ROG Flow Z13 @80W，64GB …（✅ 实测，2026-11-06，[来源](https://www.reddit.com/r/LocalLLM/comments/1xpb37p/)）。该硬件共 29 条配方，其中实测 16 条。
 
 **2500 美元以内实测最快的配置是什么？**  
-实测最快：**190 tok/s**，Qwen3.8-27B · Geezuz，硬件 2× RTX 3090（280W，PCIe，无 NVLink）（✅ 实测，2026-10-20，[来源](https://github.com/ohgeebtw/geezuz-qwen3.8-27b-dual-gpu)）。该预算内共 59 条配方，其中实测 31 条。
+实测最快：**190 tok/s**，Qwen3.8-27B · Geezuz，硬件 2× RTX 3090（280W，PCIe，无 NVLink）（✅ 实测，2026-10-20，[来源](https://github.com/ohgeebtw/geezuz-qwen3.8-27b-dual-gpu)）。该预算内共 59 条配方，其中实测 29 条。
 
 
 ## X 上的热门配方
@@ -122,7 +122,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 
 | 类别              | 设备（配方数 · ⚡ 实测最快 tok/s）                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| NVIDIA&nbsp;RTX | [RTX 5090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/rtx-5090.html) (106 · ⚡**538.1**) &nbsp;·&nbsp; [RTX 3090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/rtx-3090.html) (67 · ⚡**384**) &nbsp;·&nbsp; [RTX 4090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/rtx-4090.html) (33 · ⚡**179.4**) &nbsp;·&nbsp; [RTX 3060](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=RTX%203060&lang=zh-CN) (28 · ⚡**244**) &nbsp;·&nbsp; [RTX 5060 Ti](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/rtx-5060-ti.html) (27 · ⚡**162**) &nbsp;·&nbsp; [RTX 5070 / 5070 Ti](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=RTX%205070&lang=zh-CN) (24 · ⚡**141.3**)         |
+| NVIDIA&nbsp;RTX | [RTX 5090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/rtx-5090.html) (106 · ⚡**538.1**) &nbsp;·&nbsp; [RTX 3090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/rtx-3090.html) (67 · ⚡**384**) &nbsp;·&nbsp; [RTX 4090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/rtx-4090.html) (33 · ⚡**121**) &nbsp;·&nbsp; [RTX 3060](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=RTX%203060&lang=zh-CN) (28 · ⚡**244**) &nbsp;·&nbsp; [RTX 5060 Ti](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/rtx-5060-ti.html) (27 · ⚡**162**) &nbsp;·&nbsp; [RTX 5070 / 5070 Ti](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=RTX%205070&lang=zh-CN) (24 · ⚡**141.3**)           |
 | Apple&nbsp;芯片   | [M5 Pro / M5 Max](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/mac-m5.html) (59 · ⚡**157**) &nbsp;·&nbsp; [M5 Ultra](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=M5%20Ultra&lang=zh-CN) (39 · ⚡**153.8**) &nbsp;·&nbsp; [M3 Ultra](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/mac-studio-m3-ultra.html) (36 · ⚡**130**) &nbsp;·&nbsp; [M4 Pro](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=M4%20Pro&lang=zh-CN) (29 · ⚡**127.9**) &nbsp;·&nbsp; [M4 Max](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/mac-m4-max.html) (20 · ⚡**78.7**) &nbsp;·&nbsp; [M2 Ultra](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=M2%20Ultra&lang=zh-CN) (4 · ⚡**59.9**) |
 | DGX&nbsp;Spark  | [DGX Spark](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/dgx-spark.html) (157 · ⚡**130.1**)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | AMD             | [Radeon R9700 / RX 7900](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/amd-radeon.html) (69 · ⚡**109.9**) &nbsp;·&nbsp; [Strix Halo](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/zh-CN/strix-halo.html) (26 · ⚡**78**) &nbsp;·&nbsp; [Instinct MI50](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=MI50&lang=zh-CN) (6 · ⚡**36.8**)                                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -299,7 +299,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2` — RTX 4090 24GB → **225 tok/s** 📣 [来源](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
 - **Qwen3.8-Flash-Next** · Strata `Strata（作者自改版）· Swift 1.5 IQ…` — RTX 4090 24GB + 32GB DDR5 → **220 tok/s** 📣 [来源](https://x.com/Knuckles_XBT/status/2105245662657011841)
 - **Qwen3.8-27B** · Geezuz `Q4_K_M（另测 Q8_0）` — 2× RTX 3090（280W，PCIe，无 NVLink） → **190 tok/s** ✅ [来源](https://github.com/ohgeebtw/geezuz-qwen3.8-27b-dual-gpu)
-- **Recursive Flint 40B-A2.5B** · llama.cpp `NVFP4 GGUF（22.86GB）` — RTX 4090 24GB → **179.4 tok/s** ✅ [来源](https://llm-speed.com/m/flint-40b-a2-5b)
+- **Recursive Flint 40B-A2.5B** · llama.cpp `NVFP4 GGUF（22.86GB）` — RTX 4090 24GB → **179.4 tok/s** 📣 [来源](https://llm-speed.com/m/flint-40b-a2-5b)
 - **Qwen3.8-27B** · tqLLM `TQ_XS（~11.9 GB）· DFlash2 草稿` — RTX 5060 Ti 16GB → **175.9 tok/s** 🏛️ [来源](https://x.com/coffeecup2020/status/2110719638518526343)
 - **Qwen3.6-35B-A3B** · FreeToken `FreeToken · NVFP4（无投机）` — RTX 4090 → **167 tok/s** 🔁 [来源](https://x.com/shipfrontierai/status/2092602493213577481)
 - **LFM2.5-24B-A2B** · llama.cpp `Q4（14.5 GB）` — RTX 5060 Ti 16GB → **162 tok/s** ✅ [来源](https://x.com/niklaslenz_ai/status/2110469931011612895)
@@ -332,8 +332,8 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 - **Qwen3.8-Flash-Next** · Basalt `GSQ-RCO Q2_0（.basalt 包，70.4…` — 1× RTX 5090 32GB + 59GB RAM → **500.4 tok/s** ✅ [来源](https://x.com/witcheer/status/2120154520843882651)
 - **LFM2.5-24B-A2B** · llama.cpp `Q4（14.5 GB）` — RTX 5090 32GB → **351.5 tok/s** ✅ [来源](https://x.com/niklaslenz_ai/status/2110469931011612895)
 - **NVIDIA Nemotron 3.5 Bolt 74B-A9B** · llama.cpp `NVIDIA 官方 IQ2_XXS 24GB GGUF…` — RTX 5090 32GB（Ubuntu，driver 570） → **343 tok/s** ✅ [来源](https://www.reddit.com/r/LocalLLM/comments/1xap599/)
-- **gpt-oss-20b** · llama.cpp `Q4_K_M` — RTX 5090 32GB（主机 EPYC 7543 + 945GB RAM，CLI 报告） → **324.2 tok/s** ✅ [来源](https://llm-speed.com/r/r_dwp5fgdapmw)
-- **Qwen3-Coder-30B-A3B-Instruct** · llama.cpp `Q4_K_M` — RTX 5090 32GB（主机 EPYC 7543 + 945GB RAM，CLI 报告） → **304.9 tok/s** ✅ [来源](https://llm-speed.com/r/r_vsype4pm1ko)
+- **gpt-oss-20b** · llama.cpp `Q4_K_M` — RTX 5090 32GB（主机 EPYC 7543 + 945GB RAM，CLI 报告） → **324.2 tok/s** 📣 [来源](https://llm-speed.com/r/r_dwp5fgdapmw)
+- **Qwen3-Coder-30B-A3B-Instruct** · llama.cpp `Q4_K_M` — RTX 5090 32GB（主机 EPYC 7543 + 945GB RAM，CLI 报告） → **304.9 tok/s** 📣 [来源](https://llm-speed.com/r/r_vsype4pm1ko)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2（INT8=on）` — RTX 5090 32GB → **283 tok/s** 📣 [来源](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2) · [指南](recipes/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.zh-CN.md)
 - **Qwen3.8-Flash-Next** · Basalt `NVIDIA NVFP4（MoE）+ MTP，int8…` — RTX 5090 32GB + Core Ultra 9 285K + 247GB DDR5 → **242 tok/s** ✅ [来源](https://www.reddit.com/r/LocalLLaMA/comments/1xcp0mf/)
 - **Qwen3.8-Flash-Next** · Strata `Q2_0` — 1× RTX 5090 32GB（PCIe Gen3 x16，卡上有其他任务共用）+ 两颗 Xeon Gold 521… → **231.5 tok/s** ✅ [来源](https://github.com/Niko1221/Strata/pull/5875)
