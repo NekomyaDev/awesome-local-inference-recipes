@@ -174,7 +174,7 @@ def landing(kind, key, name, rows, qterm=None):
             link='リンク', selfrep='（自己申告）', filter_='エクスプローラーで絞り込む →',
             note='数値は各出典のものです。本プロジェクトでは再計測していません。行ごとにモデルと設定が異なります。出典レベル：公式 = プロジェクトまたはベンダー、実測 = 投稿者が実行（エンジンまたはレシピの作者は生データと再現手順も公開する）、伝聞 = 二次情報、主張 = 予測または再現手順なし。',
             lab=lambda r, k: fen(r, k) if k != 'engine' else r.get('engine'),
-            met=lambda r: met_en(r) or ''),
+            met=lambda r: gen_readme.mark_ja_en(met_en(r)) or ''),
     }
 
     def summary(lang, n):

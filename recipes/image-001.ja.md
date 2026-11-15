@@ -24,13 +24,13 @@
 
 ## 主なパラメータ
 
-- コンテキスト: native 2K
-- 同時実行: single card, serial
+- コンテキスト: native 2K（英語）
+- 同時実行: single card, serial（英語）
 - タグ: `8bit`
 
 ## 想定速度
 
-- 8.1 s / 1024² (40 steps); 30.2 s / 2048×1152 (50 steps); peak 16.2GB (✅ 実測)
+- 8.1 s / 1024² (40 steps); 30.2 s / 2048×1152 (50 steps); peak 16.2GB（英語） (✅ 実測)
 
 ## 注意点
 

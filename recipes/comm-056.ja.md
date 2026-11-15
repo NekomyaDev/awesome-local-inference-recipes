@@ -17,7 +17,7 @@
 ## エンジン
 
 - Strata (Strata-DS fork) — インストール： https://github.com/Jackwwg83/Strata-DS
-- 備考: Strata-DS (Strata fork with its own DeepSeek engine ds41_serve, C++/CUDA; hot experts in a unified-memory RAM tier computed in place by the GPU, cold experts read from the SSD on demand; sudoingX's exl3_smoe and exl3_mrow EXL3 kernels)
+- 備考: Strata-DS (Strata fork with its own DeepSeek engine ds41_serve, C++/CUDA; hot experts in a unified-memory RAM tier computed in place by the GPU, cold experts read from the SSD on demand; sudoingX's exl3_smoe and exl3_mrow EXL3 kernels)（英語）
 
 ## 起動コマンド
 
@@ -28,12 +28,12 @@ git clone https://github.com/Jackwwg83/Strata-DS.git && cd Strata-DS && ./setup.
 ## 主なパラメータ
 
 - コンテキスト: 256K (262,144)
-- 同時実行: Single stream
+- 同時実行: Single stream（英語）
 - タグ: `2bit`, `MoE`, `long-context`, `speculative`, `offload`
 
 ## 想定速度
 
-- Real coding-agent session, 48 turns (context 10K–91K), 70,211 tokens at 30.8 tok/s average (per turn 23.6–36.4, median 28.6); single runs: decode at 8K/32K/64K/128K/250K context 24.2/27.4/27.4/27.3/22.9; time to first token for an agent turn adding ≤50 tokens median 0.57 s, a new conversation with the same 10K system prompt 0.25 s; cold prefill about 500 tok/s (250K in 8.3 min); vs official MXFP4 KL 0.074 / top-1 88.6% (✅ 実測)
+- Real coding-agent session, 48 turns (context 10K–91K), 70,211 tokens at 30.8 tok/s average (per turn 23.6–36.4, median 28.6); single runs: decode at 8K/32K/64K/128K/250K context 24.2/27.4/27.4/27.3/22.9; time to first token for an agent turn adding ≤50 tokens median 0.57 s, a new conversation with the same 10K system prompt 0.25 s; cold prefill about 500 tok/s (250K in 8.3 min); vs official MXFP4 KL 0.074 / top-1 88.6%（英語） (✅ 実測)
 
 ## 注意点
 

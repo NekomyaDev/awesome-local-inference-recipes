@@ -17,7 +17,7 @@
 ## エンジン
 
 - llama.cpp — インストール： https://github.com/ggml-org/llama.cpp
-- 備考: llama.cpp (-np 1 -fa on)
+- 備考: llama.cpp (-np 1 -fa on)（英語）
 
 ## 起動コマンド
 
@@ -30,12 +30,12 @@ llama-server -hf byteshape/Qwen3.8-27B-GGUF:<tag> --spec-type draft-mtp --spec-d
 ## 主なパラメータ
 
 - コンテキスト: —
-- 同時実行: single stream (-np 1)
+- 同時実行: single stream (-np 1)（英語）
 - タグ: `2bit`, `dense`
 
 ## 想定速度
 
-- 119.0 tok/s decode. Other tiers on the same card: GPU-2 (2.88 bpw) 111, GPU-3 (3.01 bpw) 108, GPU-4 (3.23 bpw) 104, GPU-5 (3.84 bpw) 94. Qualification: with DFlash2 (7 drafts, text only) GPU-1 176 and GPU-5 167, not the headline (📣 主張)
+- 119.0 tok/s decode. Other tiers on the same card: GPU-2 (2.88 bpw) 111, GPU-3 (3.01 bpw) 108, GPU-4 (3.23 bpw) 104, GPU-5 (3.84 bpw) 94. Qualification: with DFlash2 (7 drafts, text only) GPU-1 176 and GPU-5 167, not the headline（英語） (📣 主張)
 
 ## 注意点
 

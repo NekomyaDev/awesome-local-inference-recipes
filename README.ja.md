@@ -308,18 +308,18 @@ X で反応が多かったレシピ投稿（いいね + リポスト×3 の順�
 
 **🖼️ 画像**
 
-- **Qwen-Image 2.1** · ComfyUI `Comfy-Org INT8 · ComfyUI` — RTX 4090 24GB → 8.1 s / 1024² (40 steps); 30.2 s / 2048×1152 (50 steps); peak 16.2GB ✅ [出典](https://x.com/yume_arasaki/status/2102176739359404499) · [手順](recipes/image-001.ja.md)
-- **Qwen-Image 2.1** `INT8` — RTX 3090 → 82–96 s / 2K (public receipt) 🔁 [出典](https://x.com/yume_arasaki/status/2102176739359404499)
-- **Qwen-Image 2.1** · ComfyUI `ComfyUI` — Mac M4 Pro → 3 min 52 s / image (768 edit) ✅ [出典](https://x.com/gabeciii/status/2116171024106401889)
-- **Z-Image Turbo** · ComfyUI `ComfyUI` — RTX 3090 24GB → 2048px about 8 s / image; another user 12 s after warm-up ✅ [出典](https://x.com/michaelricks/status/2104959036353356058)
+- **Qwen-Image 2.1** · ComfyUI `Comfy-Org INT8 · ComfyUI` — RTX 4090 24GB → 8.1 s / 1024² (40 steps); 30.2 s / 2048×1152 (50 steps); peak 16.2GB（英語） ✅ [出典](https://x.com/yume_arasaki/status/2102176739359404499) · [手順](recipes/image-001.ja.md)
+- **Qwen-Image 2.1** `INT8` — RTX 3090 → 82–96 s / 2K (public receipt)（英語） 🔁 [出典](https://x.com/yume_arasaki/status/2102176739359404499)
+- **Qwen-Image 2.1** · ComfyUI `ComfyUI` — Mac M4 Pro → 3 min 52 s / image (768 edit)（英語） ✅ [出典](https://x.com/gabeciii/status/2116171024106401889)
+- **Z-Image Turbo** · ComfyUI `ComfyUI` — RTX 3090 24GB → 2048px about 8 s / image; another user 12 s after warm-up（英語） ✅ [出典](https://x.com/michaelricks/status/2104959036353356058)
 
 **🎬 動画・音声**
 
-- **FastH3 V2 / Trim** `FP8` — RTX 4090 24GB → 480p 5s: 54.6 / 43.9 s; 768p: 154.6 / 132.8 s; 8GB limit Trim 82.0 s 🏛️ [出典](https://haoailab.com/blogs/fasth3-rtx/)
-- **MiniMax H3** · ComfyUI `ComfyUI` — RTX 4090 → 5 s clip ~91 s; 15 s ~8 minutes; 960×544×5s about 50 s ✅ [出典](https://x.com/yume_arasaki/status/2097790831323427046)
-- **MiniMax H3** · ComfyUI `ComfyUI` — RTX 3090 → 11 s video 13 minutes ✅ [出典](https://x.com/natehalko/status/2103538997146611890)
-- **ACE-Step 1.5** — RTX 3090 → Whole song <10 s (promo post) 🔁 [出典](https://x.com/simplifyinAI/status/2091935190335754493)
-- **MiniMax H3 Ref2VA** · ComfyUI `INT8 DiT+ NVFP4 + Turbo 4-s…` — RTX 4090 24GB → 1344×768×5.16s (24 fps / 124 frames): warm wall time ~72 s (first run… 🏛️ [出典](https://github.com/Kablex/ComfyUI-Ref2VA-VSA)
+- **FastH3 V2 / Trim** `FP8` — RTX 4090 24GB → 480p 5s: 54.6 / 43.9 s; 768p: 154.6 / 132.8 s; 8GB limit Trim 82.0 s（英語） 🏛️ [出典](https://haoailab.com/blogs/fasth3-rtx/)
+- **MiniMax H3** · ComfyUI `ComfyUI` — RTX 4090 → 5 s clip ~91 s; 15 s ~8 minutes; 960×544×5s about 50 s（英語） ✅ [出典](https://x.com/yume_arasaki/status/2097790831323427046)
+- **MiniMax H3** · ComfyUI `ComfyUI` — RTX 3090 → 11 s video 13 minutes（英語） ✅ [出典](https://x.com/natehalko/status/2103538997146611890)
+- **ACE-Step 1.5** — RTX 3090 → Whole song <10 s (promo post)（英語） 🔁 [出典](https://x.com/simplifyinAI/status/2091935190335754493)
+- **MiniMax H3 Ref2VA** · ComfyUI `INT8 DiT+ NVFP4 + Turbo 4-s…` — RTX 4090 24GB → 1344×768×5.16s (24 fps / 124 frames): warm wall time ~72 s (first run…（英語） 🏛️ [出典](https://github.com/Kablex/ComfyUI-Ref2VA-VSA)
 
 ## 第 2 段階 · 2,500〜7,000 ドル
 
@@ -343,27 +343,27 @@ X で反応が多かったレシピ投稿（いいね + リポスト×3 の順�
 **🖼️ 画像**
 
 - **Qwen-Image 2.1** `LightX2V / BennyDaBall NVFP…` — RTX 5090 32GB → 5.93 s; NVFP4 6.7 s vs INT8 7.6 s vs BF16 15.6 s (1024²) 🔁 [出典](https://x.com/yume_arasaki/status/2103277400234860878)
-- **Qwen-Image 2.1** · TensorFold `TensorFold NVFP4 / FP8 / GG…` — RTX 5090 @450W → 4.53 s / 6.94 s / 13.87 s (1024², 25 steps; NVFP4 peak 22.9GB; images… ✅ [出典](https://x.com/niklaslenz_ai/status/2106465941177487871)
-- **Qwen-Image 2.1** — RTX 5090 → 13.5 s → 1.9 s / image (vendor claim) 📣 [出典](https://x.com/fractalyze_io/status/2105207217452695841)
-- **Qwen-Image 2.1** `int8 · 25 · 1MP` — RTX 5090 32GB → Qwen-Image 2.1 base model, int8, 25 steps, 1MP: 5.2 s per image (medi… ✅ [出典](https://x.com/MoonlitMaven/status/2109206953507291214)
-- **Qwen-Image 2.1** · SGLang `spark-image-lab BF16 / SGLa…` — 1× DGX Spark → 52.6 s / 1024²; SGLang table: Spark 35.4 s, 4090 18.7 s 🔁 [出典](https://x.com/yume_arasaki/status/2103277400234860878)
-- **Qwen-Image-2.1-Turbo** `Turbo 8 vs Base 40` — RTX 5090 → 29 s vs 108 s / image (2048²) ✅ [出典](https://x.com/niklaslenz_ai/status/2108609693941920176)
-- **Z-Image Turbo vs Qwen-Image 2.1** `prompt seed 20` — RTX 5090 → Z-Image ~2× faster (no absolute times); quality: Qwen wins 9:6 ✅ [出典](https://x.com/princedoesai/status/2109376490009743713)
+- **Qwen-Image 2.1** · TensorFold `TensorFold NVFP4 / FP8 / GG…` — RTX 5090 @450W → 4.53 s / 6.94 s / 13.87 s (1024², 25 steps; NVFP4 peak 22.9GB; images…（英語） ✅ [出典](https://x.com/niklaslenz_ai/status/2106465941177487871)
+- **Qwen-Image 2.1** — RTX 5090 → 13.5 s → 1.9 s / image (vendor claim)（英語） 📣 [出典](https://x.com/fractalyze_io/status/2105207217452695841)
+- **Qwen-Image 2.1** `int8 · 25 · 1MP` — RTX 5090 32GB → Qwen-Image 2.1 base model, int8, 25 steps, 1MP: 5.2 s per image (medi…（英語） ✅ [出典](https://x.com/MoonlitMaven/status/2109206953507291214)
+- **Qwen-Image 2.1** · SGLang `spark-image-lab BF16 / SGLa…` — 1× DGX Spark → 52.6 s / 1024²; SGLang table: Spark 35.4 s, 4090 18.7 s（英語） 🔁 [出典](https://x.com/yume_arasaki/status/2103277400234860878)
+- **Qwen-Image-2.1-Turbo** `Turbo 8 vs Base 40` — RTX 5090 → 29 s vs 108 s / image (2048²)（英語） ✅ [出典](https://x.com/niklaslenz_ai/status/2108609693941920176)
+- **Z-Image Turbo vs Qwen-Image 2.1** `prompt seed 20` — RTX 5090 → Z-Image ~2× faster (no absolute times); quality: Qwen wins 9:6（英語） ✅ [出典](https://x.com/princedoesai/status/2109376490009743713)
 
 **🎬 動画・音声**
 
-- **FastH3 V2** `NVFP4` — RTX 5090 32GB → 832×480×5s: 14.8 s; 1344×768×5s: 38.6 s (with audio, end-to-end) 🏛️ [出典](https://haoailab.com/blogs/fasth3-rtx/) · [手順](recipes/video-audio-001.ja.md)
+- **FastH3 V2** `NVFP4` — RTX 5090 32GB → 832×480×5s: 14.8 s; 1344×768×5s: 38.6 s (with audio, end-to-end)（英語） 🏛️ [出典](https://haoailab.com/blogs/fasth3-rtx/) · [手順](recipes/video-audio-001.ja.md)
 - **FastH3 Trim** `NVFP4` — RTX 5090 → 480p 5s: 13.4 s; 768p: 35.4 s 🏛️ [出典](https://haoailab.com/blogs/fasth3-rtx/)
 - **FastH3 V2 / Trim** `NVFP4` — 1× / 2× DGX Spark → 1×: 480p 141.4 / 125.8 s, Trim 768p 340.1 s; 2×: 87.2 / 78.3 s 🏛️ [出典](https://haoailab.com/blogs/fasth3-rtx/)
 - **MiniMax H3** · ComfyUI `ComfyUI + SageAttention` — RTX 5090 → 1280×736×5s: 242 s → 168 s ✅ [出典](https://x.com/RKAScope/status/2084359480926503182)
-- **MiniMax H3 vs FastH3 Turbo** `seed` — RTX 5090 → 15 s clip: 11 min 55 s vs 2 min 6 s ✅ [出典](https://x.com/Sogni_Protocol/status/2097254959729246550)
-- **MiniMax H3** · NVIDIA Sol `NVIDIA Sol` — 1× DGX Spark → Sol: 480p 5 s ≈ 68 s (NVIDIA published 56 s); without Sol >400 s; wit… ✅ [出典](https://x.com/yume_arasaki/status/2100734364908986511)
-- **MiniMax H3 vs LTX-2.3 Eros** `3 prompt` — 1× DGX Spark → 864×480×5s: H3 average 270 s; LTX 154 s (1.76× faster) ✅ [出典](https://x.com/YRSM_Simon/status/2084222856972456336)
-- **LTX-2.3** · ComfyUI `ComfyUI` — RTX 5090 → 10 s about 90 s (weaker GPU about 6×) ✅ [出典](https://x.com/freshstartsnow/status/2092263835591655773)
+- **MiniMax H3 vs FastH3 Turbo** `seed` — RTX 5090 → 15 s clip: 11 min 55 s vs 2 min 6 s（英語） ✅ [出典](https://x.com/Sogni_Protocol/status/2097254959729246550)
+- **MiniMax H3** · NVIDIA Sol `NVIDIA Sol` — 1× DGX Spark → Sol: 480p 5 s ≈ 68 s (NVIDIA published 56 s); without Sol >400 s; wit…（英語） ✅ [出典](https://x.com/yume_arasaki/status/2100734364908986511)
+- **MiniMax H3 vs LTX-2.3 Eros** `3 prompt` — 1× DGX Spark → 864×480×5s: H3 average 270 s; LTX 154 s (1.76× faster)（英語） ✅ [出典](https://x.com/YRSM_Simon/status/2084222856972456336)
+- **LTX-2.3** · ComfyUI `ComfyUI` — RTX 5090 → 10 s about 90 s (weaker GPU about 6×)（英語） ✅ [出典](https://x.com/freshstartsnow/status/2092263835591655773)
 - **LTX-2.5** `LoRA` — RTX 5090 → 720p/10 s: 61.11 s; 1080p/10 s: 189.90 s ✅ [出典](https://x.com/PhotogenicWeekE/status/2087298681137701274)
-- **ACE-Step 1.5 + LTX-2.3** · ComfyUI `ComfyUI` — 1× DGX Spark → 2 min 05 s song generated in one pass; +2:28 lip-sync video end to en… 🔁 [出典](https://x.com/yume_arasaki/status/2100734364908986511)
-- **Wan2.1 14B** `97% + 3 + FP8` — RTX 5090 → Wan2.1-T2V-14B 720P: 50-step CFG dense baseline 4,769 s → 3-step CFG-… 🏛️ [出典](https://arxiv.org/abs/2609.23153)
-- **MiniMax H3** · LightX2V — RTX 5090 → 768×1344 15s video + audio ≈72 s (steady state, excl. MP4 export; bas… 🏛️ [出典](https://x.com/LightX2V/status/2108769912009424976)
+- **ACE-Step 1.5 + LTX-2.3** · ComfyUI `ComfyUI` — 1× DGX Spark → 2 min 05 s song generated in one pass; +2:28 lip-sync video end to en…（英語） 🔁 [出典](https://x.com/yume_arasaki/status/2100734364908986511)
+- **Wan2.1 14B** `97% + 3 + FP8` — RTX 5090 → Wan2.1-T2V-14B 720P: 50-step CFG dense baseline 4,769 s → 3-step CFG-…（英語） 🏛️ [出典](https://arxiv.org/abs/2609.23153)
+- **MiniMax H3** · LightX2V — RTX 5090 → 768×1344 15s video + audio ≈72 s (steady state, excl. MP4 export; bas…（英語） 🏛️ [出典](https://x.com/LightX2V/status/2108769912009424976)
 
 ## 第 3 段階 · 7,000〜14,000 ドル
 

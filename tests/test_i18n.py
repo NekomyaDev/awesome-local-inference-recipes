@@ -142,8 +142,14 @@ class ChineseAndJapaneseUI(unittest.TestCase):
             self.assertEqual(bad, [], f)
 
     def test_japanese_localize_recipe_has_no_cjk(self):
-        bad = node("const out=[];for(const r of D){const o=localizeRecipe(r,'ja');for(const k of %s)if(typeof o[k]=='string'&&/[\u3000-\u303f\u3040-\u30ff\u3400-\u9fff\uff00-\uffef]/.test(o[k]))out.push(r.id+' '+k)}process.stdout.write(JSON.stringify(out))" % json.dumps(EN_FIELDS))
+        bad = node("const out=[];for(const r of D){const o=localizeRecipe(r,'ja');for(const k of %s)if(typeof o[k]=='string'&&/[\u3000-\u303f\u3040-\u30ff\u3400-\u9fff\uff00-\uffef]/.test(o[k].replace(/（英語）$/,'')))out.push(r.id+' '+k)}process.stdout.write(JSON.stringify(out))" % json.dumps(EN_FIELDS))
         self.assertEqual(bad, [])
+
+    def test_japanese_localize_recipe_marks_english_metric(self):
+        # The only CJK allowed in JA data text is the trailing （英語） label on English source text.
+        out = node("const r=D.find(r=>r.metric_en&&/\\b[a-z]{4,}\\b/.test(r.metric_en));process.stdout.write(JSON.stringify([localizeRecipe(r,'ja').metric,localizeRecipe(r,'en').metric,r.metric_en]))")
+        self.assertEqual(out[0], out[2] + '（英語）')
+        self.assertEqual(out[1], out[2])
 
 class SpeedPage(unittest.TestCase):
     def setUp(self): self.s = (R/'speed.html').read_text(encoding='utf-8')

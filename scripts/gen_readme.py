@@ -61,6 +61,11 @@ BALT={'en':'Bar chart: fastest measured and claimed text setup in each budget ti
 def scope_md(lang):
     S=SCOPE[lang]
     return '\n\n'.join([f"## {S['h']}", SEP[lang].join(S['intro']), S['lead'], '\n'.join('- '+i for i in S['items']), *S['outro']])
+JA_EN_MARK = '（英語）'
+def mark_ja_en(s):
+    """JA output shows English source text for some data fields (metric_en, en.*); label it so readers do not take it for a translation."""
+    if not s or s.endswith(JA_EN_MARK) or re.search(r'[\u3040-\u30ff\u3400-\u9fff]', s) or not re.search(r'\b[a-z]{4,}\b', s): return s
+    return s + JA_EN_MARK
 def clip(s,n=90): s=(s or '').replace('|','/').replace('\n',' '); return s if len(s)<=n else s[:n-1]+'…'
 def en(s, cjk=CJK_OR_CURLY_QUOTE, strip=' ·+/,'):
     if not s: return s
@@ -206,7 +211,7 @@ def build(lang):
         if r['tok_s'] is not None: return f"**{r['tok_s']:g} tok/s**"
         m=(r.get('metric_en') or r['metric']) if lang in ('en','ja') else r['metric']
         if lang in ('en','ja') and m and CJK_OR_CURLY_QUOTE.search(m): m=None
-        return clip(m,70) if m else T['see']
+        return ((mark_ja_en(clip(m,70)) if lang=='ja' else clip(m,70)) if m else T['see'])
     def ln(r):
         q=E(r['quant']); q=f" `{clip(q,28)}`" if q else ''
         eg=E(r['engine']); eg='' if (not eg or r['engine']=='Unspecified') else f" · {eg}"

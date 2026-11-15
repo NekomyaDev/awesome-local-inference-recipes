@@ -17,7 +17,7 @@
 ## エンジン
 
 - mlx-serve
-- 備考: mlx-serve 26.8.11
+- 備考: mlx-serve 26.8.11（英語）
 
 ## 起動コマンド
 
@@ -28,12 +28,12 @@ mlx-serve --model ddalcu/Qwen3.8-Flash-Next-MLX-Serve-mixed-4-8bit --serve
 ## 主なパラメータ
 
 - コンテキスト: 268,288
-- 同時実行: serial single request
+- 同時実行: serial single request（英語）
 - タグ: `4bit`, `8bit`, `MoE`, `long-context`
 
 ## 想定速度
 
-- 60.0 tok/s decode; 730.0 tok/s prefill (📣 主張)
+- 60.0 tok/s decode; 730.0 tok/s prefill（英語） (📣 主張)
 
 ## 注意点
 

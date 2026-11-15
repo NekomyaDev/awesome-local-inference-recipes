@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Refresh X engagement (data/recipes.json x_post likes/reposts/as_of) and follower counts (data/sources.json, docs/watchlist.md).
+"""Refresh X engagement (data/recipes.json x_post likes/reposts/as_of) and follower counts (data/sources.json, docs/internal/watchlist.md).
 
 Live: X_BEARER_TOKEN=... python3 scripts/update_x_metrics.py
 Offline: python3 scripts/update_x_metrics.py --posts posts.json --users users.json --as-of 2026-10-16

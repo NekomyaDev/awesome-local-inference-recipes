@@ -1,48 +1,48 @@
-name: Recipe submission / 提交配方
+name: Recipe submission
 description: Add a model × engine × hardware result with its source.
 title: "[recipe] <model> on <hardware>"
 labels: [recipe]
 body:
   - type: markdown
     attributes:
-      value: "Only fill what the source shows. Unknown → leave blank (null). 只填来源写明的内容，未知留空。"
+      value: "Only fill what the source shows. Unknown → leave blank (null)."
   - type: markdown
     attributes:
-      value: "Focus: add new models and new hardware in the first few weeks after launch. Add non-mainstream combinations too (multi-GPU, multi-machine, AMD and Apple mixes, budget builds). Merge a new result into an existing entry only when the tester, machine, model and engine are all the same: the newest reliable value becomes the main value, and older values and sources go in the notes. A routine repeat by a different tester (a model × engine × hardware combination that is already in the list) stays a separate entry. 收录重点：新模型和新硬件发布后几周内的配方，以及非主流组合（多卡、多机、AMD 与 Apple 混搭、预算受限的配置）。只有测试者、机器、模型和引擎都相同时才合并进已有条目：最新的可靠数值作主值，旧数值和来源写进备注。其他测试者的常规重复配方（库里已有的「模型 × 引擎 × 硬件」组合）单独成条。"
+      value: "Focus: add new models and new hardware in the first few weeks after launch. Add non-mainstream combinations too (multi-GPU, multi-machine, AMD and Apple mixes, budget builds). Merge a new result into an existing entry only when the tester, machine, model and engine are all the same: the newest reliable value becomes the main value, and older values and sources go in the notes. A routine repeat by a different tester (a model × engine × hardware combination that is already in the list) stays a separate entry."
   - type: input
     id: source_url
-    attributes: { label: Source URL / 来源链接, placeholder: "https://x.com/... or HF model card" }
+    attributes: { label: Source URL, placeholder: "https://x.com/... or HF model card" }
     validations: { required: true }
   - type: dropdown
     id: category
-    attributes: { label: Category / 类别, options: [text, image, video/audio] }
+    attributes: { label: Category, options: [text, image, video/audio] }
     validations: { required: true }
   - type: input
     id: model
-    attributes: { label: Model (+ quant) / 模型（量化）, placeholder: "Qwen3.8-27B UD-Q4_K_XL" }
+    attributes: { label: Model (+ quant), placeholder: "Qwen3.8-27B UD-Q4_K_XL" }
     validations: { required: true }
   - type: input
     id: engine
-    attributes: { label: Engine + version / 引擎及版本, placeholder: "llama.cpp b6800" }
+    attributes: { label: Engine + version, placeholder: "llama.cpp b6800" }
   - type: input
     id: hardware
-    attributes: { label: Hardware / 硬件, placeholder: "RTX 3090 24GB + 64GB DDR5" }
+    attributes: { label: Hardware, placeholder: "RTX 3090 24GB + 64GB DDR5" }
     validations: { required: true }
   - type: input
     id: metric
-    attributes: { label: Result / 结果, placeholder: "42 tok/s decode @ 8K ctx; or 1024² in 3.1 s" }
+    attributes: { label: Result, placeholder: "42 tok/s decode @ 8K ctx; or 1024² in 3.1 s" }
     validations: { required: true }
   - type: dropdown
     id: level
-    attributes: { label: Source level / 来源等级, description: "An engine or recipe author who tests their own work: measured only with raw benchmark data and reproduction steps, else claimed. / 引擎或配方作者自测：公开原始测试数据和复现步骤才记为实测，否则记为宣称。", options: ["measured (实测)", "official (官方)", "claimed (宣称)"] }
+    attributes: { label: Source level, description: "An engine or recipe author who tests their own work: measured only with raw benchmark data and reproduction steps, else claimed.", options: [measured, official, claimed] }
     validations: { required: true }
   - type: textarea
     id: command
-    attributes: { label: Launch command (optional) / 启动命令（可选）, render: shell }
+    attributes: { label: Launch command (optional), render: shell }
   - type: checkboxes
     id: rules
     attributes:
       label: Rules
       options:
-        - label: Numbers are copied from the source, not estimated. 数字来自原文，未估算。
+        - label: Numbers are copied from the source, not estimated.
           required: true
