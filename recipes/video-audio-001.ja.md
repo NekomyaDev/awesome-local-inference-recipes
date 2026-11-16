@@ -25,12 +25,12 @@
 ## 主なパラメータ
 
 - コンテキスト: 5 s
-- 同時実行: single request
+- 同時実行: single request（英語）
 - タグ: `4bit`, `few-step`
 
 ## 想定速度
 
-- 832×480×5s: 14.8 s; 1344×768×5s: 38.6 s (with audio, end-to-end) (🏛️ 公式)
+- 832×480×5s: 14.8 s; 1344×768×5s: 38.6 s (with audio, end-to-end)（英語） (🏛️ 公式)
 
 ## 注意点
 

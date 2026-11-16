@@ -55,16 +55,19 @@ def engine_url(e):
 def page(r, lang):
     Z = lang == 'zh'; T = (lambda s: s) if Z else en
     F = lambda k: r.get(k) if Z else ((r.get('en') or {}).get(k) or en(r.get(k)))
+    J = gen_readme.mark_ja_en if lang == 'ja' else (lambda s: s)  # JA pages show English data text: label it
+    fam = r['hardware_family'] if Z else (HWF_JA if lang=='ja' else HWF).get(r['hardware_family'], r['hardware_family'])
+    hw = F('hardware') or (r['hardware'] if Z else fam)  # never fall back to the raw (Chinese) hardware value on EN/JA pages
     lvl = LV.get(r['source_level'], ('','',''))[{'en':0,'zh':1,'ja':2}[lang]]
     na = '未公开。见来源' if Z else ('未公開。出典を参照' if lang=='ja' else 'Not published. See the source.')
     repo = hf_repo(r); eu = engine_url(r.get('engine'))
     if Z: metric = r.get('metric')
-    else: metric = r.get('metric_en') or (f"{r['tok_s']} tok/s (generation)" if r.get('tok_s') else None)
+    else: metric = J(r.get('metric_en') or (f"{r['tok_s']} tok/s (generation)" if r.get('tok_s') else None))
     cmd = r.get('launch_command') if Z else F('launch_command')
     if cmd and cmd.startswith('见'): cmd = None
     other = 'README'+SUF[lang]
     L = []
-    L.append(f"# {F('model') or r['model']} · {F('engine') or '—'} · {F('hardware') or r['hardware']}")
+    L.append(f"# {F('model') or r['model']} · {F('engine') or '—'} · {hw}")
     L.append('')
     L.append(f"{switch(r['id'], lang)} · [← {({'zh':'返回列表','ja':'一覧に戻る'}).get(lang,'All recipes')}](../{other})")
     L.append('')
@@ -72,7 +75,7 @@ def page(r, lang):
     L.append(f"> {h('来源等级','Source level')}: **{lvl}** · {h('日期','Date')}: {r.get('date') or '—'} · {h('数字来自来源。本仓库未复测。','Numbers come from the source. This repo did not measure them again.')}")
     L.append('')
     L.append(f"## {h('硬件','Hardware')}\n")
-    L.append(f"- {F('hardware') or r['hardware']} ({r['hardware_family'] if Z else (HWF_JA if lang=='ja' else HWF).get(r['hardware_family'], r['hardware_family'])})")
+    L.append(f"- {hw} ({fam})")
     cost = r.get('hardware_cost_text') if Z else (f"≈ ${r['hardware_cost_usd']:,}" if r.get('hardware_cost_usd') else None)
     L.append(f"- {h('参考价格','Reference cost')}: {cost or na}\n")
     L.append(f"## {h('模型','Model')}\n")
@@ -81,7 +84,7 @@ def page(r, lang):
     L.append(f"- {h('下载','Download')}: " + (' · '.join(f"[{u.split('://', 1)[1]}]({u})" for u in links) if links else na) + '\n')
     L.append(f"## {h('引擎','Engine')}\n")
     L.append(f"- {F('engine') or na}" + (f" — {h('安装见','install:')} {eu}" if eu else ''))
-    if F('engine_note'): L.append(f"- {h('备注','Note')}: {F('engine_note')}")
+    if F('engine_note'): L.append(f"- {h('备注','Note')}: {J(F('engine_note'))}")
     L.append('')
     L.append(f"## {h('启动命令','Launch command')}\n")
     if cmd and T(cmd):
@@ -90,8 +93,8 @@ def page(r, lang):
     else: L.append(f"{h('命令未公开。见来源。','Command not published. See the source.')}")
     L.append('')
     L.append(f"## {h('关键参数','Key parameters')}\n")
-    L.append(f"- {h('上下文','Context')}: {F('context') or '—'}")
-    L.append(f"- {h('并发','Concurrency')}: {F('concurrency') or '—'}")
+    L.append(f"- {h('上下文','Context')}: {J(F('context')) or '—'}")
+    L.append(f"- {h('并发','Concurrency')}: {J(F('concurrency')) or '—'}")
     if r.get('tags'): L.append(f"- {h('标签','Tags')}: " + ', '.join(f'`{t}`' for t in r['tags']))
     L.append('')
     L.append(f"## {h('预期速度','Expected speed')}\n")

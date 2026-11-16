@@ -24,13 +24,13 @@
 
 ## 主なパラメータ
 
-- コンテキスト: 262K (243K needle test 15/15)
-- 同時実行: native engine only 1 stream (separate vLLM concurrent lane also exists)
+- コンテキスト: 262K (243K needle test 15/15)（英語）
+- 同時実行: native engine only 1 stream (separate vLLM concurrent lane also exists)（英語）
 - タグ: `3bit`, `MoE`, `long-context`, `speculative`
 
 ## 想定速度
 
-- code 102.6; prose 71.7; JSON 66.2 tok/s (✅ 実測)
+- code 102.6; prose 71.7; JSON 66.2 tok/s（英語） (✅ 実測)
 
 ## 注意点
 

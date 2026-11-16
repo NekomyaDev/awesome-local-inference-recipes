@@ -17,7 +17,7 @@
 ## エンジン
 
 - SGLang — インストール： https://github.com/sgl-project/sglang
-- 備考: SGLang (sglang/serve.sh)
+- 備考: SGLang (sglang/serve.sh)（英語）
 
 ## 起動コマンド
 
@@ -27,13 +27,13 @@ MEM=0.78 CTXLEN=32768 bash sglang/serve.sh (on 5090 add INT8=on ATTN_BACKEND=tri
 
 ## 主なパラメータ
 
-- コンテキスト: 32K (16GB card 8K×16)
-- 同時実行: single stream 283; bs32 about 2,670 (peak 3,017.6 @32 streams)
+- コンテキスト: 32K (16GB card 8K×16)（英語）
+- 同時実行: single stream 283; bs32 about 2,670 (peak 3,017.6 @32 streams)（英語）
 - タグ: `2bit`, `8bit`, `MoE`
 
 ## 想定速度
 
-- 283 tok/s decode (📣 主張)
+- 283 tok/s decode（英語） (📣 主張)
 
 ## 注意点
 

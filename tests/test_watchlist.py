@@ -10,7 +10,7 @@ def table_rows(md):
 class Watchlist(unittest.TestCase):
     def setUp(self):
         self.src = json.loads((R/'data/sources.json').read_text(encoding='utf-8'))
-        self.md = (R/'docs/watchlist.md').read_text(encoding='utf-8')
+        self.md = (R/'docs/internal/watchlist.md').read_text(encoding='utf-8')
     def test_file_matches_generator(self):
         self.assertEqual(self.md, gen_watchlist.render(self.src))
     def test_every_source_has_one_row(self):

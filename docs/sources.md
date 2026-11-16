@@ -1,4 +1,4 @@
-# Data sources / 数据来源
+# Data sources
 
 Where recipes come from and how they are checked. Every recipe links to its original source; we store only a link, a short summary and the numbers.
 
@@ -13,10 +13,10 @@ Where recipes come from and how they are checked. Every recipe links to its orig
 | arXiv | Discovery (methods) | Speculative decoding, quantization, KV cache | Datacenter numbers are not added as recipes |
 
 ## Source levels
-- 🏛️ **Official** (官方) — published by the model/engine/hardware vendor.
-- ✅ **Measured** (实测) — the poster ran it themselves and shows a screenshot or log of the run. Some authors test their own engine or recipe. Such a result is Measured only when the author publishes the raw benchmark data and the reproduction steps.
-- 🔁 **Relayed** (转述) — second-hand report of someone else's result.
-- 📣 **Claimed** (宣称) — marketing, a prediction, or an unverified claim with no screenshot/log or no way to reproduce it (e.g. an unpublished private build). An author-run result without raw benchmark data and reproduction steps is Claimed. An llm-speed result (a signed run, a model page, an @llmspeed post or a blog median) is Claimed, because it has no raw data for each run. It is Measured only when a different original source publishes raw files for each run and the reproduction steps for the main value.
+- 🏛️ **Official** (stored as `官方`) — published by the model/engine/hardware vendor.
+- ✅ **Measured** (stored as `实测`) — the poster ran it themselves and shows a screenshot or log of the run. Some authors test their own engine or recipe. Such a result is Measured only when the author publishes the raw benchmark data and the reproduction steps.
+- 🔁 **Relayed** (stored as `转述`) — second-hand report of someone else's result.
+- 📣 **Claimed** (stored as `宣称`) — marketing, a prediction, or an unverified claim with no screenshot/log or no way to reproduce it (e.g. an unpublished private build). An author-run result without raw benchmark data and reproduction steps is Claimed. An llm-speed result (a signed run, a model page, an @llmspeed post or a blog median) is Claimed, because it has no raw data for each run. It is Measured only when a different original source publishes raw files for each run and the reproduction steps for the main value.
 
 ## Original sources only
 Use only an original source for a new recipe. The original source comes from the person or team that ran the test, and it gives the measured numbers. A relayed report (a repost, summary or article that quotes the result of a different person) is not a valid source. Find the original source of the relayed report and link that source. If you cannot find an original source with measured numbers, do not add the recipe.

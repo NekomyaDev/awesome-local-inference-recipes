@@ -20,7 +20,7 @@ CHIPS = [
  ('RTX 4070', r'4070', 12, 'gpu'), ('RTX 4060 Ti', r'4060 ?Ti', 16, 'gpu'), ('RTX 4060', r'4060', 8, 'gpu'),
  ('RTX 3090', r'3090', 24, 'gpu'), ('RTX 3080 Ti', r'3080 ?Ti', 12, 'gpu'), ('RTX 3080', r'3080', 10, 'gpu'), ('RTX 3070', r'3070', 8, 'gpu'), ('RTX 3060', r'3060', 12, 'gpu'),
  ('RTX 5050', r'5050', 8, 'gpu'), ('RTX 4050', r'4050', 6, 'gpu'), ('GTX 1070 Ti', r'1070 ?Ti', 8, 'gpu'), ('GTX 1070', r'GTX 1070', 8, 'gpu'),
- ('RTX 2080 Ti', r'2080 ?Ti', 11, 'gpu'), ('RTX A6000', r'A6000', 48, 'gpu'), ('RTX A5000', r'A5000', 24, 'gpu'), ('RTX A4000', r'A4000', 16, 'gpu'),
+ ('RTX 2080 Ti', r'2080 ?Ti', 11, 'gpu'), ('RTX A6000', r'A6000', 48, 'gpu'), ('RTX A5000', r'A5000', 24, 'gpu'), ('RTX A4000', r'A4000', 16, 'gpu'), ('Titan RTX', r'Titan RTX', 24, 'gpu'),
  ('Tesla P40', r'P40\b', 24, 'gpu'), ('Tesla P100', r'P100', 16, 'gpu'), ('V100', r'V100', 32, 'gpu'), ('A100', r'A100', 80, 'gpu'),
  ('CMP 170HX', r'CMP ?170', 8, 'gpu'), ('MI50', r'MI50', 32, 'gpu'), ('MI60', r'MI60', 32, 'gpu'),
  ('RX 6800 XT', r'6800 ?XT', 16, 'gpu'), ('RX 6800', r'RX 6800', 16, 'gpu'), ('RX Vega 64', r'Vega 64', 8, 'gpu'),

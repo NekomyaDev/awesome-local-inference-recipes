@@ -17,7 +17,7 @@
 ## エンジン
 
 - MTPLX
-- 備考: MTPLX v0.1.0-preview
+- 備考: MTPLX v0.1.0-preview（英語）
 
 ## 起動コマンド
 
@@ -28,12 +28,12 @@ brew install youssofal/mtplx/mtplx && mtplx start
 ## 主なパラメータ
 
 - コンテキスト: —
-- 同時実行: single request
+- 同時実行: single request（英語）
 - タグ: `3bit`, `4bit`, `dense`, `speculative`, `MTP`
 
 ## 想定速度
 
-- 63.056 tok/s decode (📣 主張)
+- 63.056 tok/s decode（英語） (📣 主張)
 
 ## 注意点
 

@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parent.parent
 FAMILIES = [
     (r'Qwen-Image', 'Qwen-Image'), (r'Z-Image', 'Z-Image'), (r'Qwen', 'Qwen'),
     (r'DeepSeek', 'DeepSeek'), (r'GLM', 'GLM'), (r'Bonsai', 'Bonsai'),
-    (r'MiniMax H3|FastH3', 'MiniMax H3'), (r'MiniMax', 'MiniMax'), (r'LTX', 'LTX'), (r'Wan\s?2', 'Wan'),
+    (r'MiniMax[\s-]H3|FastH3', 'MiniMax H3'), (r'MiniMax', 'MiniMax'), (r'LTX', 'LTX'), (r'Wan\s?2', 'Wan'),
     (r'ACE-Step', 'ACE-Step'), (r'Edge0', 'Edge0'), (r'Llama', 'Llama'), (r'Gemma', 'Gemma'),
     (r'Mistral', 'Mistral'), (r'Kimi', 'Kimi'), (r'gpt-oss', 'gpt-oss'), (r'Flux', 'Flux'),
     (r'Hunyuan', 'Hunyuan'),

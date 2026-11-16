@@ -1,4 +1,4 @@
-# Contributing / 贡献指南
+# Contributing
 
 Please read the [Code of Conduct](CODE_OF_CONDUCT.md) first. · [中文](#中文) · [日本語](#日本語)
 
@@ -28,6 +28,8 @@ A setup that fails one condition is out of scope, even when it costs less than $
 8. Inclusion focus (from 2026-10-27). Add these recipes first. First: a recipe for a new model or new hardware, in the first few weeks after launch. Second: a recipe for a non-mainstream combination. Examples are multi-GPU, multi-machine, AMD and Apple mixed, and budget builds. Merge a new result into an existing entry only when the tester, the machine, the model and the engine are all the same. The merged entry keeps the newest reliable value as its main value, with that date and source link, and lists older values and sources briefly in the notes. A routine repeat by a different tester (a new result for a model × engine × hardware combination that is already in the list) stays a separate entry. Do not merge it into another tester's entry. The inclusion focus above decides whether to add it. The scope rules and rule 7 apply to every recipe.
 9. Agents: do not edit `data/hw_index.json` or `.claude/skills/` by hand. `python3 scripts/gen_all.py` writes them. Edit the skill only in `.agents/skills/`. A new download host must go into `data/trusted_domains.json` before the index can show it as a link. See [AGENTS.md](AGENTS.md).
 
+Maintainers: the Hugging Face candidate import process is in [docs/sources.md](docs/sources.md).
+
 ## 中文
 ### 收录范围
 
@@ -53,9 +55,9 @@ A setup that fails one condition is out of scope, even when it costs less than $
 6. 来源等级：官方 / 实测 / 宣称，详见 [docs/sources.md](docs/sources.md)。「转述」只用于第 7 条之前收录的条目。引擎或配方作者测试自己的引擎或配方时，只有公开原始测试数据和复现步骤才记为实测。缺少其中一项，记为宣称。llm-speed 的结果（签名跑分、模型页、@llmspeed 帖子或博客中位数）记为宣称，因为没有每次运行的原始数据。只有另一个原始来源为主值公开每次运行的原始文件和复现步骤时，才记为实测。
 7. 只用原始来源。原始来源是做测试的人或团队自己发的帖子、页面、发布说明或 issue，并且要给出实测数字。不要用转述（转发、汇总或引用别人结果的文章）作来源。看到转述时，先找到它的原始来源，再链接原始来源。找不到带实测数字的原始来源时，不收录。
 8. 收录重点（2026-10-27 起）。优先收录：新模型或新硬件发布后几周内的配方；非主流组合，例如多卡、多机、AMD 与 Apple 混搭、预算受限的配置。只有测试者、机器、模型和引擎都相同时，才把新结果合并进已有条目：保留最新的可靠数值作主值，写明它的日期和来源链接，旧数值和来源简要写进备注。其他测试者的常规重复配方（库里已有的「模型 × 引擎 × 硬件」组合的新结果）单独成条，不并入别人的条目；是否收录按上面的收录重点决定。收录范围和第 7 条适用于所有配方。
-9. Agent：不要手改 `data/hw_index.json` 和 `.claude/skills/`，它们由 `python3 scripts/gen_all.py` 生成。技能只在 `.agents/skills/` 里修改。新的下载域名要先加入 `data/trusted_domains.json`，索引才会把它显示为链接。详见 [AGENTS.md](AGENTS.md)。
+9. 智能体：不要手改 `data/hw_index.json` 和 `.claude/skills/`，它们由 `python3 scripts/gen_all.py` 生成。技能只在 `.agents/skills/` 里修改。新的下载域名要先加入 `data/trusted_domains.json`，索引才会把它显示为链接。详见 [AGENTS.md](AGENTS.md)。
 
-Maintainers: Hugging Face candidate ingestion is described in [docs/sources.md](docs/sources.md).
+维护者：Hugging Face 候选条目的导入流程见 [docs/sources.md](docs/sources.md)。
 
 ## 日本語
 ### 収録範囲
@@ -83,3 +85,5 @@ Maintainers: Hugging Face candidate ingestion is described in [docs/sources.md](
 7. 元の出典だけを使ってください。元の出典とは、テストを実行した人またはチームが自分で出した投稿、ページ、リリースノート、issue で、計測した数値を示すものです。伝聞（他の人の結果を引用した再投稿、まとめ、記事）を出典にしないでください。伝聞を見つけたら、その元の出典を探し、元の出典にリンクしてください。計測した数値のある元の出典が見つからないときは、収録しません。
 8. 収録の重点（2026-10-27 から）。次のレシピを優先して追加してください：新しいモデルまたは新しいハードウェアの発売後数週間以内のレシピ、および主流ではない組み合わせ（例：マルチ GPU、マルチマシン、AMD と Apple の混在、予算を抑えた構成）。テスター、マシン、モデル、エンジンがすべて同じ場合にだけ、新しい結果を既存のエントリに統合してください。統合したエントリは最新の信頼できる値を主な値とし、その日付と出典リンクを書き、古い値と出典は備考に簡潔に残します。別のテスターによる定型の重複レシピ（リストにすでにある「モデル × エンジン × ハードウェア」の組み合わせの新しい結果）は別のエントリとし、他のテスターのエントリには統合しません。追加するかどうかは上記の収録の重点で判断します。収録範囲と第 7 項は、すべてのレシピに適用します。
 9. エージェント：`data/hw_index.json` と `.claude/skills/` を手で編集しないでください。`python3 scripts/gen_all.py` が書き出します。スキルは `.agents/skills/` だけで編集してください。新しいダウンロード用ホストは、先に `data/trusted_domains.json` に追加しないとリンクとして表示されません。詳しくは [AGENTS.md](AGENTS.md) を参照。
+
+メンテナー向け：Hugging Face の候補エントリーの取り込み手順は [docs/sources.md](docs/sources.md) にあります。
