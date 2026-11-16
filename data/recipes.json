@@ -25448,15 +25448,15 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "未核价",
     "hardware_cost_usd": null,
-    "context": "40960",
+    "context": null,
     "launch_command": null,
     "source_url": "https://x.com/murasametech/status/2117257125928075762",
     "source_level": "实测",
-    "date": "2026-11-16",
+    "date": "2026-11-02",
     "measured_by": "murasametech",
-    "metric": "Strata v0.2.6 / v0.2.8，同一长文读 3 次：生成 54–62（第 1 次冷缓存 41–55）；约 4K 预填 v0.2.8 为 221.7 / 289.6 / 333.5。作者提示：第 1 次测的是文件缓存，不是版本差。2026-11-08同作者双卡、Strata0.2.11、IQ3_S、40960上限：STRATA_PREFILL_LAYER_MAJOR=1令约14K预填466.6变1059.8、33K453.7变717.5，每项3次中位（x.com/murasametech/status/2119247324656623651）。只测预填，无解码加速证据，54主值不变。2026-11-10同作者同双卡、同 IQ3_S：v0.2.11 与 v0.2.12 同日对比，解码 53.9–59.9 无差。预填仅上限 128K、约 3.3 万 token 一项 411.7→496.2（约 +20%）；其余预填项范围重叠。54 主值不变。2026-11-16同作者同双卡同模型同引擎，Strata v0.2.12，上下文 40,960。约 14,000 token 输入后生成，3 次中位：读入 434.0、生成 59.5 作新主值；旧主值 54 留备注。作者声明与同帖 llama.cpp v1.0.0（见 x-320）并非同条件。https://x.com/murasametech/status/2122170305536045264",
-    "metric_en": "Strata v0.2.6 / v0.2.8, the same long text read 3 times: generation 54–62 (first, cold-cache run 41–55); prefill at about 4K on v0.2.8 221.7 / 289.6 / 333.5. The tester warns that the first run measures the file cache, not the version. On 2026-11-08 the same author's two-card setup, Strata 0.2.11, IQ3_S and 40960 limit uses STRATA_PREFILL_LAYER_MAJOR=1: 14K prefill 466.6 to 1059.8, 33K 453.7 to 717.5, medians of 3 (x.com/murasametech/status/2119247324656623651). Prefill only; no decode-speedup claim. Keep 54. On 2026-11-10 the same author, same two-card IQ3_S setup, compared v0.2.11 and v0.2.12 on the same day: decode 53.9–59.9 with no gap. Prefill only moved on the 128K-limit ~33K-token case, 411.7 to 496.2 (about +20%); other prefill ranges overlap. Keep headline 54. On 2026-11-16 the same tester, two-card machine, model and engine, Strata v0.2.12, context 40,960. After about 14,000 input tokens, median of 3: prompt 434.0, generation 59.5 as the new headline; the old headline 54 stays in the notes. The author says this is not the same conditions as the llama.cpp v1.0.0 line in the same post (x-320). https://x.com/murasametech/status/2122170305536045264",
-    "tok_s": 59.5,
+    "metric": "Strata v0.2.6 / v0.2.8，同一长文读 3 次：生成 54–62（第 1 次冷缓存 41–55）；约 4K 预填 v0.2.8 为 221.7 / 289.6 / 333.5。作者提示：第 1 次测的是文件缓存，不是版本差。2026-11-08同作者双卡、Strata0.2.11、IQ3_S、40960上限：STRATA_PREFILL_LAYER_MAJOR=1令约14K预填466.6变1059.8、33K453.7变717.5，每项3次中位（x.com/murasametech/status/2119247324656623651）。只测预填，无解码加速证据，54主值不变。2026-11-10同作者同双卡、同 IQ3_S：v0.2.11 与 v0.2.12 同日对比，解码 53.9–59.9 无差。预填仅上限 128K、约 3.3 万 token 一项 411.7→496.2（约 +20%）；其余预填项范围重叠。54 主值不变。2026-11-16同作者同双卡同模型同引擎，Strata v0.2.12，上下文 40,960。约 14,000 token 输入后生成，3 次中位：读入 434.0、生成 59.5。该帖只有方法与中位数，无逐次原始文件，记为宣称，不改主值。作者声明与同帖 llama.cpp v1.0.0（见 x-320）并非同条件。https://x.com/murasametech/status/2122170305536045264",
+    "metric_en": "Strata v0.2.6 / v0.2.8, the same long text read 3 times: generation 54–62 (first, cold-cache run 41–55); prefill at about 4K on v0.2.8 221.7 / 289.6 / 333.5. The tester warns that the first run measures the file cache, not the version. On 2026-11-08 the same author's two-card setup, Strata 0.2.11, IQ3_S and 40960 limit uses STRATA_PREFILL_LAYER_MAJOR=1: 14K prefill 466.6 to 1059.8, 33K 453.7 to 717.5, medians of 3 (x.com/murasametech/status/2119247324656623651). Prefill only; no decode-speedup claim. Keep 54. On 2026-11-10 the same author, same two-card IQ3_S setup, compared v0.2.11 and v0.2.12 on the same day: decode 53.9–59.9 with no gap. Prefill only moved on the 128K-limit ~33K-token case, 411.7 to 496.2 (about +20%); other prefill ranges overlap. Keep headline 54. On 2026-11-16 the same tester, two-card machine, model and engine, Strata v0.2.12, context 40,960. After about 14,000 input tokens, median of 3: prompt 434.0, generation 59.5. That post has method and median only, no per-run raw files, so it is a claim and does not change the headline. The author says this is not the same conditions as the llama.cpp v1.0.0 line in the same post (x-320). https://x.com/murasametech/status/2122170305536045264",
+    "tok_s": 54,
     "concurrency": "单流",
     "source_note": "X 帖，测试者本人",
     "model_family": "Qwen",
@@ -25471,7 +25471,7 @@
       "hardware_cost_text": "Not priced",
       "concurrency": "single stream",
       "source_note": "X post by the tester",
-      "context": "40960"
+      "context": null
     },
     "source_id": "src-446f8f0b5a"
   },
@@ -30234,12 +30234,12 @@
     "hardware_cost_usd": null,
     "context": "262144",
     "launch_command": null,
-    "source_url": "https://github.com/Niko1221/Strata/issues/5615",
+    "source_url": "https://github.com/Niko1221/Strata/issues/6056",
     "source_level": "实测",
     "date": "2026-11-16",
     "measured_by": "faf-net",
-    "metric": "Strata 0.2.12，engine 0.1.58 hip-rx7900（SHA 校验）。standard-v1 package short 解码 63.6；预填 4K/16K 788.4/1201.7；strata_bench chat/agent 68.1/73.2。int8 KV，kv-resident 32768，MTP spec4。21/21，sanity 12/12。原始数据在 faf-net/ugreen-idx6011-egpu-llm。调优 DFlash2 固定测 92.6（代码偏重且 114 题仅 51 题与 MTP 输出一致）不作主值。2026-11-09同作者同机复测 Strata 0.2.13 Linux Docker 镜像（engine 0.1.59 hip-rx7900，SHA 校验）：默认 short 解码 61.9；STRATA_HIPBLASLT_TABLE=on 为 67.4（预填 16K 1,192.5，与 0.2.12 持平）。无 gfx1100 表时 16K 预填慢约 35%（769.2 vs 1,185.8）。旧 63.6 在 ±5% 内，不改主值。原始数据在 faf-net/ugreen-idx6011-egpu-llm。2026-11-16同作者同机同模型同量化，Strata 0.2.14 / engine 0.1.60 hip-rx7900（SHA 校验）。standard-v1 short 解码 67.8 作新主值；旧主值 0.2.12 short 63.6 留备注。同场成对解码 59.3 vs 0.2.12 的 60.5（噪声内）。16K/32K 预填充 1,411 / 1,390（跨场对照 0.2.13 为 1,203 / 1,217）。chat / 智能体 62.9 / 70.4；sanity 11/12（T2 tool-call 未出结构）。https://github.com/Niko1221/Strata/issues/6056",
-    "metric_en": "Strata 0.2.12, engine 0.1.58 hip-rx7900 (SHA checked). standard-v1 package short decode 63.6; prefill 4K/16K 788.4/1201.7; strata_bench chat/agent 68.1/73.2. int8 KV, kv-resident 32768, MTP spec 4. 21/21, sanity 12/12. Raw data in faf-net/ugreen-idx6011-egpu-llm. Tuned DFlash2 fixed 92.6 (code-skewed; 51/114 tasks match MTP output) is not the headline. On 2026-11-09 the same author/host retested the Strata 0.2.13 Linux Docker image (engine 0.1.59 hip-rx7900, SHA checked): default short decode 61.9; with STRATA_HIPBLASLT_TABLE=on, 67.4 (16K prefill 1,192.5, level with 0.2.12). Without the gfx1100 table, 16K prefill is about 35% slower (769.2 vs 1,185.8). The old 63.6 is within 5%; keep the headline. Raw data in faf-net/ugreen-idx6011-egpu-llm. On 2026-11-16 the same tester, machine, model and quant, Strata 0.2.14 / engine 0.1.60 hip-rx7900 (SHA checked). The new headline is standard-v1 short decode 67.8; the old 0.2.12 short 63.6 stays in the notes. Same-session paired decode 59.3 vs 0.2.12's 60.5 (inside the noise). 16K/32K prefill 1,411 / 1,390 (cross-session 0.2.13 was 1,203 / 1,217). Chat / agent 62.9 / 70.4; sanity 11/12 (T2 tool-call returned no structured call). https://github.com/Niko1221/Strata/issues/6056",
+    "metric": "Strata 0.2.12，engine 0.1.58 hip-rx7900（SHA 校验）。standard-v1 package short 解码 63.6；预填 4K/16K 788.4/1201.7；strata_bench chat/agent 68.1/73.2。int8 KV，kv-resident 32768，MTP spec4。21/21，sanity 12/12。原始数据在 faf-net/ugreen-idx6011-egpu-llm。调优 DFlash2 固定测 92.6（代码偏重且 114 题仅 51 题与 MTP 输出一致）不作主值。2026-11-09同作者同机复测 Strata 0.2.13 Linux Docker 镜像（engine 0.1.59 hip-rx7900，SHA 校验）：默认 short 解码 61.9；STRATA_HIPBLASLT_TABLE=on 为 67.4（预填 16K 1,192.5，与 0.2.12 持平）。无 gfx1100 表时 16K 预填慢约 35%（769.2 vs 1,185.8）。旧 63.6 在 ±5% 内，不改主值。原始数据在 faf-net/ugreen-idx6011-egpu-llm。2026-11-16同作者同机同模型同量化，Strata 0.2.14 / engine 0.1.60 hip-rx7900（SHA 校验）。standard-v1 short 解码 67.8 作新主值；旧主值 0.2.12 short 63.6 留备注。同场成对解码 59.3 vs 0.2.12 的 60.5（噪声内）。16K/32K 预填充 1,411 / 1,390（跨场对照 0.2.13 为 1,203 / 1,217）。chat / 智能体 62.9 / 70.4；sanity 11/12（T2 tool-call 未出结构）。https://github.com/Niko1221/Strata/issues/6056 旧实测来源见 https://github.com/Niko1221/Strata/issues/5615",
+    "metric_en": "Strata 0.2.12, engine 0.1.58 hip-rx7900 (SHA checked). standard-v1 package short decode 63.6; prefill 4K/16K 788.4/1201.7; strata_bench chat/agent 68.1/73.2. int8 KV, kv-resident 32768, MTP spec 4. 21/21, sanity 12/12. Raw data in faf-net/ugreen-idx6011-egpu-llm. Tuned DFlash2 fixed 92.6 (code-skewed; 51/114 tasks match MTP output) is not the headline. On 2026-11-09 the same author/host retested the Strata 0.2.13 Linux Docker image (engine 0.1.59 hip-rx7900, SHA checked): default short decode 61.9; with STRATA_HIPBLASLT_TABLE=on, 67.4 (16K prefill 1,192.5, level with 0.2.12). Without the gfx1100 table, 16K prefill is about 35% slower (769.2 vs 1,185.8). The old 63.6 is within 5%; keep the headline. Raw data in faf-net/ugreen-idx6011-egpu-llm. On 2026-11-16 the same tester, machine, model and quant, Strata 0.2.14 / engine 0.1.60 hip-rx7900 (SHA checked). The new headline is standard-v1 short decode 67.8; the old 0.2.12 short 63.6 stays in the notes. Same-session paired decode 59.3 vs 0.2.12's 60.5 (inside the noise). 16K/32K prefill 1,411 / 1,390 (cross-session 0.2.13 was 1,203 / 1,217). Chat / agent 62.9 / 70.4; sanity 11/12 (T2 tool-call returned no structured call). https://github.com/Niko1221/Strata/issues/6056 The earlier measured source remains https://github.com/Niko1221/Strata/issues/5615",
     "tok_s": 67.8,
     "concurrency": "单流",
     "source_note": "第一手来源；独立复核，未独立复现",
@@ -30259,7 +30259,7 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-745c6df173"
+    "source_id": "src-e1eb95022f"
   },
   {
     "id": "comm-302",
@@ -35922,7 +35922,7 @@
     "id": "comm-417",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
-    "quant": "Gyro-S TQ1_0 自定义包（量化仓库 revision 未记）",
+    "quant": "Gyro-S TQ1_0 自定义包（量化仓库 revision 未记；--spec 4 --spec-min-p 0.5，MTP）",
     "engine": "Strata",
     "hardware": "2× RTX 3090 + Ryzen 9 5900X + 31.9GiB RAM（Windows，层切分；主卡 CPU 直连 gen4 x16，副卡芯片组 gen3 x4）",
     "hardware_family": "NVIDIA 消费级",
@@ -35934,8 +35934,8 @@
     "source_level": "实测",
     "date": "2026-11-15",
     "measured_by": "jaewonpaik",
-    "metric": "Strata 0.1.57 源码构建（Windows 10.0.22631，CUDA 13.5，驱动 621.24），标准协议 strata-qwen38-thinking-v1-draft.1，单请求。短解码 106.1（106.1–114.5）作主值；4K / 16K 解码 110.4 / 92.2；4K / 16K 预填充 1,787.2 / 2,577。21/21 请求，sanity 12/12。PR 附 results.json 与 outputs.jsonl，记为实测。",
-    "metric_en": "Strata 0.1.57 source build (Windows 10.0.22631, CUDA 13.5, driver 621.24), standard protocol strata-qwen38-thinking-v1-draft.1, one request at a time. Headline is short decode 106.1 (106.1-114.5); 4K / 16K decode 110.4 / 92.2; 4K / 16K prefill 1,787.2 / 2,577. 21/21 requests, sanity 12/12. The PR attaches results.json and outputs.jsonl, so this is measured.",
+    "metric": "Strata 0.1.57 源码构建（Windows 10.0.22631，CUDA 13.5，驱动 621.24），标准协议 strata-qwen38-thinking-v1-draft.1，Limits 含 --spec 4 --spec-min-p 0.5 与 MTP，单请求。短解码 106.1（106.1–114.5）作主值；4K / 16K 解码 110.4 / 92.2；4K / 16K 预填充 1,787.2 / 2,577。21/21 请求，sanity 12/12。PR 附 results.json 与 outputs.jsonl，记为实测。",
+    "metric_en": "Strata 0.1.57 source build (Windows 10.0.22631, CUDA 13.5, driver 621.24), standard protocol strata-qwen38-thinking-v1-draft.1, limits include --spec 4 --spec-min-p 0.5 and MTP, one request at a time. Headline is short decode 106.1 (106.1-114.5); 4K / 16K decode 110.4 / 92.2; 4K / 16K prefill 1,787.2 / 2,577. 21/21 requests, sanity 12/12. The PR attaches results.json and outputs.jsonl, so this is measured.",
     "tok_s": 106.1,
     "concurrency": "单流",
     "source_note": "第一手来源；独立复核，未独立复现",
@@ -35944,7 +35944,7 @@
       "hardware_cost_text": "Not priced",
       "concurrency": "single stream",
       "source_note": "First-hand source; independently checked, not rerun",
-      "quant": "Gyro-S TQ1_0 custom pack (quantization-repo revision not recorded)",
+      "quant": "Gyro-S TQ1_0 custom pack (quant-repo revision not recorded; --spec 4 --spec-min-p 0.5, MTP)",
       "context": "131072",
       "engine_note": "Strata 0.1.57 source build, Windows 10.0.22631, CUDA 13.5, driver 621.24; protocol strata-qwen38-thinking-v1-draft.1"
     },
@@ -35954,6 +35954,7 @@
       "MoE",
       "long-context",
       "speculative",
+      "MTP",
       "multi-GPU"
     ],
     "source_id": "src-38e8ad371a"
@@ -36000,7 +36001,7 @@
     "id": "comm-419",
     "category": "text",
     "model": "Maya-S-v2",
-    "quant": "Maya-S-v2-IQ2_XXS（--glm-pack，dense.bin + 专家块）",
+    "quant": "Maya-S-v2-IQ2_XXS（--glm-pack，dense.bin + 专家块；草稿接受率 80–87%）",
     "engine": "Project Maya",
     "hardware": "3× Tesla V100-PCIE-32GB + 2× Xeon E5-2696 v3 + 128GB DDR3L",
     "hardware_family": "二手数据中心卡",
@@ -36012,8 +36013,8 @@
     "source_level": "宣称",
     "date": "2026-11-15",
     "measured_by": "noahark",
-    "metric": "Project Maya v1.1.63（Windows），包名 Maya-S-v2-IQ2_XXS，--max-context 262144，运行时全部在显存（glm stat vram hit 99.5%，disk 0.00 reads/tok）。不把模型推断为 GLM-5.3-Flash：标题虽写该名，入库用作者包名 Maya-S-v2。限定：日志走 glm 命令（`--glm-pack`、`glm prefill` / `glm stat`），且 comm-340 用同名包跑的是 GLM-5.3-Flash。单路短解码（约 44 token 提示、320 出）59.5–63.3，中位 60.9 作主值；长预填充 12.1–12.2K 中位 1,049；长解码 46.6。并行 4 合计 98.0（单路 24.5）不作单流主值。作者称逐次 JSON 随附属脚本提供，但本 PR 未附原始文件，记为宣称。",
-    "metric_en": "Project Maya v1.1.63 (Windows), package Maya-S-v2-IQ2_XXS, --max-context 262144, fully resident at run time (glm stat vram hit 99.5%, disk 0.00 reads/tok). The model is not inferred as GLM-5.3-Flash: although that name appears in the title, the row uses the author-stated package name Maya-S-v2. Caveat: the logs use the glm commands (`--glm-pack`, `glm prefill` / `glm stat`), and comm-340 ran the same package as GLM-5.3-Flash. Solo short decode (about 44-token prompt, 320 out) 59.5-63.3, median 60.9 as the headline; long prefill at 12.1-12.2K median 1,049; long decode 46.6. Parallel 4 totals 98.0 (24.5 per stream), not a single-stream headline. The author says per-run JSON ships with companion scripts, but this PR does not attach the raw files, so this is a claim.",
+    "metric": "Project Maya v1.1.63（Windows），包名 Maya-S-v2-IQ2_XXS，--max-context 262144，运行时全部在显存（glm stat vram hit 99.5%，disk 0.00 reads/tok）。同表草稿接受率 80–87%，主值含投机。不把模型推断为 GLM-5.3-Flash：标题虽写该名，入库用作者包名 Maya-S-v2。限定：日志走 glm 命令（`--glm-pack`、`glm prefill` / `glm stat`），且 comm-340 用同名包跑的是 GLM-5.3-Flash。单路短解码（约 44 token 提示、320 出）59.5–63.3，中位 60.9 作主值；长预填充 12.1–12.2K 中位 1,049；长解码 46.6。并行 4 合计 98.0（单路 24.5）不作单流主值。作者称逐次 JSON 随附属脚本提供，但本 PR 未附原始文件，记为宣称。",
+    "metric_en": "Project Maya v1.1.63 (Windows), package Maya-S-v2-IQ2_XXS, --max-context 262144, fully resident at run time (glm stat vram hit 99.5%, disk 0.00 reads/tok). The same table lists draft acceptance 80–87%, so the headline includes speculation. The model is not inferred as GLM-5.3-Flash: although that name appears in the title, the row uses the author-stated package name Maya-S-v2. Caveat: the logs use the glm commands (`--glm-pack`, `glm prefill` / `glm stat`), and comm-340 ran the same package as GLM-5.3-Flash. Solo short decode (about 44-token prompt, 320 out) 59.5-63.3, median 60.9 as the headline; long prefill at 12.1-12.2K median 1,049; long decode 46.6. Parallel 4 totals 98.0 (24.5 per stream), not a single-stream headline. The author says per-run JSON ships with companion scripts, but this PR does not attach the raw files, so this is a claim.",
     "tok_s": 60.9,
     "concurrency": "单流",
     "source_note": "第一手来源；独立复核，未独立复现",
@@ -36022,7 +36023,7 @@
       "hardware_cost_text": "Not priced",
       "concurrency": "single stream",
       "source_note": "First-hand source; independently checked, not rerun",
-      "quant": "Maya-S-v2-IQ2_XXS (--glm-pack, dense.bin + expert blobs)",
+      "quant": "Maya-S-v2-IQ2_XXS (--glm-pack, dense.bin + expert blocks; draft acceptance 80–87%)",
       "context": "262144",
       "engine_note": "Project Maya v1.1.63, Windows; --glm-pack, --max-context 262144, --prefill auto, --parallel N"
     },
@@ -36031,6 +36032,7 @@
       "2bit",
       "MoE",
       "long-context",
+      "speculative",
       "multi-GPU"
     ],
     "source_id": "src-b638ccc08f"
@@ -36051,8 +36053,8 @@
     "source_level": "实测",
     "date": "2026-11-15",
     "measured_by": "Spectre056",
-    "metric": "tensorfold-native 1.2.8（官方 macOS arm64 包，未改），Metal 后端，上下文 262144，无草稿（drafts: copies only）。community-v2 单流 code、温度 1 为 143.7 作主值；chat 温度 1 为 164.8，code 温度 0 为 169.2，只作备注。2 / 4 流合计 85.1 / 88.8（采样）不作单流主值。issue 附逐次原始数据，记为实测。",
-    "metric_en": "tensorfold-native 1.2.8 (official macOS arm64 archive, unmodified), Metal backend, context 262144, no drafter (drafts: copies only). Headline is community-v2 single-stream code at temperature 1: 143.7. Chat at temperature 1 is 164.8, code at temperature 0 is 169.2, notes only. 2- and 4-stream totals 85.1 / 88.8 (sampled) are not a single-stream headline. The issue attaches per-run raw data, so this is measured.",
+    "metric": "tensorfold-native 1.2.8（官方 macOS arm64 包，未改），Metal 后端，上下文 262144，普通自回归解码（日志 copies only，无投机）。community-v2 单流 code、温度 1 为 143.7 作主值；chat 温度 1 为 164.8，code 温度 0 为 169.2，只作备注。2 / 4 流合计 85.1 / 88.8（采样）不作单流主值。issue 附逐次原始数据，记为实测。",
+    "metric_en": "tensorfold-native 1.2.8 (official macOS arm64 archive, unmodified), Metal backend, context 262144, plain autoregressive decode (log: copies only). Headline is community-v2 single-stream code at temperature 1: 143.7. Chat at temperature 1 is 164.8, code at temperature 0 is 169.2, notes only. 2- and 4-stream totals 85.1 / 88.8 (sampled) are not a single-stream headline. The issue attaches per-run raw data, so this is measured.",
     "tok_s": 143.7,
     "concurrency": "单流",
     "source_note": "第一手来源；独立复核，未独立复现",
@@ -36069,8 +36071,7 @@
     "tags": [
       "4bit",
       "MoE",
-      "long-context",
-      "speculative"
+      "long-context"
     ],
     "source_id": "src-7a6110af99"
   },
@@ -36090,8 +36091,8 @@
     "source_level": "宣称",
     "date": "2026-11-15",
     "measured_by": "theguy_sr",
-    "metric": "llama.cpp 0.9.0-dev build 12315（dd6b945be），llama-server，-np 1，YaRN 2× 配 524,288。5 题（Python / C++ / 数学 / JSON / 长提示架构）×3 轮，温度 0，seed 42，输出 256 token，cache_prompt false。带 MTP Q8_0 解码均值 137.12±9.82 作主值（warm 第 2–3 轮 138.22）；无 MTP 107.24±1.47 写入备注。草稿接受率约 75.6%。有完整命令与逐题表，无逐次原始文件，记为宣称。PRO 6000 + TR PRO 平台未核价，估计低于 $30k。",
-    "metric_en": "llama.cpp 0.9.0-dev build 12315 (dd6b945be), llama-server, -np 1, YaRN 2× for 524,288. Five prompts (Python / C++ / math / JSON / long-prompt architecture) × 3 passes, temperature 0, seed 42, 256 output tokens, cache_prompt false. Headline is decode with MTP Q8_0, mean 137.12±9.82 (warm passes 2-3: 138.22); no MTP 107.24±1.47 is a note only. Draft acceptance about 75.6%. Commands and per-prompt tables are given, but no per-run raw files, so this is a claim. The PRO 6000 + TR PRO platform is not priced; estimated under $30k.",
+    "metric": "llama.cpp 0.9.0-dev build 12315（dd6b945be），llama-server，-np 1，YaRN 2× 配 524,288。5 题（Python / C++ / 数学 / JSON / 长提示架构）×3 轮，温度 0，seed 42，输出 256 token，cache_prompt false。带 MTP Q8_0 解码均值 137.12±9.82 作主值（warm 第 2–3 轮 138.22）；无 MTP 107.24±1.47 写入备注。草稿接受率约 75.6%。该主值 mmap 行在 512k 下约 26.8GiB MoE 权重卸载到 CPU（CPU_Mapped）。有完整命令与逐题表，无逐次原始文件，记为宣称。PRO 6000 + TR PRO 平台未核价，估计低于 $30k。",
+    "metric_en": "llama.cpp 0.9.0-dev build 12315 (dd6b945be), llama-server, -np 1, YaRN 2× for 524,288. Five prompts (Python / C++ / math / JSON / long-prompt architecture) × 3 passes, temperature 0, seed 42, 256 output tokens, cache_prompt false. Headline is decode with MTP Q8_0, mean 137.12±9.82 (warm passes 2-3: 138.22); no MTP 107.24±1.47 is a note only. Draft acceptance about 75.6%. The headline mmap run spills about 26.8GiB of MoE weights to CPU (CPU_Mapped) at 512k. Commands and per-prompt tables are given, but no per-run raw files, so this is a claim. The PRO 6000 + TR PRO platform is not priced; estimated under $30k.",
     "tok_s": 137.12,
     "concurrency": "单流",
     "source_note": "第一手来源；独立复核，未独立复现",
@@ -36111,7 +36112,8 @@
       "MoE",
       "long-context",
       "speculative",
-      "MTP"
+      "MTP",
+      "offload"
     ],
     "source_id": "src-7e8fd412d8"
   },
@@ -36131,8 +36133,8 @@
     "source_level": "宣称",
     "date": "2026-11-15",
     "measured_by": "theguy_sr",
-    "metric": "与 comm-421 同帖同机，llama.cpp 0.9.0-dev build 12315，-np 1，上下文 524,288。无草稿解码均值 23.18±0.13 作主值（部分 CPU/NVMe mmap 卸载，RAM 已写）。DSpark Q8_0 草稿 23.50（warm 24.42，任务相关约 +26%/−11%）只作备注。有方法与逐题表，无逐次原始文件，记为宣称。",
-    "metric_en": "Same post and machine as comm-421, llama.cpp 0.9.0-dev build 12315, -np 1, context 524,288. Headline is decode with no drafter, mean 23.18±0.13 (partial CPU/NVMe mmap offload; RAM is stated). DSpark Q8_0 is 23.50 (warm 24.42, task-dependent about +26%/−11%), note only. Method and per-prompt tables are given, but no per-run raw files, so this is a claim.",
+    "metric": "与 comm-421 同帖同机，llama.cpp 0.9.0-dev build 12315，-np 1，上下文 524,288。无草稿解码均值 23.18±0.13 作主值（部分 CPU/NVMe mmap 卸载，RAM 已写）。有方法与逐题表，无逐次原始文件，记为宣称。限定：对照 DSpark Q8_0 为 23.50（warm 24.42，任务相关约 +26%/−11%）只作备注。",
+    "metric_en": "Same post and machine as comm-421, llama.cpp 0.9.0-dev build 12315, -np 1, context 524,288. Headline is decode with no drafter, mean 23.18±0.13 (partial CPU/NVMe mmap offload; RAM is stated). Method and per-prompt tables are given, but no per-run raw files, so this is a claim. Qualification: DSpark Q8_0 is 23.50 (warm 24.42, task-dependent about +26%/−11%), note only.",
     "tok_s": 23.18,
     "concurrency": "单流",
     "source_note": "第一手来源；独立复核，未独立复现",
@@ -36150,7 +36152,6 @@
       "2bit",
       "MoE",
       "long-context",
-      "speculative",
       "offload"
     ],
     "source_id": "src-7e8fd412d8"
@@ -36174,12 +36175,12 @@
     "metric": "SGLang 0.5.23，TP=2，模型完全在两卡显存，CPU/RAM 未写。短提示数学推理解码，客户端流式计时、512 生成，3 次中位 125.8 作主值（最佳 131.8）。60K 107.4 / 124K 87.3；KV 池实际 126,585，服务器标称 131,072。vLLM JSON 216 为结构化最佳情况，不作主值；同机 llama.cpp 无草稿 24.6 只作对照。驱动开源模块打了 BAR1 P2P 补丁并轻度降压，不是改卡。有方法与中位数，无逐次原始文件，记为宣称。",
     "metric_en": "SGLang 0.5.23, TP=2, the model is fully in the two cards' VRAM, CPU/RAM not stated. Short-prompt math-reasoning decode, client streaming timing, 512 generated tokens, median of 3 is 125.8 as the headline (best 131.8). 60K 107.4 / 124K 87.3; the KV pool actually holds 126,585 tokens, the server advertises 131,072. The vLLM JSON 216 is a structured best case, not the headline; a same-machine llama.cpp run with no drafter at 24.6 is a reference only. The open kernel module was rebuilt with a BAR1 P2P patch and a mild undervolt; this is not a modded GPU. Method and medians are given, but no per-run raw files, so this is a claim.",
     "tok_s": 125.8,
-    "concurrency": "未写",
+    "concurrency": "单流",
     "source_note": "第一手来源；独立复核，未独立复现",
     "en": {
       "hardware": "2× RTX 5060 Ti 16GB (PCIe 5.0 x8, 153W, mild undervolt; CPU/RAM not stated)",
       "hardware_cost_text": "Not priced",
-      "concurrency": "not stated",
+      "concurrency": "single stream",
       "source_note": "First-hand source; independently checked, not rerun",
       "quant": "nvidia/Qwen3.8-27B-NVFP4 + DFlash2 drafter (maurienne-ai NVFP4, 8 tokens), FP8 KV",
       "context": "131072",
@@ -36477,8 +36478,8 @@
     "source_level": "宣称",
     "date": "2026-11-12",
     "measured_by": "metover",
-    "metric": "ComfyUI 0.45.0，单种子，无放大、无局部重绘，手写提示。4160×4000（约 16.6MP），6 步，CFG 1。PR 6000 上约 20 s / 张作主值。同帖 RTX 4090 用 int8 权重约 22 s：int8 DiT+TE 合计超过 24GB，属卸载且 RAM 未写，不另开行。无逐次原始文件，记为宣称。显存是否常驻原文未写。",
-    "metric_en": "ComfyUI 0.45.0, single seed, no upscale, no inpainting, hand-written prompts. 4160×4000 (about 16.6MP), 6 steps, CFG 1. Headline is about 20 s per image on a PRO 6000. The same post's RTX 4090 figure of about 22 s with int8 weights is not a separate row: int8 DiT+TE together exceed 24GB, so that run offloads, and RAM is not stated. No per-run raw files, so this is a claim. VRAM residency is not stated in the post.",
+    "metric": "ComfyUI 0.45.0，单种子，无放大、无局部重绘，手写提示。4160×4000（约 16.6MP），6 步，CFG 1。PR 6000 上约 20 s / 张作主值。同帖 RTX 4090 用 int8 权重约 22 s：int8 DiT+TE 合计超过 24GB 且该机 RAM 未写，不另开行。无逐次原始文件，记为宣称。显存是否常驻原文未写。",
+    "metric_en": "ComfyUI 0.45.0, single seed, no upscale, no inpainting, hand-written prompts. 4160×4000 (about 16.6MP), 6 steps, CFG 1. Headline is about 20 s per image on a PRO 6000. The same post's RTX 4090 figure of about 22 s with int8 weights is not a separate row: int8 DiT+TE together exceed 24GB, and that machine's RAM is not stated. No per-run raw files, so this is a claim. VRAM residency is not stated in the post.",
     "tok_s": null,
     "concurrency": "单张串行",
     "source_note": "第一手来源；独立复核，未独立复现",
@@ -36494,7 +36495,6 @@
     "model_family": "MiniMax H3",
     "tags": [
       "bf16",
-      "offload",
       "few-step"
     ],
     "source_id": "src-f3ae2ac56b"
@@ -36511,7 +36511,7 @@
     "hardware_cost_usd": null,
     "context": "1024²",
     "launch_command": null,
-    "source_url": "https://github.com/Anionex/h3-image-mlx/blob/HEAD/BENCHMARKS.md",
+    "source_url": "https://github.com/Anionex/h3-image-mlx/blob/e8b83f294bdfb82c87daf293f9ce30be45e41d22/BENCHMARKS.md",
     "source_level": "实测",
     "date": "2026-11-15",
     "measured_by": "Anionex",
@@ -36534,7 +36534,7 @@
       "8bit",
       "few-step"
     ],
-    "source_id": "src-ec58f9c96b"
+    "source_id": "src-5d9168814d"
   },
   {
     "id": "comm-433",
@@ -36786,8 +36786,8 @@
     "source_level": "实测",
     "date": "2026-11-15",
     "measured_by": "connorbanting03",
-    "metric": "Strata 项目 0.1.59.1 @13eedf55，engine 0.1.59（PR 正文还写 0.2.13.1），tools/strata_bench.py（非标准协议），单槽，上下文 65,536。64K 下每层 0/256 专家在显存，约 18.75GiB 在主机内存（RAM 已写）。短 chat 解码中位 40.8（40.2–40.9，n=9）作主值；智能体会话 25.1（20.3–31.4，n=15）只作备注。4K/16K/32K 预填充 663.3 / 662.6 / 647.6。对话缓存 0 reused，MTP drafts 0/0。附 results.json，记为实测。",
-    "metric_en": "Strata project 0.1.59.1 @13eedf55, engine 0.1.59 (the PR body also says 0.2.13.1), tools/strata_bench.py (not the standard protocol), one slot, context 65,536. At 64K, 0/256 experts per layer are in VRAM, about 18.75GiB in host memory (RAM is stated). Headline is short-chat decode median 40.8 (40.2-40.9, n=9); the agent session 25.1 (20.3-31.4, n=15) is a note only. 4K/16K/32K prefill 663.3 / 662.6 / 647.6. Conversation cache reused nothing, MTP drafts 0/0. results.json is attached, so this is measured.",
+    "metric": "Strata 项目 0.1.59.1 @13eedf55，engine 0.1.59（PR 正文还写 0.2.13.1），tools/strata_bench.py（非标准协议），单槽，上下文 65,536。64K 下每层 0/256 专家在显存，约 18.75GiB 在主机内存（RAM 已写）。短 chat 解码中位 40.8（40.2–40.9，n=9）作主值；智能体会话 25.1（20.3–31.4，n=15）只作备注。4K/16K/32K 预填充 663.3 / 662.6 / 647.6。对话缓存 0 reused。附 results.json，记为实测。限定：日志还记了 --mtp 2 的 drafts accepted 0 of 0，主值 40.8 不是投机加速后的速度。",
+    "metric_en": "Strata project 0.1.59.1 @13eedf55, engine 0.1.59 (the PR body also says 0.2.13.1), tools/strata_bench.py (not the standard protocol), one slot, context 65,536. At 64K, 0/256 experts per layer are in VRAM, about 18.75GiB in host memory (RAM is stated). Headline is short-chat decode median 40.8 (40.2-40.9, n=9); the agent session 25.1 (20.3-31.4, n=15) is a note only. 4K/16K/32K prefill 663.3 / 662.6 / 647.6. Conversation cache reused nothing. results.json is attached, so this is measured. Qualification: the log also recorded --mtp 2 drafts accepted 0 of 0; the headline 40.8 is not a speculation-speedup figure.",
     "tok_s": 40.8,
     "concurrency": "单流",
     "source_note": "第一手来源；独立复核，未独立复现",
@@ -36803,9 +36803,7 @@
     "model_family": "Qwen",
     "tags": [
       "4bit",
-      "MoE",
-      "speculative",
-      "MTP"
+      "MoE"
     ],
     "source_id": "src-c2ef44df67"
   },
@@ -36893,7 +36891,7 @@
     "id": "comm-439",
     "category": "text",
     "model": "GLM-5.3 753B",
-    "quant": "mlx-community/GLM-5.3-4bit；MTP 关",
+    "quant": "mlx-community/GLM-5.3-4bit，753B MoE；MTP 关",
     "engine": "oMLX",
     "hardware": "Mac Studio M5 Ultra 512GB",
     "hardware_family": "Mac",
@@ -36915,14 +36913,14 @@
       "hardware_cost_text": "Not priced",
       "concurrency": "single stream",
       "source_note": "First-hand source; independently checked, not rerun",
-      "quant": "mlx-community/GLM-5.3-4bit; MTP off",
+      "quant": "mlx-community/GLM-5.3-4bit, 753B MoE; MTP off",
       "context": "131072",
       "engine_note": "oMLX 0.7.3 with custom kernels, MTP off; mlx-lm main 56230fa"
     },
     "model_family": "GLM",
     "tags": [
       "4bit",
-      "dense",
+      "MoE",
       "long-context"
     ],
     "source_id": "src-1b27527687"
@@ -37053,9 +37051,9 @@
     "source_level": "宣称",
     "date": "2026-11-16",
     "measured_by": "jesdga95",
-    "metric": "Basalt 0.4.0，引擎作者发布帖。结构化输出最高 776 作主值，并在口径上标明这是 structured 峰值；conversation 262、prose 194 写入备注。预填充 12,000@4K。top-1 相对 BF16 为 92.8%。上下文写「最高 262K」，不是本次测试的配置上限，不填。同时处理的请求数未写。无逐次原始日志，记为宣称。同帖 DeepSeek V4.1 Flash IQ1_M（5090 + 5060 Ti）为另一配置，不并入本行。",
-    "metric_en": "Basalt 0.4.0, engine-author announcement. Headline is structured-output peak 776, labelled as such; conversation 262 and prose 194 are notes. Prefill 12,000 at 4K. Top-1 versus BF16 is 92.8%. “Up to 262K context” is a capability, not the configured limit of this run, so context is left null. Concurrency is not stated. No per-run raw logs, so this is a claim. The same post's DeepSeek V4.1 Flash IQ1_M line (5090 + 5060 Ti) is a different setup and is not merged into this row.",
-    "tok_s": 776,
+    "metric": "Basalt 0.4.0，引擎作者发布帖。对话解码 262 作主值（与库内通常单流解码更可对照）；结构化输出最高 776、散文 194 写入备注。预填充 12,000@4K。top-1 相对 BF16 为 92.8%。上下文写「最高 262K」，不是本次测试的配置上限，不填。同时处理的请求数未写。无逐次原始日志，记为宣称。同帖 DeepSeek V4.1 Flash IQ1_M（5090 + 5060 Ti）为另一配置，不并入本行。",
+    "metric_en": "Basalt 0.4.0, engine-author announcement. Headline is conversation decode 262, the figure most comparable to our usual single-stream decode; the structured-output peak 776 and prose 194 are notes. Prefill 12,000 at 4K. Top-1 versus BF16 is 92.8%. “Up to 262K context” is a capability, not the configured limit of this run, so context is left null. Concurrency is not stated. No per-run raw logs, so this is a claim. The same post's DeepSeek V4.1 Flash IQ1_M line (5090 + 5060 Ti) is a different setup and is not merged into this row.",
+    "tok_s": 262,
     "concurrency": "未写",
     "source_note": "第一手来源；独立复核，未独立复现",
     "en": {
@@ -37089,8 +37087,8 @@
     "source_level": "宣称",
     "date": "2026-11-16",
     "measured_by": "smflx",
-    "metric": "tandem.cpp v0.3.0（首个 tagged release）。短回答（最多 256 token，greedy）在 5.5k 提示后解码 110 作主值；15.8k 后 88 只作备注。作者称这比其常用 GSM8K 跑法更吵。同机 64GB，与 11-15 的 32GB 无缓存 SSD 行（comm-427）不是同一台机器。引擎作者表，无原始日志，记为宣称。",
-    "metric_en": "tandem.cpp v0.3.0 (first tagged release). Headline is decode 110 after a 5.5k-token prompt, short answers (up to 256 tokens, greedy); 88 after 15.8k is a note only. The author says this is noisier than their usual GSM8K runs. This 64GB PC is not the same machine as the 11-15 32GB DRAM-less SSD row (comm-427). Engine-author table, no raw logs, so this is a claim.",
+    "metric": "tandem.cpp v0.3.0（首个 tagged release）。短回答（最多 256 token，greedy）在 5.5k 提示后解码 110 作主值；15.8k 后 88 只作备注。作者称这比其常用 GSM8K 跑法更吵。本机 16GB 卡 + 64GB 内存。引擎作者表，无原始日志，记为宣称。限定：与 11-15 的 comm-427（另一台 32GB 内存的机器）不是同一台。",
+    "metric_en": "tandem.cpp v0.3.0 (first tagged release). Headline is decode 110 after a 5.5k-token prompt, short answers (up to 256 tokens, greedy); 88 after 15.8k is a note only. The author says this is noisier than their usual GSM8K runs. This machine is a 16GB card + 64GB RAM. Engine-author table, no raw logs, so this is a claim. Qualification: it is not the same machine as the 11-15 comm-427 row (a different 32GB-RAM PC).",
     "tok_s": 110,
     "concurrency": "单流",
     "source_note": "第一手来源；独立复核，未独立复现",
@@ -37108,8 +37106,7 @@
       "3bit",
       "MoE",
       "speculative",
-      "MTP",
-      "offload"
+      "MTP"
     ],
     "engine_fork": "tandem.cpp",
     "source_id": "src-73001add67"
@@ -37130,8 +37127,8 @@
     "source_level": "宣称",
     "date": "2026-11-16",
     "measured_by": "smflx",
-    "metric": "tandem.cpp v0.3.0。GSM8K greedy、无草稿：tandem 60.3 / 59.4，取 60.3 作主值。对照 Maya 39.0 / 39.6；Maya+DSpark 54.9。15.7k 提示后 tandem 解码 66–68，Maya 26–34。长提示 Maya 仍更快（9.5 s vs 16.5 s）。引擎作者表，无原始日志，记为宣称。",
-    "metric_en": "tandem.cpp v0.3.0. GSM8K greedy, no drafter: tandem 60.3 / 59.4, headline 60.3. Maya was 39.0 / 39.6; Maya+DSpark 54.9. After a 15.7k prompt, tandem decode 66-68, Maya 26-34. Maya is still faster on the long prompt (9.5 s vs 16.5 s). Engine-author table, no raw logs, so this is a claim.",
+    "metric": "tandem.cpp v0.3.0。GSM8K greedy、无草稿：tandem 60.3 / 59.4，取 60.3 作主值。15.7k 提示后 tandem 解码 66–68，Maya 26–34。长提示 Maya 仍更快（9.5 s vs 16.5 s）。引擎作者表，无原始日志，记为宣称。限定：对照 Maya 39.0 / 39.6；Maya+DSpark 54.9。",
+    "metric_en": "tandem.cpp v0.3.0. GSM8K greedy, no drafter: tandem 60.3 / 59.4, headline 60.3. After a 15.7k prompt, tandem decode 66-68, Maya 26-34. Maya is still faster on the long prompt (9.5 s vs 16.5 s). Engine-author table, no raw logs, so this is a claim. Qualification: Maya was 39.0 / 39.6; Maya+DSpark 54.9.",
     "tok_s": 60.3,
     "concurrency": "单流",
     "source_note": "第一手来源；独立复核，未独立复现",
@@ -37145,9 +37142,7 @@
       "engine_note": "tandem.cpp v0.3.0"
     },
     "model_family": "DeepSeek",
-    "tags": [
-      "speculative"
-    ],
+    "tags": [],
     "engine_fork": "tandem.cpp",
     "source_id": "src-73001add67"
   },
