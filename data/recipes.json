@@ -37918,5 +37918,41 @@
       }
     ],
     "source_id": "src-c4c1fbd8da"
+  },
+  {
+    "id": "comm-459",
+    "category": "text",
+    "model": "Qwen3-8B",
+    "quant": "Q4_K_M（Ollama qwen3:8b）",
+    "engine": "Ollama",
+    "hardware": "RTX 5070 Ti 笔记本 12GB（驱动 610.43.02）+ Intel Core Ultra 9 275HX（内存容量未写，Linux）",
+    "hardware_family": "NVIDIA 消费级",
+    "hardware_cost_text": "未核价",
+    "hardware_cost_usd": null,
+    "context": "4096",
+    "launch_command": null,
+    "source_url": "https://quelllm.fr/data/experiments/2026-09-12/summary.json",
+    "source_level": "实测",
+    "date": "2026-09-12",
+    "measured_by": "MGM-FALCON",
+    "metric": "Ollama 0.30.6，qwen3:8b Q4_K_M（digest a3d07590…），num_ctx 4096，num_predict 256，temperature 0，seed 42，num_gpu=99，think=false，单个串行请求，每次提示带不同编号。1 次预热不计，5 次解码中位数 59.71（59.45–59.96）作主值。每次运行后记录的显存占用等于模型大小（5,295,172,484 字节），模型完整放在 GPU 显存里。每次运行的请求、响应和计时见 https://quelllm.fr/data/experiments/2026-09-12/raw.json ，复现步骤见 https://quelllm.fr/data/experiments/2026-09-12/PROTOCOL.md 和 benchmark.py ，机器和选项见 metadata.json 。QuelLLM 站长自测，经本仓库 issue #82 投稿；该网站有付费套件和联盟链接。",
+    "metric_en": "Ollama 0.30.6, qwen3:8b Q4_K_M (digest a3d07590…), num_ctx 4096, num_predict 256, temperature 0, seed 42, num_gpu=99, think=false, one serial request, each prompt carries a different run number. One warm-up excluded; the median decode of 5 runs, 59.71 (59.45–59.96), is the headline. The VRAM size recorded after every run equals the model size (5,295,172,484 bytes), so the whole model stays in GPU memory. Per-run requests, responses and timings are in https://quelllm.fr/data/experiments/2026-09-12/raw.json ; reproduction steps are in https://quelllm.fr/data/experiments/2026-09-12/PROTOCOL.md and benchmark.py ; machine and options are in metadata.json . Measured by the QuelLLM site operator and submitted through issue #82 of this repo; the site has paid kits and affiliate links.",
+    "tok_s": 59.71,
+    "concurrency": "单流",
+    "source_note": "第一手来源（测试者本人发布的原始数据）",
+    "en": {
+      "quant": "Q4_K_M (Ollama qwen3:8b)",
+      "hardware": "RTX 5070 Ti Laptop 12GB (driver 610.43.02) + Intel Core Ultra 9 275HX (RAM size not stated, Linux)",
+      "hardware_cost_text": "Not priced",
+      "concurrency": "single stream",
+      "source_note": "First-hand source (raw data published by the tester)",
+      "context": "4096"
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense"
+    ],
+    "source_id": "src-ddf81557cc"
   }
 ]
