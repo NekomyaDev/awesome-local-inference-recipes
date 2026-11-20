@@ -28060,8 +28060,8 @@
     "source_url": "https://github.com/Niko1221/Strata/issues/5279",
     "source_level": "实测",
     "measured_by": "Norhiro",
-    "metric": "Strata 0.2.10 源码编译。Ampere+Blackwell 首个 NVFP4 layer split 报告：解码 39–45（同卡对 UD-Q4_K_XL 为 29.5–37.1）；31K prompt 24.8–25.2s（对照 29.0s）。最佳切分 K=18。tok_s 取下限 39",
-    "metric_en": "Strata 0.2.10 source build. First Ampere+Blackwell NVFP4 layer-split report: decode 39–45 (UD-Q4_K_XL on the same pair was 29.5–37.1); 31K prompt 24.8–25.2s (was 29.0s). Best split K=18. tok_s uses the low end 39",
+    "metric": "Strata 0.2.10 源码编译。Ampere+Blackwell 首个 NVFP4 layer split 报告：解码 39–45（同卡对 UD-Q4_K_XL 为 29.5–37.1）；31K prompt 24.8–25.2s（对照 29.0s）。最佳切分 K=18。tok_s 取下限 39 2026-11-20 同人同机后续 https://github.com/Niko1221/Strata/issues/6361 （同一 i7-7800X、同一对卡、同样的 PCIe 探测值；内存写作 4×16GB DDR4-2666，又写可见 94 GiB，两者对不上，硬件栏内存不改）：Strata 0.2.16（64524fb9，engine 0.1.62），--layer-split auto（3060 在前选 K=16，5060 Ti 在前选 K=29），--max-context 65536，每项 3 次。短对话解码中位在各次启动间为 26.2–30.9；把 3060 当辅助专家缓存（--expert-cache-device1）时 32.8–34.1，预填充慢 15–25%。只给区间，只追加，不改主值。",
+    "metric_en": "Strata 0.2.10 source build. First Ampere+Blackwell NVFP4 layer-split report: decode 39–45 (UD-Q4_K_XL on the same pair was 29.5–37.1); 31K prompt 24.8–25.2s (was 29.0s). Best split K=18. tok_s uses the low end 39 Follow-up on 2026-11-20 by the same person on the same machine, https://github.com/Niko1221/Strata/issues/6361 (same i7-7800X, same card pair, same PCIe probe values; RAM given as 4×16GB DDR4-2666 but also as 94 GiB visible, which do not agree, so the hardware field is left as is): Strata 0.2.16 (64524fb9, engine 0.1.62), --layer-split auto (K=16 with the 3060 first, K=29 with the 5060 Ti first), --max-context 65536, 3 runs per test. Short-chat decode medians vary between launches from 26.2 to 30.9; with the 3060 as a helper expert cache (--expert-cache-device1) 32.8-34.1, with 15-25% slower prefill. Range only, so appended only; headline unchanged.",
     "tok_s": 39,
     "source_note": "GitHub issue，测试者本人，附原始数据和方法",
     "model_family": "Qwen",
@@ -29783,8 +29783,8 @@
     "source_level": "宣称",
     "date": "2026-11-08",
     "measured_by": "mbaaku",
-    "metric": "Strata0.2.12，SYCL engine0.1.58源码加8个本地patch。双B60各PCIe4 x8，RAM实际3600MT/s；单请求、MTP spec2、fp16 KV、layer-split36，上下文上限262144。必须--pipeline-windows 0；默认2令20/22输出退化为叹号，sanity0/12，不收其速度。关闭后sanity12/12，短/4K/16K decode31.4/29.7/28.8，预填代价30–37%。 原始results.json/outputs.jsonl仅称可索取，未公开可读，按原始数据规则降为宣称。",
-    "metric_en": "Strata 0.2.12, source SYCL engine 0.1.58 with eight local patches. B60 pair on PCIe 4.0 x8/x8, RAM actually 3600MT/s; one request at a time. MTP spec 2, fp16 KV, layer split 36, context limit 262144. Must use --pipeline-windows 0: default 2 produced exclamation-only output in 20/22 requests and sanity 0/12. Workaround gives sanity 12/12, short/4K/16K decode 31.4/29.7/28.8; costs 30–37% prefill. Invalid-output speed is excluded. Raw results.json/outputs.jsonl are available on request, not publicly readable; classified as a claim under the raw-data rule.",
+    "metric": "Strata0.2.12，SYCL engine0.1.58源码加8个本地patch。双B60各PCIe4 x8，RAM实际3600MT/s；单请求、MTP spec2、fp16 KV、layer-split36，上下文上限262144。必须--pipeline-windows 0；默认2令20/22输出退化为叹号，sanity0/12，不收其速度。关闭后sanity12/12，短/4K/16K decode31.4/29.7/28.8，预填代价30–37%。 原始results.json/outputs.jsonl仅称可索取，未公开可读，按原始数据规则降为宣称。 2026-11-19 同人同机后续 https://github.com/Niko1221/Strata/issues/6295 ：Strata v0.2.16（64524fb9，SYCL engine 0.1.62，源码构建），同一模型文件、上下文 262,144 与引擎选项，--pipeline-windows 0：解码 30–32，预填充 4K 615、16K 1,004，与 v0.2.13 相同；sanity 12/12。默认 --pipeline-windows 2 又回到 0/12（12 条 sanity 的推理部分都是叹号）。只给区间，只追加，不改主值。",
+    "metric_en": "Strata 0.2.12, source SYCL engine 0.1.58 with eight local patches. B60 pair on PCIe 4.0 x8/x8, RAM actually 3600MT/s; one request at a time. MTP spec 2, fp16 KV, layer split 36, context limit 262144. Must use --pipeline-windows 0: default 2 produced exclamation-only output in 20/22 requests and sanity 0/12. Workaround gives sanity 12/12, short/4K/16K decode 31.4/29.7/28.8; costs 30–37% prefill. Invalid-output speed is excluded. Raw results.json/outputs.jsonl are available on request, not publicly readable; classified as a claim under the raw-data rule. Follow-up on 2026-11-19 by the same person on the same machine, https://github.com/Niko1221/Strata/issues/6295 : Strata v0.2.16 (64524fb9, SYCL engine 0.1.62, source build), same model files, 262,144 context and engine options, --pipeline-windows 0: decode 30-32, prefill 615 at 4K and 1,004 at 16K, the same as v0.2.13; sanity 12/12. The default --pipeline-windows 2 is back to 0/12 (the reasoning in all 12 sanity answers is exclamation marks). Range only, so appended only; headline unchanged.",
     "tok_s": 31.4,
     "concurrency": "单流",
     "source_note": "第一手来源；独立复核，未独立复现",
@@ -30768,11 +30768,11 @@
     "launch_command": null,
     "source_url": "https://github.com/Picom-code/pico-dgx-ds4",
     "source_level": "实测",
-    "date": "2026-11-09",
+    "date": "2026-11-20",
     "measured_by": "Picom-code / Patrick Moorhead",
-    "metric": "pico-dgx-ds4 @7a3b982（blaesus/dsgx10 分支，DSGB10）。配方作者 README 头表，温度 0、9 次中位：单用户 chat 解码 82，代码 144 另标。sparkDash 1.8.8 口径散文 101 / 代码 166。8 用户不同提示 多路合计 300，16 用户不同提示 多路合计 380，16 份相同提示 多路合计 438，均不作单流主值。头表为 exact/lossless 构建；有损 relaxed-accept 实验已移除。加图像后 chat/code 81.9/144.4。--max-ctx 1048576。头表未逐行写明官方 checkpoint 与 UNCENSORED-FP8 变体。2026-11-11 同配方 live 构建（stack4 + stack5）：同一 3 提示 chat 台 27 次中位 84.6、代码 144.0，较原主值 82 高 3.2%，在 ±5% 内，只追加、不改主值，也不另建条。90.3 是另一组 320 条留存提示的均值（exact 86.2 → stack4 89.5 → stack5 90.3），口径不同。16 用户不同提示 合计 368–376，不作单流主值。日期与来源链接不改。https://github.com/Picom-code/pico-dgx-ds4 2026-11-16 另一位测试者 PlusTen_AI 在 4× DGX Spark 环上用同一 Pico Code 配方跑 DeepSeek V4.1 原始权重，按自己在 Hermes 里的实际任务计时：预填充 9,236，解码 106 / 188.4（帖中未说明两个值分别对应什么）。不是基准测试，配方提交号未写，只作旁证，不改主值。https://x.com/PlusTen_AI/status/2122323995630694816",
-    "metric_en": "pico-dgx-ds4 at 7a3b982 (blaesus/dsgx10 fork, DSGB10). Recipe-author README headline table, temperature 0, 9-run median: single-user chat decode 82; code 144 is separate. sparkDash 1.8.8 method: prose 101 / code 166. Multi-user totals of 300 (8 distinct prompts), 380 (16 distinct) and 438 (16 copied prompts) are not single-stream. Headline is the exact/lossless build; a lossy relaxed-accept trial was removed. After images: chat/code 81.9/144.4. --max-ctx 1048576. The table does not say per row whether the official checkpoint or the UNCENSORED-FP8 variant was used. 2026-11-11 same-recipe live build (stack4 + stack5): 27-run median on the same 3-prompt chat bench is 84.6, code 144.0, 3.2% above the existing 82 and within ±5%; appended only, headline unchanged, no new row. 90.3 is the mean on a different 320-prompt held-out set (exact 86.2 → stack4 89.5 → stack5 90.3), a different method. 16-user distinct-prompt totals 368–376 are not single-stream. Date and source URL are unchanged. https://github.com/Picom-code/pico-dgx-ds4 On 2026-11-16 a different tester, PlusTen_AI, ran the same Pico Code recipe with the original DeepSeek V4.1 weights on a 4× DGX Spark ring, timed on their own real Hermes tasks: prefill 9,236, decode 106 / 188.4 (the post does not say what each of the two values is). Not a benchmark and no recipe commit stated, corroboration only; the headline is unchanged. https://x.com/PlusTen_AI/status/2122323995630694816",
-    "tok_s": 82,
+    "metric": "pico-dgx-ds4 v2.0（2026-11-20 发布，标签 v2.0 = 22a39ac，DSGB10）。配方作者 README 头表，温度 0：三提示单用户 chat 在 2026-11-19 四次冷启动（各 9 次中位）为 83.6 / 84.1 / 84.6 / 83.8，表内 84 作主值；代码 149.6 / 145.4 / 151.9 / 143.1，表内 147 另标。作者写单用户 chat 没有变化，提升在共享步骤、读提示、采样请求和长代码上。多用户合计只写入 streams：8 用户不同提示 345（两次 340 / 350），16 用户不同提示 413（8 次均值，407.8–419.4）；16 份相同提示 441 与智能体场景未重跑，仍是上一构建的值。整文件改写 365–468 不是单流主值。发布帖的「90」是 320 条留存提示的均值（exact 86.2 → stack4 89.5 → stack5 90.3），本版没有重跑，口径不同。--max-ctx 1048576。头表未逐行写明官方 checkpoint 与 UNCENSORED-FP8 变体。发布帖 https://x.com/Picomoorhead/status/2123614635366432859 同人同机同模型同引擎，按规则 8 更新本条。旧值：@7a3b982（blaesus/dsgx10 分支）头表 9 次中位 chat 82、代码 144，8 / 16 用户不同提示 合计 300 / 380，16 份相同提示 438；sparkDash 1.8.8 口径散文 101 / 代码 166；加图像后 chat/code 81.9/144.4；2026-11-11 live 构建（stack4 + stack5）27 次中位 84.6 / 144.0，16 用户不同提示 合计 368–376。2026-11-16 另一位测试者 PlusTen_AI 在 4× DGX Spark 环上用同一 Pico Code 配方跑 DeepSeek V4.1 原始权重，按自己在 Hermes 里的实际任务计时：预填充 9,236，解码 106 / 188.4（帖中未说明两个值分别对应什么）。不是基准测试，配方提交号未写，只作旁证。https://x.com/PlusTen_AI/status/2122323995630694816",
+    "metric_en": "pico-dgx-ds4 v2.0 (released 2026-11-20, tag v2.0 = 22a39ac, DSGB10). Recipe-author README headline table, temperature 0: the 3-prompt single-user chat over four cold starts on 2026-11-19 (9-run median each) is 83.6 / 84.1 / 84.6 / 83.8, and the table's 84 is the headline; code 149.6 / 145.4 / 151.9 / 143.1, listed as 147, is separate. The author writes that one-user chat is unchanged and that the gains are in shared steps, prompt reading, sampled requests and long code. Multi-user totals go only in streams: 8 users with distinct prompts 345 (two runs, 340 / 350), 16 users with distinct prompts 413 (mean of 8 runs, 407.8-419.4); 16 copied prompts (441) and the agent scenario were not re-run and still show the build before. Whole-file rewrites at 365-468 are not a single-stream headline. The release post's \"90\" is the mean over the 320 held-out prompts (exact 86.2 → stack4 89.5 → stack5 90.3), not re-run for this release, a different method. --max-ctx 1048576. The table does not say per row whether the official checkpoint or the UNCENSORED-FP8 variant was used. Release post https://x.com/Picomoorhead/status/2123614635366432859 Same person, machine, model and engine, so this row is updated under rule 8. Earlier values: @7a3b982 (blaesus/dsgx10 fork) header table, 9-run medians, chat 82 and code 144, 8 / 16 users with distinct prompts 300 / 380, 16 copied prompts 438; sparkDash 1.8.8 method prose 101 / code 166; with images chat/code 81.9/144.4; the 2026-11-11 live build (stack4 + stack5) 27-run medians 84.6 / 144.0, 16 users with distinct prompts 368-376. On 2026-11-16 a different tester, PlusTen_AI, ran the same Pico Code recipe with the original DeepSeek V4.1 weights on a 4× DGX Spark ring, timed on their own real Hermes tasks: prefill 9,236, decode 106 / 188.4 (the post does not say what each of the two values is). Not a benchmark and no recipe commit stated, corroboration only. https://x.com/PlusTen_AI/status/2122323995630694816",
+    "tok_s": 84,
     "concurrency": "单流",
     "source_note": "第一手来源；独立复核，未独立复现",
     "en": {
@@ -30782,7 +30782,7 @@
       "source_note": "First-hand source; independently checked, not rerun",
       "quant": "Native exact/lossless build",
       "context": "1M",
-      "engine_note": "pico-dgx-ds4 @7a3b982 (DSGB10)"
+      "engine_note": "pico-dgx-ds4 v2.0 (22a39ac, DSGB10)"
     },
     "model_family": "DeepSeek",
     "tags": [
@@ -30794,11 +30794,11 @@
     "streams": [
       {
         "n": 8,
-        "tok_s": 300
+        "tok_s": 345
       },
       {
         "n": 16,
-        "tok_s": 380
+        "tok_s": 413
       }
     ],
     "source_id": "src-b60256b42e"
@@ -33565,29 +33565,29 @@
     "model": "Qwen3.8-Flash-Next",
     "quant": "Avalon IQ3_KS，MTP",
     "engine": "Avalon",
-    "hardware": "1× RX 7900 XTX 24GB（整机另有一张同型号空闲）+ Ryzen 7 5800X + 64GB DDR4（ROCm 7.2.4，Linux）",
+    "hardware": "1× RX 7900 XTX 24GB（整机另有一张同型号空闲）+ Ryzen 7 5800X + 64GB DDR4（ROCm 10.1，Linux）",
     "hardware_family": "AMD",
     "hardware_cost_text": "≈$1,007（10月最低均价）",
     "hardware_cost_usd": null,
     "context": null,
     "launch_command": null,
-    "source_url": "https://www.reddit.com/r/ROCm/comments/1xu91z3/",
+    "source_url": "https://www.reddit.com/r/ROCm/comments/1y0n9zg/",
     "source_level": "宣称",
-    "date": "2026-11-12",
+    "date": "2026-11-19",
     "measured_by": "fintip",
-    "metric": "Avalon 8c4e4753c，单卡。同一作者同机同方法：112 / 3.5K / 32K 提示，512 生成，每档 3 次中位。主值取 112-token 提示。解码中位 89 / 98 / 88，主值 89。当前 main 26a215567 在 32K 提示崩溃（作者已报上游），不收作主值。上下文未写，不填。降为宣称。",
-    "metric_en": "Avalon 8c4e4753c, one card. Same author, machine and method: 112 / 3.5K / 32K prompts, 512 generated, median of 3 per size. Headline is the 112-token prompt. Decode medians 89 / 98 / 88; headline 89. Current main 26a215567 crashed on the 32K prompt (reported upstream) and is not used as a headline. Context is unstated, left null. Claim.",
-    "tok_s": 89,
+    "metric": "Avalon 1200934a7，单卡，ROCm 10.1。2026-11-19 第二篇帖：112 / 3.5K / 34K 提示，512 生成，温度 1.0 / top-p 0.95 / top-k 20，思考开，MTP 开，取中位。解码 87 / 90 / 90，112 token 的 87 作主值；预填充 3.5K 1,051、34K 2,385。当前 main 已修好 32K 内存不足。上下文未写，不填。无逐次原始数据，记为宣称。同人同机同模型同引擎，按规则 8 更新本条。旧值：Avalon 8c4e4753c（ROCm 7.2.4，帖子 https://www.reddit.com/r/ROCm/comments/1xu91z3/ ）112 / 3.5K / 32K 每档 3 次中位 89 / 98 / 88，主值 89；当时的 main 26a215567 在 32K 提示崩溃。同帖双卡 LLAMA_STAGES=0 加手动切分为 64 / 75 / 64，硬件不同，不另开行。",
+    "metric_en": "Avalon 1200934a7, one card, ROCm 10.1. Second post on 2026-11-19: 112 / 3.5K / 34K prompts, 512 generated, temperature 1.0 / top-p 0.95 / top-k 20, thinking on, MTP on, medians. Decode 87 / 90 / 90, and 87 at 112 tokens is the headline; prefill 1,051 at 3.5K and 2,385 at 34K. Current main fixed the 32K out-of-memory. Context is not stated and left empty. No per-run raw data, so this is a claim. Same person, machine, model and engine, so this row is updated under rule 8. Earlier: Avalon 8c4e4753c (ROCm 7.2.4, post https://www.reddit.com/r/ROCm/comments/1xu91z3/ ) gave medians of 3 at 112 / 3.5K / 32K of 89 / 98 / 88, headline 89; main at the time (26a215567) crashed on the 32K prompt. In the same post, two cards with LLAMA_STAGES=0 and a manual split give 64 / 75 / 64; that is different hardware and not a separate row.",
+    "tok_s": 87,
     "concurrency": "单流",
     "source_note": "第一手来源；独立复核，未独立复现",
     "en": {
-      "hardware": "1× RX 7900 XTX 24GB (a second card of the same type is idle) + Ryzen 7 5800X + 64GB DDR4 (ROCm 7.2.4, Linux)",
+      "hardware": "1× RX 7900 XTX 24GB (a second card of the same type is idle) + Ryzen 7 5800X + 64GB DDR4 (ROCm 10.1, Linux)",
       "hardware_cost_text": "≈$1,007 (October average low)",
       "concurrency": "single stream",
       "source_note": "First-hand source; independently checked, not rerun",
       "quant": "Avalon IQ3_KS, MTP",
       "context": null,
-      "engine_note": "Avalon 8c4e4753c, single card (second XTX idle)"
+      "engine_note": "Avalon 1200934a7, single card (second XTX idle)"
     },
     "model_family": "Qwen",
     "tags": [
@@ -33596,8 +33596,8 @@
       "speculative",
       "MTP"
     ],
-    "engine_fork": "Avalon @8c4e4753c",
-    "source_id": "src-73bec92b8e"
+    "engine_fork": "Avalon @1200934a7",
+    "source_id": "src-4629b2754a"
   },
   {
     "id": "comm-375",
@@ -33605,23 +33605,23 @@
     "model": "Qwen3.8-Flash-Next",
     "quant": "GSQ-RCO IQ3_XXS，MTP",
     "engine": "Strata",
-    "hardware": "2× RX 7900 XTX 24GB（各 PCIe 4.0 x8）+ Ryzen 7 5800X + 64GB DDR4（ROCm 7.2.4，Linux）",
+    "hardware": "2× RX 7900 XTX 24GB（各 PCIe 4.0 x8）+ Ryzen 7 5800X + 64GB DDR4（ROCm 10.1，Linux）",
     "hardware_family": "AMD",
     "hardware_cost_text": "未核价",
     "hardware_cost_usd": null,
     "context": null,
     "launch_command": null,
-    "source_url": "https://www.reddit.com/r/ROCm/comments/1xu91z3/",
+    "source_url": "https://www.reddit.com/r/ROCm/comments/1y0n9zg/",
     "source_level": "宣称",
-    "date": "2026-11-12",
+    "date": "2026-11-19",
     "measured_by": "fintip",
-    "metric": "上游 Strata 双卡，量化与硬件相同，0.2.11（76）与 0.2.13.1（75）合为一条；主值取当前 0.2.13.1 的 75（3.5K 88 / 32K 75 另标）。同机 0.2.11 为 76（3.5K 83 / 32K 82），作者称与 0.2.13.1 在往返噪声内。上下文未写，不填。降为宣称。",
-    "metric_en": "Upstream Strata on two cards, same quant and hardware; 0.2.11 (76) and 0.2.13.1 (75) are one row. Headline is current 0.2.13.1 at 75 (3.5K 88 / 32K 75 separate). Same-machine 0.2.11 is 76 (3.5K 83 / 32K 82); the author says it is within run-to-run noise of 0.2.13.1. Context is unstated, left null. Claim.",
-    "tok_s": 75,
+    "metric": "上游 Strata 0.2.13.1 双卡，GSQ-RCO IQ3_XXS，MTP。2026-11-19 第二篇帖（同机换到 ROCm 10.1）：112 / 3.5K / 34K token 提示、输出 512、温度 1.0 / top-p 0.95 / top-k 20、思考开、MTP 开、取中位，解码 79 / 100 / 84，112 token 的 79 作主值；预填充 3.5K 1,440、34K 2,496。原主值 75（ROCm 7.2.4，3.5K 88 / 32K 75，帖子 https://www.reddit.com/r/ROCm/comments/1xu91z3/ ）；更早 0.2.11 为 76（3.5K 83 / 32K 82），作者称与 0.2.13.1 在往返噪声内。同人同机同模型同引擎同版本，只换了 ROCm，按规则 8 更新主值（+5.3%）。IQ3_XXS 包 76GB，大于两卡合计 48GB 显存；作者写这类 MoE 引擎上 64GB 内存决定能常驻多少，内存大小已写明。上下文未写，不填。无逐次原始数据，记为宣称。",
+    "metric_en": "Upstream Strata 0.2.13.1 on two cards, GSQ-RCO IQ3_XXS, MTP. Second post on 2026-11-19 (same machine, now on ROCm 10.1): 112 / 3.5K / 34K-token prompts, 512 out, temperature 1.0 / top-p 0.95 / top-k 20, thinking on, MTP on, medians; decode 79 / 100 / 84, and 79 at 112 tokens is the headline. Prefill 1,440 at 3.5K and 2,496 at 34K. The previous headline was 75 (ROCm 7.2.4; 3.5K 88 / 32K 75; post https://www.reddit.com/r/ROCm/comments/1xu91z3/ ); the earlier 0.2.11 gave 76 (3.5K 83 / 32K 82), which the author called round-trip noise against 0.2.13.1. Same person, machine, model, engine and version, only ROCm changed, so the headline is updated under rule 8 (+5.3%). The IQ3_XXS pack is 76GB, more than the 48GB of VRAM on the two cards; the author writes that for these MoE engines the 64GB of RAM decides what stays resident, and the RAM size is stated. Context is not stated and left empty. No per-run raw data, so this is a claim.",
+    "tok_s": 79,
     "concurrency": "单流",
     "source_note": "第一手来源；独立复核，未独立复现",
     "en": {
-      "hardware": "2× RX 7900 XTX 24GB (PCIe 4.0 x8 each) + Ryzen 7 5800X + 64GB DDR4 (ROCm 7.2.4, Linux)",
+      "hardware": "2× RX 7900 XTX 24GB (PCIe 4.0 x8 each) + Ryzen 7 5800X + 64GB DDR4 (ROCm 10.1, Linux)",
       "hardware_cost_text": "Not priced",
       "concurrency": "single stream",
       "source_note": "First-hand source; independently checked, not rerun",
@@ -33637,7 +33637,7 @@
       "MTP",
       "multi-GPU"
     ],
-    "source_id": "src-73bec92b8e"
+    "source_id": "src-4629b2754a"
   },
   {
     "id": "comm-376",
@@ -35302,23 +35302,23 @@
     "hardware_cost_usd": null,
     "context": "262144",
     "launch_command": null,
-    "source_url": "https://www.reddit.com/r/LocalLLaMA/comments/1xvs2vy/",
+    "source_url": "https://www.reddit.com/r/LocalLLaMA/comments/1y0j6f7/",
     "source_level": "宣称",
-    "date": "2026-11-13",
+    "date": "2026-11-19",
     "measured_by": "W61k3r",
-    "metric": "llama.cpp 1.0.0（build b12359），Vulkan，上下文 262,144，4-bit K/V 缓存，batch 2048/512，MTP 最多 2 个草稿。62 token 提示时 generation 65.3 作主值；3,631 / 33,002 token 提示为 57.0 / 55.8；133,561 token 提示时 Vulkan 设备丢失，无输出。2026-11-13 测。作者在 LexiSuite 对比帖中把它作为对照；同帖 LexiEngine 76.8 没有引擎版本，未收。同时处理的请求数未写。有表，无原始日志，记为宣称。",
-    "metric_en": "llama.cpp 1.0.0 (build b12359), Vulkan, 262,144 context, 4-bit K/V cache, batch 2048/512, MTP with up to 2 drafts. Headline is generation 65.3 with a 62-token prompt. 3,631 / 33,002-token prompts: 57.0 / 55.8. With a 133,561-token prompt the Vulkan device was lost and there was no output. Measured 2026-11-13. The author ran it as the reference in a LexiSuite comparison post; LexiEngine 76.8 from the same post has no engine version and has no row. The number of requests at once is not stated. Table only, no raw logs, so this is a claim.",
-    "tok_s": 65.3,
-    "concurrency": "未写",
+    "metric": "llama.cpp b12531（上游 2026-11-18 构建），Vulkan，上下文 262,144，4-bit K/V 缓存，批大小 2048/512，MTP 最多 2 个草稿，一个槽位，机上无其他负载。2026-11-18–19 测，见 LexiEngine 帖与基准页 https://lexipanel.com/docs/Benchmarks.html ：62 token 故事提示 65.82 作主值，76 token 代码提示 64.79；3,631 / 33,002 / 133,561 / 253,291 / 261,896 token 提示为 58.54 / 56.95 / 37.31 / 28.13 / 26.87，133,561 时不再丢失 GPU。有表，无原始日志，记为宣称。同人同机同模型同引擎，按规则 8 更新本条。旧值：llama.cpp 1.0.0（b12359），2026-11-13 测，62 token 提示 65.3，3,631 / 33,002 token 提示 57.0 / 55.8，133,561 token 提示时 Vulkan 设备丢失；帖子 https://www.reddit.com/r/LocalLLaMA/comments/1xvs2vy/ 。LexiEngine 本身的结果另见 comm-461。",
+    "metric_en": "llama.cpp b12531 (upstream build of 2026-11-18), Vulkan, 262,144 context, 4-bit K/V cache, batch 2048/512, MTP with up to 2 drafts, one slot, nothing else running. Measured 2026-11-18 to 19, in the LexiEngine post and on the benchmark page https://lexipanel.com/docs/Benchmarks.html : headline is 65.82 on the 62-token story prompt; 64.79 on the 76-token code prompt; prompts of 3,631 / 33,002 / 133,561 / 253,291 / 261,896 tokens give 58.54 / 56.95 / 37.31 / 28.13 / 26.87, and the GPU is no longer lost at 133,561. Table only, no raw logs, so this is a claim. Same person, machine, model and engine, so this row is updated under rule 8. Earlier: llama.cpp 1.0.0 (b12359), measured 2026-11-13, 65.3 with a 62-token prompt, 57.0 / 55.8 with 3,631 / 33,002-token prompts, and the Vulkan device was lost with a 133,561-token prompt; post https://www.reddit.com/r/LocalLLaMA/comments/1xvs2vy/ . LexiEngine's own result is comm-461.",
+    "tok_s": 65.82,
+    "concurrency": "单流",
     "source_note": "第一手来源；独立复核，未独立复现",
     "en": {
       "hardware": "1× RX 7900 XTX 24GB (291W cap, Vulkan) + i7-9700 + 32GB RAM (Linux 7.3; the machine also has a GeForce 2060, not used here)",
       "hardware_cost_text": "Not priced",
-      "concurrency": "not stated",
+      "concurrency": "single stream",
       "source_note": "First-hand source; independently checked, not rerun",
       "quant": "Q4_K_M (with its own MTP head)",
       "context": "262144",
-      "engine_note": "llama.cpp 1.0.0 (build b12359), Vulkan; 262,144 context, 4-bit K/V cache, batch 2048/512, up to 2 drafted tokens (MTP)"
+      "engine_note": "llama.cpp b12531 (upstream build of 2026-11-18), Vulkan; 262,144 context, 4-bit K/V cache, batch 2048/512, up to 2 drafted tokens (MTP)"
     },
     "model_family": "Qwen",
     "tags": [
@@ -35328,7 +35328,7 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-f27e519771"
+    "source_id": "src-cb6ea78c8c"
   },
   {
     "id": "comm-413",
@@ -37318,11 +37318,11 @@
     "launch_command": null,
     "source_url": "https://github.com/swbiggart/inkling2-sparks",
     "source_level": "宣称",
-    "date": "2026-11-16",
+    "date": "2026-11-20",
     "measured_by": "woolsey (Scott Biggart)",
-    "metric": "inkling2-sparks v0.1（发布包 tensorfold-inkling2-tp4-v0.1，基于上游 TensorFold 223da7659），TP4，NCCL 走 RoCE，DSpark 草稿默认开，请求上限 131,072。README 单流中位（每行 3 次，各自重启服务，丢首次）：代码 60.8 作主值；工具调用 70.2；思考 56.3；原始代码补全 52.7；散文 40.0；关草稿 31.0。默认设置 4 流合计 100.7，不作单流主值。仓库给出版本、校验和与复现脚本，但逐次原始 JSON 未公开，记为宣称。帖子 https://x.com/woolsey/status/2122332836472799319",
-    "metric_en": "inkling2-sparks v0.1 (release tensorfold-inkling2-tp4-v0.1, built from upstream TensorFold 223da7659), TP4, NCCL over RoCE, DSpark drafter on by default, requests up to 131,072. README single-stream medians (3 runs per row, each on its own server start, first dropped): headline is code 60.8; tool call 70.2; thinking 56.3; raw code completion 52.7; prose 40.0; drafter off 31.0. Four streams at the defaults total 100.7, not a single-stream headline. The repo gives the version, checksums and reproduction scripts, but the per-run raw JSON is not published, so this is a claim. Post https://x.com/woolsey/status/2122332836472799319",
-    "tok_s": 60.8,
+    "metric": "inkling2-sparks v0.2（2026-11-20 发布包 tensorfold-inkling2-tp4-v0.2；上游 TensorFold 223da7659 加 patches/ 补丁系列，即作者分叉 swbiggart/TensorFold-upstream 分支 inkling2-sparks-v0.2 的 c55b38d79），TP4，NCCL 走 RoCE，DSpark 草稿默认开，请求上限 131,072。README 单流表（v0.2）：代码 79.7 作主值；工具调用 72.8；思考 68.0；原始代码补全 56.8；散文 53.9；关草稿 33.9。默认设置 4 流合计 118.5，不作单流主值。v0.1（发布包 tensorfold-inkling2-tp4-v0.1，2026-11-16 收录）时代码为 60.8（工具调用 70.2、思考 56.3、原始代码补全 52.7、散文 40.0、关草稿 31.0，4 流合计 100.7）。同人同机同模型同引擎，按规则 8 更新本条。仓库给出版本、校验和与复现脚本，但逐次原始 JSON 未公开，记为宣称。帖子 https://x.com/woolsey/status/2122332836472799319 （v0.1）、https://x.com/woolsey/status/2123623073886924836 （v0.2）",
+    "metric_en": "inkling2-sparks v0.2 (release tensorfold-inkling2-tp4-v0.2, 2026-11-20; upstream TensorFold 223da7659 plus the patches/ series, i.e. commit c55b38d79 on branch inkling2-sparks-v0.2 of the author's fork swbiggart/TensorFold-upstream), TP4, NCCL over RoCE, DSpark drafter on by default, requests up to 131,072. README single-stream table (v0.2): headline is code 79.7; tool call 72.8; thinking 68.0; raw code completion 56.8; prose 53.9; drafter off 33.9. Four streams at the defaults total 118.5, not a single-stream headline. With v0.1 (release tensorfold-inkling2-tp4-v0.1, added 2026-11-16) code was 60.8 (tool call 70.2, thinking 56.3, raw code completion 52.7, prose 40.0, drafter off 31.0; four streams 100.7). Same person, machine, model and engine, so this row is updated under rule 8. The repo gives the version, checksums and reproduction scripts, but the per-run raw JSON is not published, so this is a claim. Posts https://x.com/woolsey/status/2122332836472799319 (v0.1), https://x.com/woolsey/status/2123623073886924836 (v0.2)",
+    "tok_s": 79.7,
     "concurrency": "单流",
     "source_note": "第一手来源；独立复核，未独立复现",
     "en": {
@@ -37332,7 +37332,7 @@
       "source_note": "First-hand source; independently checked, not rerun",
       "quant": "Thinking Machines original checkpoint (revision aac97412, no extra quantization; experts NVFP4 layers 0-39 / MXFP8 layers 40-47) + DSpark drafter",
       "context": "131072",
-      "engine_note": "inkling2-sparks v0.1 (release tensorfold-inkling2-tp4-v0.1, built from upstream TensorFold 223da7659); TP4, NCCL over RoCE, DSpark on by default"
+      "engine_note": "inkling2-sparks v0.2 (release tensorfold-inkling2-tp4-v0.2; upstream TensorFold 223da7659 + patches, fork commit c55b38d79); TP4, NCCL over RoCE, DSpark on by default"
     },
     "model_family": "Other",
     "tags": [
@@ -37345,7 +37345,7 @@
     "streams": [
       {
         "n": 4,
-        "tok_s": 100.7
+        "tok_s": 118.5
       }
     ],
     "source_id": "src-69bd5f63c0"
@@ -37690,8 +37690,8 @@
     "source_level": "宣称",
     "date": "2026-11-18",
     "measured_by": "MythomancerX",
-    "metric": "llama.cpp b10448，Qwen3.8-27B Q4_K_M，MTP n-max 2，q4_0 KV，128K 上下文，贪心，短 Go 提示，预热后 4 次，中位数 73.87 作主值，显存占用 20,619 MiB。构建号 b10448 写在本条来源帖（作者的一条回复）里，该帖重复同一个「4 次中位数 73.87」；测法细节来自 https://x.com/MythomancerX/status/2122427190239195385 ; 单次数值没有列出，同时处理的请求数未写，记为宣称。作者写的是「我的单张 3090」（指一张卡，不是一个请求），帖子和回复里都没有单请求或单流的说法，所以单流不成立，并发保持未写。限定：同帖的 DFlash2 结果（155.11–158.52）用的是更新的官方构建，不是同一个二进制，构建号也未写，不收。",
-    "metric_en": "llama.cpp b10448, Qwen3.8-27B Q4_K_M, MTP n-max 2, q4_0 KV, 128K context, greedy, a short Go prompt, 4 runs after a warmup; median 73.87 is the headline; VRAM use 20,619 MiB. The build number b10448 is in the source post (a reply by the author), which repeats the same \"73.87 tok/s median over 4 runs\"; the test details are from https://x.com/MythomancerX/status/2122427190239195385 ; individual run values are not listed and the number of simultaneous requests is not stated, so this is a claim. The author says \"my single 3090\" (one card, not one request) and nothing in the post or its replies says one request or one stream, so single-stream is not established and concurrency stays not stated. Qualification: the DFlash2 result in the same post (155.11-158.52) ran on a newer official build, not the same binary, and its build number is not stated; it is not included.",
+    "metric": "llama.cpp b10448，Qwen3.8-27B Q4_K_M，MTP n-max 2，q4_0 KV，128K 上下文，贪心，短 Go 提示，预热后 4 次，中位数 73.87 作主值，显存占用 20,619 MiB。构建号 b10448 写在本条来源帖（作者的一条回复）里，该帖重复同一个「4 次中位数 73.87」；测法细节来自 https://x.com/MythomancerX/status/2122427190239195385 ; 单次数值没有列出，同时处理的请求数未写，记为宣称。作者写的是「我的单张 3090」（指一张卡，不是一个请求），帖子和回复里都没有单请求或单流的说法，所以单流不成立，同时处理的请求数保持未写。限定：同帖的 DFlash2 结果（155.11–158.52）用的是更新的官方构建，不是同一个二进制，构建号也未写，不收。 2026-11-19 同人同卡同模型的后续帖 https://x.com/MythomancerX/status/2123506049630056590 ：llama.cpp 投机解码，思考关，同 seed，各跑 2 次（两次一致）。代码温度 0 为 76.5–76.8（草稿接受 89.5%），温度 1.0 为 75.5–75.7；散文温度 0 为 60.5–61.2，温度 1.0 为 54.5。帖子没写构建号，不能确认与 b10448 是同一二进制，只追加，不改主值。",
+    "metric_en": "llama.cpp b10448, Qwen3.8-27B Q4_K_M, MTP n-max 2, q4_0 KV, 128K context, greedy, a short Go prompt, 4 runs after a warmup; median 73.87 is the headline; VRAM use 20,619 MiB. The build number b10448 is in the source post (a reply by the author), which repeats the same \"73.87 tok/s median over 4 runs\"; the test details are from https://x.com/MythomancerX/status/2122427190239195385 ; individual run values are not listed and the number of simultaneous requests is not stated, so this is a claim. The author says \"my single 3090\" (one card, not one request) and nothing in the post or its replies says one request or one stream, so single-stream is not established and concurrency stays not stated. Qualification: the DFlash2 result in the same post (155.11-158.52) ran on a newer official build, not the same binary, and its build number is not stated; it is not included. Follow-up on 2026-11-19 by the same person on the same card and model, https://x.com/MythomancerX/status/2123506049630056590 : llama.cpp speculative decoding, thinking off, same seed, 2 runs each (both matched). Code at temperature 0 is 76.5-76.8 (89.5% of drafts accepted), at 1.0 75.5-75.7; prose at temperature 0 is 60.5-61.2, at 1.0 54.5. The post does not give the build, so it cannot be confirmed as the same binary as b10448; appended only, headline unchanged.",
     "tok_s": 73.87,
     "concurrency": "未写",
     "source_note": "第一手来源；独立复核，未独立复现",
@@ -38224,5 +38224,743 @@
       "MTP"
     ],
     "source_id": "src-fde19dcb18"
+  },
+  {
+    "id": "x-336",
+    "category": "text",
+    "model": "DaisyRose-27B",
+    "quant": "RadixArk NVFP4（混合精度：193 个模块 NVFP4、208 个 FP8，磁盘 21.9GB）+ DSpark 草稿，fp8 KV",
+    "engine": "SGLang",
+    "hardware": "1× RTX 5090 32GB",
+    "hardware_family": "NVIDIA 消费级",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
+    "hardware_cost_usd": 5400,
+    "context": "16384",
+    "launch_command": null,
+    "source_url": "https://x.com/niklaslenz_ai/status/2123431856976622060",
+    "source_level": "宣称",
+    "date": "2026-11-19",
+    "measured_by": "niklaslenz_ai",
+    "metric": "DaisyRose-27B 是 RadixArk 在 Qwen3.8-27B 上的后训练模型。按 RadixArk 给 5090 列的配置运行：SGLang v0.5.23，DSpark 草稿，fp8 KV，--context-length 16384，一次只处理一个请求。作者采样（温度 1.0、top_p 0.95、top_k 20）下代码解码 154.9 作主值，散文 130.7；温度 0.7 时代码 152.7、散文 135.7。预填充 2K 11,411、8K 9,613，首 token 2K 0.18 s、8K 0.85 s。方法：每个提示 2 次取中位，输出 512 token，思考关，seed 42；预填充与首 token 来自 0.7 测试，3 次中位。无逐次原始数据，记为宣称。",
+    "metric_en": "DaisyRose-27B is RadixArk's post-trained model on Qwen3.8-27B. Run with the setup RadixArk lists for the 5090: SGLang v0.5.23, DSpark drafter, fp8 KV, --context-length 16384, one request at a time. Headline is code decode 154.9 with the author's sampling (temperature 1.0, top_p 0.95, top_k 20); prose 130.7. At temperature 0.7: code 152.7, prose 135.7. Prefill 11,411 at 2K and 9,613 at 8K; first token 0.18 s at 2K and 0.85 s at 8K. Method: median of 2 runs per prompt, 512 tokens out, thinking off, seed 42; prefill and first token come from the 0.7 test, median of 3. No per-run raw data, so this is a claim.",
+    "tok_s": 154.9,
+    "concurrency": "单流",
+    "source_note": "第一手来源；独立复核，未独立复现",
+    "en": {
+      "quant": "RadixArk NVFP4 (mixed precision: 193 modules NVFP4, 208 FP8; 21.9GB on disk) + DSpark drafter, fp8 KV",
+      "hardware": "1× RTX 5090 32GB",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "concurrency": "single stream",
+      "source_note": "First-hand source; independently checked, not rerun",
+      "context": "16384"
+    },
+    "model_family": "Other",
+    "tags": [
+      "4bit",
+      "8bit",
+      "dense",
+      "speculative"
+    ],
+    "engine_raw": "SGLang v0.5.23",
+    "engine_note": "SGLang v0.5.23",
+    "source_id": "src-caa7ed05aa"
+  },
+  {
+    "id": "x-337",
+    "category": "text",
+    "model": "GLM-5.3-Flash",
+    "quant": "TensorFold 4-bit MTP 包",
+    "engine": "TensorFold",
+    "hardware": "Mac Studio M5 Ultra 512GB（macOS 27.2）",
+    "hardware_family": "Mac",
+    "hardware_cost_text": "未核价",
+    "hardware_cost_usd": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/sash__mit/status/2123457826224038132",
+    "source_level": "宣称",
+    "date": "2026-11-19",
+    "measured_by": "sash__mit",
+    "metric": "TensorFold 1.2.10，TensorFold 4-bit MTP 包，原版 MLX 0.32.4，macOS 27.2。单台 Mac 解码 89.5 作主值，作者称是同机同包 mlx-vlm 的 2.1 倍（同一天按 A-B-B-A 交替测）。单台长文档跑到 128k token。单台这一项同时处理的请求数未写，按仓库惯例保留 tok_s。作者称保留了原始日志，复现仓库尚未公开，记为宣称。同帖两台 Mac 用 GLM-Tandem 的 137（版本未写）不收。",
+    "metric_en": "TensorFold 1.2.10, TensorFold 4-bit MTP pack, stock MLX 0.32.4, macOS 27.2. Headline is one-Mac decode 89.5; the author says this is 2.1× mlx-vlm on the same Mac and pack (same-day A-B-B-A). Long documents worked up to 128k tokens on one Mac. For the one-Mac figure the number of simultaneous requests is not stated; tok_s is kept, following repo convention. The author says raw logs were kept, but the reproduction repo is not public yet, so this is a claim. The same post's two-Mac GLM-Tandem figure of 137 (version not stated) is not included.",
+    "tok_s": 89.5,
+    "concurrency": "未写",
+    "source_note": "第一手来源；独立复核，未独立复现",
+    "en": {
+      "quant": "TensorFold 4-bit MTP pack",
+      "hardware": "Mac Studio M5 Ultra 512GB (macOS 27.2)",
+      "hardware_cost_text": "Not priced",
+      "concurrency": "not stated",
+      "source_note": "First-hand source; independently checked, not rerun"
+    },
+    "model_family": "GLM",
+    "tags": [
+      "4bit",
+      "MoE",
+      "speculative",
+      "MTP"
+    ],
+    "engine_raw": "TensorFold 1.2.10",
+    "engine_note": "TensorFold 1.2.10",
+    "source_id": "src-3fc91a9a00"
+  },
+  {
+    "id": "x-338",
+    "category": "text",
+    "model": "Qwen3.8-Flash-Next v1.1",
+    "quant": "bertholomus/Qwen3.8-Flash-Next-NVFP4-GPTQ（v1.1：路由专家 GPTQ 校准 NVFP4，dense 投影与共享专家 MXFP8）",
+    "engine": "TensorFold",
+    "hardware": "1× RTX PRO 6000 Blackwell 96GB",
+    "hardware_family": "NVIDIA 消费级",
+    "hardware_cost_text": "$15,999 最低追踪报价（新卡，Newegg/B&H/Best Buy 聚合，2026-10-13）；B&H Workstation 版 $17,999.99（见 prices.json）",
+    "hardware_cost_usd": 15999,
+    "context": "262144",
+    "launch_command": null,
+    "source_url": "https://github.com/bertholomus/Qwen3.8-Flash-Next-NVFP4-Recipe",
+    "source_level": "宣称",
+    "date": "2026-11-20",
+    "measured_by": "bertholomusai",
+    "metric": "配方作者 README（v1.1）：原版 TensorFold 1.2.9 发布二进制（tensorfold-1.2.9-linux-x86_64.tar.gz），单流模式 --parallel 1 --context 262144，思考关，贪心。单流解码 159 作主值（新生成 768 token；v1.0 为 152）。智能体模式（--parallel 8 --context 32768，提示缓存开）8 个智能体合计 445，只写入 streams。v1.1 的 KV 页池 1,410 页（v1.0 为 1,048），包体小 2.8GB。README 只给汇总值，无逐次原始数据，记为宣称。作者帖 https://x.com/bertholomusai/status/2123578803809374433",
+    "metric_en": "Recipe-author README (v1.1): stock TensorFold 1.2.9 release binary (tensorfold-1.2.9-linux-x86_64.tar.gz), single mode --parallel 1 --context 262144, thinking off, greedy. Headline is one-stream decode 159 (768 new tokens; v1.0 was 152). In agents mode (--parallel 8 --context 32768, prompt cache on), 8 agents total 445; that goes only in streams. The v1.1 KV page pool is 1,410 pages (v1.0: 1,048) and the pack is 2.8GB smaller. The README gives summary values only, with no per-run raw data, so this is a claim. Author post https://x.com/bertholomusai/status/2123578803809374433",
+    "tok_s": 159,
+    "concurrency": "单流（另测合计）",
+    "source_note": "第一手来源；独立复核，未独立复现",
+    "streams": [
+      {
+        "n": 8,
+        "tok_s": 445
+      }
+    ],
+    "en": {
+      "quant": "bertholomus/Qwen3.8-Flash-Next-NVFP4-GPTQ (v1.1: GPTQ-calibrated NVFP4 routed experts, MXFP8 dense projections and shared experts)",
+      "hardware": "1× RTX PRO 6000 Blackwell 96GB",
+      "hardware_cost_text": "$15,999 lowest tracked quote (new card, Newegg/B&H/Best Buy aggregate, 2026-10-13); B&H Workstation edition $17,999.99 (see prices.json)",
+      "concurrency": "single stream (totals also measured)",
+      "source_note": "First-hand source; independently checked, not rerun",
+      "context": "262144"
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "MoE",
+      "long-context"
+    ],
+    "engine_raw": "TensorFold 1.2.9",
+    "engine_note": "TensorFold 1.2.9",
+    "source_id": "src-0349bbcbff"
+  },
+  {
+    "id": "x-339",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": "MLX 4-bit + DFlash2 草稿",
+    "engine": "TensorFold",
+    "hardware": "1× DGX Spark（GB10）",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "$6,950（128GB，2026-10-11）",
+    "hardware_cost_usd": 6950,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/JRB_AI/status/2123682757960462484",
+    "source_level": "宣称",
+    "date": "2026-11-20",
+    "measured_by": "JRB_AI",
+    "metric": "TensorFold 1.2.9，MLX 4-bit，DFlash2 草稿。单流，输出 512 token，3 次中位，解码速度不含首 token。代码 97.7 作主值（同引擎同权重不开草稿 14.7，6.6 倍）；DSpine 草稿 94.8；散文 52.4（3.6 倍）。同帖同机其他引擎：llama.cpp Q4_K_M 12.4 → 61.9（DFlash2），vLLM nightly NVFP4 10.6 → 56.0（DSpine），版本未写，不另开行。说明帖 https://x.com/JRB_AI/status/2123682758795182189 。无逐次原始数据，记为宣称。",
+    "metric_en": "TensorFold 1.2.9, MLX 4-bit, DFlash2 drafter. One stream, 512 tokens out, median of 3, decode speed excluding the first token. Headline is code 97.7 (14.7 without a drafter on the same engine and weights, 6.6×); DSpine drafter 94.8; prose 52.4 (3.6×). Other engines on the same machine in the same thread: llama.cpp Q4_K_M 12.4 → 61.9 (DFlash2) and vLLM nightly NVFP4 10.6 → 56.0 (DSpine); their versions are not stated, so they are not separate rows. Method post https://x.com/JRB_AI/status/2123682758795182189 . No per-run raw data, so this is a claim.",
+    "tok_s": 97.7,
+    "concurrency": "单流",
+    "source_note": "第一手来源；独立复核，未独立复现",
+    "en": {
+      "quant": "MLX 4-bit + DFlash2 drafter",
+      "hardware": "1× DGX Spark (GB10)",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "concurrency": "single stream",
+      "source_note": "First-hand source; independently checked, not rerun"
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "speculative"
+    ],
+    "engine_raw": "TensorFold 1.2.9",
+    "engine_note": "TensorFold 1.2.9",
+    "source_id": "src-eff610c2f4"
+  },
+  {
+    "id": "x-340",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": "未写",
+    "engine": "llama.cpp",
+    "hardware": "MacBook Pro M5 Pro 48GB",
+    "hardware_family": "Mac",
+    "hardware_cost_text": "未核价",
+    "hardware_cost_usd": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/kaimi_local/status/2123501682340298812",
+    "source_level": "宣称",
+    "date": "2026-11-19",
+    "measured_by": "kaimi_local",
+    "metric": "llama.cpp（构建号未写），思考关，3 次中位。4K 时生成：基座 Qwen3.8-27B 10.00 作主值；Qwen3.8-27B-pi-adapted 运行时加 LoRA 9.64、合并权重 10.00。4K 预填充 407 / 357 / 406。32K 首 token 97 / 109 / 97 s。合并后峰值 33.5GB，作者称在 48GB 内还剩 14GB。量化未写。同时处理的请求数未写，按仓库惯例保留 tok_s。无逐次原始数据，记为宣称。与 x-333（Mac mini M5 Pro 64GB）不是同一台机器。",
+    "metric_en": "llama.cpp (build not stated), thinking off, median of 3. Generation at 4K: the base Qwen3.8-27B at 10.00 is the headline; Qwen3.8-27B-pi-adapted with a runtime LoRA 9.64 and with merged weights 10.00. Prefill at 4K: 407 / 357 / 406. Time to first token at 32K: 97 / 109 / 97 s. Merged peak 33.5GB; the author says it fits in 48GB with 14GB to spare. Quant not stated. The number of simultaneous requests is not stated; tok_s is kept, following repo convention. No per-run raw data, so this is a claim. Not the same machine as x-333 (Mac mini M5 Pro 64GB).",
+    "tok_s": 10.0,
+    "concurrency": "未写",
+    "source_note": "第一手来源；独立复核，未独立复现",
+    "en": {
+      "quant": "Not stated",
+      "hardware": "MacBook Pro M5 Pro 48GB",
+      "hardware_cost_text": "Not priced",
+      "concurrency": "not stated",
+      "source_note": "First-hand source; independently checked, not rerun",
+      "engine_note": "llama.cpp (build not stated)"
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "dense"
+    ],
+    "source_id": "src-63f063fde3"
+  },
+  {
+    "id": "x-341",
+    "category": "text",
+    "model": "Qwen3.8-Flash-Next",
+    "quant": "Q4（具体包名未写）",
+    "engine": "Strata",
+    "hardware": "AMD Strix Halo 128GB 小主机（Windows 11）",
+    "hardware_family": "AMD",
+    "hardware_cost_text": "未核价（作者称 2025-10 以 €1,990 购入）",
+    "hardware_cost_usd": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/M_AlgoSystems/status/2123739658932625730",
+    "source_level": "宣称",
+    "date": "2026-11-20",
+    "measured_by": "M_AlgoSystems",
+    "metric": "Strata（版本未写），Windows 11，Qwen3.8-Flash-Next Q4，平均 46 作主值。同时处理的请求数未写，按仓库惯例保留 tok_s。只有一个平均值，无方法与原始数据，记为宣称。低预算小主机。",
+    "metric_en": "Strata (version not stated), Windows 11, Qwen3.8-Flash-Next Q4; the headline is the stated average of 46. The number of simultaneous requests is not stated; tok_s is kept, following repo convention. Only one average is given, with no method or raw data, so this is a claim. Low-budget mini PC.",
+    "tok_s": 46,
+    "concurrency": "未写",
+    "source_note": "第一手来源；独立复核，未独立复现",
+    "en": {
+      "quant": "Q4 (exact package name not stated)",
+      "hardware": "AMD Strix Halo 128GB mini PC (Windows 11)",
+      "hardware_cost_text": "Not priced (the author says it was bought for €1,990 in 2025-10)",
+      "concurrency": "not stated",
+      "source_note": "First-hand source; independently checked, not rerun",
+      "engine_note": "Strata (version not stated)"
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "MoE"
+    ],
+    "source_id": "src-b38df55bc7"
+  },
+  {
+    "id": "x-342",
+    "category": "text",
+    "model": "Arete-27B",
+    "quant": "4-bit + 补回的 Qwen3.8-27B MTP 头",
+    "engine": "MLX",
+    "hardware": "Apple M5 Max（机型与内存未写）",
+    "hardware_family": "Mac",
+    "hardware_cost_text": "未核价",
+    "hardware_cost_usd": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/ParisMichalas/status/2123712157313311071",
+    "source_level": "宣称",
+    "date": "2026-11-20",
+    "measured_by": "ParisMichalas",
+    "metric": "Arete-27B 发布时不带 MTP 头，作者把基座 Qwen3.8-27B 的 MTP 头补回。mlx-vlm（版本未写），4-bit，思考关，单流。代码 62 作主值（不开 MTP 为 32，1.94 倍，草稿接受率 84%）；散文 33 → 48（1.47 倍，55%）。M5 Max 的机型与内存未写。无逐次原始数据，记为宣称。",
+    "metric_en": "Arete-27B ships without an MTP head; the author put the base Qwen3.8-27B head back. mlx-vlm (version not stated), 4-bit, thinking off, one stream. Headline is code 62 (32 without MTP, 1.94×, 84% of drafts accepted); prose 33 → 48 (1.47×, 55%). The M5 Max model and memory size are not stated. No per-run raw data, so this is a claim.",
+    "tok_s": 62,
+    "concurrency": "单流",
+    "source_note": "第一手来源；独立复核，未独立复现",
+    "en": {
+      "quant": "4-bit + the Qwen3.8-27B MTP head put back",
+      "hardware": "Apple M5 Max (model and memory not stated)",
+      "hardware_cost_text": "Not priced",
+      "concurrency": "single stream",
+      "source_note": "First-hand source; independently checked, not rerun",
+      "engine_note": "mlx-vlm (version not stated)"
+    },
+    "model_family": "Other",
+    "tags": [
+      "4bit",
+      "dense",
+      "speculative",
+      "MTP"
+    ],
+    "engine_raw": "mlx-vlm",
+    "engine_note": "mlx-vlm",
+    "source_id": "src-04c6cc015b"
+  },
+  {
+    "id": "x-343",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": "Q4_K_M",
+    "engine": "Ollama",
+    "hardware": "1× RTX 3090 24GB（约 349W）",
+    "hardware_family": "NVIDIA 消费级",
+    "hardware_cost_text": "$1,206–1,499（二手成交，2026-10-06/12）",
+    "hardware_cost_usd": 1206,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/airi_ai_navi/status/2123540108062466467",
+    "source_level": "宣称",
+    "date": "2026-11-19",
+    "measured_by": "airi_ai_navi",
+    "metric": "Ollama（版本未写），Qwen3.8-27B Q4_K_M，单张 RTX 3090，功耗约 349W，40.6 作主值。作者的日常配置。同时处理的请求数未写，按仓库惯例保留 tok_s。无方法与原始数据，记为宣称。",
+    "metric_en": "Ollama (version not stated), Qwen3.8-27B Q4_K_M, one RTX 3090 at about 349W; the headline is 40.6. The author's daily setup. The number of simultaneous requests is not stated; tok_s is kept, following repo convention. No method or raw data, so this is a claim.",
+    "tok_s": 40.6,
+    "concurrency": "未写",
+    "source_note": "第一手来源；独立复核，未独立复现",
+    "en": {
+      "quant": "Q4_K_M",
+      "hardware": "1× RTX 3090 24GB (about 349W)",
+      "hardware_cost_text": "$1,206–1,499 (used, sold, 2026-10-06/12)",
+      "concurrency": "not stated",
+      "source_note": "First-hand source; independently checked, not rerun",
+      "engine_note": "Ollama (version not stated)"
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense"
+    ],
+    "source_id": "src-11069ceea6"
+  },
+  {
+    "id": "x-344",
+    "category": "text",
+    "model": "Qwen3.5-4B",
+    "quant": "unsloth/Qwen3.5-4B-MTP-GGUF Q4_K_M（含 MTP 张量）",
+    "engine": "llama.cpp",
+    "hardware": "NVIDIA Jetson AGX Orin 32GB（JetPack 6.2.1）",
+    "hardware_family": "其他",
+    "hardware_cost_text": "未核价",
+    "hardware_cost_usd": null,
+    "context": "8192",
+    "launch_command": "llama-server -hf unsloth/Qwen3.5-4B-MTP-GGUF:Q4_K_M -ngl 99 -c 8192 -np 1 --spec-type draft-mtp",
+    "source_url": "https://wiki.seeedstudio.com/jetson/accelerate_llm_inference_mtp/",
+    "source_level": "宣称",
+    "date": "2026-11-20",
+    "measured_by": "Seeed Studio",
+    "metric": "Seeed Studio 在其 Wiki 上自测（测试硬件是 NVIDIA Jetson AGX Orin 32GB，Seeed 不是该硬件、模型或引擎的作者，按宣称记）：llama.cpp（CUDA 构建，构建号未写），一个槽位（-np 1），-c 8192，--spec-type draft-mtp。生成斐波那契 Python 脚本：开 MTP 49.7 作主值，不开 MTP 25.6。另在人群监测演示里，开 MTP 让任务完成时间缩短约 3 s。无逐次原始数据，记为宣称。作者帖 https://x.com/seeedstudio/status/2123725540670767277",
+    "metric_en": "Seeed Studio's own test on its wiki (the hardware is an NVIDIA Jetson AGX Orin 32GB; Seeed is not the author of the hardware, model or engine, so this is a claim): llama.cpp (CUDA build, build number not stated), one slot (-np 1), -c 8192, --spec-type draft-mtp. Writing a Fibonacci Python script: 49.7 with MTP is the headline, 25.6 without MTP. In a crowd-monitoring demo, MTP cut task completion time by about 3 s. No per-run raw data, so this is a claim. Post by Seeed Studio https://x.com/seeedstudio/status/2123725540670767277",
+    "tok_s": 49.7,
+    "concurrency": "单流",
+    "source_note": "第一手来源；独立复核，未独立复现",
+    "en": {
+      "quant": "unsloth/Qwen3.5-4B-MTP-GGUF Q4_K_M (with MTP tensors)",
+      "hardware": "NVIDIA Jetson AGX Orin 32GB (JetPack 6.2.1)",
+      "hardware_cost_text": "Not priced",
+      "concurrency": "single stream",
+      "source_note": "First-hand source; independently checked, not rerun",
+      "context": "8192",
+      "engine_note": "llama.cpp CUDA build (build number not stated), --spec-type draft-mtp"
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "speculative",
+      "MTP"
+    ],
+    "source_id": "src-e015ee544b"
+  },
+  {
+    "id": "comm-460",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": "MLX 4-bit（TensorFold/Qwen3.8-27B-MLX-4bit，revision 22d8d538）+ z-lab/Qwen3.8-27B-DFlash2 草稿（revision 50307d4c）",
+    "engine": "TensorFold (SergiioB fork)",
+    "hardware": "2× Intel Arc Pro B70 32GB（PCIe 4.0 x8/x8，两卡均 230W / 2,800 MHz）",
+    "hardware_family": "其他",
+    "hardware_cost_text": "未核价",
+    "hardware_cost_usd": null,
+    "context": "139264",
+    "launch_command": "XPU_ATTN_PREF=256 ZE_FLAT_DEVICE_HIERARCHY=COMPOSITE zig-out/xpu/bin/tensorfold-native serve Qwen3.8-27B-MLX-4bit --drafter Qwen3.8-27B-DFlash2 --tp 2 --parallel 1 --context 139264 --prompt-cache-gib 0 --no-thinking --no-update-check --host 127.0.0.1 --port 8046",
+    "source_url": "https://github.com/SergiioB/intel-arc-pro-b70-inference-cookbook/blob/d5a9b504eee68067c9558b8b8ed920609c01ebc2/docs/qwen38-27b/RECIPES-B70.md",
+    "source_level": "实测",
+    "date": "2026-11-19",
+    "measured_by": "@SergiiioBS",
+    "metric": "作者分叉 SergiioB/TensorFold 的二进制 2286abc0c（上游 PR #3586 的 --tp 2 加作者的前缀注意力核，XPU_ATTN_PREF=256），构建时只加 ocloc 26.05 兼容补丁（env.txt 记录的唯一改动文件 zig/build/xpu.zig 就是这个补丁）。Linux 7.0.0-28，Intel compute-runtime 26.05.37020.3，Level Zero 1.28.2。RECIPES-B70.md 配方 3：两卡 --tp 2 --parallel 1 --context 139264，--prompt-cache-gib 0，思考关，两卡均 230W / 2,800 MHz，贪心，输出 512 token。68 token 代码提示跑两次，解码 173.25 / 173.73，均值 173.49，取一位小数 173.5 作主值；52 token 散文提示 133.89 / 134.44。7,976 / 32,552 / 130,856 token 代码提示为 151.4–151.5 / 123.7–123.8 / 81.3–81.6。不开草稿的串行解码依次为 50.5 / 46.8 / 44.6 / 32.1。逐次原始数据在 results/qwen38-27b/recipes-equal-caps-20261119/rebaseline-230w/tp2/cells.jsonl ，构建与启动步骤在 RECIPES-B70.md 配方 1 与配方 3。主值不取 166 或 121.6：作者 X 帖的 128 → 166 是 2026-11-18 第 0 张卡仍限 180W / 2,400 MHz 时的旧值（同页表格为 165.2）；121.6 是 TENSORFOLD-TWO-CARDS 页的提示长度扫描（512 token 提示，输出 256 token，3 次均值，也在 180/230W 下），口径不同。在修复分支 ac346900b 上同一配方为 173.6，速度相同。单卡即可装下全部权重（配方 2），两卡时模型完整放在 GPU 显存里。作者 X 帖 https://x.com/SergiiioBS/status/2123332365149712673 。同作者单卡行见 comm-294。",
+    "metric_en": "Binary 2286abc0c from the author's fork SergiioB/TensorFold (upstream PR #3586 --tp 2 plus the author's prefix attention kernel, XPU_ATTN_PREF=256), built with only the ocloc 26.05 compatibility patch (the one modified file recorded in env.txt, zig/build/xpu.zig, is that patch). Linux 7.0.0-28, Intel compute-runtime 26.05.37020.3, Level Zero 1.28.2. RECIPES-B70.md recipe 3: two cards, --tp 2 --parallel 1 --context 139264, --prompt-cache-gib 0, thinking off, both cards at 230W / 2,800 MHz, greedy, 512 tokens out. Two runs on the 68-token code prompt decode at 173.25 / 173.73; their mean, 173.49, rounded to 173.5, is the headline. The 52-token prose prompt gives 133.89 / 134.44. Code prompts of 7,976 / 32,552 / 130,856 tokens give 151.4-151.5 / 123.7-123.8 / 81.3-81.6. Serial decode without the drafter is 50.5 / 46.8 / 44.6 / 32.1. Per-run raw data is in results/qwen38-27b/recipes-equal-caps-20261119/rebaseline-230w/tp2/cells.jsonl ; build and launch steps are recipes 1 and 3 in RECIPES-B70.md. Why not 166 or 121.6: the 128 → 166 in the author's X post is the older value from 2026-11-18, when card 0 still ran at 180W / 2,400 MHz (165.2 in the page's table); 121.6 comes from the prompt-length sweep on the TENSORFOLD-TWO-CARDS page (512-token prompt, 256 tokens out, mean of 3, also at 180/230W), a different method. The same recipe on the fixes branch ac346900b gives 173.6, the same speed. One card holds all the weights (recipe 2), so on two cards the model stays entirely in GPU memory. Author's X post https://x.com/SergiiioBS/status/2123332365149712673 . The same author's one-card row is comm-294.",
+    "tok_s": 173.5,
+    "concurrency": "单流",
+    "source_note": "作者 cookbook 仓库配方页与 cells.jsonl 逐次原始数据（作者 X 帖链接此仓库）",
+    "en": {
+      "quant": "MLX 4-bit (TensorFold/Qwen3.8-27B-MLX-4bit, revision 22d8d538) + z-lab/Qwen3.8-27B-DFlash2 drafter (revision 50307d4c)",
+      "hardware": "2× Intel Arc Pro B70 32GB (PCIe 4.0 x8/x8, both cards at 230W / 2,800 MHz)",
+      "hardware_cost_text": "Not priced",
+      "concurrency": "single stream",
+      "context": "139264",
+      "source_note": "Author's cookbook recipe page and per-run raw data in cells.jsonl (the author's X post links this repo)",
+      "engine_note": "SergiioB/TensorFold fork, binary 2286abc0c (upstream PR #3586 --tp 2 + prefix attention kernel) + ocloc 26.05 build patch"
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "long-context",
+      "speculative",
+      "multi-GPU"
+    ],
+    "source_id": "src-a2eb9f9070",
+    "engine_fork": "SergiioB"
+  },
+  {
+    "id": "comm-461",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": "Q4_K_M + 草稿头投机（最多 2 个草稿 token），4-bit KV",
+    "engine": "LexiEngine",
+    "hardware": "1× RX 7900 XTX 24GB（限 291W，Vulkan）+ i7-9700（Linux 7.3）",
+    "hardware_family": "AMD",
+    "hardware_cost_text": "未核价",
+    "hardware_cost_usd": null,
+    "context": "262144",
+    "launch_command": null,
+    "source_url": "https://www.reddit.com/r/LocalLLaMA/comments/1y0j6f7/",
+    "source_level": "宣称",
+    "date": "2026-11-19",
+    "measured_by": "W61k3r",
+    "metric": "LexiEngine 0a5222f（作者自写的 Rust 引擎，开发版；GitHub 发布 tag 为 LexiSuiteT17），TurboFCFusion 配置，上下文 262,144，4-bit KV，批大小 2048/512，最多 2 个草稿 token，一个槽位，机器上无其他任务。62 token 故事提示解码 75.11 作主值；76 token 代码提示 74.99；3,631 / 33,002 / 133,561 / 253,291 / 261,896 token 提示为 71.38 / 69.88 / 50.18 / 39.90 / 39.64，首 token 3.99 / 40.0 / 222.6 / 557.5 / 586.6 s。同一晚同配置 llama.cpp b12531 为 65.82（见 comm-412）。作者称 11-19 用发布版 84c95dd 抽查，速度在波动范围内。引擎作者自测，详表在 https://lexipanel.com/docs/Benchmarks.html ，无逐次原始数据，记为宣称。与 comm-412 同人同机同模型，引擎不同，另开一行。",
+    "metric_en": "LexiEngine 0a5222f (the author's own Rust engine, development release; GitHub release tag LexiSuiteT17), TurboFCFusion configuration, 262,144 context, 4-bit KV, batch 2048/512, at most 2 drafted tokens, one slot, nothing else running. Headline is decode 75.11 on the 62-token story prompt; 74.99 on the 76-token code prompt; prompts of 3,631 / 33,002 / 133,561 / 253,291 / 261,896 tokens give 71.38 / 69.88 / 50.18 / 39.90 / 39.64, first token at 3.99 / 40.0 / 222.6 / 557.5 / 586.6 s. llama.cpp b12531 with the same settings the same night gives 65.82 (see comm-412). The author says a spot check of release 84c95dd on 11-19 was within run-to-run variation. The engine author's own test; full tables at https://lexipanel.com/docs/Benchmarks.html ; no per-run raw data, so this is a claim. Same person, machine and model as comm-412 but a different engine, so a separate row.",
+    "tok_s": 75.11,
+    "concurrency": "单流",
+    "source_note": "第一手来源；独立复核，未独立复现",
+    "en": {
+      "quant": "Q4_K_M + draft-head speculation (at most 2 drafted tokens), 4-bit KV",
+      "hardware": "1× RX 7900 XTX 24GB (291W cap, Vulkan) + i7-9700 (Linux 7.3)",
+      "hardware_cost_text": "Not priced",
+      "concurrency": "single stream",
+      "source_note": "First-hand source; independently checked, not rerun",
+      "context": "262144",
+      "engine_note": "LexiEngine 0a5222f (development release; GitHub release tag LexiSuiteT17)"
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "long-context",
+      "speculative"
+    ],
+    "source_id": "src-cb6ea78c8c"
+  },
+  {
+    "id": "comm-462",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": "W3A4 3-bit 权重 + MXFP4 target + DFlash2 草稿（7 token），4-bit KV，FP8 输出头",
+    "engine": "Paiton",
+    "hardware": "1× Radeon AI PRO R9700 32GB（Proxmox 虚拟机，客户机内存 64 GiB）",
+    "hardware_family": "AMD",
+    "hardware_cost_text": "未核价",
+    "hardware_cost_usd": null,
+    "context": "262144",
+    "launch_command": null,
+    "source_url": "https://www.reddit.com/r/LocalLLaMA/comments/1y0i8ww/",
+    "source_level": "宣称",
+    "date": "2026-11-19",
+    "measured_by": "paq85",
+    "metric": "Paiton vLLM（ROCm 10，插件 b263e0d6），Proxmox 虚拟机，客户机内存 64 GiB，上下文 262K。贪心，流式，思考关，短提示；24 个请求覆盖 9 类任务，每个阶段 3 轮。单流解码中位 173.8 作主值（均值 179.4，范围 99.8–234.1；代码 214，聊天 100），首 token 40 ms，草稿接受率 54%。1 / 2 / 4 / 8 路合计 179 / 286 / 459 / 684，只写入 streams。预填充 12K 时 4,078，245K 时 2,158。详表在作者博客 https://www.damiansromek.pl/en/tech/blog/local-llm-benchmarks-r9700/ （2026-11-17）。无逐次原始数据，记为宣称。同帖 Strata 的 83.8 在博客里一处写 Qwen3.8-27B、一处写 Qwen3.8-Flash-Next，模型不明，不收。",
+    "metric_en": "Paiton vLLM (ROCm 10, plugin b263e0d6), Proxmox VM with 64 GiB guest RAM, 262K context. Greedy, streaming, thinking off, short prompts; 24 requests over 9 task types, three rounds per phase. Headline is the single-stream median decode 173.8 (mean 179.4, range 99.8-234.1; code 214, chat 100); first token 40 ms; 54% of drafts accepted. Totals at 1 / 2 / 4 / 8 streams are 179 / 286 / 459 / 684 and go only in streams. Prefill 4,078 at 12K and 2,158 at 245K. Full tables are on the author's blog https://www.damiansromek.pl/en/tech/blog/local-llm-benchmarks-r9700/ (2026-11-17). No per-run raw data, so this is a claim. The same post's Strata 83.8 is given as Qwen3.8-27B in one place and Qwen3.8-Flash-Next in another on the blog; the model is unclear, so it is not included.",
+    "tok_s": 173.8,
+    "concurrency": "单流（另测合计）",
+    "source_note": "第一手来源；独立复核，未独立复现",
+    "streams": [
+      {
+        "n": 2,
+        "tok_s": 286
+      },
+      {
+        "n": 4,
+        "tok_s": 459
+      },
+      {
+        "n": 8,
+        "tok_s": 684
+      }
+    ],
+    "en": {
+      "quant": "W3A4 3-bit weights + MXFP4 target + DFlash2 drafter (7 tokens), 4-bit KV, FP8 output head",
+      "hardware": "1× Radeon AI PRO R9700 32GB (Proxmox VM, 64 GiB guest RAM)",
+      "hardware_cost_text": "Not priced",
+      "concurrency": "single stream (totals also measured)",
+      "source_note": "First-hand source; independently checked, not rerun",
+      "context": "262144",
+      "engine_note": "Paiton vLLM (ROCm 10, plugin b263e0d6)"
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "4bit",
+      "8bit",
+      "dense",
+      "long-context",
+      "speculative"
+    ],
+    "source_id": "src-27b7d41b77"
+  },
+  {
+    "id": "comm-463",
+    "category": "text",
+    "model": "Qwen3.8-Flash-Next",
+    "quant": "Halogen V2 checkpoint（位宽未写）+ R2 HT4 草稿",
+    "engine": "Halogen",
+    "hardware": "Beelink GTR9 Pro（Ryzen AI Max+ 395，128GB 统一内存）",
+    "hardware_family": "AMD",
+    "hardware_cost_text": "未核价",
+    "hardware_cost_usd": null,
+    "context": "524288",
+    "launch_command": null,
+    "source_url": "https://www.reddit.com/r/StrixHalo/comments/1y0ouzy/",
+    "source_level": "宣称",
+    "date": "2026-11-20",
+    "measured_by": "Independent_Rock347",
+    "metric": "Halogen 0.20.7，Flash-Next V2 checkpoint，R2 HT4 草稿，524,288 位置窗口。单个短代码请求 94.3 作主值（3 次单请求，输出上限 320 token，温度 0.7；换回 checkpoint 自带草稿为 79.6）。4 个代码请求合计 130.0（含预填充与解码，端到端），只写入 streams。0.20.1 上 32,540 token 冷提示预填充 1,933；缓存命中的代码追问首 token 从 620 ms 降到 131 ms。图表与测试设置在作者博客 https://lycsweb.com/blog-strix-halo-aging-like-fine-wine.html （2026-11-19）。无逐次原始数据，记为宣称。",
+    "metric_en": "Halogen 0.20.7, Flash-Next V2 checkpoint, R2 HT4 drafter, 524,288-position window. Headline is 94.3 on one short coding request (three single requests, 320-token output cap, temperature 0.7; 79.6 with the checkpoint's own drafter). Four coding requests total 130.0 (prefill plus decode, end to end) and go only in streams. On 0.20.1, a cold 32,540-token prompt prefills at 1,933; first token on a cached coding follow-up fell from 620 ms to 131 ms. Charts and test settings are on the author's blog https://lycsweb.com/blog-strix-halo-aging-like-fine-wine.html (2026-11-19). No per-run raw data, so this is a claim.",
+    "tok_s": 94.3,
+    "concurrency": "单流（另测合计）",
+    "source_note": "第一手来源；独立复核，未独立复现",
+    "streams": [
+      {
+        "n": 4,
+        "tok_s": 130.0
+      }
+    ],
+    "en": {
+      "quant": "Halogen V2 checkpoint (bit width not stated) + R2 HT4 drafter",
+      "hardware": "Beelink GTR9 Pro (Ryzen AI Max+ 395, 128GB unified memory)",
+      "hardware_cost_text": "Not priced",
+      "concurrency": "single stream (totals also measured)",
+      "source_note": "First-hand source; independently checked, not rerun",
+      "context": "524288"
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "MoE",
+      "long-context",
+      "speculative"
+    ],
+    "engine_raw": "Halogen 0.20.7",
+    "engine_note": "Halogen 0.20.7",
+    "source_id": "src-cf9b570a31"
+  },
+  {
+    "id": "comm-464",
+    "category": "text",
+    "model": "Kolibri-1 78B",
+    "quant": "IQ2_M（28GB；MoE，每 token 激活 3.46B）",
+    "engine": "llama.cpp",
+    "hardware": "Minisforum AI X1 Pro（Ryzen AI 9 HX 370 + Radeon 890M，96GB DDR5-5600，其中 48GB 划给显存）",
+    "hardware_family": "AMD",
+    "hardware_cost_text": "未核价",
+    "hardware_cost_usd": null,
+    "context": "262144",
+    "launch_command": null,
+    "source_url": "https://www.reddit.com/r/LocalLLM/comments/1y0pjq9/",
+    "source_level": "宣称",
+    "date": "2026-11-20",
+    "measured_by": "Successful_Example83",
+    "metric": "llama.cpp Vulkan（构建号未写），Kolibri-1 78B IQ2_M（28GB，每 token 激活 3.46B），上下文 262k。解码 27.28 作主值，预填充 430。作者的主力智能体模型。同表其他行：Qwen3.6-35B Q4_K_M 26.8–27.0（只有区间）、Ling 3.0 Flash 124B 20.4 / 19.7 等，未单列。同时处理的请求数未写，按仓库惯例保留 tok_s。无逐次原始数据，记为宣称。低预算小主机。",
+    "metric_en": "llama.cpp Vulkan (build not stated), Kolibri-1 78B IQ2_M (28GB, 3.46B active per token), 262k context. Headline is decode 27.28; prefill 430. The author's main agent model. Other rows in the same table, such as Qwen3.6-35B Q4_K_M at 26.8-27.0 (range only) and Ling 3.0 Flash 124B at 20.4 / 19.7, are not separate rows. The number of simultaneous requests is not stated; tok_s is kept, following repo convention. No per-run raw data, so this is a claim. Low-budget mini PC.",
+    "tok_s": 27.28,
+    "concurrency": "未写",
+    "source_note": "第一手来源；独立复核，未独立复现",
+    "en": {
+      "quant": "IQ2_M (28GB; MoE, 3.46B active per token)",
+      "hardware": "Minisforum AI X1 Pro (Ryzen AI 9 HX 370 + Radeon 890M, 96GB DDR5-5600, 48GB of it shared as VRAM)",
+      "hardware_cost_text": "Not priced",
+      "concurrency": "not stated",
+      "source_note": "First-hand source; independently checked, not rerun",
+      "context": "262144",
+      "engine_note": "llama.cpp Vulkan (build not stated)"
+    },
+    "model_family": "Other",
+    "tags": [
+      "2bit",
+      "MoE",
+      "long-context"
+    ],
+    "source_id": "src-a9f177d1d8"
+  },
+  {
+    "id": "comm-465",
+    "category": "text",
+    "model": "SenseNova-Loop-9B",
+    "quant": "MLX 4-bit（作者用 mlx-vlm 从官方权重自转）",
+    "engine": "MLX",
+    "hardware": "Mac Studio M5 Ultra 256GB",
+    "hardware_family": "Mac",
+    "hardware_cost_text": "未核价",
+    "hardware_cost_usd": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://www.reddit.com/r/LocalLLM/comments/1y0f7sp/",
+    "source_level": "宣称",
+    "date": "2026-11-19",
+    "measured_by": "Binary_orchid",
+    "metric": "mlx-vlm main 分支（提交号未写；Loop 支持在 main 上），作者从官方权重自转 MLX 4-bit。每次新起服务，GPU 上无其他任务，一个提示（《战争与和平》节选，10% / 50% / 90% 处藏 3 个 7 位数码），生成 256 token，思考关。1K 上下文生成 20.0 作主值；128K 17.2，512K 11.0；读 512K 提示 12.0 分钟，512K 时峰值内存 71GB。同表 MLX 8-bit 17.9、BF16 15.1，官方 GGUF Q4_K_M（OpenSenseNova/llama.cpp 分叉）7.1、Q8_0 8.2，未单列。所有构建在每个长度都找回 3 个数码。配置的上下文上限未写。无逐次原始数据，记为宣称。",
+    "metric_en": "mlx-vlm main branch (commit not stated; the Loop support is on main), MLX 4-bit self-converted from the official weights. Each run on a fresh server with nothing else on the GPU and one prompt (a War and Peace excerpt with three 7-digit codes at 10% / 50% / 90%), 256 new tokens, thinking off. Headline is generation 20.0 at 1K context; 17.2 at 128K and 11.0 at 512K; reading the 512K prompt took 12.0 minutes, peak memory 71GB at 512K. The same table's MLX 8-bit 17.9, BF16 15.1 and the official GGUF Q4_K_M (OpenSenseNova/llama.cpp fork) 7.1 and Q8_0 8.2 are not separate rows. Every build found all three codes at every length. The configured context limit is not stated. No per-run raw data, so this is a claim.",
+    "tok_s": 20.0,
+    "concurrency": "单流",
+    "source_note": "第一手来源；独立复核，未独立复现",
+    "en": {
+      "quant": "MLX 4-bit (self-converted from the official weights with mlx-vlm)",
+      "hardware": "Mac Studio M5 Ultra 256GB",
+      "hardware_cost_text": "Not priced",
+      "concurrency": "single stream",
+      "source_note": "First-hand source; independently checked, not rerun",
+      "engine_note": "mlx-vlm main branch (commit not stated)"
+    },
+    "model_family": "Other",
+    "tags": [
+      "4bit",
+      "dense"
+    ],
+    "engine_raw": "mlx-vlm",
+    "engine_note": "mlx-vlm",
+    "source_id": "src-fe8c01ca95"
+  },
+  {
+    "id": "comm-466",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": "NVFP4，int8 KV",
+    "engine": "Basalt",
+    "hardware": "1× RTX 5090 32GB（800W 上限，PCIe 5.0 x16）+ Ryzen 7 9800X3D + 64GiB 内存（Windows）",
+    "hardware_family": "NVIDIA 消费级",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
+    "hardware_cost_usd": 5400,
+    "context": "66661",
+    "launch_command": null,
+    "source_url": "https://github.com/jesdga95/basalt/pull/471",
+    "source_level": "宣称",
+    "date": "2026-11-19",
+    "measured_by": "MrTukTuk",
+    "metric": "Basalt commit d3b7574296，community-1 预设（basalt-bench --community），--gpu 0 --max-context 66661 --kv int8，NVFP4。对话任务解码 307.5 作主值（与 comm-443、comm-455 一样取对话测试集）；结构化 958.0；散文 226.5；综合 575.0。草稿接受率：对话 42.8%、结构化 86.2%、散文 32.5%。预填充 16K 18,709.7、64K 13,322.1。PR 正文写 27B 完整放在 32 GiB 显存里，从 x8 换到 x16 解码约 +1.5%。数据是 docs/community/benchmarks.json 的一行（2026-11-19，提交人 MrTukTuk，PR 作者 bovali），无逐次原始数据，同时处理的请求数未写，记为宣称。PR 未合并（jesdga95/basalt#471）。同 PR 的 Flash-Next IQ3_XXS 行不收（81 GiB 的 MoE 包装不进 32 GiB 显存）。",
+    "metric_en": "Basalt commit d3b7574296, community-1 preset (basalt-bench --community), --gpu 0 --max-context 66661 --kv int8, NVFP4. Conversation-task decode 307.5 is the headline (the conversation fixture, as in comm-443 and comm-455); structured 958.0; prose 226.5; blended 575.0. Draft acceptance: conversation 42.8%, structured 86.2%, prose 32.5%. Prefill 18,709.7 at 16K and 13,322.1 at 64K. The PR body says the 27B sits fully in 32 GiB of VRAM and that moving from x8 to x16 gave about +1.5% decode. The data is one row of docs/community/benchmarks.json (2026-11-19, submitter MrTukTuk, PR author bovali) with no per-run raw data, and the number of simultaneous requests is not stated, so this is a claim. Unmerged PR (jesdga95/basalt#471). The Flash-Next IQ3_XXS row in the same PR is not included (an 81 GiB MoE pack does not fit in 32 GiB of VRAM).",
+    "tok_s": 307.5,
+    "concurrency": "未写",
+    "source_note": "第一手来源；独立复核，未独立复现",
+    "en": {
+      "quant": "NVFP4, int8 KV",
+      "hardware": "1× RTX 5090 32GB (800W limit, PCIe 5.0 x16) + Ryzen 7 9800X3D + 64GiB RAM (Windows)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "concurrency": "not stated",
+      "source_note": "First-hand source; independently checked, not rerun",
+      "context": "66661",
+      "engine_note": "Basalt commit d3b7574296, community-1 preset, --gpu 0 --max-context 66661 --kv int8"
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "speculative"
+    ],
+    "source_id": "src-3016fadf9f"
+  },
+  {
+    "id": "comm-467",
+    "category": "text",
+    "model": "DeepSeek-V4.1-Flash-1017",
+    "quant": "原生权重（官方 checkpoint，未再量化）",
+    "engine": "spark-ds41f",
+    "hardware": "4× DGX Spark（GB10），tp4-ring（ConnectX-7 线缆环，无交换机）",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "≈$27,800（4×$6,950，计算值）",
+    "hardware_cost_usd": 27800,
+    "context": "1048576",
+    "launch_command": null,
+    "source_url": "https://github.com/christopherowen/spark-ds41f/tree/d3d40d941f2752fea95aa770eb10d41b5ad5aa1a/manifests/suites/2026-11-20-spark-ds41f-1120-tp4-single-stream",
+    "source_level": "实测",
+    "date": "2026-11-20",
+    "measured_by": "christopherowen",
+    "metric": "spark-ds41f-1120（2026-11-20 发布，镜像 spark-ds41f:1120，sha256:5c12472565a7），tp4-ring：4 台 DGX Spark 用双 ConnectX-7 200GbE 线缆连成环，无交换机，64 KiB 页内核加 Memory Saver，32 个会话槽，上下文 1,048,576。单流套件 c1 的逐请求解码中位 89.0 作主值（c1.json 请求表中计时窗口内 104 个请求，每个按首 token 之后的 token 数除以首末 token 间隔计算）；README 生成表的 c1 输出吞吐 89.1 另标：c1.json 为预热 60 s 后 300 s 内的 10 个批次，批均值 89.06，服务端 generation_tps 相同，首 token 中位 0.11 s；单 token 间隔中位 11.09 ms；约 23 token 的短提示，每次输出 256 token，思考关，2026-11-18 测。采样（温度 1.0）c1 为 87.1。8 / 16 路合计 213.6 / 280.4，只写入 streams。预填充 32K 9,615、1M 9,397。作者发布帖按散文 / 代码分开为 84.7 / 105.1，口径不同。逐请求原始数据在本链接的 c1.json，复现步骤见仓库 docs/setup.md 。他人跑同一配方的行见 x-193、x-307、x-311。发布帖 https://x.com/christopherowen/status/2123764423600861612",
+    "metric_en": "spark-ds41f-1120 (released 2026-11-20, image spark-ds41f:1120, sha256:5c12472565a7), tp4-ring: four DGX Sparks cabled into a ring with dual ConnectX-7 200GbE links, no switch, 64 KiB page kernel plus Memory Saver, 32 session slots, 1,048,576 context. Headline is the per-request decode median of the single-stream suite c1, 89.0 (104 requests in the timed window of the c1.json request table, each computed as the tokens after the first divided by the time from first to last token); the README's c1 output throughput of 89.1 is separate: c1.json has 10 batches over 300 s after a 60 s warm-up, batch mean 89.06, the same as the server's generation_tps; median first token 0.11 s; median time per output token 11.09 ms; short prompts of about 23 tokens, 256 tokens out per request, thinking off; measured 2026-11-18. Sampled (temperature 1.0) c1 is 87.1. Totals at 8 / 16 streams are 213.6 / 280.4 and go only in streams. Prefill 9,615 at 32K and 9,397 at 1M. The author's release post splits it into prose / code 84.7 / 105.1, a different method. Per-request raw data is in c1.json at this link; reproduction steps are in the repo's docs/setup.md . Rows for other people running the same recipe are x-193, x-307 and x-311. Release post https://x.com/christopherowen/status/2123764423600861612",
+    "tok_s": 89.0,
+    "concurrency": "单流（另测合计）",
+    "source_note": "配方作者仓库 spark-ds41f-1120 单流套件 c1.json 逐请求原始数据（README 表由此生成）",
+    "streams": [
+      {
+        "n": 8,
+        "tok_s": 213.6
+      },
+      {
+        "n": 16,
+        "tok_s": 280.4
+      }
+    ],
+    "en": {
+      "quant": "Native weights (official checkpoint, no extra quantization)",
+      "hardware": "4× DGX Spark (GB10), tp4-ring (ConnectX-7 cable ring, no switch)",
+      "hardware_cost_text": "≈$27,800 (4×$6,950, calculated)",
+      "concurrency": "single stream (totals also measured)",
+      "context": "1048576",
+      "source_note": "Per-request raw data in c1.json of the spark-ds41f-1120 single-stream suite in the recipe author's repo (the README table is generated from it)",
+      "engine_note": "spark-ds41f-1120, image spark-ds41f:1120 (sha256:5c12472565a7)"
+    },
+    "model_family": "DeepSeek",
+    "tags": [
+      "MoE",
+      "long-context",
+      "multi-GPU"
+    ],
+    "source_id": "src-2672698785"
+  },
+  {
+    "id": "comm-468",
+    "category": "text",
+    "model": "DeepSeek-V4.1-Flash-1017",
+    "quant": "原生权重（官方 checkpoint，未再量化）",
+    "engine": "spark-ds41f",
+    "hardware": "3× DGX Spark（GB10），tp3-triangle（三角直连，无交换机）",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "≈$20,850（3×$6,950，计算值）",
+    "hardware_cost_usd": 20850,
+    "context": "1048576",
+    "launch_command": null,
+    "source_url": "https://github.com/christopherowen/spark-ds41f/tree/d3d40d941f2752fea95aa770eb10d41b5ad5aa1a/manifests/suites/2026-11-20-spark-ds41f-1120-tp3-single-stream",
+    "source_level": "实测",
+    "date": "2026-11-20",
+    "measured_by": "christopherowen",
+    "metric": "spark-ds41f-1120（2026-11-20 发布，镜像 spark-ds41f:1120，sha256:5c12472565a7），tp3-triangle：3 台 DGX Spark 两两直连成三角，无交换机，64 KiB 页内核加 Memory Saver，8 个会话槽，上下文 1,048,576。单流套件 c1 的逐请求解码中位 69.5 作主值（c1.json 请求表中计时窗口内 82 个请求，每个按首 token 之后的 token 数除以首末 token 间隔计算）；README 生成表的 c1 输出吞吐 70.4 另标：c1.json 为预热 60 s 后 300 s 内的 10 个批次，批均值 70.36，服务端 generation_tps 相同，首 token 中位 0.14 s；单 token 间隔中位 14.17 ms；约 23 token 的短提示，每次输出 256 token，思考关，2026-11-19 测。采样（温度 1.0）c1 为 68.3。4 / 8 路合计 131.6 / 170.7，只写入 streams。预填充 32K 7,270、1M 6,922。作者发布帖按散文 / 代码分开为 62.2 / 78.5，口径不同。逐请求原始数据在本链接的 c1.json，复现步骤见仓库 docs/setup.md 。他人跑同一配方的行见 x-193、x-307、x-311。发布帖 https://x.com/christopherowen/status/2123764423600861612",
+    "metric_en": "spark-ds41f-1120 (released 2026-11-20, image spark-ds41f:1120, sha256:5c12472565a7), tp3-triangle: three DGX Sparks cabled directly to each other in a triangle, no switch, 64 KiB page kernel plus Memory Saver, 8 session slots, 1,048,576 context. Headline is the per-request decode median of the single-stream suite c1, 69.5 (82 requests in the timed window of the c1.json request table, each computed as the tokens after the first divided by the time from first to last token); the README's c1 output throughput of 70.4 is separate: c1.json has 10 batches over 300 s after a 60 s warm-up, batch mean 70.36, the same as the server's generation_tps; median first token 0.14 s; median time per output token 14.17 ms; short prompts of about 23 tokens, 256 tokens out per request, thinking off; measured 2026-11-19. Sampled (temperature 1.0) c1 is 68.3. Totals at 4 / 8 streams are 131.6 / 170.7 and go only in streams. Prefill 7,270 at 32K and 6,922 at 1M. The author's release post splits it into prose / code 62.2 / 78.5, a different method. Per-request raw data is in c1.json at this link; reproduction steps are in the repo's docs/setup.md . Rows for other people running the same recipe are x-193, x-307 and x-311. Release post https://x.com/christopherowen/status/2123764423600861612",
+    "tok_s": 69.5,
+    "concurrency": "单流（另测合计）",
+    "source_note": "配方作者仓库 spark-ds41f-1120 单流套件 c1.json 逐请求原始数据（README 表由此生成）",
+    "streams": [
+      {
+        "n": 4,
+        "tok_s": 131.6
+      },
+      {
+        "n": 8,
+        "tok_s": 170.7
+      }
+    ],
+    "en": {
+      "quant": "Native weights (official checkpoint, no extra quantization)",
+      "hardware": "3× DGX Spark (GB10), tp3-triangle (direct triangle links, no switch)",
+      "hardware_cost_text": "≈$20,850 (3×$6,950, calculated)",
+      "concurrency": "single stream (totals also measured)",
+      "context": "1048576",
+      "source_note": "Per-request raw data in c1.json of the spark-ds41f-1120 single-stream suite in the recipe author's repo (the README table is generated from it)",
+      "engine_note": "spark-ds41f-1120, image spark-ds41f:1120 (sha256:5c12472565a7)"
+    },
+    "model_family": "DeepSeek",
+    "tags": [
+      "MoE",
+      "long-context",
+      "multi-GPU"
+    ],
+    "source_id": "src-10b31cac6c"
   }
 ]
