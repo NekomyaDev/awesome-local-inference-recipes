@@ -130,7 +130,7 @@ Recipe count and the fastest measured single-stream tok/s for each device (multi
 
 ## Browse by Model Family
 
-Click a family to open the explorer pre-filtered. Tags: [`MoE`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=MoE&lang=en) 730, [`speculative`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=speculative&lang=en) 441, [`long-context`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=long-context&lang=en) 427, [`4bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=4bit&lang=en) 400, [`multi-GPU`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=multi-GPU&lang=en) 262, [`dense`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=dense&lang=en) 259, [`MTP`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=MTP&lang=en) 233, [`3bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=3bit&lang=en) 165, [`2bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=2bit&lang=en) 146, [`offload`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=offload&lang=en) 107, [`8bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=8bit&lang=en) 83, [`1bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=1bit&lang=en) 43, [`ternary`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=ternary&lang=en) 23, [`bf16`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=bf16&lang=en) 20, [`few-step`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=few-step&lang=en) 18, [`abliterated`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=abliterated&lang=en) 16, [`6bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=6bit&lang=en) 11, [`5bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=5bit&lang=en) 8, [`gpu-unlock`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=gpu-unlock&lang=en) 7. The `gpu-unlock` tag shows a stock GPU with a firmware or driver unlock (no hardware change).
+Click a family to open the explorer pre-filtered. Tags: [`MoE`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=MoE&lang=en) 730, [`speculative`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=speculative&lang=en) 441, [`long-context`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=long-context&lang=en) 427, [`4bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=4bit&lang=en) 399, [`multi-GPU`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=multi-GPU&lang=en) 262, [`dense`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=dense&lang=en) 259, [`MTP`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=MTP&lang=en) 233, [`3bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=3bit&lang=en) 165, [`2bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=2bit&lang=en) 146, [`offload`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=offload&lang=en) 107, [`8bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=8bit&lang=en) 83, [`1bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=1bit&lang=en) 43, [`ternary`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=ternary&lang=en) 23, [`bf16`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=bf16&lang=en) 20, [`few-step`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=few-step&lang=en) 18, [`abliterated`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=abliterated&lang=en) 16, [`6bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=6bit&lang=en) 11, [`5bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=5bit&lang=en) 7, [`gpu-unlock`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=gpu-unlock&lang=en) 7. The `gpu-unlock` tag shows a stock GPU with a firmware or driver unlock (no hardware change).
 
 | Family                                                                                                               | Recipes | Text | Image | Video & Audio |
 | -------------------------------------------------------------------------------------------------------------------- | ------- | ---- | ----- | ------------- |
@@ -397,7 +397,7 @@ Engine names are normalized (`scripts/normalize_engines.py`); original strings a
 
 ## Tier 4 · $14k–30k
 
-*3–4 Spark clusters, multi-GPU workstations* · 55 recipes
+*3–4 Spark clusters, multi-GPU workstations* · 54 recipes
 
 
 **📝 Text**
@@ -407,16 +407,16 @@ Engine names are normalized (`scripts/normalize_engines.py`); original strings a
 - **Recursive Flint 40B-A2.5B** · llama.cpp `Q8_0 GGUF` — 1× RTX PRO 6000 Blackwell 96GB → **244 tok/s** ✅ [source](https://www.reddit.com/r/nvidia/comments/1xd0f7x/)
 - **Swift-1.5-Qwen3.8-Flash-Next** · ninfer `NVFP4+FP8 · MTP 3` — RTX PRO 6000 Blackwell 96GB @ 600W + 96GB DDR4 + Ryzen 5 56… → **238 tok/s** ✅ [source](https://demietrich.com/blog/q3.8fn_engine_comparison/)
 - **Qwen3.8-Flash-Next** · SGLang (Penny Royal fork) — 1× RTX PRO 6000 Blackwell 96GB → **200 tok/s** ✅ [source](https://x.com/jhsmith409/status/2117236468871569860)
-- **GLM-5.3-Flash** · TensorFold — 4× GB10 → **172.39 tok/s** 📣 [source](https://x.com/ashxhart/status/2124248353722474508)
 - **Qwen3.8-Flash-Next v1.1** · TensorFold `bertholomus/Qwen3.8-Flash-N…` — 1× RTX PRO 6000 Blackwell 96GB → **159 tok/s** 📣 [source](https://github.com/bertholomus/Qwen3.8-Flash-Next-NVFP4-Recipe)
 - **Inkling 2 Mini** · vLLM `thinkingmachines/Inkling-2-…` — 1× RTX PRO 6000 Blackwell 96GB → **154.8 tok/s** 📣 [source](https://github.com/sybil-solutions/local-ai-registry/pull/482)
 - **Qwen3.8-Flash-Next** · vLLM `NVFP4 · MTP 2` — RTX PRO 6000 Blackwell 96GB @ 600W + 96GB DDR4 + Ryzen 5 56… → **150 tok/s** ✅ [source](https://demietrich.com/blog/q3.8fn_engine_comparison/)
 - **DeepSeek-V4.1-Flash-1017** · spark-ds41f `1017` — 4× DGX Spark → **136 tok/s** ✅ [source](https://x.com/machigurixmeru/status/2116835181558694130)
-- *…and 45 more in the [explorer](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=en).*
+- **DeepSeek-V4.1-Flash-1017** · TensorFold `LakyFx EXL3 3.5bpw` — 3× DGX Spark → **126.1 tok/s** ✅ [source](https://x.com/laky_fx/status/2113654994847117605)
+- *…and 44 more in the [explorer](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=en).*
 
 ## Cost Not Published
 
-Multi-card builds priced per card, Macs whose memory (and so price) is not stated, and other rows without a single published price · 674 recipes. Top text recipes by tok/s:
+Multi-card builds priced per card, Macs whose memory (and so price) is not stated, and other rows without a single published price · 675 recipes. Top text recipes by tok/s:
 
 - **Qwen3.6-35B-A3B** · SGLang `NVFP4` — 1× RTX 5090 → **626 tok/s** 🏛️ [source](https://github.com/jhsmith409/sglang-elsa)
 - **Qwen3.5-2B** · webyIQ `int4 1.1GB` — RTX 5080 → **620 tok/s** 📣 [source](https://www.reddit.com/r/LocalLLM/comments/1xmcqkb/)
@@ -430,7 +430,7 @@ Multi-card builds priced per card, Macs whose memory (and so price) is not state
 - **Qwen3.8-27B** · YASAKANI `YASAKANI 3/4-bit quality KV` — 1× RTX 5090 32GB → **336.8 tok/s** 📣 [source](https://x.com/niklaslenz_ai/status/2121673267467407435)
 - **LFM2.5-24B-A2B** · llama.cpp `Q4_K_M` — 1× RTX 5090 32GB → **308.5 tok/s** 📣 [source](https://llm-speed.com/m/lfm2-5-24b-a2b)
 - **gpt-oss-120b** · QEngine `OpenAI checkpoint b5c939de` — 3× RTX 3090 24GB → **301 tok/s** 📣 [source](https://github.com/bpx03/QEngine/releases/tag/v1.5.0)
-- *…browse all 674 in the [explorer](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=en).*
+- *…browse all 675 in the [explorer](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=en).*
 
 
 ## Engines & Tools

@@ -130,7 +130,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 
 ## 按模型系列浏览
 
-点击系列名即可打开已筛选的配方库。标签：[`MoE`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=MoE&lang=zh-CN) 730, [`speculative`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=speculative&lang=zh-CN) 441, [`long-context`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=long-context&lang=zh-CN) 427, [`4bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=4bit&lang=zh-CN) 400, [`multi-GPU`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=multi-GPU&lang=zh-CN) 262, [`dense`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=dense&lang=zh-CN) 259, [`MTP`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=MTP&lang=zh-CN) 233, [`3bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=3bit&lang=zh-CN) 165, [`2bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=2bit&lang=zh-CN) 146, [`offload`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=offload&lang=zh-CN) 107, [`8bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=8bit&lang=zh-CN) 83, [`1bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=1bit&lang=zh-CN) 43, [`ternary`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=ternary&lang=zh-CN) 23, [`bf16`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=bf16&lang=zh-CN) 20, [`few-step`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=few-step&lang=zh-CN) 18, [`abliterated`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=abliterated&lang=zh-CN) 16, [`6bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=6bit&lang=zh-CN) 11, [`5bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=5bit&lang=zh-CN) 8, [`gpu-unlock`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=gpu-unlock&lang=zh-CN) 7。`gpu-unlock` 标签表示原厂显卡使用了固件或驱动解锁（无硬件改装）。
+点击系列名即可打开已筛选的配方库。标签：[`MoE`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=MoE&lang=zh-CN) 730, [`speculative`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=speculative&lang=zh-CN) 441, [`long-context`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=long-context&lang=zh-CN) 427, [`4bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=4bit&lang=zh-CN) 399, [`multi-GPU`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=multi-GPU&lang=zh-CN) 262, [`dense`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=dense&lang=zh-CN) 259, [`MTP`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=MTP&lang=zh-CN) 233, [`3bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=3bit&lang=zh-CN) 165, [`2bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=2bit&lang=zh-CN) 146, [`offload`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=offload&lang=zh-CN) 107, [`8bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=8bit&lang=zh-CN) 83, [`1bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=1bit&lang=zh-CN) 43, [`ternary`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=ternary&lang=zh-CN) 23, [`bf16`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=bf16&lang=zh-CN) 20, [`few-step`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=few-step&lang=zh-CN) 18, [`abliterated`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=abliterated&lang=zh-CN) 16, [`6bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=6bit&lang=zh-CN) 11, [`5bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=5bit&lang=zh-CN) 7, [`gpu-unlock`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=gpu-unlock&lang=zh-CN) 7。`gpu-unlock` 标签表示原厂显卡使用了固件或驱动解锁（无硬件改装）。
 
 | 系列                                                                                                                      | 配方数 | 文字  | 图像  | 影音  |
 | ----------------------------------------------------------------------------------------------------------------------- | --- | --- | --- | --- |
@@ -397,7 +397,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 
 ## 第 4 档 · 14,000–30,000 美元
 
-*3–4 台 Spark 集群、多卡工作站* · 共 55 条
+*3–4 台 Spark 集群、多卡工作站* · 共 54 条
 
 
 **📝 文字**
@@ -407,16 +407,16 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 - **Recursive Flint 40B-A2.5B** · llama.cpp `Q8_0 GGUF（MoE）` — 1× RTX PRO 6000 Blackwell 96GB → **244 tok/s** ✅ [来源](https://www.reddit.com/r/nvidia/comments/1xd0f7x/)
 - **Swift-1.5-Qwen3.8-Flash-Next** · ninfer `NVFP4+FP8 · MTP 3（Ninfer600…` — RTX PRO 6000 Blackwell 96GB @ 600W + 96GB DDR4 + Ryzen 5 56… → **238 tok/s** ✅ [来源](https://demietrich.com/blog/q3.8fn_engine_comparison/)
 - **Qwen3.8-Flash-Next** · SGLang (Penny Royal fork) `未注明` — 1× RTX PRO 6000 Blackwell 96GB（限 300W） → **200 tok/s** ✅ [来源](https://x.com/jhsmith409/status/2117236468871569860)
-- **GLM-5.3-Flash** · TensorFold `未写` — 4× GB10（TP=4，品牌未写） → **172.39 tok/s** 📣 [来源](https://x.com/ashxhart/status/2124248353722474508)
 - **Qwen3.8-Flash-Next v1.1** · TensorFold `bertholomus/Qwen3.8-Flash-N…` — 1× RTX PRO 6000 Blackwell 96GB → **159 tok/s** 📣 [来源](https://github.com/bertholomus/Qwen3.8-Flash-Next-NVFP4-Recipe)
 - **Inkling 2 Mini** · vLLM `thinkingmachines/Inkling-2-…` — 1× RTX PRO 6000 Blackwell 96GB → **154.8 tok/s** 📣 [来源](https://github.com/sybil-solutions/local-ai-registry/pull/482)
 - **Qwen3.8-Flash-Next** · vLLM `NVFP4 · MTP 2` — RTX PRO 6000 Blackwell 96GB @ 600W + 96GB DDR4 + Ryzen 5 56… → **150 tok/s** ✅ [来源](https://demietrich.com/blog/q3.8fn_engine_comparison/)
 - **DeepSeek-V4.1-Flash-1017** · spark-ds41f `官方 1017 权重（MXFP4/FP8）` — 4× DGX Spark（GB10） → **136 tok/s** ✅ [来源](https://x.com/machigurixmeru/status/2116835181558694130)
-- *……另有 45 条，见 [配方库](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=zh-CN)。*
+- **DeepSeek-V4.1-Flash-1017** · TensorFold `LakyFx EXL3 3.5bpw` — 3× DGX Spark（TP3） → **126.1 tok/s** ✅ [来源](https://x.com/laky_fx/status/2113654994847117605)
+- *……另有 44 条，见 [配方库](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=zh-CN)。*
 
 ## 价格未公开
 
-按张计价的多卡组合、未注明内存（因而无法定价）的 Mac 以及其他没有单一公开价格的配方 · 共 674 条。按 tok/s 排名靠前的文字配方：
+按张计价的多卡组合、未注明内存（因而无法定价）的 Mac 以及其他没有单一公开价格的配方 · 共 675 条。按 tok/s 排名靠前的文字配方：
 
 - **Qwen3.6-35B-A3B** · SGLang `NVFP4` — 1× RTX 5090 → **626 tok/s** 🏛️ [来源](https://github.com/jhsmith409/sglang-elsa)
 - **Qwen3.5-2B** · webyIQ `int4 GPTQ（group 32），约 1.1GB` — RTX 5080（Chrome 156，WebGPU） → **620 tok/s** 📣 [来源](https://www.reddit.com/r/LocalLLM/comments/1xmcqkb/)
@@ -430,7 +430,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 - **Qwen3.8-27B** · YASAKANI `YASAKANI 自带 3/4-bit quality…` — 1× RTX 5090 32GB → **336.8 tok/s** 📣 [来源](https://x.com/niklaslenz_ai/status/2121673267467407435)
 - **LFM2.5-24B-A2B** · llama.cpp `Q4_K_M（Liquid 官方 GGUF，14.5G…` — 1× RTX 5090 32GB → **308.5 tok/s** 📣 [来源](https://llm-speed.com/m/lfm2-5-24b-a2b)
 - **gpt-oss-120b** · QEngine `OpenAI 官方 checkpoint b5c939…` — 3× RTX 3090 24GB（PCIe 4.0 x16，P2P） → **301 tok/s** 📣 [来源](https://github.com/bpx03/QEngine/releases/tag/v1.5.0)
-- *……全部 674 条见 [配方库](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=zh-CN)。*
+- *……全部 675 条见 [配方库](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=zh-CN)。*
 
 
 ## 引擎与工具

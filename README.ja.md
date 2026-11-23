@@ -130,7 +130,7 @@ X で反応が多かったレシピ投稿（いいね + リポスト×3 の順�
 
 ## モデルファミリー別
 
-ファミリー名をクリックすると、絞り込み済みのエクスプローラーが開きます。タグ：[`MoE`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=MoE&lang=ja) 730, [`speculative`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=speculative&lang=ja) 441, [`long-context`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=long-context&lang=ja) 427, [`4bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=4bit&lang=ja) 400, [`multi-GPU`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=multi-GPU&lang=ja) 262, [`dense`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=dense&lang=ja) 259, [`MTP`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=MTP&lang=ja) 233, [`3bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=3bit&lang=ja) 165, [`2bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=2bit&lang=ja) 146, [`offload`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=offload&lang=ja) 107, [`8bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=8bit&lang=ja) 83, [`1bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=1bit&lang=ja) 43, [`ternary`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=ternary&lang=ja) 23, [`bf16`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=bf16&lang=ja) 20, [`few-step`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=few-step&lang=ja) 18, [`abliterated`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=abliterated&lang=ja) 16, [`6bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=6bit&lang=ja) 11, [`5bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=5bit&lang=ja) 8, [`gpu-unlock`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=gpu-unlock&lang=ja) 7。`gpu-unlock` タグは、市販の GPU にファームウェアまたはドライバーのロック解除を使った構成です（ハードウェア改造なし）。
+ファミリー名をクリックすると、絞り込み済みのエクスプローラーが開きます。タグ：[`MoE`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=MoE&lang=ja) 730, [`speculative`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=speculative&lang=ja) 441, [`long-context`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=long-context&lang=ja) 427, [`4bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=4bit&lang=ja) 399, [`multi-GPU`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=multi-GPU&lang=ja) 262, [`dense`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=dense&lang=ja) 259, [`MTP`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=MTP&lang=ja) 233, [`3bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=3bit&lang=ja) 165, [`2bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=2bit&lang=ja) 146, [`offload`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=offload&lang=ja) 107, [`8bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=8bit&lang=ja) 83, [`1bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=1bit&lang=ja) 43, [`ternary`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=ternary&lang=ja) 23, [`bf16`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=bf16&lang=ja) 20, [`few-step`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=few-step&lang=ja) 18, [`abliterated`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=abliterated&lang=ja) 16, [`6bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=6bit&lang=ja) 11, [`5bit`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=5bit&lang=ja) 7, [`gpu-unlock`](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=gpu-unlock&lang=ja) 7。`gpu-unlock` タグは、市販の GPU にファームウェアまたはドライバーのロック解除を使った構成です（ハードウェア改造なし）。
 
 | ファミリー                                                                                                                | レシピ数 | テキスト | 画像  | 動画・音声 |
 | -------------------------------------------------------------------------------------------------------------------- | ---- | ---- | --- | ----- |
@@ -397,7 +397,7 @@ X で反応が多かったレシピ投稿（いいね + リポスト×3 の順�
 
 ## 第 4 段階 · 14,000〜30,000 ドル
 
-*Spark 3〜4 台のクラスター、マルチ GPU ワークステーション* · 55 件
+*Spark 3〜4 台のクラスター、マルチ GPU ワークステーション* · 54 件
 
 
 **📝 テキスト**
@@ -407,16 +407,16 @@ X で反応が多かったレシピ投稿（いいね + リポスト×3 の順�
 - **Recursive Flint 40B-A2.5B** · llama.cpp `Q8_0 GGUF` — 1× RTX PRO 6000 Blackwell 96GB → **244 tok/s** ✅ [出典](https://www.reddit.com/r/nvidia/comments/1xd0f7x/)
 - **Swift-1.5-Qwen3.8-Flash-Next** · ninfer `NVFP4+FP8 · MTP 3` — RTX PRO 6000 Blackwell 96GB @ 600W + 96GB DDR4 + Ryzen 5 56… → **238 tok/s** ✅ [出典](https://demietrich.com/blog/q3.8fn_engine_comparison/)
 - **Qwen3.8-Flash-Next** · SGLang (Penny Royal fork) — 1× RTX PRO 6000 Blackwell 96GB → **200 tok/s** ✅ [出典](https://x.com/jhsmith409/status/2117236468871569860)
-- **GLM-5.3-Flash** · TensorFold — 4× GB10 → **172.39 tok/s** 📣 [出典](https://x.com/ashxhart/status/2124248353722474508)
 - **Qwen3.8-Flash-Next v1.1** · TensorFold `bertholomus/Qwen3.8-Flash-N…` — 1× RTX PRO 6000 Blackwell 96GB → **159 tok/s** 📣 [出典](https://github.com/bertholomus/Qwen3.8-Flash-Next-NVFP4-Recipe)
 - **Inkling 2 Mini** · vLLM `thinkingmachines/Inkling-2-…` — 1× RTX PRO 6000 Blackwell 96GB → **154.8 tok/s** 📣 [出典](https://github.com/sybil-solutions/local-ai-registry/pull/482)
 - **Qwen3.8-Flash-Next** · vLLM `NVFP4 · MTP 2` — RTX PRO 6000 Blackwell 96GB @ 600W + 96GB DDR4 + Ryzen 5 56… → **150 tok/s** ✅ [出典](https://demietrich.com/blog/q3.8fn_engine_comparison/)
 - **DeepSeek-V4.1-Flash-1017** · spark-ds41f `1017` — 4× DGX Spark → **136 tok/s** ✅ [出典](https://x.com/machigurixmeru/status/2116835181558694130)
-- *…ほか 45 件は[エクスプローラー](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=ja)で。*
+- **DeepSeek-V4.1-Flash-1017** · TensorFold `LakyFx EXL3 3.5bpw` — 3× DGX Spark → **126.1 tok/s** ✅ [出典](https://x.com/laky_fx/status/2113654994847117605)
+- *…ほか 44 件は[エクスプローラー](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=ja)で。*
 
 ## 価格非公開
 
-1 枚単位で価格が出ているマルチ GPU 構成、メモリ（＝価格）が不明な Mac など、単一の公開価格がないレシピ · 674 件。tok/s 上位のテキストレシピ：
+1 枚単位で価格が出ているマルチ GPU 構成、メモリ（＝価格）が不明な Mac など、単一の公開価格がないレシピ · 675 件。tok/s 上位のテキストレシピ：
 
 - **Qwen3.6-35B-A3B** · SGLang `NVFP4` — 1× RTX 5090 → **626 tok/s** 🏛️ [出典](https://github.com/jhsmith409/sglang-elsa)
 - **Qwen3.5-2B** · webyIQ `int4 1.1GB` — RTX 5080 → **620 tok/s** 📣 [出典](https://www.reddit.com/r/LocalLLM/comments/1xmcqkb/)
@@ -430,7 +430,7 @@ X で反応が多かったレシピ投稿（いいね + リポスト×3 の順�
 - **Qwen3.8-27B** · YASAKANI `YASAKANI 3/4-bit quality KV` — 1× RTX 5090 32GB → **336.8 tok/s** 📣 [出典](https://x.com/niklaslenz_ai/status/2121673267467407435)
 - **LFM2.5-24B-A2B** · llama.cpp `Q4_K_M` — 1× RTX 5090 32GB → **308.5 tok/s** 📣 [出典](https://llm-speed.com/m/lfm2-5-24b-a2b)
 - **gpt-oss-120b** · QEngine `OpenAI checkpoint b5c939de` — 3× RTX 3090 24GB → **301 tok/s** 📣 [出典](https://github.com/bpx03/QEngine/releases/tag/v1.5.0)
-- *…全 674 件は[エクスプローラー](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=ja)で見られます。*
+- *…全 675 件は[エクスプローラー](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=ja)で見られます。*
 
 
 ## エンジンとツール
