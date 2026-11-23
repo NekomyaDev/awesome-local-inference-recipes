@@ -37997,7 +37997,7 @@
     "date": "2026-11-22",
     "measured_by": "YH31377807",
     "metric": "与 x-329 同帖同机同引擎，不同模型。2026-11-22 帖：llama.cpp b12110，Qwen3.8-27B（稠密）生成 25 作主值，峰值内存 20GB，pp512 752，无交换；量化与同时处理的请求数在该帖未写。2026-11-21 的日文帖 https://x.com/YH31377807/status/2123972595561480573 写 Q5、生成 25、峰值 20GB。按规则 8 记在同一行的旧值：2026-11-19 帖 https://x.com/YH31377807/status/2123239508716208482 用 llama.cpp b12375 的 llama-bench pp512 / tg128：空上下文解码 24.6，8K 23.9、32K 21.7；预填充 727 / 652 / 485；该帖量化只写 Q5，具体包名未写。无逐次原始数据，记为宣称。",
-    "metric_en": "Same post, machine and engine as x-329, different model. 2026-11-22 post: llama.cpp b12110, Qwen3.8-27B (dense) generation 25 is the headline, peak memory 20GB, pp512 752, no swap; that post gives neither the quant nor the number of simultaneous requests. the 2026-11-21 Japanese post https://x.com/YH31377807/status/2123972595561480573 says Q5, generation 25, peak 20GB. Older values kept on this row under rule 8: the 2026-11-19 post https://x.com/YH31377807/status/2123239508716208482 used llama-bench pp512 / tg128 on llama.cpp b12375: empty-context decode 24.6, 8K 23.9, 32K 21.7; prefill 727 / 652 / 485; that post gives the quant only as Q5, with no exact package name. No per-run raw data, so this is a claim.",
+    "metric_en": "Same post, machine and engine as x-329, different model. 2026-11-22 post: llama.cpp b12110, Qwen3.8-27B (dense) generation 25 is the headline, peak memory 20GB, pp512 752, no swap; that post gives neither the quant nor the number of simultaneous requests. The 2026-11-21 Japanese post https://x.com/YH31377807/status/2123972595561480573 says Q5, generation 25, peak 20GB. Older values kept on this row under rule 8: the 2026-11-19 post https://x.com/YH31377807/status/2123239508716208482 used llama-bench pp512 / tg128 on llama.cpp b12375: empty-context decode 24.6, 8K 23.9, 32K 21.7; prefill 727 / 652 / 485; that post gives the quant only as Q5, with no exact package name. No per-run raw data, so this is a claim.",
     "tok_s": 25,
     "concurrency": "未写",
     "source_note": "第一手来源；独立复核，未独立复现",
@@ -39624,7 +39624,7 @@
     "id": "comm-483",
     "category": "text",
     "model": "Inkling 2 Mini",
-    "quant": "thinkingmachines/Inkling-2-Mini@ed40e7da（PR 写 official BF16；MoE）",
+    "quant": "thinkingmachines/Inkling-2-Mini@ed40e7da 官方发布权重（精度未写，MoE）",
     "engine": "vLLM",
     "hardware": "1× RTX PRO 6000 Blackwell 96GB",
     "hardware_family": "NVIDIA 消费级",
@@ -39636,13 +39636,13 @@
     "source_level": "宣称",
     "date": "2026-11-22",
     "measured_by": "franciscocordobaotalora（X @fcordobaot）",
-    "metric": "local-ai-registry 配方 PR：vLLM 的 Inkling 镜像按 digest 固定，权重 thinkingmachines/Inkling-2-Mini@ed40e7da，上下文 128K，六项门槛全部通过（lab.py try --on endpoint，在 1c43bdeb）。解码 154.8 作主值，预填充 7,179。PR 未附逐次原始数据，未合并，同时处理的请求数未写，记为宣称。",
-    "metric_en": "local-ai-registry recipe PR: vLLM's Inkling image pinned by digest, weights thinkingmachines/Inkling-2-Mini@ed40e7da, 128K context, all six gates pass (lab.py try --on endpoint at 1c43bdeb). Decode 154.8 is the headline, prefill 7,179. The PR carries no per-run raw data, is not merged, and the number of simultaneous requests is not stated, so this is a claim.",
+    "metric": "local-ai-registry 配方 PR：vLLM 的 Inkling 镜像按 digest 固定，权重 thinkingmachines/Inkling-2-Mini@ed40e7da，上下文 128K，六项门槛全部通过（lab.py try --on endpoint，在 1c43bdeb）。解码 154.8 作主值，预填充 7,179。PR 把权重写作 official BF16，但同一版本在 comm-471 的来源里是 NVFP4 / MXFP8 专家，所以这里精度记为未写。PR 未附逐次原始数据，未合并，同时处理的请求数未写，记为宣称。",
+    "metric_en": "local-ai-registry recipe PR: vLLM's Inkling image pinned by digest, weights thinkingmachines/Inkling-2-Mini@ed40e7da, 128K context, all six gates pass (lab.py try --on endpoint at 1c43bdeb). Decode 154.8 is the headline, prefill 7,179. The PR calls the weights official BF16, but comm-471's source describes the same revision as NVFP4 / MXFP8 experts, so precision is recorded as not stated. The PR carries no per-run raw data, is not merged, and the number of simultaneous requests is not stated, so this is a claim.",
     "tok_s": 154.8,
     "concurrency": "未写",
     "source_note": "第一手来源；独立复核，未独立复现",
     "en": {
-      "quant": "thinkingmachines/Inkling-2-Mini@ed40e7da (the PR says official BF16; MoE)",
+      "quant": "thinkingmachines/Inkling-2-Mini@ed40e7da official release weights (precision not stated, MoE)",
       "hardware": "1× RTX PRO 6000 Blackwell 96GB",
       "hardware_cost_text": "$15,999 lowest tracked quote (new card, Newegg/B&H/Best Buy aggregate, 2026-10-13); B&H Workstation edition $17,999.99 (see prices.json)",
       "concurrency": "not stated",
@@ -39652,7 +39652,6 @@
     },
     "model_family": "Other",
     "tags": [
-      "bf16",
       "MoE",
       "long-context"
     ],
@@ -39674,8 +39673,8 @@
     "source_level": "宣称",
     "date": "2026-11-23",
     "measured_by": "Vsleocadio",
-    "metric": "Project Maya maya-ik2 v1.1.74，Windows 11 本地构建，命令行（--tokens）两卡，上下文 32,768，IK2_KV=fp8，IK2_WARM + IK2_PIN_ALL=1 + IK2_ROOM_MB=512，不带显示器的卡作主卡。256 token 解码中位 54.07 作主值（峰值 56.29）；2K 提示之后 52.43；预填充 86 token 84.9、2K 885.7。全部 3,072 个专家分在两张卡的显存里（2,367 / 705），解码时 100% 命中显存；IK2_PIN_ALL=1 另在主机内存固定一份，供预填充未命中时读取。同机对照：不加 IK2_WARM 41.23，显示器所在卡作主卡 52.72。作者报告 --serve --gpus 2 与只加 IK2_WARM 时会出错。无逐次原始数据，记为宣称。限定：起草关（--drafting off），两卡时引擎不支持起草。",
-    "metric_en": "Project Maya maya-ik2 v1.1.74, local Windows 11 build, command line (--tokens) on two cards, 32,768 context, IK2_KV=fp8, IK2_WARM + IK2_PIN_ALL=1 + IK2_ROOM_MB=512, the card without the display as primary. Median decode over 256 tokens 54.07 is the headline (peak 56.29); 52.43 after a 2K prompt; prefill 84.9 at 86 tokens and 885.7 at 2K. All 3,072 experts are split across the two cards' VRAM (2,367 / 705) and decode hits VRAM 100%; IK2_PIN_ALL=1 also pins a copy in host memory for prompt misses. Same-machine controls: 41.23 without IK2_WARM, 52.72 with the display card as primary. The author reports errors with --serve --gpus 2 and with IK2_WARM alone. No per-run raw data, so this is a claim. Qualification: drafting off (--drafting off); the engine does not draft on two cards.",
+    "metric": "Project Maya maya-ik2 v1.1.74，Windows 11 本地构建，命令行（--tokens）两卡，上下文 32,768，IK2_KV=fp8，IK2_WARM + IK2_PIN_ALL=1 + IK2_ROOM_MB=512，不带显示器的卡作主卡。256 token 解码中位 54.07 作主值（峰值 56.29）；2K 提示之后 52.43；预填充 86 token 84.9、2K 885.7。全部 3,072 个专家分在两张卡的显存里（2,367 / 705），解码时 100% 命中显存；IK2_PIN_ALL=1 另在主机内存固定一份全部专家，预填充未命中时从主机内存读取（预填充部分卸载，RAM 64GB）。同机对照：不加 IK2_WARM 41.23，显示器所在卡作主卡 52.72。作者报告 --serve --gpus 2 与只加 IK2_WARM 时会出错。无逐次原始数据，记为宣称。限定：起草关（--drafting off），两卡时引擎不支持起草。",
+    "metric_en": "Project Maya maya-ik2 v1.1.74, local Windows 11 build, command line (--tokens) on two cards, 32,768 context, IK2_KV=fp8, IK2_WARM + IK2_PIN_ALL=1 + IK2_ROOM_MB=512, the card without the display as primary. Median decode over 256 tokens 54.07 is the headline (peak 56.29); 52.43 after a 2K prompt; prefill 84.9 at 86 tokens and 885.7 at 2K. All 3,072 experts are split across the two cards' VRAM (2,367 / 705) and decode hits VRAM 100%; IK2_PIN_ALL=1 also pins a copy of every expert in host memory, and prompt misses read from there (partial offload during prefill, 64GB RAM). Same-machine controls: 41.23 without IK2_WARM, 52.72 with the display card as primary. The author reports errors with --serve --gpus 2 and with IK2_WARM alone. No per-run raw data, so this is a claim. Qualification: drafting off (--drafting off); the engine does not draft on two cards.",
     "tok_s": 54.07,
     "concurrency": "单流",
     "source_note": "第一手来源；独立复核，未独立复现",
@@ -39692,7 +39691,8 @@
     "tags": [
       "4bit",
       "MoE",
-      "multi-GPU"
+      "multi-GPU",
+      "offload"
     ],
     "source_id": "src-a75dbb4d47"
   },
