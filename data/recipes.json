@@ -40159,7 +40159,7 @@
     "source_level": "宣称",
     "date": "2026-11-22",
     "measured_by": "Arref000",
-    "metric": "Unsloth 的 llama.cpp（b12588-mix），UD-Q2_K_XL（约 9 GB），75 行代码修改任务：46.3 作主值。上下文与同时处理的请求数未写。无逐次原始数据，记为宣称。限定：同帖 112.8（2.4 倍）用的是作者自己的融合 Metal 内核加编辑感知的 drafter，引擎未命名，不收。",
+    "metric": "Unsloth 的 llama.cpp（b12588-mix），UD-Q2_K_XL（约 9 GB），75 行代码修改任务：46.3 作主值。上下文与同时处理的请求数未写。无逐次原始数据，记为宣称。限定：同帖 112.8（2.4 倍）用的是作者自己的融合 Metal 内核加编辑感知的草稿模型，引擎未命名，不收。",
     "metric_en": "Unsloth's llama.cpp (b12588-mix), UD-Q2_K_XL (about 9 GB), a 75-line code edit: 46.3 is the headline. Context and the number of simultaneous requests are not stated. No per-run raw data, so this is a claim. Qualification: the same post's 112.8 (2.4×) used the author's own fused Metal kernels and an edit-aware drafter, an unnamed engine, and is not included.",
     "tok_s": 46.3,
     "concurrency": "未写",
