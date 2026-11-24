@@ -100,7 +100,7 @@ Fastest measured: **130.1 tok/s** — Qwen3.8-Flash-Next · TensorFold on 1× DG
 Fastest measured: **108.7 tok/s** — Ornith-1.5-35B-A3B · WHIRL on Radeon 8060S (✅ measured, 2026-11-06, [source](https://www.reddit.com/r/LocalLLM/comments/1xpb37p/)). 32 recipe(s) for this hardware, 16 measured.
 
 **What is the fastest measured setup under $2,500?**  
-Fastest measured: **190 tok/s** — Qwen3.8-27B · Geezuz on 2× RTX 3090 (✅ measured, 2026-10-20, [source](https://github.com/ohgeebtw/geezuz-qwen3.8-27b-dual-gpu)). 70 recipe(s) in this budget, 34 measured.
+Fastest measured: **190 tok/s** — Qwen3.8-27B · Geezuz on 2× RTX 3090 (✅ measured, 2026-10-20, [source](https://github.com/ohgeebtw/geezuz-qwen3.8-27b-dual-gpu)). 70 recipe(s) in this budget, 33 measured.
 
 
 ## Popular on X

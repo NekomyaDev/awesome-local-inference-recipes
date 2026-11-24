@@ -100,7 +100,7 @@
 实测最快：**108.7 tok/s**，Ornith-1.5-35B-A3B · WHIRL，硬件 Radeon 8060S（Ryzen AI Max+ 395，ASUS ROG Flow Z13 @80W，64GB …（✅ 实测，2026-11-06，[来源](https://www.reddit.com/r/LocalLLM/comments/1xpb37p/)）。该硬件共 32 条配方，其中实测 16 条。
 
 **2500 美元以内实测最快的配置是什么？**  
-实测最快：**190 tok/s**，Qwen3.8-27B · Geezuz，硬件 2× RTX 3090（280W，PCIe，无 NVLink）（✅ 实测，2026-10-20，[来源](https://github.com/ohgeebtw/geezuz-qwen3.8-27b-dual-gpu)）。该预算内共 70 条配方，其中实测 34 条。
+实测最快：**190 tok/s**，Qwen3.8-27B · Geezuz，硬件 2× RTX 3090（280W，PCIe，无 NVLink）（✅ 实测，2026-10-20，[来源](https://github.com/ohgeebtw/geezuz-qwen3.8-27b-dual-gpu)）。该预算内共 70 条配方，其中实测 33 条。
 
 
 ## X 上的热门配方
