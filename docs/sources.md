@@ -8,7 +8,7 @@ Where recipes come from and how they are checked. Every recipe links to its orig
 | Hugging Face model cards | Primary | Benchmark tables from quant authors (prefill / decode t/s) | Hardware often missing; reviewed by hand |
 | r/LocalLLaMA | Primary (manual) | Consumer-hardware reports | Manual review only |
 | GitHub (engine repos, llama.cpp discussions) | Primary | Official bench threads, release notes | |
-| llamabench.ai / LocalScore / llamaperf | Cross-check | Benchmarks with commands | Linked, not copied |
+| llamabench.ai / LocalScore | Cross-check | Benchmarks with commands | Linked, not copied |
 | Hacker News | Discovery | New engines and projects | |
 | arXiv | Discovery (methods) | Speculative decoding, quantization, KV cache | Datacenter numbers are not added as recipes |
 
@@ -31,3 +31,8 @@ From 2026-10-27, add these recipes first. First: a recipe for a new model or new
 
 ## Rules
 No estimates, no invented values — unknown fields are `null`. No full-text copies of posts.
+
+Field rules (CONTRIBUTING rule 10): `tok_s` is single-stream only; a total over several requests goes in the notes. Unstated concurrency is written `未写` (`not stated`). `context` is the configured limit or `null`. Versions are never inferred. Offload rows state the RAM size. Chinese text uses 解码 / 预填充 / 智能体, avoids 并发, and never puts 。 directly after a URL.
+
+## Gone or moved sources
+When a source moves (a renamed repo, a new blog path, a Codeberg issue that became a pull request), point `source_url` at the new address after checking that the numbers are still there. When a source is gone (deleted post, suspended or protected account) and no archive copy exists, say so in `source_note`, with the date of the check. The @llamaperf X account was suspended in 2026-11; its links no longer open.

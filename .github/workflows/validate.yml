@@ -16,6 +16,7 @@ jobs:
         with: { python-version: '3.12' }
       - run: node scripts/validate.mjs
       - run: node scripts/check_dupes.mjs
+      - run: python3 scripts/check_near_dupes.py
       - run: python3 scripts/check_urls.py
       - run: python3 -m unittest discover tests
       - name: No TODO/HACK/FIXME/keep-in-sync markers in code
