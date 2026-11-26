@@ -45480,8 +45480,8 @@
     "source_level": "宣称",
     "date": "2026-11-26",
     "measured_by": "RustingStudio",
-    "metric": "GitHub 发布说明（2026-11-26 07:48 UTC+8，RustingStudio）：RustingStrata v1.3.6 的修复条目：Inkling 2 在只装得下部分专家的卡上，解码不再把未命中的专家复制到卡上，改由 CPU 计算；RTX 2060 6GB 加 UD-Q4_K_XL 的解码从 2.4 升到 6.1 作主值。限定：发布说明一句话，上下文、内存大小和同时处理的请求数都没写；大部分专家在内存里，属于卸载；同一条目里 RTX 3060 只用 27% 显存时 12 升到 16.5，没有作主值；记为宣称。",
-    "metric_en": "GitHub release note (2026-11-26 07:48 UTC+8, RustingStudio): the RustingStrata v1.3.6 fix entry: for Inkling 2 on a card that holds only part of the experts, decode no longer copies missed experts to the card and the CPU runs them instead; decode on an RTX 2060 6GB with UD-Q4_K_XL going from 2.4 to 6.1 is the headline. Qualification: the release note is one sentence and context, RAM size and number of simultaneous requests are not stated; most experts sit in system memory, which is offload; in the same entry an RTX 3060 using 27% of its VRAM goes from 12 to 16.5, which is not the headline; this is a claim.",
+    "metric": "GitHub 发布说明（2026-11-26 07:48 UTC+8，RustingStudio）：RustingStrata v1.3.6 的修复条目：Inkling 2 在只装得下部分专家的卡上，解码不再把未命中的专家复制到卡上，改由 CPU 计算；RTX 2060 6GB 加 UD-Q4_K_XL 的解码从 2.4 升到 6.1 作主值。限定：发布说明一句话，上下文、内存大小和同时处理的请求数都没写；未命中的专家由 CPU 计算，内存大小没写；同一条目里 RTX 3060 只用 27% 显存时 12 升到 16.5，没有作主值；记为宣称。",
+    "metric_en": "GitHub release note (2026-11-26 07:48 UTC+8, RustingStudio): the RustingStrata v1.3.6 fix entry: for Inkling 2 on a card that holds only part of the experts, decode no longer copies missed experts to the card and the CPU runs them instead; decode on an RTX 2060 6GB with UD-Q4_K_XL going from 2.4 to 6.1 is the headline. Qualification: the release note is one sentence and context, RAM size and number of simultaneous requests are not stated; experts missing from the card are computed on the CPU, with the RAM size not stated; in the same entry an RTX 3060 using 27% of its VRAM goes from 12 to 16.5, which is not the headline; this is a claim.",
     "tok_s": 6.1,
     "concurrency": "未写",
     "source_note": "GitHub 发布说明，引擎作者一句话；数据不全",
@@ -45496,8 +45496,7 @@
     "model_family": "Other",
     "tags": [
       "4bit",
-      "MoE",
-      "offload"
+      "MoE"
     ],
     "source_id": "src-5b55eccdef"
   },
@@ -46962,8 +46961,8 @@
     "source_level": "宣称",
     "date": "2026-11-26",
     "measured_by": "casino_hunk",
-    "metric": "X 帖（2026-11-26，@casino_hunk）：作者自己打补丁的 llama.cpp（循环感知的物理专家缓存、缓存感知路由、尾部剪枝），上下文 100K，Q8_0 KV。解码 30.96 作主值。同时处理的请求数未写。没有逐次原始数据，记为宣称。限定：8GB 显存放不下全部权重，大部分专家在系统内存里，内存大小没写；尾部剪枝可能改变输出。",
-    "metric_en": "X post (2026-11-26, @casino_hunk): a self-patched llama.cpp (loop-aware physical MoE cache, cache-aware routing, tail pruning), 100K context, Q8_0 KV. Decode 30.96 is the headline. Number of simultaneous requests not stated. no per-run raw data, so this is a claim. Qualification: the weights do not fit in 8GB of VRAM so most experts sit in system memory (size not stated), which is offload; tail pruning may change the output.",
+    "metric": "X 帖（2026-11-26，@casino_hunk）：作者自己打补丁的 llama.cpp（循环感知的物理专家缓存、缓存感知路由、尾部剪枝），上下文 100K，Q8_0 KV。解码 30.96 作主值。同时处理的请求数未写。没有逐次原始数据，记为宣称。限定：8GB 显存放不下全部权重，其余部分放在哪里、内存多大都没写；尾部剪枝可能改变输出。",
+    "metric_en": "X post (2026-11-26, @casino_hunk): a self-patched llama.cpp (loop-aware physical MoE cache, cache-aware routing, tail pruning), 100K context, Q8_0 KV. Decode 30.96 is the headline. Number of simultaneous requests not stated. no per-run raw data, so this is a claim. Qualification: the weights do not fit in 8GB of VRAM, and where the rest lives and how much RAM there is are not stated; tail pruning may change the output.",
     "tok_s": 30.96,
     "concurrency": "未写",
     "source_note": "X 帖，测试者本人；无逐次原始数据",
@@ -46978,8 +46977,7 @@
     },
     "model_family": "Other",
     "tags": [
-      "MoE",
-      "offload"
+      "MoE"
     ],
     "source_id": "src-861dec9822"
   },
@@ -46999,8 +46997,8 @@
     "source_level": "宣称",
     "date": "2026-11-26",
     "measured_by": "Parziva_1",
-    "metric": "X 帖（2026-11-26，@Parziva_1）：两天调参之后，引擎名和版本没写；起点是官方 llama.cpp。生成 27 作主值；预填充 436；起点为预填充 38、生成 17.6。同时处理的请求数未写。没有逐次原始数据，记为宣称。限定：6GB 显存放不下全部权重，内存大小没写，卸载。",
-    "metric_en": "X post (2026-11-26, @Parziva_1): after two days of tuning; engine name and version not stated, starting from stock llama.cpp. Generation 27 is the headline; prefill 436; the starting point was 38 prefill and 17.6 generation. Number of simultaneous requests not stated. no per-run raw data, so this is a claim. Qualification: the weights do not fit in 6GB of VRAM and the RAM size is not stated, which is offload.",
+    "metric": "X 帖（2026-11-26，@Parziva_1）：两天调参之后，引擎名和版本没写；起点是官方 llama.cpp。生成 27 作主值；预填充 436；起点为预填充 38、生成 17.6。同时处理的请求数未写。没有逐次原始数据，记为宣称。限定：6GB 显存放不下全部权重，其余部分放在哪里、内存多大都没写。",
+    "metric_en": "X post (2026-11-26, @Parziva_1): after two days of tuning; engine name and version not stated, starting from stock llama.cpp. Generation 27 is the headline; prefill 436; the starting point was 38 prefill and 17.6 generation. Number of simultaneous requests not stated. no per-run raw data, so this is a claim. Qualification: the weights do not fit in 6GB of VRAM, and where the rest lives and how much RAM there is are not stated.",
     "tok_s": 27.0,
     "concurrency": "未写",
     "source_note": "X 帖，测试者本人；无逐次原始数据",
@@ -47014,8 +47012,7 @@
     },
     "model_family": "Other",
     "tags": [
-      "MoE",
-      "offload"
+      "MoE"
     ],
     "source_id": "src-6e06dad319"
   },
@@ -47035,8 +47032,8 @@
     "source_level": "宣称",
     "date": "2026-11-26",
     "measured_by": "0xkaiken",
-    "metric": "X 帖（2026-11-26，@0xkaiken）：用 sybil 的推理优化技能调出的参数，引擎没写。解码 14.63 作主值；比调参前快 41%–61%，预填充快 65%。同时处理的请求数未写。没有逐次原始数据，记为宣称。限定：6GB 显存放不下 15 GB 的文件，内存大小没写，卸载；作者称输出无质量损失，没有给出检查。",
-    "metric_en": "X post (2026-11-26, @0xkaiken): flags tuned with the sybil inference-optimisation skill; engine not stated. Decode 14.63 is the headline; 41%-61% faster decode and 65% faster prefill than before tuning. Number of simultaneous requests not stated. no per-run raw data, so this is a claim. Qualification: the 15 GB file does not fit in 6GB of VRAM and the RAM size is not stated, which is offload; the author claims zero quality loss without showing a check.",
+    "metric": "X 帖（2026-11-26，@0xkaiken）：用 sybil 的推理优化技能调出的参数，引擎没写。解码 14.63 作主值；比调参前快 41%–61%，预填充快 65%。同时处理的请求数未写。没有逐次原始数据，记为宣称。限定：6GB 显存放不下 15 GB 的文件，其余部分放在哪里、内存多大都没写；作者称输出无质量损失，没有给出检查。",
+    "metric_en": "X post (2026-11-26, @0xkaiken): flags tuned with the sybil inference-optimisation skill; engine not stated. Decode 14.63 is the headline; 41%-61% faster decode and 65% faster prefill than before tuning. Number of simultaneous requests not stated. no per-run raw data, so this is a claim. Qualification: the 15 GB file does not fit in 6GB of VRAM, and where the rest lives and how much RAM there is are not stated; the author claims zero quality loss without showing a check.",
     "tok_s": 14.63,
     "concurrency": "未写",
     "source_note": "X 帖，测试者本人；无逐次原始数据",
@@ -47050,8 +47047,7 @@
     },
     "model_family": "Other",
     "tags": [
-      "MoE",
-      "offload"
+      "MoE"
     ],
     "source_id": "src-038813c380"
   },
@@ -47148,8 +47144,8 @@
     "source_level": "宣称",
     "date": "2026-11-26",
     "measured_by": "david_hatley",
-    "metric": "X 帖（2026-11-26，@david_hatley）：llama.cpp 的 AtomicChat 移植版（版本未写），调参后的参数，64K 窗口。解码 48.0 作主值；默认参数为 35.9；32K 处 33.6（默认 27.4）；8K 提示预填充 787（默认 364）。同时处理的请求数未写。没有逐次原始数据，记为宣称。限定：20.8 GB 的文件放不进 12GB 显存，内存大小没写，卸载。",
-    "metric_en": "X post (2026-11-26, @david_hatley): AtomicChat's llama.cpp port (version not stated) with tuned flags, 64K window. Decode 48.0 is the headline; stock flags 35.9; 33.6 at 32K (stock 27.4); 8K-prompt prefill 787 (stock 364). Number of simultaneous requests not stated. no per-run raw data, so this is a claim. Qualification: the 20.8 GB file does not fit in 12GB of VRAM and the RAM size is not stated, which is offload.",
+    "metric": "X 帖（2026-11-26，@david_hatley）：llama.cpp 的 AtomicChat 移植版（版本未写），调参后的参数，64K 窗口。解码 48.0 作主值；默认参数为 35.9；32K 处 33.6（默认 27.4）；8K 提示预填充 787（默认 364）。同时处理的请求数未写。没有逐次原始数据，记为宣称。限定：20.8 GB 的文件放不进 12GB 显存，其余部分放在哪里、内存多大都没写。",
+    "metric_en": "X post (2026-11-26, @david_hatley): AtomicChat's llama.cpp port (version not stated) with tuned flags, 64K window. Decode 48.0 is the headline; stock flags 35.9; 33.6 at 32K (stock 27.4); 8K-prompt prefill 787 (stock 364). Number of simultaneous requests not stated. no per-run raw data, so this is a claim. Qualification: the 20.8 GB file does not fit in 12GB of VRAM, and where the rest lives and how much RAM there is are not stated.",
     "tok_s": 48.0,
     "concurrency": "未写",
     "source_note": "X 帖，测试者本人；无逐次原始数据",
@@ -47164,8 +47160,7 @@
     },
     "model_family": "Other",
     "tags": [
-      "MoE",
-      "offload"
+      "MoE"
     ],
     "source_id": "src-ab3822dde3"
   },
