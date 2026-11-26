@@ -47394,8 +47394,8 @@
     "source_level": "宣称",
     "date": "2026-11-25",
     "measured_by": "murasametech",
-    "metric": "X 帖（2026-11-25，@murasametech）：Strata v0.2.21，Windows 11 的 WSL2，默认 32K 设置，约 14K token 输入，3 次取中位，两张卡按层切分，所以没有起草。生成 47.4 作主值；预填充 2,185；32K 质量检查 9/9 通过。同时处理的请求数未写。没有逐次原始数据，记为宣称。限定：作者没有分清通过的原因是思考设置从关改成低还是引擎本身。",
-    "metric_en": "X post (2026-11-25, @murasametech): Strata v0.2.21, WSL2 on Windows 11, default 32K setting, about 14K input tokens, median of 3, DSpark off because the layers are split across two cards. Generation 47.4 is the headline; prefill 2,185; 9 of 9 quality checks at 32K passed. Number of simultaneous requests not stated. no per-run raw data, so this is a claim. Qualification: the author did not separate whether the pass came from the thinking setting changing from off to low or from the engine.",
+    "metric": "X 帖（2026-11-25，@murasametech）：Strata v0.2.21，Windows 11 的 WSL2，默认 32K 设置，约 14K token 输入，3 次取中位，两张卡按层切分，所以没有起草。生成 47.4 作主值；预填充 2,185；32K 质量检查 9/9 通过；同一台机器加 --kv-offload on 另见 x-420。同时处理的请求数未写。没有逐次原始数据，记为宣称。限定：作者没有分清通过的原因是思考设置从关改成低还是引擎本身。",
+    "metric_en": "X post (2026-11-25, @murasametech): Strata v0.2.21, WSL2 on Windows 11, default 32K setting, about 14K input tokens, median of 3, DSpark off because the layers are split across two cards. Generation 47.4 is the headline; prefill 2,185; 9 of 9 quality checks at 32K passed; the same machine with --kv-offload on is x-420. Number of simultaneous requests not stated. no per-run raw data, so this is a claim. Qualification: the author did not separate whether the pass came from the thinking setting changing from off to low or from the engine.",
     "tok_s": 47.4,
     "concurrency": "未写",
     "source_note": "X 帖，测试者本人；无逐次原始数据",
@@ -47411,7 +47411,8 @@
     "model_family": "Other",
     "tags": [
       "MoE",
-      "multi-GPU"
+      "multi-GPU",
+      "offload"
     ],
     "source_id": "src-2af4525b87"
   },
@@ -47431,8 +47432,8 @@
     "source_level": "宣称",
     "date": "2026-11-25",
     "measured_by": "murasametech",
-    "metric": "X 帖（2026-11-25，@murasametech）：Strata v0.2.21，加 --kv-offload on（KV 放到系统内存），约 14K token 输入，3 次取中位。生成 26.5 作主值；约 32K 输入为 14.4；默认不放 KV 时为 47.4。同时处理的请求数未写。没有逐次原始数据，记为宣称。限定：KV 在内存里，大约慢了四成；Windows 空闲内存最低 44.3 GiB。",
-    "metric_en": "X post (2026-11-25, @murasametech): Strata v0.2.21 with --kv-offload on (KV cache in system memory), about 14K input tokens, median of 3. Generation 26.5 is the headline; about 32K input gives 14.4; the default without KV offload gave 47.4. Number of simultaneous requests not stated. no per-run raw data, so this is a claim. Qualification: the KV cache sits in RAM and decode is about 40% slower; Windows free memory bottomed at 44.3 GiB.",
+    "metric": "X 帖（2026-11-25，@murasametech）：Strata v0.2.21，加 --kv-offload on（KV 放到系统内存），约 14K token 输入，3 次取中位。生成 26.5 作主值；约 32K 输入为 14.4；默认不放 KV 时为 47.4（同一台机器，另见 x-419）。同时处理的请求数未写。没有逐次原始数据，记为宣称。限定：KV 在内存里，大约慢了四成；Windows 空闲内存最低 44.3 GiB。",
+    "metric_en": "X post (2026-11-25, @murasametech): Strata v0.2.21 with --kv-offload on (KV cache in system memory), about 14K input tokens, median of 3. Generation 26.5 is the headline; about 32K input gives 14.4; the default without KV offload gave 47.4 (same machine, see also x-419). Number of simultaneous requests not stated. no per-run raw data, so this is a claim. Qualification: the KV cache sits in RAM and decode is about 40% slower; Windows free memory bottomed at 44.3 GiB.",
     "tok_s": 26.5,
     "concurrency": "未写",
     "source_note": "X 帖，测试者本人；无逐次原始数据",
