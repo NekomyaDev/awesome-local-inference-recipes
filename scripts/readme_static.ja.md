@@ -26,7 +26,7 @@
 
 ## コントリビュート
 
-1 レシピにつき 1 PR でお願いします。[投稿ページ](submit.html)の YAML テンプレートをコピーし、出典に書かれている内容だけを埋めてください（それ以外は `null`）。`node scripts/validate.mjs` でチェックし、元の投稿へのリンクを添えてください。その後 `python3 scripts/gen_readme.py` で README をすべて再生成します。新しいモデルや新しいハードウェアの発売後数週間以内のレシピと、主流ではない組み合わせを優先して収録します。テスター、マシン、モデル、エンジンがすべて同じ場合にだけ既存のエントリに統合し、別のテスターによる定型の重複レシピは別のエントリにします。詳しくは [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
+1 レシピにつき 1 PR でお願いします。[投稿ページ](submit.html)の YAML テンプレートをコピーし、出典に書かれている内容だけを埋めてください（それ以外は `null`）。`node scripts/validate.mjs` でチェックし、元の投稿へのリンクを添えてください。その後 `python3 scripts/gen_all.py` で README とサイトのページをすべて再生成します。新しいモデルや新しいハードウェアの発売後数週間以内のレシピと、主流ではない組み合わせを優先して収録します。テスター、マシン、モデル、エンジンがすべて同じ場合にだけ既存のエントリに統合し、別のテスターによる定型の重複レシピは別のエントリにします。詳しくは [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
 
 ローカル開発：`python3 -m http.server 5190` → `index.html`（トップ）· `explore.html`（絞り込み・並べ替え・散布図）· スキーマは [`schema/recipe.schema.json`](schema/recipe.schema.json)。
 

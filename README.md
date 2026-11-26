@@ -486,7 +486,7 @@ Multi-card builds priced per card, Macs whose memory (and so price) is not state
 
 ## Contributing
 
-One recipe = one PR. Copy the YAML template from [submit.html](https://raytone-lab.github.io/awesome-local-inference-recipes/submit.html?lang=en), fill only what the source shows (`null` otherwise), run `node scripts/validate.mjs`, and link the post. Then run `python3 scripts/gen_readme.py` to regenerate all READMEs. Add new models and new hardware in the first few weeks after launch, and non-mainstream combinations, first. Merge a new result into an existing entry only for the same tester, machine, model and engine. A routine repeat by a different tester stays a separate entry. See [CONTRIBUTING.md](CONTRIBUTING.md).
+One recipe = one PR. Copy the YAML template from [submit.html](https://raytone-lab.github.io/awesome-local-inference-recipes/submit.html?lang=en), fill only what the source shows (`null` otherwise), run `node scripts/validate.mjs`, and link the post. Then run `python3 scripts/gen_all.py` to regenerate the READMEs and site pages. Add new models and new hardware in the first few weeks after launch, and non-mainstream combinations, first. Merge a new result into an existing entry only for the same tester, machine, model and engine. A routine repeat by a different tester stays a separate entry. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Dev: `python3 -m http.server 5190` → `index.html` (landing) · `explore.html` (filter/sort/scatter) · schema in [`schema/recipe.schema.json`](schema/recipe.schema.json).
 
