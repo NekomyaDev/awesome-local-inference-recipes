@@ -17,10 +17,14 @@ HW = [
  HardwarePage('amd-radeon','AMD Radeon (RX 7900 / R9700)',r'RX 7900|R9700','R9700'),HardwarePage('tesla-p40','NVIDIA Tesla P40',r'P40','P40'),HardwarePage('rtx-pro-6000','RTX PRO 6000',r'RTX PRO 6000','RTX PRO 6000')]
 BY_SLUG = {h.slug: h for h in HW}
 
+# Text that says a row also reports several requests at once. Older rows wrote 并发; rows now write
+# 同时处理 N 个请求 / 同时处理多个请求. Such rows stay out of the single-stream picks.
+AGG_TEXT = r'并发|aggregate|总吞吐|同时处理 ?(?:[\d/]+ ?个|多)'
+
 def selfrep(r): return '自称' in (r.get('metric') or '')
 COMPARE = re.compile(r'\s/|/\s|\svs\.?\s', re.I)
 def single_stream(r):
-    return not r.get('superseded_by') and not re.search(r'并发|aggregate|总吞吐', (r.get('metric') or '') + ' ' + str(r.get('concurrency') or ''), re.I)
+    return not r.get('superseded_by') and not re.search(AGG_TEXT, (r.get('metric') or '') + ' ' + str(r.get('concurrency') or ''), re.I)
 def single(r):
     return ('multi-GPU' not in r['tags'] and not re.search(r'[2-9] ?[x×] ?|双|[2-9] ?台', r['hardware']) and not COMPARE.search(r['hardware'])
             and single_stream(r))

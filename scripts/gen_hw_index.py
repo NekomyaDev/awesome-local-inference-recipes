@@ -6,6 +6,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from dataset_constants import DATA_ASOF
 import url_safety as us
+from hardware_index import AGG_TEXT
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / 'data/hw_index.json'
@@ -106,7 +107,7 @@ def parse_hw(h):
 def single_stream(r):
     if re.fullmatch(r'\s*未写\s*', str(r.get('concurrency') or '')):  # concurrency not stated: do not claim single-stream
         return False
-    return not r.get('superseded_by') and not re.search(r'并发|aggregate|总吞吐', (r.get('metric') or '') + ' ' + str(r.get('concurrency') or ''), re.I)
+    return not r.get('superseded_by') and not re.search(AGG_TEXT, (r.get('metric') or '') + ' ' + str(r.get('concurrency') or ''), re.I)
 
 
 def model_size(r, params):

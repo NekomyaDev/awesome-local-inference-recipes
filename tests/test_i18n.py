@@ -1,7 +1,9 @@
 import unittest
-import json, re, subprocess, unittest
+import json, re, subprocess, sys, unittest
 from pathlib import Path
 R = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(R / 'scripts'))
+import hardware_index
 CJK = re.compile(r'[\u3000-\u303f\u3040-\u30ff\u3400-\u9fff\uff00-\uffef]+')
 LANG_NAMES = {'中文', '简体中文', '日本語'}
 DATA_ENUMS = {'官方', '实测', '转述', '宣称', 'NVIDIA 消费级', '消费级', '二手数据中心卡', '其他'}
@@ -172,6 +174,10 @@ class SpeedPage(unittest.TestCase):
         self.assertIn("const RATES=EMBED?[10,20,50,100,200,500]:[5,10,20,50,100,200,500]", self.s)
         self.assertIn("for(const r of EMBED?RATES:[...RATES,'c'])", self.s)
 
+    def test_local_picks_use_the_python_aggregate_pattern(self):
+        js = re.search(r"!/(.*?)/i\.test\(\(r\.metric", self.s).group(1)
+        self.assertEqual(js.replace('\\/', '/'), hardware_index.AGG_TEXT)
+
     def test_local_picks_are_measured_single_stream_and_localized(self):
         fn = re.search(r'function localPicks\(rc,lang\)\{.*?\n', self.s).group(0)
         for lang in ('en', 'ja'):
@@ -180,7 +186,7 @@ class SpeedPage(unittest.TestCase):
             for i, lv, hw, model, met, conc in picks:
                 self.assertEqual(src[i]['source_level'], '实测', i)
                 self.assertFalse(src[i].get('superseded_by'), i)
-                self.assertNotRegex((src[i].get('metric') or '') + ' ' + str(src[i].get('concurrency') or ''), r'并发|aggregate|总吞吐|自称', i)
+                self.assertNotRegex((src[i].get('metric') or '') + ' ' + str(src[i].get('concurrency') or ''), hardware_index.AGG_TEXT + '|自称', i)
                 self.assertIsNone(CJK.search(hw + ' ' + model), f'{lang} {i}')
 
 
