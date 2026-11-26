@@ -111,7 +111,7 @@ const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const f1=x=>x>=100?Math.round(x):x>=10?x.toFixed(0):x.toFixed(1);
 function badge(r){return r<ALOUD?0:r<=READ*1.5?1:r<250?2:3}
-function localPicks(rc,lang){return rc.filter(r=>r.category==='text'&&r.tok_s&&r.source_level==='实测'&&!selfReported(r)&&!r.superseded_by&&!/并发|aggregate|总吞吐/i.test((r.metric||'')+' '+(r.concurrency||''))).map(r=>localizeRecipe(r,lang==='zh-CN'?'zh-CN':'en'))}
+function localPicks(rc,lang){return rc.filter(r=>r.category==='text'&&r.tok_s&&r.source_level==='实测'&&!selfReported(r)&&!r.superseded_by&&!/并发|aggregate|总吞吐|同时处理 ?(?:[\d\/]+ ?个|多)/i.test((r.metric||'')+' '+(r.concurrency||''))).map(r=>localizeRecipe(r,lang==='zh-CN'?'zh-CN':'en'))}
 function closest(r){let best=null;for(const x of RECIPES){const d=Math.abs(Math.log(x.tok_s/r));if(d<=Math.log(1.12)&&(!best||d<best.d))best={d,x}}return best&&best.x}
 function cloudNear(r){let best=null;for(const c of REF.cloud.items){const q=c.tps*Q2O,d=Math.abs(Math.log(q/r));if(d<=Math.log(1.2)&&(!best||d<best.d))best={d,c,q}}return best}
 function hwShort(s){return s.replace(/[（(][^）)]*[）)]/g,'').replace(/[\u4e00-\u9fff，、；：]+/g,' ').replace(/\s+/g,' ').trim()}

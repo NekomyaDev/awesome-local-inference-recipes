@@ -210,7 +210,7 @@
     "context": "256K 配置",
     "launch_command": null,
     "source_url": "https://x.com/needmorevram/status/2105050786938118599",
-    "source_note": "@needmorevram；独立佐证：Strata PR #2390（3090 UD-IQ4_XS 短对话 65.5、agent 74.8 tok/s）https://github.com/Niko1221/Strata/pull/2390",
+    "source_note": "@needmorevram；独立佐证：Strata PR #2390（3090 UD-IQ4_XS 短对话 65.5、智能体 74.8 tok/s）https://github.com/Niko1221/Strata/pull/2390",
     "source_level": "实测",
     "date": null,
     "model_family": "Qwen",
@@ -677,7 +677,7 @@
     "hardware_cost_usd": 6950,
     "metric": "代码 102.6；散文 71.7；JSON 66.2 tok/s",
     "tok_s": 71.7,
-    "concurrency": "原生引擎仅 1 路（另有 vLLM 并发通道）",
+    "concurrency": "原生引擎仅 1 路（另有 vLLM 同时处理多个请求的通道）",
     "context": "262K（243K 针测 15/15）",
     "launch_command": null,
     "source_url": "https://x.com/yume_arasaki/status/2101741448811229219",
@@ -879,7 +879,7 @@
     "hardware_cost_usd": 18000,
     "metric": "48K/用户：538.5 tok/s 合计解码；128K/用户：365",
     "tok_s": null,
-    "concurrency": "16 并发",
+    "concurrency": "同时处理 16 个请求",
     "context": "128K/用户",
     "launch_command": null,
     "source_url": "https://x.com/richgel999/status/2109515169638326738",
@@ -1038,7 +1038,7 @@
     "hardware_cost_usd": null,
     "metric": "最佳 83 tok/s；4 流合计 224",
     "tok_s": 83.0,
-    "concurrency": "4 流",
+    "concurrency": "未写（另有 4 流合计 224）",
     "context": null,
     "launch_command": null,
     "source_url": "https://x.com/yume_arasaki/status/2108359576966094952",
@@ -1054,7 +1054,7 @@
     "source_id": "src-77d360cc7f",
     "metric_en": "Best 83 tok/s; 4 streams total 224",
     "en": {
-      "concurrency": "4 streams",
+      "concurrency": "not stated (4 streams 224 aggregate reported separately)",
       "source_note": "@yume_arasaki roundup"
     }
   },
@@ -1293,7 +1293,7 @@
     "hardware_cost_usd": 1206,
     "metric": "82 原生 → 114 MTP → 138 DFlash2 tok/s",
     "tok_s": 138,
-    "concurrency": "syv-ai 调优 64 流合计 ~1,000",
+    "concurrency": "未写（另有 syv-ai 调优 64 流合计 ~1,000）",
     "context": "大上下文与 DFlash2 难共存（~110K 吃满）",
     "launch_command": null,
     "source_url": "https://x.com/yume_arasaki/status/2090971775714939097",
@@ -1311,7 +1311,7 @@
     "en": {
       "quant": "DFlash2 (TeksEdge)",
       "context": "large context hard to combine with DFlash2 (~110K fills it up)",
-      "concurrency": "syv-ai tuned 64 streams total ~1,000",
+      "concurrency": "not stated (syv-ai tuned 64 streams total ~1,000 reported separately)",
       "hardware_cost_text": "$1,206–1,499 (used, sold, 2026-10-06/12)",
       "source_note": "@yume_arasaki roundup"
     }
@@ -1391,7 +1391,7 @@
     "hardware_cost_usd": 18000,
     "metric": "合计解码 900→80 tok/s（4K→128K/会话）；PP 6.3–6.8K",
     "tok_s": null,
-    "concurrency": "16 并发",
+    "concurrency": "同时处理 16 个请求",
     "context": "128K",
     "launch_command": null,
     "source_url": "https://x.com/richgel999/status/2109515169638326738",
@@ -1520,7 +1520,7 @@
     "hardware_cost_usd": null,
     "metric": "74 tok/s 短提示；54 @32K；4 智能体合计 3.9×（oMLX 38 / Ollama 24）",
     "tok_s": 74.0,
-    "concurrency": "4 agent；TeksEdge 转述 Inco 测试 16 路 32K 请求均可处理",
+    "concurrency": "未写（另测 4 个智能体同时运行；TeksEdge 转述 Inco 测试 16 路 32K 请求均可处理）",
     "context": "32K 测试",
     "launch_command": null,
     "source_url": "https://x.com/inco_ai/status/2101100812936290364",
@@ -1537,7 +1537,7 @@
     "en": {
       "quant": "Splash (DFlash 2 built in)",
       "context": "32K tested",
-      "concurrency": "4 agents; TeksEdge relays Inco test: 16 streams of 32K requests all handled",
+      "concurrency": "not stated (4 agents run at once measured separately; TeksEdge relays Inco test: 16 streams of 32K requests all handled)",
       "source_note": "@inco_ai (project team)"
     }
   },
@@ -1745,7 +1745,7 @@
     "context": "64K",
     "launch_command": null,
     "source_url": "https://x.com/llamaperf/status/2104723054173790224",
-    "source_note": "@llamaperf 转述 r/LocalLLaMA",
+    "source_note": "@llamaperf 转述 r/LocalLLaMA；原帖已无法访问（@llamaperf 账号被 X 封禁，2026-11-26 核查），无存档",
     "source_level": "转述",
     "date": null,
     "model_family": "Qwen",
@@ -1756,7 +1756,7 @@
     "metric_en": "139.6 @32K; 112.4 @64K (0.71GiB spilled to CPU)",
     "en": {
       "hardware_cost_text": "$1,206–1,499 (used, sold, 2026-10-06/12)",
-      "source_note": "@llamaperf relaying r/LocalLLaMA"
+      "source_note": "@llamaperf relaying r/LocalLLaMA; the original post is no longer reachable (@llamaperf was suspended on X, checked 2026-11-26) and has no archive copy"
     }
   },
   {
@@ -1978,7 +1978,7 @@
     "hardware_cost_usd": 13900,
     "metric": "30 tok/s",
     "tok_s": 30.0,
-    "concurrency": "2 并发",
+    "concurrency": "同时处理 2 个请求",
     "context": "220K",
     "launch_command": null,
     "source_url": "https://x.com/realWeZZard/status/2099322375770869891",
@@ -2252,7 +2252,7 @@
     "context": "559K（针测 12/12 至 548K）",
     "launch_command": null,
     "source_url": "https://x.com/yume_arasaki/status/2099966865326170554",
-    "source_note": "@yume_arasaki 自测（原帖：跑 Mia AI Lab 的 EXL3 2.9bpw 配方，TP=2、DSpark k=3；35K agent 提示 48.5、代码 clamp 51.5；Mia 上游散文 31.6）；该配方即 github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-EXL3-2x-DGX-Sparks，README 写明为 vLLM 服务；与 @Tech2Wild 4× Spark vLLM 1017 的 48.5 是另一次测量",
+    "source_note": "@yume_arasaki 自测（原帖：跑 Mia AI Lab 的 EXL3 2.9bpw 配方，TP=2、DSpark k=3；35K 智能体提示 48.5、代码 clamp 51.5；Mia 上游散文 31.6）；该配方即 github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-EXL3-2x-DGX-Sparks，README 写明为 vLLM 服务；与 @Tech2Wild 4× Spark vLLM 1017 的 48.5 是另一次测量",
     "source_level": "实测",
     "date": null,
     "model_family": "DeepSeek",
@@ -2819,7 +2819,7 @@
     "id": "text-097",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
-    "quant": "oMLX 0.7.1.dev1（专家卸载 / 批量 prefill）",
+    "quant": "oMLX 0.7.1.dev1（专家卸载 / 批量预填充）",
     "engine": "oMLX",
     "hardware": "M3 Ultra / M5 Max",
     "hardware_family": "Mac",
@@ -3076,7 +3076,7 @@
     "id": "text-105",
     "category": "text",
     "model": "Qwen3.8-27B / Flash-Next / 35B-A3B",
-    "quant": "mlx-serve 26.9.5（并发投机解码）",
+    "quant": "mlx-serve 26.9.5（多请求投机解码）",
     "engine": "MLX",
     "hardware": "Mac Studio M4 Max 128GB",
     "hardware_family": "Mac",
@@ -3185,7 +3185,7 @@
     "metric": "28.41 vs 14.62 tok/s；Ollama 17–26；峰值内存 ~20GB",
     "tok_s": null,
     "concurrency": null,
-    "context": "22.5K token agent 提示 5 分钟未出首 token",
+    "context": "22.5K token 智能体提示 5 分钟未出首 token",
     "launch_command": null,
     "source_url": "https://x.com/aaronedell/status/2092016879519068309",
     "source_note": "@aaronedell",
@@ -5113,7 +5113,7 @@
     "context": null,
     "launch_command": null,
     "source_url": "https://x.com/TechPractice1/status/2105338176055509376",
-    "source_note": "@TechPractice1 on X。新数字：rcespa 在 Threadripper PRO 3975WX + 247GiB 上用 IQ3_S（engine 0.1.53，262K）得到短对话 88.9、agent 93.4，预填 4K/16K/32K 1,407.9 / 2,406.7 / 2,415.7（https://github.com/Niko1221/Strata/issues/4643）；@dad__vibes 在 225–240K 上下文（大部分来自缓存）报告 67.8–107.2（https://x.com/dad__vibes/status/2115893835339649057）",
+    "source_note": "@TechPractice1 on X。新数字：rcespa 在 Threadripper PRO 3975WX + 247GiB 上用 IQ3_S（engine 0.1.53，262K）得到短对话 88.9、智能体 93.4，预填 4K/16K/32K 1,407.9 / 2,406.7 / 2,415.7（https://github.com/Niko1221/Strata/issues/4643）；@dad__vibes 在 225–240K 上下文（大部分来自缓存）报告 67.8–107.2（https://x.com/dad__vibes/status/2115893835339649057）",
     "source_level": "实测",
     "date": "2026-09-30",
     "x_post": {
@@ -5223,7 +5223,7 @@
     "hardware_cost_usd": 13900,
     "metric": "1 流 54 tok/s；2 流 83；4 流合计 142（旧 0.3.4：40/53/54）",
     "tok_s": 54,
-    "concurrency": "4 流合计 142 tok/s",
+    "concurrency": "单流（另测 4 流合计 142 tok/s）",
     "context": null,
     "launch_command": null,
     "source_url": "https://x.com/easthambuilds/status/2105693180427452703",
@@ -5248,7 +5248,7 @@
     "metric_en": "1 stream 54 tok/s; 2 streams 83; 4 streams total 142 (old 0.3.4: 40/53/54)",
     "en": {
       "hardware": "2× DGX Spark (TP2)",
-      "concurrency": "4 streams total 142 tok/s",
+      "concurrency": "single stream (4 streams 142 tok/s aggregate measured separately)",
       "engine_note": "TensorFold 0.5.0 + DFlash2 draft",
       "hardware_cost_text": "≈$13,900 (2×$6,950, computed)"
     }
@@ -5789,7 +5789,7 @@
     "context": "262,144（原生）；测试 180K/192K/32K",
     "launch_command": "llama-server ... --ctx-size 262144（卡内示例）",
     "source_url": "https://huggingface.co/esatapedico/Qwen3.8-27B-NVFP4-MTP-GGUF",
-    "source_note": "HF 模型卡（作者自报）; prefill 随上下文下降，不同上下文不可直接比; 180K 上下文运行；卡注 prefill 随上下文下降，不同上下文不可直接比; 原文: | LOW (Q5_0 / IQ4_XS / IQ4_XS) | 645.6 | 18.44 | 1,151 | 0.726 | 2.88 | 361 |",
+    "source_note": "HF 模型卡（作者自报）; 预填充随上下文下降，不同上下文不可直接比; 180K 上下文运行；卡注预填充随上下文下降，不同上下文不可直接比; 原文: | LOW (Q5_0 / IQ4_XS / IQ4_XS) | 645.6 | 18.44 | 1,151 | 0.726 | 2.88 | 361 |",
     "source_level": "宣称",
     "date": "2026-08-14",
     "metric_en": "18.44 tok/s decode; 645.6 tok/s prefill; MID-HIGH (Q8_0) + MTP at 32K 25.98 tok/s decode, 1451.6 tok/s prefill",
@@ -6648,7 +6648,7 @@
     "hardware_cost_usd": 2214,
     "metric": "225 tok/s 生成",
     "tok_s": 225,
-    "concurrency": "bs32 1,321",
+    "concurrency": "单流（另测 bs32 合计 1,321）",
     "context": "32K（16GB 卡 8K×16）",
     "launch_command": "MEM=0.78 CTXLEN=32768 bash sglang/serve.sh（5090 加 INT8=on ATTN_BACKEND=triton MEM=0.82）",
     "source_url": "https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2",
@@ -6666,7 +6666,8 @@
       "context": "32K (16GB card 8K×16)",
       "hardware_cost_text": "card only used about $2,214 (2026-10-06 eBay sold, see prices.json)",
       "source_note": "HF model card (self-reported); each row measured on the corresponding physical card using the in-card command; 4090 temperature 0 vs 0.6: 218 vs 102 tok/s, temperature has a large effect; original: | RTX 4090 | 24 GB | sm_89 | **225 tok/s** | 0.26 s | **1,321 tok/s** @ bs 32 | 32k |",
-      "launch_command": "MEM=0.78 CTXLEN=32768 bash sglang/serve.sh (on 5090 add INT8=on ATTN_BACKEND=triton MEM=0.82)"
+      "launch_command": "MEM=0.78 CTXLEN=32768 bash sglang/serve.sh (on 5090 add INT8=on ATTN_BACKEND=triton MEM=0.82)",
+      "concurrency": "single stream (bs32 aggregate 1,321 measured separately)"
     }
   },
   {
@@ -6681,7 +6682,7 @@
     "hardware_cost_usd": null,
     "metric": "212 tok/s 生成",
     "tok_s": 212,
-    "concurrency": "bs16 914，8K×16 流",
+    "concurrency": "单流（另测 bs16 合计 914，8K×16 流）",
     "context": "32K（16GB 卡 8K×16）",
     "launch_command": "MEM=0.78 CTXLEN=32768 bash sglang/serve.sh（5090 加 INT8=on ATTN_BACKEND=triton MEM=0.82）",
     "source_url": "https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2",
@@ -6698,7 +6699,7 @@
     "en": {
       "quant": "Escha W2 (16GB recipe)",
       "context": "32K (16GB card 8K×16)",
-      "concurrency": "bs16 914, 8K×16 streams",
+      "concurrency": "single stream (bs16 aggregate 914 at 8K × 16 streams measured separately)",
       "source_note": "HF model card (self-reported); each row measured on the corresponding physical card using the in-card command; 4090 temperature 0 vs 0.6: 218 vs 102 tok/s, temperature has a large effect; original: | RTX 5080 | 16 GB | sm_120 | **212 tok/s** | 0.18 s @1k | 914 tok/s @ bs 16 | 8k × 16 streams |",
       "launch_command": "MEM=0.78 CTXLEN=32768 bash sglang/serve.sh (on 5090 add INT8=on ATTN_BACKEND=triton MEM=0.82)"
     }
@@ -6715,7 +6716,7 @@
     "hardware_cost_usd": 1206,
     "metric": "154 tok/s 生成",
     "tok_s": 154,
-    "concurrency": "bs16 390",
+    "concurrency": "单流（另测 bs16 合计 390）",
     "context": "32K（16GB 卡 8K×16）",
     "launch_command": "MEM=0.78 CTXLEN=32768 bash sglang/serve.sh（5090 加 INT8=on ATTN_BACKEND=triton MEM=0.82）",
     "source_url": "https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2",
@@ -6733,7 +6734,8 @@
       "context": "32K (16GB card 8K×16)",
       "hardware_cost_text": "card only used about $1,206 (2026-10-06 getpcparts, see prices.json)",
       "source_note": "HF model card (self-reported); each row measured on the corresponding physical card using the in-card command; 4090 temperature 0 vs 0.6: 218 vs 102 tok/s, temperature has a large effect; original: | RTX 3090 | 24 GB | sm_86 | **154 tok/s** | 0.63 s | 390 tok/s @ bs 16 | 32k |",
-      "launch_command": "MEM=0.78 CTXLEN=32768 bash sglang/serve.sh (on 5090 add INT8=on ATTN_BACKEND=triton MEM=0.82)"
+      "launch_command": "MEM=0.78 CTXLEN=32768 bash sglang/serve.sh (on 5090 add INT8=on ATTN_BACKEND=triton MEM=0.82)",
+      "concurrency": "single stream (bs16 aggregate 390 measured separately)"
     }
   },
   {
@@ -6748,7 +6750,7 @@
     "hardware_cost_usd": null,
     "metric": "128 tok/s 生成",
     "tok_s": 128,
-    "concurrency": "bs16 387",
+    "concurrency": "单流（另测 bs16 合计 387）",
     "context": "32K（16GB 卡 8K×16）",
     "launch_command": "MEM=0.78 CTXLEN=32768 bash sglang/serve.sh（5090 加 INT8=on ATTN_BACKEND=triton MEM=0.82）",
     "source_url": "https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2",
@@ -6766,7 +6768,8 @@
       "quant": "Escha W2 (16GB recipe)",
       "context": "32K (16GB card 8K×16)",
       "source_note": "HF model card (self-reported); each row measured on the corresponding physical card using the in-card command; 4090 temperature 0 vs 0.6: 218 vs 102 tok/s, temperature has a large effect; original: | RTX 5060 Ti | 16 GB | sm_120 | **128 tok/s** | 0.52 s @1k | 387 tok/s @ bs 16 | 8k × 16 streams |",
-      "launch_command": "MEM=0.78 CTXLEN=32768 bash sglang/serve.sh (on 5090 add INT8=on ATTN_BACKEND=triton MEM=0.82)"
+      "launch_command": "MEM=0.78 CTXLEN=32768 bash sglang/serve.sh (on 5090 add INT8=on ATTN_BACKEND=triton MEM=0.82)",
+      "concurrency": "single stream (bs16 aggregate 387 measured separately)"
     }
   },
   {
@@ -7093,7 +7096,7 @@
     "context": "最高 128k（卡称；64k 时 28.8 GiB）",
     "launch_command": null,
     "source_url": "https://huggingface.co/agentionai/Qwen3.8-Flash-Next-Gyro-GGUF",
-    "source_note": "HF 模型卡（作者自报）; prose 140 / code 209 / JSON 221；prefill 为 16k prompt; 原文: | RTX 5090, 32 GB | Strata `rc1` (release candidate) | prose **140**, code 209, JSON 221 | 4,883 (16k prompt) | prose 114 |",
+    "source_note": "HF 模型卡（作者自报）; prose 140 / code 209 / JSON 221；预填充为 16k prompt; 原文: | RTX 5090, 32 GB | Strata `rc1` (release candidate) | prose **140**, code 209, JSON 221 | 4,883 (16k prompt) | prose 114 |",
     "source_level": "宣称",
     "date": "2026-09-30",
     "metric_en": "140.0 tok/s decode; 4883.0 tok/s prefill",
@@ -7131,7 +7134,7 @@
     "context": "最高 128k（卡称；64k 时 28.8 GiB）",
     "launch_command": null,
     "source_url": "https://huggingface.co/agentionai/Qwen3.8-Flash-Next-Gyro-GGUF",
-    "source_note": "HF 模型卡（作者自报）; 开 MTP：JSON 210 / code 180；prefill 约值 pp2048; 原文: | RTX 5090, 32 GB | llama.cpp fork main, CUDA | **113** (MTP: JSON 210, code 180, copy 218) | ~3,000 (pp2048) |  |",
+    "source_note": "HF 模型卡（作者自报）; 开 MTP：JSON 210 / code 180；预填充约值 pp2048; 原文: | RTX 5090, 32 GB | llama.cpp fork main, CUDA | **113** (MTP: JSON 210, code 180, copy 218) | ~3,000 (pp2048) |  |",
     "source_level": "宣称",
     "date": "2026-09-30",
     "metric_en": "113.0 tok/s decode; 3000.0 tok/s prefill",
@@ -7170,7 +7173,7 @@
     "context": "最高 128k（卡称；64k 时 28.8 GiB）",
     "launch_command": null,
     "source_url": "https://huggingface.co/agentionai/Qwen3.8-Flash-Next-Gyro-GGUF",
-    "source_note": "HF 模型卡（作者自报）; code+MTP 70.6；prefill pp512; 原文: | Radeon AI PRO R9700, 32 GB | llama.cpp fork, Vulkan | 57.8 (code with MTP: 70.6) | 1,246 (pp512) |  |",
+    "source_note": "HF 模型卡（作者自报）; code+MTP 70.6；预填充 pp512; 原文: | Radeon AI PRO R9700, 32 GB | llama.cpp fork, Vulkan | 57.8 (code with MTP: 70.6) | 1,246 (pp512) |  |",
     "source_level": "宣称",
     "date": "2026-09-30",
     "metric_en": "57.8 tok/s decode; 1246.0 tok/s prefill",
@@ -7282,7 +7285,7 @@
     "context": "262,144",
     "launch_command": null,
     "source_url": "https://huggingface.co/OsaurusAI/Allosaurus-v0.1-125B-A6B-JANGH2",
-    "source_note": "HF 模型卡（作者自报）; ~4k prompt 后 decode 掉到 31.7（卡称预发布引擎已知问题）；prefill 902 为 ~4k prompt; 原文: | decode, short prompt | 46.5 tok/s | 53.1 tok/s |",
+    "source_note": "HF 模型卡（作者自报）; ~4k prompt 后解码掉到 31.7（卡称预发布引擎已知问题）；预填充 902 为 ~4k prompt; 原文: | decode, short prompt | 46.5 tok/s | 53.1 tok/s |",
     "source_level": "宣称",
     "date": "2026-10-03",
     "metric_en": "46.5 tok/s decode; 902.0 tok/s prefill",
@@ -7464,7 +7467,7 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
     "hardware_cost_usd": 13900,
-    "metric": "MiaAI 1104 配方（TensorFold，1M 上下文，8 slot，GPU 锁 2200 MHz）。niklaslenz：散文 38.7 / 代码 42.4（思考关，512 token，2 次中位数）；用 Mia 自带测试方法复现 47.8（思考开），4 流合计 87.7，128K 预填 1,787。jmurillocode：散文单流思考关 33.7 / 开 40.3，8 流 89.9 / 101.1，预填约 1,747（x.com/jmurillocode/status/2118322418523480496）。JASONMCNAB：与 Mia 公布值差 ≤5%，1 流 50.3 vs 47.8（x.com/JASONMCNAB/status/2118312375732367487）。Mia 原帖自报约 48 / 4 流约 87（x.com/MiaAI_lab/status/2118005417494155664）。历史：同作者更早 EXL3 配方单流约 60.4 / 4 流 108.8（x.com/MiaAI_lab/status/2105598458547646875）。tok_s 取 niklaslenz 散文 38.7",
+    "metric": "MiaAI 1104 配方（TensorFold，1M 上下文，8 slot，GPU 锁 2200 MHz）。niklaslenz：散文 38.7 / 代码 42.4（思考关，512 token，2 次中位数）；用 Mia 自带测试方法复现 47.8（思考开），4 流合计 87.7，128K 预填 1,787。jmurillocode：散文单流思考关 33.7 / 开 40.3，8 流 89.9 / 101.1，预填约 1,747（x.com/jmurillocode/status/2118322418523480496）。JASONMCNAB：与 Mia 公布值差 ≤5%，1 流 50.3 vs 47.8（x.com/JASONMCNAB/status/2118312375732367487，该帖已删除，2026-11-26 核查）。Mia 原帖自报约 48 / 4 流约 87（x.com/MiaAI_lab/status/2118005417494155664）。历史：同作者更早 EXL3 配方单流约 60.4 / 4 流 108.8（x.com/MiaAI_lab/status/2105598458547646875）。tok_s 取 niklaslenz 散文 38.7",
     "tok_s": 38.7,
     "concurrency": "单流",
     "context": "1M（4 路共享约 2.7–2.9M KV 池）",
@@ -7505,7 +7508,7 @@
     "source_id": "src-0e30e37e2f",
     "engine_raw": "TensorFold + DFlash2",
     "engine_note": "TensorFold + DFlash2",
-    "metric_en": "MiaAI 1104 recipe (TensorFold, 1M context, 8 slots, GPU clock capped at 2200 MHz). niklaslenz: prose 38.7 / code 42.4 (thinking off, 512 tokens, median of 2); with Mia's own harness he matches 47.8 (thinking on), 4 streams 87.7 aggregate, 128K prefill 1,787. jmurillocode: prose single-stream thinking off 33.7 / on 40.3, 8 streams 89.9 / 101.1, prefill about 1,747 (x.com/jmurillocode/status/2118322418523480496). JASONMCNAB: within 5% of Mia's published values, 1 stream 50.3 vs 47.8 (x.com/JASONMCNAB/status/2118312375732367487). Mia's own post reports about 48 / about 87 at 4 streams (x.com/MiaAI_lab/status/2118005417494155664). History: the author's earlier EXL3 recipe was about 60.4 single-stream / 108.8 at 4 streams (x.com/MiaAI_lab/status/2105598458547646875). tok_s uses niklaslenz prose 38.7",
+    "metric_en": "MiaAI 1104 recipe (TensorFold, 1M context, 8 slots, GPU clock capped at 2200 MHz). niklaslenz: prose 38.7 / code 42.4 (thinking off, 512 tokens, median of 2); with Mia's own harness he matches 47.8 (thinking on), 4 streams 87.7 aggregate, 128K prefill 1,787. jmurillocode: prose single-stream thinking off 33.7 / on 40.3, 8 streams 89.9 / 101.1, prefill about 1,747 (x.com/jmurillocode/status/2118322418523480496). JASONMCNAB: within 5% of Mia's published values, 1 stream 50.3 vs 47.8 (x.com/JASONMCNAB/status/2118312375732367487, since deleted, checked 2026-11-26). Mia's own post reports about 48 / about 87 at 4 streams (x.com/MiaAI_lab/status/2118005417494155664). History: the author's earlier EXL3 recipe was about 60.4 single-stream / 108.8 at 4 streams (x.com/MiaAI_lab/status/2105598458547646875). tok_s uses niklaslenz prose 38.7",
     "en": {
       "quant": "EXL3 4bpw (MiaAI 1104 recipe, dense/head q8, FP8 KV, DFlash2)",
       "hardware": "2× DGX Spark",
@@ -7527,7 +7530,7 @@
     "hardware_cost_usd": 27800,
     "metric": "1 流 95 tok/s（prose）；4 流 163",
     "tok_s": 95,
-    "concurrency": null,
+    "concurrency": "单流",
     "context": "KV 约 6M",
     "launch_command": null,
     "source_url": "https://x.com/MiaAI_lab/status/2108939694918488183",
@@ -7565,7 +7568,8 @@
       "hardware": "4× DGX Spark (works with or without switch, TP4 branch)",
       "context": "KV ≈ 6M",
       "engine_note": "TensorFold TP4 branch",
-      "hardware_cost_text": "≈$27,800 (4×$6,950, computed)"
+      "hardware_cost_text": "≈$27,800 (4×$6,950, computed)",
+      "concurrency": "single stream"
     }
   },
   {
@@ -7580,11 +7584,11 @@
     "hardware_cost_usd": 6950,
     "metric": "1 流 64.4 tok/s（prose）；8 流 200.9；32k 预填充 2,630 tok/s；@yume_arasaki 汇总帖（Mia 数据 + 复现）：单流散文 63.6，4 流合计 114.5（x.com/yume_arasaki/status/2106837882870886438）",
     "tok_s": 64.4,
-    "concurrency": null,
+    "concurrency": "单流",
     "context": "262K，最多 8 路",
     "launch_command": null,
     "source_url": "https://x.com/MiaAI_lab/status/2108203605685596490",
-    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取）；MiaAI 更新版 recipe 独立复测（@devopsfortunato，2026-10-29）：单流 decode 47.8 → 52.4，预填 2,092 → 2,245，质量相同。TensorFold prompt-cache bug：重发同一 128K 文档时复用 0 token（59.9 s），3abeeff 修复后 2.6 s（@devopsfortunato，x.com/devopsfortunato/status/2115488771936534727）。修复前的长上下文首 token 时间可能偏高",
+    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取）；MiaAI 更新版 recipe 独立复测（@devopsfortunato，2026-10-29）：单流解码 47.8 → 52.4，预填 2,092 → 2,245，质量相同。TensorFold prompt-cache bug：重发同一 128K 文档时复用 0 token（59.9 s），3abeeff 修复后 2.6 s（@devopsfortunato，x.com/devopsfortunato/status/2115488771936534727）。修复前的长上下文首 token 时间可能偏高",
     "source_level": "实测",
     "date": "2026-10-08",
     "x_post": {
@@ -7619,7 +7623,8 @@
     "en": {
       "context": "262K, up to 8 streams",
       "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
-      "source_note": "@MiaAI_lab post + mia-ai.net/models (fetched 10/14); independent re-test of the updated MiaAI recipe (@devopsfortunato, 2026-10-29): single-stream decode 47.8 → 52.4, prefill 2,092 → 2,245, same quality. TensorFold prompt-cache bug: a resent 128K document reused 0 tokens (59.9 s); after fix 3abeeff it takes 2.6 s (@devopsfortunato, x.com/devopsfortunato/status/2115488771936534727). Long-context first-token times before the fix can be too high"
+      "source_note": "@MiaAI_lab post + mia-ai.net/models (fetched 10/14); independent re-test of the updated MiaAI recipe (@devopsfortunato, 2026-10-29): single-stream decode 47.8 → 52.4, prefill 2,092 → 2,245, same quality. TensorFold prompt-cache bug: a resent 128K document reused 0 tokens (59.9 s); after fix 3abeeff it takes 2.6 s (@devopsfortunato, x.com/devopsfortunato/status/2115488771936534727). Long-context first-token times before the fix can be too high",
+      "concurrency": "single stream"
     }
   },
   {
@@ -7634,7 +7639,7 @@
     "hardware_cost_usd": 6950,
     "metric": "1 流 48.7 tok/s（mia-ai.net，帖文未写单流）；8 流 117 prose / 180 code（帖文）；峰值内存 91 GiB",
     "tok_s": 48.7,
-    "concurrency": null,
+    "concurrency": "单流",
     "context": "262K（YaRN 512K）",
     "launch_command": null,
     "source_url": "https://x.com/MiaAI_lab/status/2101339268203380857",
@@ -7670,7 +7675,8 @@
       "quant": "NVFP4 (official NVIDIA NVFP4 optional)",
       "context": "262K (YaRN 512K)",
       "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
-      "source_note": "@MiaAI_lab post + mia-ai.net/models (fetched 10/14; single-stream tok/s taken from mia-ai.net, the post does not have this exact value)"
+      "source_note": "@MiaAI_lab post + mia-ai.net/models (fetched 10/14; single-stream tok/s taken from mia-ai.net, the post does not have this exact value)",
+      "concurrency": "single stream"
     }
   },
   {
@@ -7685,7 +7691,7 @@
     "hardware_cost_usd": 13900,
     "metric": "1 流 54.4 tok/s、8 流 207、32k 预填充 2,962 tok/s（均为 mia-ai.net；帖文写约 50 单流 / 约 212 8 流）",
     "tok_s": 54.4,
-    "concurrency": null,
+    "concurrency": "单流",
     "context": "1M（2.5M bf16 KV）",
     "launch_command": null,
     "source_url": "https://x.com/MiaAI_lab/status/2094338533909475486",
@@ -7721,7 +7727,8 @@
     "en": {
       "context": "1M (2.5M bf16 KV)",
       "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
-      "source_note": "@MiaAI_lab post + mia-ai.net/models (fetched 10/14; single-stream tok/s taken from mia-ai.net, the post does not have this exact value)"
+      "source_note": "@MiaAI_lab post + mia-ai.net/models (fetched 10/14; single-stream tok/s taken from mia-ai.net, the post does not have this exact value)",
+      "concurrency": "single stream"
     }
   },
   {
@@ -7736,7 +7743,7 @@
     "hardware_cost_usd": 13900,
     "metric": "单流 82 tok/s（峰值约 95）；3 会话 135 tok/s",
     "tok_s": 82,
-    "concurrency": null,
+    "concurrency": "单流",
     "context": null,
     "launch_command": null,
     "source_url": "https://x.com/MiaAI_lab/status/2083326111144906836",
@@ -7770,7 +7777,8 @@
     "metric_en": "single stream 82 tok/s (peak about 95); 3 sessions 135 tok/s",
     "en": {
       "quant": "official FP8 weights",
-      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)"
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
+      "concurrency": "single stream"
     }
   },
   {
@@ -7785,8 +7793,8 @@
     "hardware_cost_usd": 6950,
     "metric": "单会话 95 tok/s；8 会话 317 tok/s",
     "tok_s": 95,
-    "concurrency": null,
-    "context": "256K，24 路并发",
+    "concurrency": "单流",
+    "context": "256K，24 个请求同时处理",
     "launch_command": null,
     "source_url": "https://x.com/MiaAI_lab/status/2082573590529204458",
     "source_note": "@MiaAI_lab on X",
@@ -7821,7 +7829,8 @@
     "metric_en": "single session 95 tok/s; 8 sessions 317 tok/s",
     "en": {
       "context": "256K, 24 concurrent",
-      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)"
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "concurrency": "single stream"
     }
   },
   {
@@ -7919,7 +7928,7 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11）",
     "hardware_cost_usd": 6950,
-    "metric": "24 并发会话最高 440 tok/s（合计）",
+    "metric": "同时处理 24 个会话最高 440 tok/s（合计）",
     "tok_s": null,
     "concurrency": null,
     "context": "256K，24 路",
@@ -8018,7 +8027,7 @@
     "metric": "解码 29 tok/s prose / 41 code；预填充 2,000 tok/s；top-token 一致率 92%，KLD 0.07",
     "tok_s": 29,
     "concurrency": null,
-    "context": "262K，8 并发，2M KV 池",
+    "context": "262K，8 个请求同时处理，2M KV 池",
     "launch_command": null,
     "source_url": "https://x.com/0xSero/status/2106373861818224907",
     "source_note": "@0xSero on X",
@@ -8334,7 +8343,7 @@
     "hardware_cost_usd": 6950,
     "metric": "单流 42 tok/s；C8 114；TTFT 0.2s；1.86M KV",
     "tok_s": 42,
-    "concurrency": null,
+    "concurrency": "单流",
     "context": null,
     "launch_command": null,
     "source_url": "https://x.com/WescheNex1q/status/2091634749433331979",
@@ -8368,7 +8377,8 @@
     "engine_note": "SGLang + DFlash2",
     "metric_en": "single stream 42 tok/s; C8 114; TTFT 0.2s; 1.86M KV",
     "en": {
-      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)"
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "concurrency": "single stream"
     }
   },
   {
@@ -8573,7 +8583,7 @@
     "hardware_cost_usd": 13900,
     "metric": "复现 MiaAI_lab recipe：1 流 61.43（Mia 60.4）；4 流 107.8（Mia 108.8）",
     "tok_s": 61.43,
-    "concurrency": null,
+    "concurrency": "单流",
     "context": null,
     "launch_command": null,
     "source_url": "https://x.com/JASONMCNAB/status/2106367944963842279",
@@ -8606,7 +8616,8 @@
     "metric_en": "reproduces MiaAI_lab recipe: 1 stream 61.43 (Mia 60.4); 4 streams 107.8 (Mia 108.8)",
     "en": {
       "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
-      "source_note": "@JASONMCNAB on X; engine info: MiaAI_lab recipe"
+      "source_note": "@JASONMCNAB on X; engine info: MiaAI_lab recipe",
+      "concurrency": "single stream"
     }
   },
   {
@@ -8621,7 +8632,7 @@
     "hardware_cost_usd": 13900,
     "metric": "TensorFold：1 流 95、3 流 147、预填充 1,400；vLLM 对照：51 / 86 / 870",
     "tok_s": 95,
-    "concurrency": null,
+    "concurrency": "单流",
     "context": "16 流 × 600K",
     "launch_command": null,
     "source_url": "https://x.com/Urthoo/status/2106426248759005362",
@@ -8655,7 +8666,8 @@
     "metric_en": "TensorFold: 1 stream 95, 3 streams 147, prefill 1,400; vLLM comparison: 51 / 86 / 870",
     "en": {
       "context": "16 streams × 600K",
-      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)"
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
+      "concurrency": "single stream"
     }
   },
   {
@@ -8971,7 +8983,7 @@
     "context": null,
     "launch_command": null,
     "source_url": "https://x.com/niklaslenz_ai/status/2110132306061013386",
-    "source_note": "@niklaslenz_ai on X（参数与 prefill 见其回复 2110290343719522729 / 2110244773709914230 / 2110245823955259551）；独立佐证：Strata PR #2165（他人 5090 + IQ3_XXS，聊天 202.1 / agent 223.8 tok/s）https://github.com/Niko1221/Strata/pull/2165",
+    "source_note": "@niklaslenz_ai on X（参数与预填充见其回复 2110290343719522729 / 2110244773709914230 / 2110245823955259551）；独立佐证：Strata PR #2165（他人 5090 + IQ3_XXS，聊天 202.1 / 智能体 223.8 tok/s）https://github.com/Niko1221/Strata/pull/2165",
     "source_level": "实测",
     "date": "2026-10-14",
     "x_post": {
@@ -9377,7 +9389,7 @@
     "hardware_cost_usd": 13900,
     "metric": "复现 sudoingX recipe，单流思考关、3 次 <1% 差：结构化 135.5 / JSON 115.2 / 数学 114.0 / 代码 91.3 / 散文 57.2；关草稿约 44；8K→240K 散文 57.6–61.5；TTFT 8K 4.3 s / 35K ~18 s / 240K 91.8 s；Hermes Agent 回合 82–94",
     "tok_s": 57.2,
-    "concurrency": null,
+    "concurrency": "单流",
     "context": "262K，MAX_SEQS=2",
     "launch_command": null,
     "source_url": "https://x.com/yume_arasaki/status/2110460251820732478",
@@ -9408,7 +9420,8 @@
       "context": "262K, MAX_SEQS=2",
       "engine_note": "vLLM main 6e517b15 + 20 patches, DSpark k=5, TP=2",
       "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
-      "source_note": "@yume_arasaki reproduction (details 2110460903300935879)"
+      "source_note": "@yume_arasaki reproduction (details 2110460903300935879)",
+      "concurrency": "single stream"
     }
   },
   {
@@ -9423,7 +9436,7 @@
     "hardware_cost_usd": 6950,
     "metric": "第 2 部分单流：结构化 45.2 / JSON 45.7 / 代码 35.9 / 散文 27.5；33K 研究回合 32；8K→240K 解码 50.1→44.4；TTFT 8K 14 s / 65K 79 s / 240K 280 s；预填充 450–640 tok/s；浅层 69 W；第 1 部分（同作者前一帖）：结构化 43.2 / 代码 40.7 / 散文 29.2",
     "tok_s": 27.5,
-    "concurrency": null,
+    "concurrency": "单流",
     "context": "262K（KV Q4）",
     "launch_command": null,
     "source_url": "https://x.com/yume_arasaki/status/2110193379342786881",
@@ -9452,7 +9465,8 @@
       "model": "RED-SNOW-5.3-FLASH (GLM-5.3-Flash refusal-removed version)",
       "context": "262K (KV Q4)",
       "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
-      "source_note": "@yume_arasaki self-test part 2; supersedes the depth numbers of the same author's part 1 (x.com/yume_arasaki/status/2109454666933436691, structured 43.2 / code 40.7 / prose 29.2): part 1 recorded \"11.3 at 8K → 0.7 at 240K\", while part 2 fully measured 8K→240K decode 50.1→44.4 (only an 11% drop)"
+      "source_note": "@yume_arasaki self-test part 2; supersedes the depth numbers of the same author's part 1 (x.com/yume_arasaki/status/2109454666933436691, structured 43.2 / code 40.7 / prose 29.2): part 1 recorded \"11.3 at 8K → 0.7 at 240K\", while part 2 fully measured 8K→240K decode 50.1→44.4 (only an 11% drop)",
+      "concurrency": "single stream"
     }
   },
   {
@@ -10273,7 +10287,7 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
     "hardware_cost_usd": 13900,
-    "metric": "作者称 25–40 tok/s（难散文→结构化），多流 >50；明确“不做精确声明”（无单一数值，tok_s 留空）；KV 池约 3M token（最多 6 并发共享）",
+    "metric": "作者称 25–40 tok/s（难散文→结构化），多流 >50；明确“不做精确声明”（无单一数值，tok_s 留空）；KV 池约 3M token（最多同时处理 6 个请求（共享））",
     "tok_s": null,
     "concurrency": "最多 6",
     "context": null,
@@ -10310,10 +10324,10 @@
     "hardware_cost_usd": 13900,
     "metric": "单流 63.7 tok/s（带宽上限推算 74.7，达 85%）；同机 V4.1-Flash 因内存失败",
     "tok_s": 63.7,
-    "concurrency": null,
+    "concurrency": "单流",
     "context": null,
     "launch_command": null,
-    "source_url": "https://senn-tech.com/en/blog/dgx-spark-verbund-deepseek-v41-flash",
+    "source_url": "https://senn-tech.com/en/blog/two-dgx-spark-boxes-on-our-bench",
     "source_note": "senn-tech 博客（借测机，2026-09-28 实测）",
     "source_level": "实测",
     "date": "2026-09-28",
@@ -10323,12 +10337,13 @@
       "multi-GPU"
     ],
     "measured_by": "senn-tech",
-    "source_id": "src-00467e05da",
+    "source_id": "src-dfa4456e02",
     "metric_en": "single stream 63.7 tok/s (bandwidth-limit estimate 74.7, reaches 85%); V4.1-Flash on same machine failed due to RAM",
     "en": {
       "hardware": "2× DGX Spark (QSFP direct link)",
       "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
-      "source_note": "senn-tech blog (borrowed test machine, measured 2026-09-28)"
+      "source_note": "senn-tech blog (borrowed test machine, measured 2026-09-28)",
+      "concurrency": "single stream"
     }
   },
   {
@@ -11004,9 +11019,9 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
     "hardware_cost_usd": 13900,
-    "metric": "单请求 vLLM TP=2 55.7 tok/s（8 并发合计 202）；同机 SGLang TP=2 53.3；对照：Ollama 单节点 42",
+    "metric": "单请求 vLLM TP=2 55.7 tok/s（同时处理 8 个请求合计 202）；同机 SGLang TP=2 53.3；对照：Ollama 单节点 42",
     "tok_s": 55.7,
-    "concurrency": "1 / 8 并发",
+    "concurrency": "单流（另测 8 个请求同时处理合计 202）",
     "context": null,
     "launch_command": null,
     "source_url": "https://www.reddit.com/r/LocalLLM/comments/1x60lzg/comment/pgrio9u/",
@@ -11023,7 +11038,7 @@
     "metric_en": "single request vLLM TP=2 55.7 tok/s (8 concurrent total 202); SGLang TP=2 on same machine 53.3; for comparison: Ollama single node 42",
     "en": {
       "hardware": "2× DGX Spark (TP=2)",
-      "concurrency": "1 / 8 concurrent",
+      "concurrency": "single stream (8 concurrent requests 202 aggregate measured separately)",
       "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
       "source_note": "r/LocalLLM u/ShadoByBB measured in a comment (text-only comment, no screenshot/log, counted as claimed)"
     }
@@ -11714,7 +11729,7 @@
     "hardware_cost_usd": 27800,
     "metric": "单流散文 ~62.5 tok/s（tuned；base ~32.6；对照 Moorhead ~58；16 slots 散文 ~228 / 代码 ~293，未达媒体 494）",
     "tok_s": 62.5,
-    "concurrency": null,
+    "concurrency": "单流",
     "context": "262K",
     "launch_command": null,
     "source_url": "https://www.reddit.com/r/LocalLLaMA/comments/1x79ijg/",
@@ -11729,7 +11744,8 @@
       "hardware_cost_text": "≈$27,800 (4×$6,950, computed)",
       "context": "262K",
       "source_note": "r/LocalLLaMA u/Aroochacha measured (knapcio SGLang TP4 + DSpark recipe)",
-      "engine_note": "SGLang TP4 + DSpark (knapcio recipe, tuned)"
+      "engine_note": "SGLang TP4 + DSpark (knapcio recipe, tuned)",
+      "concurrency": "single stream"
     },
     "model_family": "DeepSeek",
     "tags": [
@@ -11917,9 +11933,9 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$13,900（2×$6,950，2026-10-11）",
     "hardware_cost_usd": 13900,
-    "metric": "单流解码约 7 tok/s（28 tok 提示 7.01；650 tok 6.88；9,146 tok 6.76）；加载约 10 分 48 秒；预填充短提示 ~26、9K 提示 ~263 tok/s；并发 4 槽合计约 14–16 tok/s",
+    "metric": "单流解码约 7 tok/s（28 tok 提示 7.01；650 tok 6.88；9,146 tok 6.76）；加载约 10 分 48 秒；预填充短提示 ~26、9K 提示 ~263 tok/s；同时处理 4 个槽合计约 14–16 tok/s",
     "tok_s": 7.01,
-    "concurrency": null,
+    "concurrency": "单流",
     "context": "32K（UD-IQ1_M；UD-IQ2_XXS 仅约 8K）",
     "launch_command": null,
     "source_url": "https://x.com/wei_wang/status/2111430275683021105",
@@ -11939,7 +11955,8 @@
       "hardware": "2× DGX Spark (GB10, 200GbE RoCE)",
       "hardware_cost_text": "≈$13,900 (2×$6,950, 2026-10-11)",
       "context": "32K (UD-IQ1_M; UD-IQ2_XXS only ~8K)",
-      "source_note": "@wei_wang measured long-form write-up (two Sparks over RPC)"
+      "source_note": "@wei_wang measured long-form write-up (two Sparks over RPC)",
+      "concurrency": "single stream"
     },
     "model_family": "Other",
     "tags": [
@@ -11989,7 +12006,7 @@
     "id": "text-143",
     "category": "text",
     "model": "Qwen3.8-27B",
-    "quant": "UD-Q4_K_M · DFlash2 草稿（n=7）· Vulkan + Intel FA prefill",
+    "quant": "UD-Q4_K_M · DFlash2 草稿（n=7）· Vulkan + Intel FA 预填充",
     "engine": "llama.cpp",
     "hardware": "Intel Arc Pro B60 24GB（Ryzen 7 3700X + 32GB DDR4，Windows 11）",
     "hardware_family": "其他",
@@ -11997,7 +12014,7 @@
     "hardware_cost_usd": null,
     "metric": "单请求解码均值 53.3 tok/s（7 个编码任务 47–58，64K KV）；eval-suite 吞吐 42.3 tok/s；stock 无草稿约 16；32K 预填充 420 tok/s（Intel FA）",
     "tok_s": 53.3,
-    "concurrency": null,
+    "concurrency": "单流",
     "context": "64K（配置上限；常用约 57–61K）",
     "launch_command": null,
     "source_url": "https://github.com/edagher92-coder/arc-llm-lab",
@@ -12011,7 +12028,8 @@
       "hardware": "Intel Arc Pro B60 24GB (Ryzen 7 3700X + 32GB DDR4, Windows 11)",
       "hardware_cost_text": "A$999 (PCCaseGear OEM Passive, incl. GST, 2026-10-10); ASRock Creator ~A$1,240 (gpuprix 2026-10-07)",
       "context": "64K (config max; typically ~57–61K in use)",
-      "source_note": "arc-llm-lab README (raw logs attached; also published desktop-contention field report on 2026-10-17). Another tester (Ton-Llop, 2026-10-30, https://www.reddit.com/r/LocalLLM/comments/1xjc629/) reports that the same B60 under WSL2 + Mesa Dozen Vulkan is 8–40× slower than native Windows Vulkan, and Qwen3.8-27B segfaults under WSL2. Use native Windows or Linux"
+      "source_note": "arc-llm-lab README (raw logs attached; also published desktop-contention field report on 2026-10-17). Another tester (Ton-Llop, 2026-10-30, https://www.reddit.com/r/LocalLLM/comments/1xjc629/) reports that the same B60 under WSL2 + Mesa Dozen Vulkan is 8–40× slower than native Windows Vulkan, and Qwen3.8-27B segfaults under WSL2. Use native Windows or Linux",
+      "concurrency": "single stream"
     },
     "model_family": "Qwen",
     "tags": [
@@ -12248,7 +12266,7 @@
     "context": "1,048,576",
     "launch_command": "cp .env.example .env && scripts/download.sh && scripts/patch_template.py --worker && docker/build.sh && scripts/host_tuning.sh && ./start.sh",
     "source_url": "https://github.com/Elevatormusic/DeepSeek-V4.1-Flash-1017-EXL3-TensorFold-2x-DGX-Spark",
-    "source_note": "Elevatormusic 仓库 README + runs/ 运行记录（Reddit u/shayanx45 同步发帖；引擎基于 bertholomus 的 V4.1 TP2 移植，作者称 prefill 比其公布值低）；同机型更快配方见 comm-049（MiaAI EAQv1 2.9，散文 74.9）",
+    "source_note": "Elevatormusic 仓库 README + runs/ 运行记录（Reddit u/shayanx45 同步发帖；引擎基于 bertholomus 的 V4.1 TP2 移植，作者称预填充比其公布值低）；同机型更快配方见 comm-049（MiaAI EAQv1 2.9，散文 74.9）",
     "source_level": "实测",
     "date": "2026-10-18",
     "measured_by": "Elevatormusic",
@@ -12477,8 +12495,8 @@
     "concurrency": "单路",
     "context": "131,072",
     "launch_command": "ds41-server --model ../ds41-2bit/DeepSeek-V4.1-Flash-1017-ds41-2bit.gguf --engram ../v41-1017 --tokenizer ../v41-1017/tokenizer.json --ctx 131072 --gpu0-gb=-1.5 --gpu1-gb=-1.0 --arena-gb 104 --rank ../ds41-2bit/expert-rank.json",
-    "source_url": "https://github.com/lxe/ds41",
-    "source_note": "lxe/ds41 README 作者实测（自研 Rust+CUDA 引擎；热专家按 agentic 负载排序，agent 数字偏乐观）",
+    "source_url": "https://github.com/lxe/dsx",
+    "source_note": "lxe/dsx README（仓库原名 lxe/ds41） 作者实测（自研 Rust+CUDA 引擎；热专家按 agentic 负载排序，智能体数字偏乐观）",
     "source_level": "实测",
     "date": "2026-10-18",
     "measured_by": "lxe",
@@ -12488,7 +12506,7 @@
       "hardware": "2× RTX 3090 (PCIe 4.0 x16 + 3.0 x4) + 128GB DDR4-3200 + i7-12700K + NVMe",
       "concurrency": "Single stream",
       "engine_note": "ds41 (Rust + CUDA engine for this one model; hot experts in VRAM, rest in a 104 GB RAM arena on CPU)",
-      "source_note": "lxe/ds41 README, author measured (custom Rust+CUDA engine; hot experts ranked on agentic text, so agent numbers are optimistic)",
+      "source_note": "lxe/dsx README (repository formerly lxe/ds41), author measured (custom Rust+CUDA engine; hot experts ranked on agentic text, so agent numbers are optimistic)",
       "hardware_cost_text": "≈$2,412–2,998 (2×3090, card only)"
     },
     "model_family": "DeepSeek",
@@ -12501,7 +12519,7 @@
       "multi-GPU",
       "offload"
     ],
-    "source_id": "src-4c95b14431",
+    "source_id": "src-5690ba85ba",
     "engine_raw": "ds41（专用 Rust + CUDA 引擎；热专家在显存，其余在 104GB 内存 arena 由 CPU 计算）",
     "engine_note": "ds41（专用 Rust + CUDA 引擎；热专家在显存，其余在 104GB 内存 arena 由 CPU 计算）"
   },
@@ -12649,7 +12667,7 @@
     "context": "262,144",
     "launch_command": "strata --serve --pack <pack> --native <IQ3_S-00001-of-00002.gguf> --ple-gguf <IQ3_S-00002-of-00002.gguf> --expert-profile data/expert-profile.bin --expert-cache 7700 --prefill auto:32768 --spec 4 --spec-min-p 0.5 --mtp <rt> --max-context 262144 --kv k8v4 --kv-resident 32768 --vram-reserve-mib 700 --adapt-every 0 --pcie-frac 0 --pool-workers 15 --vision --prompt-cache 16 --prompt-cache-every 16384 --conversation-cache-slots 8 --conversation-cache-mib 16384 --conversation-cache-min-tokens 32768",
     "source_url": "https://github.com/Niko1221/Strata/issues/2938",
-    "source_note": "Strata issue #2938 社区基准（destroyor，附引擎日志；启动命令中 <pack>、<rt> 等占位符为 issue 原文）；另一台 7900 XTX（Strata #4556）报告：decode 从 0.1.3x 的 60+ 降到 0.1.48 默认的 34.8，调优后 36.7。本行用 0.1.45，未复测",
+    "source_note": "Strata issue #2938 社区基准（destroyor，附引擎日志；启动命令中 <pack>、<rt> 等占位符为 issue 原文）；另一台 7900 XTX（Strata #4556）报告：解码从 0.1.3x 的 60+ 降到 0.1.48 默认的 34.8，调优后 36.7。本行用 0.1.45，未复测",
     "source_level": "实测",
     "date": "2026-10-18",
     "measured_by": "destroyor",
@@ -12724,9 +12742,9 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$27,800（4×$6,950，计算值）",
     "hardware_cost_usd": 27800,
-    "metric": "单路解码：代码 106 / 文章 62 tok/s；8 并发合计 190–290；预填充约 5,300–5,500（8K–128K），240K 约 4,850；TTFT 短提示约 0.22 s、128K 约 24 s",
+    "metric": "单路解码：代码 106 / 文章 62 tok/s；同时处理 8 个请求合计 190–290；预填充约 5,300–5,500（8K–128K），240K 约 4,850；TTFT 短提示约 0.22 s、128K 约 24 s",
     "tok_s": 62.0,
-    "concurrency": "单路（另测 8 并发合计）",
+    "concurrency": "单路（另测同时处理 8 个请求合计）",
     "context": "256K",
     "launch_command": null,
     "source_url": "https://x.com/Rainbow29449582/status/2111491044953256097",
@@ -13278,7 +13296,7 @@
     "context": "262K（262,144）",
     "launch_command": null,
     "source_url": "https://github.com/MiaAI-Lab/Ornith-1.5-122B-TensorFold",
-    "source_note": "MiaAI-Lab 仓库 README 表（同步 X @MiaAI_lab/status/2112822741208314258；X 帖写代码单流 103，与仓库表不同，按仓库表取值）；注意：同一 README 的说明部分写 --parallel 2 合计 decode 只有约 20，并把负载下多流列为未测试，与表中多流数据不一致",
+    "source_note": "MiaAI-Lab 仓库 README 表（同步 X @MiaAI_lab/status/2112822741208314258；X 帖写代码单流 103，与仓库表不同，按仓库表取值）；注意：同一 README 的说明部分写 --parallel 2 合计解码只有约 20，并把负载下多流列为未测试，与表中多流数据不一致",
     "source_level": "实测",
     "date": "2026-10-21",
     "measured_by": "MiaAI_lab",
@@ -13848,7 +13866,7 @@
     "hardware_family": "Mac",
     "hardware_cost_text": "机型未注明；最低为 Mac mini M5 Pro 18C/20C 64GB/1TB $3,199（Apple 定价，2026-10，见 prices.json）；MBP14 同配置 $3,699",
     "hardware_cost_usd": 3199,
-    "metric": "Splash 1.4.0 发布说明 / README：短提示解码 95 tok/s（中位每 token 10.57 ms）；32K 提示读入 1,312 tok/s（34,980 token / 首 token 26.66 s）；重放提示首 token 171 ms（16/16 命中缓存）；4 路并发合计 171 tok/s。PR #521 对比：同 GGUF、同一台 Mac、同提示，Strata 解码 71.4 tok/s，读入 974 tok/s，重放 32K 首 token 36.3 s（无缓存命中），4 路合计 69.9 tok/s。Strata 上下文设为 64K，Splash 未写上下文设置，所以对比不完全对等。发布推文写“最高 120 tok/s”，发布说明和 README 里没有 120 的数据，tok_s 取 95",
+    "metric": "Splash 1.4.0 发布说明 / README：短提示解码 95 tok/s（中位每 token 10.57 ms）；32K 提示读入 1,312 tok/s（34,980 token / 首 token 26.66 s）；重放提示首 token 171 ms（16/16 命中缓存）；同时处理 4 个请求合计 171 tok/s。PR #521 对比：同 GGUF、同一台 Mac、同提示，Strata 解码 71.4 tok/s，读入 974 tok/s，重放 32K 首 token 36.3 s（无缓存命中），4 路合计 69.9 tok/s。Strata 上下文设为 64K，Splash 未写上下文设置，所以对比不完全对等。发布推文写“最高 120 tok/s”，发布说明和 README 里没有 120 的数据，tok_s 取 95",
     "metric_en": "Splash 1.4.0 release notes / README: decode 95 tok/s on a short prompt (median 10.57 ms per token); prefill 1,312 tok/s on a 32K prompt (34,980 tokens / 26.66 s to first token); replayed prompt first token 171 ms (16 of 16 cache hits); 4 concurrent requests 171 tok/s total. PR #521 comparison with the same GGUF, the same Mac and the same prompts: Strata decode 71.4 tok/s, prefill 974 tok/s, replayed 32K first token 36.3 s (no cache hits), 4 concurrent 69.9 tok/s total. Strata context was set to 64K and the Splash context setting is not stated, so the comparison is not fully equal. The launch post says \"up to 120 tok/s\". The release notes and README give no 120 value, so tok_s is 95",
     "tok_s": 95.0,
     "concurrency": "单路（另测 4 路合计 171）",
@@ -14154,10 +14172,10 @@
     "hardware_family": "其他",
     "hardware_cost_text": "$15,999 最低追踪报价（新卡，2026-10-13）",
     "hardware_cost_usd": 15999,
-    "metric": "单流约 110–180；64 并发峰值约 2,500 合计；作者跑 45 道 LiveCodeBench v6 得 82.2、50 个 SWE-bench Verified 任务得 80（子集，非完整评测）",
+    "metric": "单流约 110–180；同时处理 64 个请求峰值约 2,500 合计；作者跑 45 道 LiveCodeBench v6 得 82.2、50 个 SWE-bench Verified 任务得 80（子集，非完整评测）",
     "metric_en": "single stream about 110–180; 64 concurrent requests peak about 2,500 total; author ran 45 LiveCodeBench v6 problems (82.2) and 50 SWE-bench Verified tasks (80) (subsets, not full evals)",
     "tok_s": 110,
-    "concurrency": "单流（另测 64 并发峰值约 2,500）",
+    "concurrency": "单流（另测 同时处理 64 个请求峰值约 2,500）",
     "context": "262,144",
     "launch_command": null,
     "source_url": "https://www.reddit.com/r/LocalLLaMA/comments/1xc6j8t/",
@@ -14489,10 +14507,10 @@
     "hardware_family": "Mac",
     "hardware_cost_text": "上代机型（机型未注明），价格未核实",
     "hardware_cost_usd": null,
-    "metric": "同一文件：解码 Splash 102.9 / llama.cpp 20.6（加多 token 预测 28.1）/ Ollama 22.2；32K 读入 332.5 / 159.5（155.3）/ 158.9；32K 缓存重发 265.4 / 136.5（134.3）/ 381.7 ms；4 并发合计 107.1 / 25.8（62.9）/ 13.0",
+    "metric": "同一文件：解码 Splash 102.9 / llama.cpp 20.6（加多 token 预测 28.1）/ Ollama 22.2；32K 读入 332.5 / 159.5（155.3）/ 158.9；32K 缓存重发 265.4 / 136.5（134.3）/ 381.7 ms；同时处理 4 个请求合计 107.1 / 25.8（62.9）/ 13.0",
     "metric_en": "Same file: decode Splash 102.9 / llama.cpp 20.6 (with MTP 28.1) / Ollama 22.2; 32K prefill 332.5 / 159.5 (155.3) / 158.9; 32K cached resend 265.4 / 136.5 (134.3) / 381.7 ms; 4 concurrent total 107.1 / 25.8 (62.9) / 13.0",
     "tok_s": 102.9,
-    "concurrency": "单流（另测 4 并发合计 107.1）",
+    "concurrency": "单流（另测 同时处理 4 个请求合计 107.1）",
     "context": "32K 测试",
     "launch_command": null,
     "source_url": "https://x.com/ai_prompt1/status/2113184563052822535",
@@ -14532,10 +14550,10 @@
     "hardware_family": "Mac",
     "hardware_cost_text": "上代机型（机型未注明），价格未核实",
     "hardware_cost_usd": null,
-    "metric": "解码 Splash 160.5 / llama.cpp 42.3（3.8×）；32K 读入 744.0 / 486.7；32K 缓存重发 62.6 / 58.2 ms；4 并发合计 144.8 / 89.1；Ollama 跑不起来",
+    "metric": "解码 Splash 160.5 / llama.cpp 42.3（3.8×）；32K 读入 744.0 / 486.7；32K 缓存重发 62.6 / 58.2 ms；同时处理 4 个请求合计 144.8 / 89.1；Ollama 跑不起来",
     "metric_en": "decode Splash 160.5 / llama.cpp 42.3 (3.8×); 32K prefill 744.0 / 486.7; 32K cached resend 62.6 / 58.2 ms; 4 concurrent total 144.8 / 89.1; Ollama does not run it",
     "tok_s": 160.5,
-    "concurrency": "单流（另测 4 并发合计 144.8）",
+    "concurrency": "单流（另测 同时处理 4 个请求合计 144.8）",
     "context": "32K 测试",
     "launch_command": null,
     "source_url": "https://x.com/ai_prompt1/status/2113184642920820852",
@@ -15043,10 +15061,10 @@
     "hardware_family": "AMD",
     "hardware_cost_text": "≈$3,200（2×$1,600 新卡最低，计算值，仅显卡）",
     "hardware_cost_usd": 3200,
-    "metric": "顺序 130.6；1/2/4/8 并发合计 147.3 / 238.2 / 268.9 / 374.9；ROCm TP=2 自定义 kernel",
+    "metric": "顺序 130.6；同时处理 1/2/4/8 个请求合计 147.3 / 238.2 / 268.9 / 374.9；ROCm TP=2 自定义 kernel",
     "metric_en": "sequential 130.6; 1/2/4/8 concurrent aggregate 147.3 / 238.2 / 268.9 / 374.9; ROCm TP=2 custom kernels",
     "tok_s": 130.6,
-    "concurrency": "单流（另测并发合计）",
+    "concurrency": "单流（另测同时处理多个请求合计）",
     "context": "262K",
     "launch_command": null,
     "source_url": "https://x.com/dad__vibes/status/2113402407183057228",
@@ -15223,7 +15241,7 @@
     "metric": "1 请求 244；3 请求同时每请求 135；预填充 5,230；单次运行",
     "metric_en": "1 request 244; 135 per request with 3 at once; prefill 5,230; one run",
     "tok_s": 244,
-    "concurrency": "单流（另测 3 并发）",
+    "concurrency": "单流（另测同时处理 3 个请求）",
     "context": "每 slot 64K",
     "launch_command": null,
     "source_url": "https://www.reddit.com/r/nvidia/comments/1xd0f7x/",
@@ -15568,7 +15586,7 @@
     "context": "1M",
     "launch_command": null,
     "source_url": "https://github.com/knapcio/DeepSeek-V4.1-Flash-4x-DGX-Spark-TP4",
-    "source_note": "配方作者 README（@506fb10），SGLang dsv4.1 f80c91a4b + 回移补丁；@masa_ai_labo 经 CRS804 交换机复测 4 个 recipe（256K 输入，单请求，各 3 次，x.com/masa_ai_labo/status/2115680566062534756）：本 recipe 冷预填约 6,180 最快；spark-ds41f（vLLM/TileLang）decode 均值 70.29 最高",
+    "source_note": "配方作者 README（@506fb10），SGLang dsv4.1 f80c91a4b + 回移补丁；@masa_ai_labo 经 CRS804 交换机复测 4 个 recipe（256K 输入，单请求，各 3 次，x.com/masa_ai_labo/status/2115680566062534756）：本 recipe 冷预填约 6,180 最快；spark-ds41f（vLLM/TileLang）解码均值 70.29 最高",
     "source_level": "宣称",
     "date": "2026-10-24",
     "measured_by": "knapcio",
@@ -15906,7 +15924,7 @@
     "context": null,
     "launch_command": null,
     "source_url": "https://x.com/laky_fx/status/2113654994847117605",
-    "source_note": "X 帖，测试者本人；配方 github.com/LakyFx/deepseek-v41-flash-exl3-tp3-spark",
+    "source_note": "X 帖，测试者本人；配方 github.com/LakyFx/deepseek-v41-flash-exl3-tp3-tp4-spark",
     "source_level": "实测",
     "date": "2026-10-23",
     "measured_by": "laky_fx",
@@ -15921,7 +15939,7 @@
       "hardware": "3× DGX Spark (TP3)",
       "hardware_cost_text": "≈$20,850 (3×$6,950, DGX Spark 128GB price 2026-10-11, computed)",
       "concurrency": "single stream (C12 aggregate also measured)",
-      "source_note": "X post by the tester; recipe at github.com/LakyFx/deepseek-v41-flash-exl3-tp3-spark"
+      "source_note": "X post by the tester; recipe at github.com/LakyFx/deepseek-v41-flash-exl3-tp3-tp4-spark"
     },
     "source_id": "src-65a117e452"
   },
@@ -16051,7 +16069,7 @@
     "context": "131K",
     "launch_command": "strata --pack unsloth-ud-iq4_xs --native Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00003.gguf --expert-profile expert-profile.bin --expert-cache auto --prefill auto --spec 4 --mtp rt --max-context 131072",
     "source_url": "https://github.com/Niko1221/Strata/issues/3888",
-    "source_note": "GitHub benchmark issue，测试者本人（tools/strata_bench.py）；另一台 2× 3090（Strata #4584）报告：engine 0.1.47 升到 0.1.53 后预填和 decode 都变慢；作者说未确认是引擎回归",
+    "source_note": "GitHub benchmark issue，测试者本人（tools/strata_bench.py）；另一台 2× 3090（Strata #4584）报告：engine 0.1.47 升到 0.1.53 后预填充和解码 都变慢；作者说未确认是引擎回归",
     "source_level": "实测",
     "date": "2026-10-24",
     "measured_by": "infopointer",
@@ -16582,7 +16600,7 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$27,800（4×$6,950，DGX Spark 128GB 2026-10-11 价，计算值）",
     "hardware_cost_usd": 27800,
-    "metric": "SGLang TP4 / nnodes=4，NCCL 2.30.7 Ring，fp8 KV：单流解码 59.0（TTFT 0.183s）；预填 32K 1,121 / 266K 1,248；聚合（另计）6 并发 122.9。配方来自 knapcio SGLang profile",
+    "metric": "SGLang TP4 / nnodes=4，NCCL 2.30.7 Ring，fp8 KV：单流解码 59.0（TTFT 0.183s）；预填 32K 1,121 / 266K 1,248；聚合（另计）同时处理 6 个请求 122.9。配方来自 knapcio SGLang profile",
     "metric_en": "SGLang TP4 / nnodes=4, NCCL 2.30.7 Ring, fp8 KV: single-stream decode 59.0 (TTFT 0.183 s); prefill 32K 1,121 / 266K 1,248; aggregate (separate) 6 concurrent 122.9. Recipe from the knapcio SGLang profile",
     "tok_s": 59.0,
     "concurrency": "单流（另测聚合）",
@@ -17593,7 +17611,7 @@
     "metric_en": "code 76.6/77.0→84.7/84.7, agent 74.2→83.3 (0.2.5→0.2.6); RAM must hold all CPU-side experts with 8 GiB free; older 0.2.4 values (2026-10-24, strata-dsv41 0.1.49, IQ2_XXS 2.00bpw GGUF, https://github.com/Niko1221/Strata/releases/tag/v0.2.4 ): output about 31, prompt about 505 at 8K and about 818 at 32K. Qualification: 0.2.4 output with DSpark 55–69, not the headline",
     "tok_s": 84.7,
     "concurrency": "单流",
-    "source_note": "Strata 项目方（Niko1221）0.2.6 发布说明测试表。Strata 0.2.9 官方发布说明（2026-10-31，https://github.com/Niko1221/Strata/releases/tag/v0.2.9）：0.2.9 之前不带 --gpu 的 strata launch 在四卡机器上只用一张卡（2,371 / 15,360 个专家上卡，decode 7.8 和 25.7）；0.2.9 默认用满四卡（12,147 / 15,360，每 token 5 个专家，decode 57.7–103.7）。用 0.2.8 或更早版本时要写 --gpu 指定四卡",
+    "source_note": "Strata 项目方（Niko1221）0.2.6 发布说明测试表。Strata 0.2.9 官方发布说明（2026-10-31，https://github.com/Niko1221/Strata/releases/tag/v0.2.9）：0.2.9 之前不带 --gpu 的 strata launch 在四卡机器上只用一张卡（2,371 / 15,360 个专家上卡，解码 7.8 和 25.7）；0.2.9 默认用满四卡（12,147 / 15,360，每 token 5 个专家，解码 57.7–103.7）。用 0.2.8 或更早版本时要写 --gpu 指定四卡",
     "model_family": "DeepSeek",
     "tags": [
       "2bit",
@@ -18068,7 +18086,7 @@
     "source_level": "实测",
     "date": "2026-10-26",
     "measured_by": "qni-live",
-    "metric": "short 185.7（默认）/183.4（batch-groups=auto）；16K 解码 152.5；聚合（另计）4 并发 192–245",
+    "metric": "short 185.7（默认）/183.4（batch-groups=auto）；16K 解码 152.5；聚合（另计）同时处理 4 个请求 192–245",
     "metric_en": "short 185.7 (default) / 183.4 (batch-groups=auto); 16K decode 152.5; aggregate (separate) 4 concurrent 192–245",
     "tok_s": 185.7,
     "concurrency": "单流",
@@ -18378,7 +18396,7 @@
     "hardware_cost_usd": null,
     "context": null,
     "launch_command": null,
-    "source_url": "https://codeberg.org/StillDeadcode/radiance/issues/248",
+    "source_url": "https://codeberg.org/StillDeadcode/radiance/pulls/248",
     "source_level": "宣称",
     "date": "2026-10-25",
     "measured_by": "Perire",
@@ -18401,7 +18419,7 @@
       "source_note": "Radiance PR author (Perire) own test; the PR is not merged",
       "engine_note": "Radiance PR #248 (not merged, stacked on #247, based on 32881da9)"
     },
-    "source_id": "src-1d36c43d7a"
+    "source_id": "src-8d7026d2c9"
   },
   {
     "id": "comm-138",
@@ -18415,7 +18433,7 @@
     "hardware_cost_usd": null,
     "context": null,
     "launch_command": null,
-    "source_url": "https://codeberg.org/StillDeadcode/radiance/issues/247",
+    "source_url": "https://codeberg.org/StillDeadcode/radiance/pulls/247",
     "source_level": "宣称",
     "date": "2026-10-25",
     "measured_by": "Perire",
@@ -18438,7 +18456,7 @@
       "source_note": "Radiance PR author (Perire) own test; the PR is not merged",
       "engine_note": "Radiance PR #247 (not merged, based on 32881da9)"
     },
-    "source_id": "src-d07551a4ef"
+    "source_id": "src-1cdae99adf"
   },
   {
     "id": "comm-139",
@@ -18452,7 +18470,7 @@
     "hardware_cost_usd": null,
     "context": null,
     "launch_command": null,
-    "source_url": "https://codeberg.org/StillDeadcode/radiance/issues/255",
+    "source_url": "https://codeberg.org/StillDeadcode/radiance/pulls/255",
     "source_level": "实测",
     "date": "2026-10-26",
     "measured_by": "Perire",
@@ -18474,7 +18492,7 @@
       "source_note": "Test data in merged Radiance PR #255 (Perire)",
       "engine_note": "Radiance 1.12.0 (PR #255 merged)"
     },
-    "source_id": "src-67ebd68ee4"
+    "source_id": "src-0aef6560c1"
   },
   {
     "id": "x-146",
@@ -18762,7 +18780,7 @@
     "source_level": "实测",
     "date": "2026-10-26",
     "measured_by": "Tech2Wild",
-    "metric": "单流 66；recipe 含 C1–C6 并发 bench",
+    "metric": "单流 66；recipe 含 C1–C6 同时处理多个请求的测试",
     "metric_en": "single stream 66; the recipe has a C1–C6 concurrency bench",
     "tok_s": 66,
     "concurrency": "单流",
@@ -19080,10 +19098,10 @@
     "source_level": "实测",
     "date": "2026-10-27",
     "measured_by": "Anantus",
-    "metric": "单流解码：代码 47.7 ± 2.7，散文 41.3 ± 3.0（每行 n=15，95% CI，按 completion_tokens 计）；聚合（另计）64 并发 420–427；97K 提示约 45 秒预填；MTP 平均接受 2.7–2.9 个 token。tok_s 取代码值",
+    "metric": "单流解码：代码 47.7 ± 2.7，散文 41.3 ± 3.0（每行 n=15，95% CI，按 completion_tokens 计）；聚合（另计）同时处理 64 个请求 420–427；97K 提示约 45 秒预填；MTP 平均接受 2.7–2.9 个 token。tok_s 取代码值",
     "metric_en": "Single-stream decode: code 47.7 ± 2.7, prose 41.3 ± 3.0 (n=15 per row, 95% CI, counted from completion_tokens); aggregate (separate) 64 concurrent 420–427; 97K prompt prefill about 45 s; MTP mean acceptance 2.7–2.9 tokens. tok_s is the code value",
     "tok_s": 47.7,
-    "concurrency": "单流（另测 64 并发聚合）",
+    "concurrency": "单流（另测同时处理 64 个请求的聚合）",
     "source_note": "NVIDIA 开发者论坛帖，测试者本人（Anantus）；官方 vLLM GLM-5.3-Flash 镜像 + FlashInfer 0.6.18；帖中列出 4 个坑（pip 装 FlashInfer 会降 NCCL；MTP 草稿模型的预填 CUDA graph 触发 Xid 31，对草稿模型设 enforce_eager 可解）",
     "model_family": "GLM",
     "tags": [
@@ -19138,7 +19156,7 @@
     "metric_en": "Median of 3 runs, 1,024 tokens, temp 0.6: prose 31.8 / code 49.0; first token after an 8K prompt 4.8 s. tok_s is prose",
     "tok_s": 31.8,
     "concurrency": "单流",
-    "source_note": "NVIDIA 开发者论坛帖，引擎作者（raspy135）自报；仓库 github.com/raspy135/tideLM。缺失专家会被替换，输出质量可能下降；作者称 EXL3 配方更快",
+    "source_note": "NVIDIA 开发者论坛帖，引擎作者（raspy135）自报；仓库 github.com/raspy135/tideLM 。缺失专家会被替换，输出质量可能下降；作者称 EXL3 配方更快",
     "model_family": "DeepSeek",
     "tags": [
       "4bit",
@@ -19215,7 +19233,7 @@
     "metric_en": "Engine-log timings, 12 warm-up runs then 8×200 tokens (median of the last 6): chat prompt 50.2 / code prompt 51.9; prefill at a 3.8K prompt 474; MTP acceptance 86–88%; DFlash2 on the same card and config gave 43.75 / 46.88, with no clear difference from MTP. Run-to-run spread on this machine is about ±15%",
     "tok_s": 50.2,
     "concurrency": "单流",
-    "source_note": "Strata 社区基准 issue，测试者本人（pietroMastro92）；不是官方 strata bench 协议。同一测试者 2026-10-31 报告（https://github.com/Niko1221/Strata/issues/4781，A/B 交替 4 次）：engine 0.1.54 自动专家缓存变小（3,429 MiB），20K 预填从 0.1.52 的约 1,592 降到 1,139 并且波动；加 --vram-reserve-mib 1536 后缓存 4,112 MiB，预填回到 1,588；2048 反而降到 1,250。decode 不变（47–50）",
+    "source_note": "Strata 社区基准 issue，测试者本人（pietroMastro92）；不是官方 strata bench 协议。同一测试者 2026-10-31 报告（https://github.com/Niko1221/Strata/issues/4781，A/B 交替 4 次）：engine 0.1.54 自动专家缓存变小（3,429 MiB），20K 预填从 0.1.52 的约 1,592 降到 1,139 并且波动；加 --vram-reserve-mib 1536 后缓存 4,112 MiB，预填回到 1,588；2048 反而降到 1,250。解码不变（47–50）",
     "model_family": "Qwen",
     "tags": [
       "3bit",
@@ -19297,7 +19315,7 @@
     "metric_en": "After tuning (STRATA_ARENA_PIN_GIB=40, STRATA_STAGE_TRIM=1, layer split K=28, Cyrillic draft vocabulary): decode 67.0 on a Russian prompt and 67.3 on an English prompt; prefill 2,161. Before tuning: decode 46.2, prefill 1,567.7. STAGE_TRIM alone gave 53.9. 6 runs per point; the author used own prompts, not strata bench. tok_s is the English value; on 2026-11-02 the same tester swept engines 0.1.47–0.1.55 (NVFP4 GPTQ, 262K): decode 66.6–70.0, prefill about 2,930–2,972, no measurable difference between versions (Strata #4996)",
     "tok_s": 67.3,
     "concurrency": "单流",
-    "source_note": "Strata 社区基准 issue，测试者本人（AdrinalinNS）；结果取决于自建引擎，只含一条俄文提示和一条英文提示。同一测试者 2026-10-29 在 #4603（https://github.com/Niko1221/Strata/issues/4603）用 IQ3_S（专家 arena 放内存，int8 KV，MTP spec 4，Strata 0.1.52）测得单流 decode 92.9 tok/s",
+    "source_note": "Strata 社区基准 issue，测试者本人（AdrinalinNS）；结果取决于自建引擎，只含一条俄文提示和一条英文提示。同一测试者 2026-10-29 在 #4603（https://github.com/Niko1221/Strata/issues/4603）用 IQ3_S（专家 arena 放内存，int8 KV，MTP spec 4，Strata 0.1.52）测得单流解码 92.9 tok/s",
     "model_family": "Qwen",
     "tags": [
       "4bit",
@@ -19460,7 +19478,7 @@
     "metric_en": "Greedy, measured over HTTP: depth 0 / 32K / 128K: prefill pp2048 1,077 / 993 / 700; decode 23.3 / 22.9 / 21.7; DSpark on mixed text 28.0 / 30.1 / 27.2; DSpark on repetitive text (separate, reads high) 65.3 / 59.6 / 55.2; aggregate (separate) 8 users 78.5; editing a source file 67.6. tok_s is decode at depth 0",
     "tok_s": 23.3,
     "concurrency": "单流（另测 8 用户聚合）",
-    "source_note": "Reddit 帖，引擎作者（tsuru_pg，franzmoca/gufo feat/ds41 分支）；需要整机独占：装好草稿模型后只剩约 1.75GiB 内存，要无桌面的机器。作者更新（2026-10-29，https://www.reddit.com/r/LocalLLaMA/comments/1xix81f/）：IQ1_M decode 23.3 → 24.5，pp2048 1,077 → 1,228；IQ2_XXS 用 --stream-experts 从 SSD（990 PRO）读专家：decode 20.8，8 用户聚合 81.5。旧的四分片 ISTA 文件要先转换",
+    "source_note": "Reddit 帖，引擎作者（tsuru_pg，franzmoca/gufo feat/ds41 分支）；需要整机独占：装好草稿模型后只剩约 1.75GiB 内存，要无桌面的机器。作者更新（2026-10-29，https://www.reddit.com/r/LocalLLaMA/comments/1xix81f/）：IQ1_M 解码 23.3 → 24.5，pp2048 1,077 → 1,228；IQ2_XXS 用 --stream-experts 从 SSD（990 PRO）读专家：解码 20.8，8 用户聚合 81.5。旧的四分片 ISTA 文件要先转换",
     "model_family": "DeepSeek",
     "tags": [
       "1bit",
@@ -21051,7 +21069,7 @@
     "context": null,
     "launch_command": null,
     "source_url": "https://www.reddit.com/r/LocalLLaMA/comments/1xhnua5/",
-    "source_note": "Reddit 帖，作者本人发布自己的推理栈；20 tok/s 档改变专家选择，有质量代价。作者更新（2026-10-30，https://www.reddit.com/r/LocalLLaMA/comments/1xjifu3/）：长 prompt 预填超过 4,000；与其他引擎输出一致时 decode 7.5；偏向显存专家约 24（KL 约相当于 1.5bpw，可按 token 调节）；代码 github.com/fronteagle739/streaming-llama-stack",
+    "source_note": "Reddit 帖，作者本人发布自己的推理栈；20 tok/s 档改变专家选择，有质量代价。作者更新（2026-10-30，https://www.reddit.com/r/LocalLLaMA/comments/1xjifu3/）：长 prompt 预填超过 4,000；与其他引擎输出一致时解码 7.5；偏向显存专家约 24（KL 约相当于 1.5bpw，可按 token 调节）；代码 github.com/fronteagle739/streaming-llama-stack",
     "source_level": "宣称",
     "date": "2026-10-28",
     "measured_by": "Front_Eagle739",
@@ -21320,7 +21338,7 @@
     "context": "868K",
     "launch_command": null,
     "source_url": "https://x.com/bertholomusai/status/2115706264063983997",
-    "source_note": "X 帖，recipe 作者本人；量化未注明。独立复现：@niklaslenz_ai（2026-10-29，https://x.com/niklaslenz_ai/status/2115933014832103923）用 recipe v0.2.0 在直连的两台 Spark 上得到代码 45.9（3 次中位数）；7 行 decode 与 README 相差 −3.0% 到 +0.9%，预填低 3.3–4.0%；KV 位置约 546K（README 868K）",
+    "source_note": "X 帖，recipe 作者本人；量化未注明。独立复现：@niklaslenz_ai（2026-10-29，https://x.com/niklaslenz_ai/status/2115933014832103923）用 recipe v0.2.0 在直连的两台 Spark 上得到代码 45.9（3 次中位数）；7 行解码与 README 相差 −3.0% 到 +0.9%，预填低 3.3–4.0%；KV 位置约 546K（README 868K）",
     "source_level": "宣称",
     "date": "2026-10-29",
     "measured_by": "bertholomusai",
@@ -21831,7 +21849,7 @@
     "hardware_family": "其他",
     "hardware_cost_text": "未核价",
     "hardware_cost_usd": null,
-    "metric": "加权综合解码 109.8（摘要 210，JSON 约 118，代码约 95–97，散文约 70）；TTFT P50 197 ms；64K 预填 1,318；聚合（另计）8 并发 85.2",
+    "metric": "加权综合解码 109.8（摘要 210，JSON 约 118，代码约 95–97，散文约 70）；TTFT P50 197 ms；64K 预填 1,318；聚合（另计）同时处理 8 个请求 85.2",
     "metric_en": "Weighted combined decode 109.8 (summary 210, JSON about 118, code about 95–97, prose about 70); TTFT P50 197 ms; prefill at 64K 1,318; aggregate (separate) 8 concurrent 85.2",
     "tok_s": 109.8,
     "concurrency": "单流（聚合另计）",
@@ -21965,7 +21983,7 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$15,999 最低追踪报价（新卡，2026-10-13；仅显卡）",
     "hardware_cost_usd": null,
-    "metric": "编码任务（约 250 token 入，1,536 出，温度 0，思考关）：单流 287（含预填的墙钟值）；预填 4K 约 14.5K，128K 约 13.5K；聚合（另计）8 并发 965",
+    "metric": "编码任务（约 250 token 入，1,536 出，温度 0，思考关）：单流 287（含预填的墙钟值）；预填 4K 约 14.5K，128K 约 13.5K；聚合（另计）同时处理 8 个请求 965",
     "metric_en": "Coding tasks (about 250 tokens in, 1,536 out, temperature 0, thinking off): single stream 287 (wall clock, prefill included); prefill about 14.5K at 4K, about 13.5K at 128K; aggregate (separate) 8 concurrent 965",
     "tok_s": 287,
     "concurrency": "单流（聚合另计）",
@@ -22023,7 +22041,7 @@
     "context": "256K",
     "launch_command": null,
     "source_url": "https://github.com/Niko1221/Strata/issues/4680",
-    "source_note": "GitHub issue，recipe 作者本人（github.com/unixyo/strata-rdna2-gfx1030-recipe）；STRATA_ROUTE_RESIDENT=1.0 给 decode 加 8–18%，但会改变输出，只用 5 个问题检查过；256K 下的回答质量未测",
+    "source_note": "GitHub issue，recipe 作者本人（github.com/unixyo/strata-rdna2-gfx1030-recipe）；STRATA_ROUTE_RESIDENT=1.0 给解码加 8–18%，但会改变输出，只用 5 个问题检查过；256K 下的回答质量未测",
     "source_level": "宣称",
     "date": "2026-10-30",
     "measured_by": "unixyo",
@@ -22212,7 +22230,7 @@
     "context": null,
     "launch_command": null,
     "source_url": "https://github.com/Niko1221/Strata/releases/tag/v0.2.8",
-    "source_note": "Strata v0.2.8 发布说明，引擎作者的官方数字；这是引擎团队自己的基准测试，不是独立实测。Strata 0.2.9 官方发布说明（2026-10-31，https://github.com/Niko1221/Strata/releases/tag/v0.2.9）：同样两张 B65，prompt 1K/4K/16K 快 4.6% / 14.6% / 15.8%；8 并发聚合 42.1 → 53.8；经 batch server 的单请求 decode 慢 2.7%（--batch-groups 1 恢复旧行为）",
+    "source_note": "Strata v0.2.8 发布说明，引擎作者的官方数字；这是引擎团队自己的基准测试，不是独立实测。Strata 0.2.9 官方发布说明（2026-10-31，https://github.com/Niko1221/Strata/releases/tag/v0.2.9）：同样两张 B65，prompt 1K/4K/16K 快 4.6% / 14.6% / 15.8%；8 个请求同时处理的聚合 42.1 → 53.8；经 batch server 的单请求解码慢 2.7%（--batch-groups 1 恢复旧行为）",
     "source_level": "官方",
     "date": "2026-10-29",
     "measured_by": "Niko1221",
@@ -22377,7 +22395,7 @@
     "context": "262K",
     "launch_command": null,
     "source_url": "https://www.reddit.com/r/LocalLLM/comments/1xipyo8/",
-    "source_note": "Reddit 帖，测试者本人；每格 2–5 次运行；oMLX 开 MTP 时多 agent 并发会因内存尖峰失败",
+    "source_note": "Reddit 帖，测试者本人；每格 2–5 次运行；oMLX 开 MTP 时多个智能体同时运行时会因内存尖峰失败",
     "source_level": "实测",
     "date": "2026-10-29",
     "measured_by": "bvknight",
@@ -22416,7 +22434,7 @@
     "context": "262K",
     "launch_command": null,
     "source_url": "https://github.com/Niko1221/Strata/issues/4609",
-    "source_note": "GitHub benchmark issue，测试者本人；替代 10-11 的旧报告（engine 0.1.43），decode 基本不变",
+    "source_note": "GitHub benchmark issue，测试者本人；替代 10-11 的旧报告（engine 0.1.43），解码基本不变",
     "source_level": "实测",
     "date": "2026-10-29",
     "measured_by": "Kurokosama",
@@ -22532,7 +22550,7 @@
     "context": "256K",
     "launch_command": null,
     "source_url": "https://www.reddit.com/r/LocalLLaMA/comments/1xk20x5/",
-    "source_note": "Reddit 帖，recipe 作者本人（PLI Labs，github.com/ProprietaryLegal/DeepSeek-V4.1-Flash-2xDGX-Spark-x86-offload，原始 JSON 在 runs/）；作者自己写明：散文比 MiaAI 配方慢（66 对 80.7），128K 后 decode 比 bertholomus 慢（62 对 99）；第三台主机未核价；作者公开原始测试数据（runs/*.json）和复现步骤（README「Reproduce」），按规则记为实测",
+    "source_note": "Reddit 帖，recipe 作者本人（PLI Labs，github.com/ProprietaryLegal/DGX-sPLIce-DeepSeek-V4.1-Flash-2xDGX-Spark-2xRTX3090-drafter-x86-offload，原始 JSON 在 runs/）；作者自己写明：散文比 MiaAI 配方慢（66 对 80.7），128K 后解码比 bertholomus 慢（62 对 99）；第三台主机未核价；作者公开原始测试数据（runs/*.json）和复现步骤（README「Reproduce」），按规则记为实测",
     "source_level": "实测",
     "date": "2026-10-31",
     "measured_by": "TumbleweedNew6515",
@@ -22549,7 +22567,7 @@
       "hardware": "2× DGX Spark (GPU locked at 2300 MHz) + 1 EPYC host with 2× RTX 3090 (NVLink), 3 machines in total",
       "hardware_cost_text": "Not priced",
       "concurrency": "single stream (aggregate separate)",
-      "source_note": "Reddit post by the recipe author (PLI Labs, github.com/ProprietaryLegal/DeepSeek-V4.1-Flash-2xDGX-Spark-x86-offload, raw JSON in runs/); the author states that prose is slower than the MiaAI recipe (66 vs 80.7) and decode after 128K is slower than bertholomus (62 vs 99); the third host is not priced",
+      "source_note": "Reddit post by the recipe author (PLI Labs, github.com/ProprietaryLegal/DGX-sPLIce-DeepSeek-V4.1-Flash-2xDGX-Spark-2xRTX3090-drafter-x86-offload, raw JSON in runs/); the author states that prose is slower than the MiaAI recipe (66 vs 80.7) and decode after 128K is slower than bertholomus (62 vs 99); the third host is not priced",
       "engine_note": "vLLM TP2 (a third machine serves the Engram tables over RDMA and runs the DSpark drafter)"
     },
     "streams": [
@@ -22734,7 +22752,7 @@
     "hardware_family": "其他",
     "hardware_cost_text": "未核价",
     "hardware_cost_usd": null,
-    "metric": "SPEED-Bench 编码 70.44（NVIDIA 的 llama.cpp RTX Spark 配方 35.37）；AA-AgentPerf 734 s 对 1,118 s；最多 16 并发",
+    "metric": "SPEED-Bench 编码 70.44（NVIDIA 的 llama.cpp RTX Spark 配方 35.37）；AA-AgentPerf 734 s 对 1,118 s；最多同时处理 16 个请求",
     "metric_en": "SPEED-Bench coding 70.44 (35.37 with the NVIDIA llama.cpp RTX Spark recipe); AA-AgentPerf 734 s vs 1,118 s; up to 16 concurrent requests",
     "tok_s": 70.44,
     "concurrency": "单流",
@@ -23417,7 +23435,7 @@
     "source_level": "实测",
     "date": "2026-10-31",
     "measured_by": "luisefigueroa",
-    "metric": "1 个并发 51；聚合（另计）8 个并发 225。2× Spark（TP2，RoCE）：78 → 307，8 并发 p50 首 token 1.45 秒降到 0.67 秒。两者都通过 8 并发 1 小时稳定测试。首次启动的 FlashInfer 自动调优会使单机 OOM，设 MAX_JOBS=2 可解",
+    "metric": "同时处理 1 个请求 51；聚合（另计）同时处理 8 个请求 225。2× Spark（TP2，RoCE）：78 → 307，同时处理 8 个请求时 p50 首 token 1.45 秒降到 0.67 秒。两者都通过同时处理 8 个请求的 1 小时稳定测试。首次启动的 FlashInfer 自动调优会使单机 OOM，设 MAX_JOBS=2 可解",
     "metric_en": "1 concurrent 51; aggregate (separate) 8 concurrent 225. 2× Spark (TP2, RoCE): 78 → 307, p50 first token at 8 concurrent falls from 1.45 s to 0.67 s. Both passed a 1-hour test at 8 concurrent. The FlashInfer auto-tuning at first start causes an OOM on one Spark; set MAX_JOBS=2 to prevent it",
     "tok_s": 51,
     "concurrency": "单流（聚合另计）",
@@ -23466,7 +23484,7 @@
     "metric_en": "Cold A/B, same llama.cpp settings: stock 15.1, moe-cache 19.9. Windows support is experimental",
     "tok_s": 19.9,
     "concurrency": "单流",
-    "source_note": "X 帖，引擎作者本人，未附原始数据；github.com/IbrahimSiddiqui007/moe-cache",
+    "source_note": "X 帖，引擎作者本人，未附原始数据；github.com/IbrahimSiddiqui007/moe-cache；原帖已无法访问（@Ibrummmn 账号被 X 封禁，2026-11-26 核查），无存档",
     "model_family": "Qwen",
     "tags": [
       "3bit",
@@ -23477,7 +23495,7 @@
       "hardware": "Ryzen 9 7950X + RX 9070 XT 16GB + 32GB RAM (Windows)",
       "hardware_cost_text": "Not priced",
       "concurrency": "single stream",
-      "source_note": "X post by the engine author, no raw data attached; github.com/IbrahimSiddiqui007/moe-cache"
+      "source_note": "X post by the engine author, no raw data attached; github.com/IbrahimSiddiqui007/moe-cache; the original post is no longer reachable (@Ibrummmn was suspended on X, checked 2026-11-26) and has no archive copy"
     },
     "source_id": "src-1fae2e81c3"
   },
@@ -25292,7 +25310,7 @@
     "metric": "2 个智能体并行（每卡 1 个，共用内存中一份 47GB 模型）：每个约 52；绑核 51+51，不绑 31+33；预填新提示约 1,000。同机 Qwen3.8-27B 双卡 47 / 51 / 58（散文 / 代码 / 推理）；限定：Strata 0.2.10 起 Auto 默认改用 DFlash2；双卡解码可能弱于 MTP 或弱于单卡（Strata #5206 双 4060 Ti 上 DFlash2≈MTP；#5172 双 RX 9070 比单卡慢 10–50%）",
     "metric_en": "2 agents in parallel (1 per card, sharing one 47 GB copy in RAM): about 52 each; pinned 51+51, unpinned 31+33; fresh prompt prefill about 1,000. Same machine Qwen3.8-27B on 2 cards 47 / 51 / 58 (prose / code / reasoning); qualification: from Strata 0.2.10, Auto defaults to DFlash2; dual-card decode can lag MTP or a single card (Strata #5206: DFlash2≈MTP on 2× 4060 Ti; #5172: dual RX 9070 10–50% slower than one card)",
     "tok_s": 52,
-    "concurrency": "每个 agent 单流（2 个并行）",
+    "concurrency": "每个智能体单流（2 个并行）",
     "source_note": "Reddit 帖，测试者本人",
     "model_family": "Qwen",
     "tags": [
@@ -26039,7 +26057,7 @@
     "source_level": "官方",
     "date": "2026-11-03",
     "measured_by": "Niko1221",
-    "metric": "128K 上下文，真 8GB 卡：4 种启动（DFlash2、2 个并发请求等）都能启动，12.7–14.8；Auto 只开 DFlash2 时 13.9–18.4；这张卡上 DFlash2 比 MTP 慢 2.6%。发布说明的 \"8GB 卡 63–73\" 是大卡手动限显存模拟，不是真 8GB 卡；真 RTX 5070 限到约 8GB 时比满卡慢 17–27%。反例：RTX 4060 Ti 8GB + 32GB RAM 专家落回文件读取，约 1（x.com/phdowl1991/status/2117497960267436380）。tok_s 取真卡下限",
+    "metric": "128K 上下文，真 8GB 卡：4 种启动（DFlash2、同时处理 2 个请求等）都能启动，12.7–14.8；Auto 只开 DFlash2 时 13.9–18.4；这张卡上 DFlash2 比 MTP 慢 2.6%。发布说明的 \"8GB 卡 63–73\" 是大卡手动限显存模拟，不是真 8GB 卡；真 RTX 5070 限到约 8GB 时比满卡慢 17–27%。反例：RTX 4060 Ti 8GB + 32GB RAM 专家落回文件读取，约 1（x.com/phdowl1991/status/2117497960267436380）。tok_s 取真卡下限",
     "metric_en": "128K context on a real 8 GB card: all 4 starts (DFlash2, 2 requests at once, and others) start, 12.7–14.8; Auto with DFlash2 alone 13.9–18.4; on this card DFlash2 is 2.6% slower than MTP. The \"63–73 on 8 GB cards\" in the release notes comes from a larger card limited by hand, not a real 8 GB card; a real RTX 5070 limited to about 8 GB is 17–27% slower than the full card. Counter-example: RTX 4060 Ti 8GB + 32 GB RAM, experts fall back to file reads, about 1 (x.com/phdowl1991/status/2117497960267436380). tok_s is the lower real-card value",
     "tok_s": 12.7,
     "concurrency": "单流",
@@ -26168,7 +26186,7 @@
     "source_level": "实测",
     "date": "2026-11-03",
     "measured_by": "nrtdadmin",
-    "metric": "Strata 0.2.6 / engine 0.1.47，4 卡 layer split，--kv int8：单请求计数类 117，散文 64；预填 1,448（--prefill-pipe 3072）；聚合（另计）4 并发 166.9。作者报告 engine 0.1.55 在 Volta 上慢 40–50%，已回退",
+    "metric": "Strata 0.2.6 / engine 0.1.47，4 卡 layer split，--kv int8：单请求计数类 117，散文 64；预填 1,448（--prefill-pipe 3072）；聚合（另计）同时处理 4 个请求 166.9。作者报告 engine 0.1.55 在 Volta 上慢 40–50%，已回退",
     "metric_en": "Strata 0.2.6 / engine 0.1.47, 4-card layer split, --kv int8: one request counting text 117, prose 64; prefill 1,448 (--prefill-pipe 3072); aggregate (separate) 4 at once 166.9. The tester reports engine 0.1.55 is 40–50% slower on Volta and rolled back",
     "tok_s": 64,
     "concurrency": "单流（聚合另计）",
@@ -26438,7 +26456,7 @@
     "source_level": "宣称",
     "date": "2026-11-03",
     "measured_by": "ivanfioravanti",
-    "metric": "mlx-serve PR 草稿（未合并），llmprobe：DSpark 解码 88（单机 56），可预测文本 116；普通解码 54（单机 41）；预填 1,608（单机 1,018）；4 并发聚合 94（单机 62）。0.5–256K 平均解码 / 预填：双机 69.5 / 1,365，单机 51.7 / 889（x.com/ivanfioravanti/status/2117658847544525094）；2026-11-05 ivanfioravanti 用原始权重跑 DeepSeek Harness：mlx-server 2×M3 Ultra 与 TensorFold 4×Spark 平均解码约 52，最大上下文 815K（M3）/ 400K（Spark）（x.com/ivanfioravanti/status/2118222107783873005）",
+    "metric": "mlx-serve PR 草稿（未合并），llmprobe：DSpark 解码 88（单机 56），可预测文本 116；普通解码 54（单机 41）；预填 1,608（单机 1,018）；同时处理 4 个请求的聚合 94（单机 62）。0.5–256K 平均解码 / 预填：双机 69.5 / 1,365，单机 51.7 / 889（x.com/ivanfioravanti/status/2117658847544525094）；2026-11-05 ivanfioravanti 用原始权重跑 DeepSeek Harness：mlx-server 2×M3 Ultra 与 TensorFold 4×Spark 平均解码约 52，最大上下文 815K（M3）/ 400K（Spark）（x.com/ivanfioravanti/status/2118222107783873005）",
     "metric_en": "mlx-serve draft PR (not merged), llmprobe: DSpark decode 88 (56 on one Mac), 116 on predictable text; plain decode 54 (41 on one Mac); prefill 1,608 (1,018 on one Mac); 4 concurrent streams 94 aggregate (62 on one Mac). Average decode / prefill over 0.5–256K: 69.5 / 1,365 on two Macs, 51.7 / 889 on one Mac (x.com/ivanfioravanti/status/2117658847544525094); 2026-11-05 ivanfioravanti on original weights with the DeepSeek Harness: mlx-server 2×M3 Ultra and TensorFold 4×Spark both average about 52 decode, max context 815K (M3) / 400K (Spark) (x.com/ivanfioravanti/status/2118222107783873005)",
     "tok_s": 88,
     "concurrency": "单流",
@@ -26673,7 +26691,7 @@
     "source_level": "宣称",
     "date": "2026-11-04",
     "measured_by": "nabe2030",
-    "metric": "Strata 0.2.10 all-cards split（双卡同时算每一层）加补丁，专家放系统内存：短 prompt 51–60（MTP）。补丁和步骤见 github.com/Niko1221/Strata/issues/5187。tok_s 取下限；限定：Strata 0.2.10 起 Auto 默认改用 DFlash2；双卡解码可能弱于 MTP 或弱于单卡（Strata #5206 双 4060 Ti 上 DFlash2≈MTP；#5172 双 RX 9070 比单卡慢 10–50%）",
+    "metric": "Strata 0.2.10 all-cards split（双卡同时算每一层）加补丁，专家放系统内存：短 prompt 51–60（MTP）。补丁和步骤见 github.com/Niko1221/Strata/issues/5187 。tok_s 取下限；限定：Strata 0.2.10 起 Auto 默认改用 DFlash2；双卡解码可能弱于 MTP 或弱于单卡（Strata #5206 双 4060 Ti 上 DFlash2≈MTP；#5172 双 RX 9070 比单卡慢 10–50%）",
     "metric_en": "Strata 0.2.10 all-cards split (both cards compute every layer) with patches, experts in system RAM: 51–60 on short prompts (MTP). Patches and steps: github.com/Niko1221/Strata/issues/5187. tok_s uses the low end; qualification: from Strata 0.2.10, Auto defaults to DFlash2; dual-card decode can lag MTP or a single card (Strata #5206: DFlash2≈MTP on 2× 4060 Ti; #5172: dual RX 9070 10–50% slower than one card)",
     "tok_s": 51,
     "concurrency": "单流",
@@ -27245,7 +27263,7 @@
     "metric_en": "109 (screenshot). The post does not give the engine",
     "tok_s": 109,
     "concurrency": "单流",
-    "source_note": "X 帖文（作者本人，无原始数据）（附截图）",
+    "source_note": "X 帖文（作者本人，无原始数据）（附截图）；原帖已不公开（@ffaebi 账号设为仅关注者可见，2026-11-26 核查），无存档",
     "model_family": "Other",
     "tags": [
       "MoE"
@@ -27255,7 +27273,7 @@
       "hardware": "MacBook Pro M5 Max 128GB",
       "hardware_cost_text": "Not priced",
       "concurrency": "single stream",
-      "source_note": "X post by the author (no raw data) (with screenshot)"
+      "source_note": "X post by the author (no raw data) (with screenshot); the original post is no longer public (@ffaebi made the account protected, checked 2026-11-26) and has no archive copy"
     },
     "source_id": "src-34ef93ea22"
   },
@@ -27746,7 +27764,7 @@
       "hardware": "MacBook Pro M5 Max 128GB",
       "hardware_cost_text": "Not priced",
       "concurrency": "single stream",
-      "source_note": "X post by the author (no raw data)"
+      "source_note": "X post by the author (no raw data); the original post is no longer public (@ffaebi made the account protected, checked 2026-11-26) and has no archive copy"
     },
     "id": "x-266",
     "model": "Qwen3.8-Flash-Next",
@@ -27760,7 +27778,7 @@
     "metric": "oMLX 0.7.4.dev1：解码 72，预填 2,200",
     "metric_en": "oMLX 0.7.4.dev1: decode 72, prefill 2,200",
     "tok_s": 72,
-    "source_note": "X 帖文（作者本人，无原始数据）",
+    "source_note": "X 帖文（作者本人，无原始数据）；原帖已不公开（@ffaebi 账号设为仅关注者可见，2026-11-26 核查），无存档",
     "model_family": "Qwen",
     "source_id": "src-f88e17d423"
   },
@@ -29118,7 +29136,7 @@
     "source_level": "实测",
     "date": "2026-11-07",
     "measured_by": "milpster",
-    "metric": "milpster 混 HIP/CUDA fork（从 v0.2.11 派生 + HIP DFlash2）：IQ3_XXS pooled 494-token 中位解码 34.7；同设定未改 stock 为 23.3。1024 输出时相对 stock 的收益缩至约 1.3×。新鲜 16K 预填 299 vs stock 338（−12%），88K 472 vs 549（−14%）。RTX 3080 Laptop 是真实笔记本 GPU 作 helper，不是改装桌面卡。另有 IQ3_S 包，数字不混用。复现见 github.com/milpster/strata-dflash2-gfx906-mixed-rocm-cuda。tok_s 取 34.7",
+    "metric": "milpster 混 HIP/CUDA fork（从 v0.2.11 派生 + HIP DFlash2）：IQ3_XXS pooled 494-token 中位解码 34.7；同设定未改 stock 为 23.3。1024 输出时相对 stock 的收益缩至约 1.3×。新鲜 16K 预填 299 vs stock 338（−12%），88K 472 vs 549（−14%）。RTX 3080 Laptop 是真实笔记本 GPU 作 helper，不是改装桌面卡。另有 IQ3_S 包，数字不混用。复现见 github.com/milpster/strata-dflash2-gfx906-mixed-rocm-cuda 。tok_s 取 34.7",
     "metric_en": "milpster mixed HIP/CUDA fork (derived from v0.2.11 + HIP DFlash2): IQ3_XXS pooled 494-token median decode 34.7; stock without the fork is 23.3 in the same setup. At 1024 output tokens the gain versus stock shrinks to about 1.3×. Fresh 16K prefill 299 vs stock 338 (−12%), 88K 472 vs 549 (−14%). The RTX 3080 Laptop is a real laptop GPU used as a helper, not a modded desktop card. An IQ3_S pack also exists; do not mix those numbers. Reproduction: github.com/milpster/strata-dflash2-gfx906-mixed-rocm-cuda. tok_s uses 34.7",
     "tok_s": 34.7,
     "concurrency": "单流",
@@ -30856,7 +30874,7 @@
     "source_level": "宣称",
     "date": "2026-11-10",
     "measured_by": "mmastrac",
-    "metric": "配方作者本人帖：单流 76（原话 “76 if you're just running one”）；8 流约 100 为多路合计，不作单流主值。README 正文无速度表，无原始日志，降为宣称。引擎 gr8，release 901ad084。帖中未写所用档位（默认 MAX_MODEL_LEN 262,144，TUNE=context 时 1,048,576），上下文不填。配方仓 github.com/kindlingai/glm-5.3-flash-exlr8-2x-spark。",
+    "metric": "配方作者本人帖：单流 76（原话 “76 if you're just running one”）；8 流约 100 为多路合计，不作单流主值。README 正文无速度表，无原始日志，降为宣称。引擎 gr8，release 901ad084。帖中未写所用档位（默认 MAX_MODEL_LEN 262,144，TUNE=context 时 1,048,576），上下文不填。配方仓 github.com/kindlingai/glm-5.3-flash-exlr8-2x-spark 。",
     "metric_en": "Recipe-author post: single-stream 76 (“76 if you're just running one”); about 100 with 8 streams is a multi-client total, not the headline. The README body has no speed table and no raw log; claim. Engine gr8, release 901ad084. The post does not name the profile (default MAX_MODEL_LEN 262,144; 1,048,576 with TUNE=context), so context is left null. Recipe repo github.com/kindlingai/glm-5.3-flash-exlr8-2x-spark.",
     "tok_s": 76,
     "concurrency": "单流",
@@ -31045,7 +31063,7 @@
     "hardware_cost_usd": null,
     "context": "8192",
     "launch_command": ".\\start_dspine_nvfp4.bat \"D:\\models\\qwen27-dspine-nvfp4-tables.v3.ninfer\"",
-    "source_url": "https://github.com/Dylan997S/ninfer-5090-windows/releases/tag/v1.2.5-dspine.1",
+    "source_url": "https://github.com/Dylan997S/ninfer-dspine-rtx5090/releases/tag/v1.2.5-dspine.1",
     "source_level": "实测",
     "date": "2026-11-09",
     "measured_by": "Dylan997S / DaSun64125381",
@@ -31077,7 +31095,7 @@
         "tok_s": 684.4
       }
     ],
-    "source_id": "src-a97898bf44"
+    "source_id": "src-4a57f0d8a6"
   },
   {
     "id": "comm-317",
@@ -31495,7 +31513,7 @@
     "source_level": "实测",
     "date": "2026-11-09",
     "measured_by": "aquariumyossy / yossy_lexiq",
-    "metric": "11-09 窗口补录（当日漏收）。inferd 0.4.1 macos27 预构建（BUILD-INFO 4ad756ad）。conc.py followup，greedy，thinking off：16K 上下文负载、N=1 单流解码 93.9 作主值（端到端 90.4；推文取整为 90）。N=4/8/16 多路合计 221.0/266.0/314.7，不作单流主值。配置 max_ctx=147456。release_gate PASS；agents_at_once 8×4K 与 16×16K 均 PASS。原始 jsonl 公开于 issue。同步 X：x.com/yossy_lexiq/status/2119679429500973444。",
+    "metric": "11-09 窗口补录（当日漏收）。inferd 0.4.1 macos27 预构建（BUILD-INFO 4ad756ad）。conc.py followup，greedy，thinking off：16K 上下文负载、N=1 单流解码 93.9 作主值（端到端 90.4；推文取整为 90）。N=4/8/16 多路合计 221.0/266.0/314.7，不作单流主值。配置 max_ctx=147456。release_gate PASS；agents_at_once 8×4K 与 16×16K 均 PASS。原始 jsonl 公开于 issue。同步 X：x.com/yossy_lexiq/status/2119679429500973444 。",
     "metric_en": "Makeup from the 11-09 window (missed that night). inferd 0.4.1 macos27 prebuilt (BUILD-INFO 4ad756ad). conc.py followup, greedy, thinking off: 16K-context load, N=1 single-stream decode 93.9 is the headline (end-to-end 90.4; the X post rounded to 90). N=4/8/16 totals 221.0/266.0/314.7 are not single-stream. Configured max_ctx=147456. release_gate PASS; agents_at_once 8×4K and 16×16K both PASS. Raw jsonl is public in the issue. Also posted at x.com/yossy_lexiq/status/2119679429500973444.",
     "tok_s": 93.9,
     "concurrency": "单流",
@@ -32353,7 +32371,7 @@
     "source_level": "实测",
     "date": "2026-11-07",
     "measured_by": "witcheer",
-    "metric": "Basalt v0.3.0（帖文所链仓库 toolcall/basalt93 写明版本，非按发帖时最新发行推断）。测于 2026-11-07。MTP 草稿 9 次干净跑、各 700 token：解码 500.4 作主值；无草稿 259.0 另标。同权 llama.cpp 对照 98.3 / 89.1。上下文设置未写，不填。预登记规则与公开树在 github.com/notwitcheer/llm-bench-rig/tree/main/toolcall/basalt93。",
+    "metric": "Basalt v0.3.0（帖文所链仓库 toolcall/basalt93 写明版本，非按发帖时最新发行推断）。测于 2026-11-07。MTP 草稿 9 次干净跑、各 700 token：解码 500.4 作主值；无草稿 259.0 另标。同权 llama.cpp 对照 98.3 / 89.1。上下文设置未写，不填。预登记规则与公开树在 github.com/notwitcheer/llm-bench-rig/tree/main/toolcall/basalt93 。",
     "metric_en": "Basalt v0.3.0 (named in the linked tree toolcall/basalt93, not inferred from the latest release at post time). Measured 2026-11-07. Headline is MTP-draft decode 500.4 (9 clean runs, 700 tokens each); no-draft 259.0 is separate. Same-weight llama.cpp comparison 98.3 / 89.1. Context is not named, so it is left null. Pre-registered rule and public tree: github.com/notwitcheer/llm-bench-rig/tree/main/toolcall/basalt93.",
     "tok_s": 500.4,
     "concurrency": "单流",
@@ -35758,7 +35776,7 @@
     "source_level": "宣称",
     "date": "2026-11-14",
     "measured_by": "mrru5s3ll",
-    "metric": "vLLM 0.29.0+aeon.sm121a.dspark（镜像 aeon-vllm-ultimate:2026-09-18-v0.29.0-omni），配置上下文 262,144，FP8 KV，DFlash2 最多 9 个推测 token。作者 7 月同一脚本 bench_aeon.py：11 个提示逐个运行，greedy，思考关。解码中位 43.7（两次相同）作主值；最小 / 最大 23.7 / 79.4；TTFT 中位 272 ms。思考开的单请求 32.3。快速并发测试（思考开）1 / 4 / 16 用户 合计 34.5 / 74.9 / 163.5，不作单流主值。博文有完整配置，无原始数据，记为宣称。X 帖 https://x.com/mrru5s3ll/status/2121373870670368890",
+    "metric": "vLLM 0.29.0+aeon.sm121a.dspark（镜像 aeon-vllm-ultimate:2026-09-18-v0.29.0-omni），配置上下文 262,144，FP8 KV，DFlash2 最多 9 个推测 token。作者 7 月同一脚本 bench_aeon.py：11 个提示逐个运行，greedy，思考关。解码中位 43.7（两次相同）作主值；最小 / 最大 23.7 / 79.4；TTFT 中位 272 ms。思考开的单请求 32.3。同时处理多个请求的快速测试（思考开）1 / 4 / 16 用户 合计 34.5 / 74.9 / 163.5，不作单流主值。博文有完整配置，无原始数据，记为宣称。X 帖 https://x.com/mrru5s3ll/status/2121373870670368890",
     "metric_en": "vLLM 0.29.0+aeon.sm121a.dspark (image aeon-vllm-ultimate:2026-09-18-v0.29.0-omni), configured context 262,144, FP8 KV, DFlash2 with up to 9 speculative tokens. The author's July script bench_aeon.py: 11 prompts run one by one, greedy, thinking off. Headline is median decode 43.7 (the same in both repeats); min / max 23.7 / 79.4; median TTFT 272 ms. One request with thinking on: 32.3. Quick concurrency test (thinking on) at 1 / 4 / 16 users: aggregate 34.5 / 74.9 / 163.5, not single-stream values. The blog post gives the full config but no raw data, so this is a claim. X post https://x.com/mrru5s3ll/status/2121373870670368890",
     "tok_s": 43.7,
     "concurrency": "单流",
@@ -37755,7 +37773,7 @@
     "source_level": "宣称",
     "date": "2026-11-17",
     "measured_by": "DaHoodie",
-    "metric": "Basalt commit 899e820af7，community-1 预设，--gpu 0 --max-context 66661 --kv int8，NVFP4。对话任务解码 120.9 作主值（与 comm-443 一样取对话夹具）；结构化 393.0；散文 95.4；综合解码 239.9。草稿接受率：对话 43.0%，结构化 85.2%，散文 35.7%。预填充 16K 6,559 / 64K 4,770 tok/s。数据是 docs/community/benchmarks.json 里的一行（各夹具汇总，运行日期 2026-11-17，提交者 DaHoodie），没有逐次原始数据，同时处理的请求数未写，记为宣称。基准程序 basalt-bench（PR 分支 1f60fad 的 src/program/bench_main.cpp）按固定顺序依次运行对话、结构化、散文三个夹具，没有并发参数，但 PR 正文和 docs/community.md 都没有写单请求或单流，所以单流不成立，并发保持未写。这是未合并的 PR（jesdga95/basalt#417，2026-11-18 提交）。同 PR 的 Flash-Next NVFP4 行不收。",
+    "metric": "Basalt commit 899e820af7，community-1 预设，--gpu 0 --max-context 66661 --kv int8，NVFP4。对话任务解码 120.9 作主值（与 comm-443 一样取对话夹具）；结构化 393.0；散文 95.4；综合解码 239.9。草稿接受率：对话 43.0%，结构化 85.2%，散文 35.7%。预填充 16K 6,559 / 64K 4,770 tok/s。数据是 docs/community/benchmarks.json 里的一行（各夹具汇总，运行日期 2026-11-17，提交者 DaHoodie），没有逐次原始数据，同时处理的请求数未写，记为宣称。基准程序 basalt-bench（PR 分支 1f60fad 的 src/program/bench_main.cpp）按固定顺序依次运行对话、结构化、散文三个夹具，没有设置同时处理多个请求的参数，但 PR 正文和 docs/community.md 都没有写单请求或单流，所以单流不成立，同时处理多少个请求保持未写。这是未合并的 PR（jesdga95/basalt#417，2026-11-18 提交）。同 PR 的 Flash-Next NVFP4 行不收。",
     "metric_en": "Basalt commit 899e820af7, community-1 preset, --gpu 0 --max-context 66661 --kv int8, NVFP4. Conversation-task decode 120.9 is the headline (the conversation fixture, as in comm-443); structured 393.0; prose 95.4; blended decode 239.9. Draft acceptance: conversation 43.0%, structured 85.2%, prose 35.7%. Prefill 6,559 tok/s at 16K and 4,770 at 64K. The data is one row of docs/community/benchmarks.json (per-fixture summaries, run date 2026-11-17, submitter DaHoodie) with no per-run raw data, and the number of simultaneous requests is not stated, so this is a claim. The benchmark program basalt-bench (src/program/bench_main.cpp on the PR branch 1f60fad) runs the conversation, structured and prose fixtures one after another in a fixed order and has no concurrency option, but neither the PR body nor docs/community.md says one request or one stream, so single-stream is not established and concurrency stays not stated. It is an unmerged PR (jesdga95/basalt#417, opened 2026-11-18). The Flash-Next NVFP4 row in the same PR is not included.",
     "tok_s": 120.9,
     "concurrency": "未写",
