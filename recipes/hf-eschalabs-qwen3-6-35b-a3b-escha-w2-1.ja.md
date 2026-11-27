@@ -33,7 +33,7 @@ MEM=0.78 CTXLEN=32768 bash sglang/serve.sh (on 5090 add INT8=on ATTN_BACKEND=tri
 
 ## 想定速度
 
-- 283 tok/s decode（英語） (📣 主張)
+- 283 tok/s 生成 (📣 主張)
 
 ## 注意点
 

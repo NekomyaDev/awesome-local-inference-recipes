@@ -33,7 +33,7 @@ sudo systemctl enable --now nvidia-powerd && git clone https://github.com/Jackww
 
 ## 想定速度
 
-- Short prompts from a cold start 30.0–32.0 (median of 5; code prompt 31.2); through the API on a running server 33.2–39.3; 30 minutes non-stop 37.6; with 4K/32K/128K/256K prompts decode 26.1/25.6/25.2/24.4 and prefill 244/844/904/752 tok/s; skips on: HumanEval+ 90.2% (off 91.5%), GSM8K 98.0% (off 97.5%)（英語） (✅ 実測)
+- Short prompts from a コールドスタート 30.0–32.0 (median of 5; code prompt 31.2); through the API on a running server 33.2–39.3; 30 分 non-stop 37.6; with 4K/32K/128K/256K prompts decode 26.1/25.6/25.2/24.4 and prefill 244/844/904/752 tok/s; skips on: HumanEval+ 90.2% (off 91.5%), GSM8K 98.0% (off 97.5%) (✅ 実測)
 
 ## 注意点
 

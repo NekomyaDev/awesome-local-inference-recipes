@@ -33,7 +33,7 @@ mlx-serve --model ddalcu/Qwen3.8-Flash-Next-MLX-Serve-mixed-4-8bit --serve
 
 ## 想定速度
 
-- 60.0 tok/s decode; 730.0 tok/s prefill（英語） (📣 主張)
+- 60.0 tok/s 生成；730.0 tok/s 読み込み (📣 主張)
 
 ## 注意点
 
