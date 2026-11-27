@@ -33,7 +33,7 @@ brew install youssofal/mtplx/mtplx && mtplx start
 
 ## 想定速度
 
-- 63.056 tok/s decode（英語） (📣 主張)
+- 63.056 tok/s 生成 (📣 主張)
 
 ## 注意点
 

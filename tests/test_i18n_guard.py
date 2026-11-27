@@ -4,7 +4,7 @@ import json, re, sys, unittest
 from pathlib import Path
 R = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(R/'scripts'))
-import gen_readme, gen_recipe_pages, i18n_rules
+import gen_readme, gen_recipe_pages, i18n_rules, ja_text
 
 CJK = re.compile(r'[\u3000-\u303f\u3040-\u30ff\u3400-\u9fff\uff00-\uffef]')
 D = json.load(open(R/'data/recipes.json', encoding='utf-8'))
@@ -53,9 +53,15 @@ class JaEnglishMarker(unittest.TestCase):
         for s in (None, '', '262,144', '42 tok/s', 'MTP KV Q4_K_M', '単一ストリーム'):
             self.assertEqual(m(s), s)
 
-    def test_ja_recipe_page_marks_english_metric(self):
+    def test_ja_recipe_page_uses_japanese_metric_or_marks_english(self):
         r = next(r for r in D if r.get('metric_en') and re.search(r'\b[a-z]{4,}\b', r['metric_en']))
-        self.assertIn(r['metric_en'] + '（英語）', gen_recipe_pages.page(r, 'ja'))
+        page = gen_recipe_pages.page(r, 'ja')
+        jm = ja_text.metric(r)
+        if ja_text.english_fallback(r) or ja_text.needs_en_mark(jm):
+            self.assertIn((jm or r['metric_en']) + '（英語）', page)
+        else:
+            self.assertTrue(jm and jm[:20] in page, jm)
+            self.assertNotIn(r['metric_en'] + '（英語）', page)
         self.assertNotIn('（英語）', gen_recipe_pages.page(r, 'en'))
 
 

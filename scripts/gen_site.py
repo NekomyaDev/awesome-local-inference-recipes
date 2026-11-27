@@ -8,7 +8,7 @@ Run: python3 scripts/gen_site.py"""
 import json, re, html
 from urllib.parse import quote
 from pathlib import Path
-import gen_readme
+import gen_readme, ja_text
 from dataset_constants import DATA_ASOF
 from hardware_index import HW, MIN_ROWS, selfrep, single, meas_text, COMPARE
 R = Path(__file__).resolve().parent.parent
@@ -28,6 +28,9 @@ def en(s):
     if not s: return s
     return gen_readme.en(normalize_punct(str(s)), cjk=gen_readme.CJK_CHAR, strip=' ·+/,;；') or s
 def met_en(r): return r.get('metric_en') or en(r.get('metric'))
+def ja_met(r):
+    m = ja_text.metric(r) or ''
+    return gen_readme.mark_ja_en(m) if ja_text.english_fallback(r) or ja_text.needs_en_mark(m) else m
 def fen(r, k): return (r.get('en') or {}).get(k) or en(r.get(k))
 def safe_url(u): return u if re.match(r'(https?:)?//|[\w./#?=&%-]+$', u) and not u.lower().startswith('javascript:') else '#'
 
@@ -174,7 +177,7 @@ def landing(kind, key, name, rows, qterm=None):
             link='リンク', selfrep='（自己申告）', filter_='エクスプローラーで絞り込む →',
             note='数値は各出典のものです。本プロジェクトでは再計測していません。行ごとにモデルと設定が異なります。出典レベル：公式 = プロジェクトまたはベンダー、実測 = 投稿者が実行（エンジンまたはレシピの作者は生データと再現手順も公開する）、伝聞 = 二次情報、主張 = 予測または再現手順なし。',
             lab=lambda r, k: fen(r, k) if k != 'engine' else r.get('engine'),
-            met=lambda r: gen_readme.mark_ja_en(met_en(r)) or ''),
+            met=lambda r: ja_text.metric(r) or ''),
     }
 
     def summary(lang, n):

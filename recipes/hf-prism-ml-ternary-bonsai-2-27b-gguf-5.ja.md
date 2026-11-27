@@ -35,7 +35,7 @@ llama-cli ... -ngl 99 -fa on -c 32768 (requires the PrismML llama.cpp fork; stoc
 
 ## 想定速度
 
-- 28.1 tok/s decode; 387 tok/s prefill（英語） (📣 主張)
+- 28.1 tok/s 生成；387 tok/s 読み込み (📣 主張)
 
 ## 注意点
 
