@@ -30,7 +30,7 @@
 
 本地开发：`python3 -m http.server 5190` → `index.html`（首页）· `explore.html`（筛选、排序、散点图）· 数据格式见 [`schema/recipe.schema.json`](schema/recipe.schema.json)。
 
-给 AI agent：技能 [`.agents/skills/local-inference-recipe-finder`](.agents/skills/local-inference-recipe-finder/SKILL.md) 检测本机硬件，并从 [`data/hw_index.json`](docs/hw_index.md) 推荐配方。详见 [AGENTS.md](AGENTS.md)。
+给 AI 智能体：技能 [`.agents/skills/local-inference-recipe-finder`](.agents/skills/local-inference-recipe-finder/SKILL.md) 检测本机硬件，并从 [`data/hw_index.json`](docs/hw_index.md) 推荐配方。详见 [AGENTS.md](AGENTS.md)。
 
 <details><summary>网站预览</summary>
 
