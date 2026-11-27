@@ -67,4 +67,37 @@ class SparkHeadline(unittest.TestCase):
             self.assertIn(f"**{b['tok_s']:g} tok/s**", row, lang); self.assertIn(b['source_url'], row, lang)
             self.assertRegex(s, re.escape('[DGX Spark](' + PAGES + 'hw/' + {'en': '', 'zh': 'zh-CN/', 'ja': 'ja/'}[lang] + 'dgx-spark.html) (') + r'\d+ · ⚡\*\*' + re.escape(f"{b['tok_s']:g}") + r'\*\*', lang)
 
+class Headlines(unittest.TestCase):
+    LABELS = {'en': 'Fastest on one RTX 5090', 'zh': '单张 RTX 5090 最快', 'ja': 'RTX 5090 1 枚で最速'}
+
+    def setUp(self):
+        self.D = json.loads((R/'data/recipes.json').read_text(encoding='utf-8'))
+        self.H = dict(hi.headline_rows(self.D))
+
+    def test_device_headlines_equal_the_grid(self):
+        best = {c.page or c.label: b for g, ch in hi.grid(self.D) for c, n, b in ch}
+        self.assertEqual(self.H['5090']['id'], best['rtx-5090']['id'])
+        self.assertEqual(self.H['spark']['id'], best['dgx-spark']['id'])
+        for key, group in (('mac', 'apple'), ('amd', 'amd')):
+            bs = [b for g, ch in hi.grid(self.D) if g == group for c, n, b in ch if b]
+            self.assertEqual(self.H[key]['tok_s'], max(b['tok_s'] for b in bs), key)
+
+    def test_headlines_are_measured_single_stream(self):
+        for k, r in self.H.items():
+            self.assertTrue(hi.meas_text(r) and hi.single_stream(r), k)
+            if k in ('mac', '5090', 'amd', 'spark'): self.assertTrue(hi.single(r), k)
+
+    def test_cheapest_is_the_lowest_measured_price(self):
+        lo = min(r['hardware_cost_usd'] for r in self.D if hi.meas_text(r) and hi.single_stream(r) and r.get('hardware_cost_usd'))
+        self.assertEqual(self.H['cheap']['hardware_cost_usd'], lo)
+
+    def test_readme_shows_the_computed_rows(self):
+        for lang, f in README.items():
+            s = (R/f).read_text(encoding='utf-8')
+            for k, r in self.H.items():
+                self.assertIn(f"**{r['tok_s']:g} tok/s**", s, (lang, k)); self.assertIn(r['source_url'], s, (lang, k))
+            row = next(l for l in s.splitlines() if l.startswith('| ' + self.LABELS[lang]))
+            self.assertIn(f"**{self.H['5090']['tok_s']:g} tok/s**", row, lang)
+
+
 if __name__ == '__main__': unittest.main()
