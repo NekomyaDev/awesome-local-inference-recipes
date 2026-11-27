@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 # Hardware strings on new Hugging Face rows → (item name substring, multiplier).
-# Multiplier is 2 for a 2× card of the same model. Order matters: more specific first.
+# Multiplier is 2 for a 2× card of the same model. More specific patterns are listed first.
 HARDWARE_LOOKUP = [
     (re.compile(r'^2\s*[x×]\s*Tesla V100 32GB', re.I), 'Tesla V100 32GB', 2),
     (re.compile(r'^Tesla V100 32GB', re.I), 'Tesla V100 32GB', 1),

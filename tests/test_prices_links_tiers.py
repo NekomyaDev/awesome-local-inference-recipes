@@ -166,33 +166,35 @@ class ApproveReviewPrices(unittest.TestCase):
         self.assertIn('sourced_prices.cost_for_hardware', src)
 
     def test_approve_review_writes_snapshot_costs_into_a_new_row(self):
-        import tempfile, shutil, importlib
+        import tempfile, shutil
         P = prices.load()
         want_text, want_usd = prices.cost_for_hardware('RTX 4090 24GB', P)
         self.assertTrue(want_text and want_usd)
-        with tempfile.TemporaryDirectory() as tmp:
-            tmp = Path(tmp)
-            (tmp / 'data').mkdir(); (tmp / 'data' / 'candidates').mkdir()
-            shutil.copy(R / 'data/prices.json', tmp / 'data/prices.json')
+        scratch = Path(tempfile.mkdtemp())
+        try:
+            (scratch / 'data').mkdir(); (scratch / 'data' / 'candidates').mkdir()
+            shutil.copy(R / 'data/prices.json', scratch / 'data/prices.json')
             # A tiny empty recipe list so the new row is the only one added.
-            (tmp / 'data' / 'recipes.json').write_text('[]\n', encoding='utf-8')
+            (scratch / 'data' / 'recipes.json').write_text('[]\n', encoding='utf-8')
             cid = 'hf-test--Tiny-7B-gguf'
             cand = {'candidates': [{'id': cid, 'status': 'pending'}]}
             review = {'reviews': [{'id': cid, 'decision': '收录', 'url': 'https://example.com/model',
                 'recipes': [{'hardware': 'RTX 4090 24GB', 'quant': 'Q4', 'engine': 'llama.cpp',
                              'gen_tok_s': 10, 'prefill_tok_s': None, 'level': '宣称', 'quote': '10 tok/s'}]}]}
-            rp = tmp / 'data/candidates/hf-2099-01-01.review.json'
+            rp = scratch / 'data/candidates/hf-2099-01-01.review.json'
             rp.write_text(json.dumps(review), encoding='utf-8')
-            (tmp / 'data/candidates/hf-2099-01-01.json').write_text(json.dumps(cand), encoding='utf-8')
+            (scratch / 'data/candidates/hf-2099-01-01.json').write_text(json.dumps(cand), encoding='utf-8')
             old_root, old_argv = approve_review.ROOT, sys.argv[:]
             try:
-                approve_review.ROOT = str(tmp)
+                approve_review.ROOT = str(scratch)
                 sys.argv = ['approve_review.py', str(rp)]
                 approve_review.main()
             finally:
                 approve_review.ROOT = old_root
                 sys.argv = old_argv
-            rows = json.loads((tmp / 'data/recipes.json').read_text(encoding='utf-8'))
+            rows = json.loads((scratch / 'data/recipes.json').read_text(encoding='utf-8'))
+        finally:
+            shutil.rmtree(scratch, ignore_errors=True)
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0]['hardware_cost_usd'], want_usd)
         self.assertEqual(rows[0]['hardware_cost_text'], want_text)
