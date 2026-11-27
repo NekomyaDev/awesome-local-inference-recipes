@@ -6,3 +6,5 @@ __pycache__/
 *.pyc
 .DS_Store
 data/candidates/
+urls-strict.txt
+urls-walled.txt

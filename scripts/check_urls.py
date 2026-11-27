@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """URL and launch-command hygiene check. CI runs this. Exit 1 on any violation.
-Rules: scripts/url_safety.py and docs/hw_index.md (Security)."""
-import json, sys
+Rules: scripts/url_safety.py and docs/hw_index.md (Security).
+Also checks that no URL in free text is glued to the text after it (see glued_urls), in data/recipes.json and data/prices.json."""
+import json, re, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import url_safety as us
@@ -23,14 +24,72 @@ def known_owners():
     return out
 
 
+# A URL must end at whitespace or at punctuation that URL_RE stops at. Text glued straight after a URL becomes part of
+# the link: CJK text makes the URL non-ASCII; ASCII text is caught when the same field's other-language copy has the
+# URL without the tail, or when a site name is stuck to the end of the path (".../rtx-4090llm-speed").
+CJK = re.compile(r'[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af\uff01-\uff60]')
+SITE_TAIL = re.compile(r'(?<=[a-z0-9])(?<!sub)(?:llm-speed|llmspeed|reddit|github|huggingface|modelscope)$', re.I)
+# (Chinese field, English copy) pairs. The English copy lives at the top level (metric_en) or under "en".
+PAIRS = (('metric', 'metric_en'), ('source_note', 'en.source_note'), ('engine_note', 'en.engine_note'), ('quant', 'en.quant'),
+         ('hardware', 'en.hardware'), ('context', 'en.context'), ('concurrency', 'en.concurrency'), ('hardware_cost_text', 'en.hardware_cost_text'))
+
+
+def _get(r, path):
+    for k in path.split('.'):
+        r = r.get(k) if isinstance(r, dict) else None
+    return r if isinstance(r, str) else ''
+
+
+def _strings(o):
+    if isinstance(o, str): yield o
+    elif isinstance(o, dict):
+        for v in o.values(): yield from _strings(v)
+    elif isinstance(o, list):
+        for v in o: yield from _strings(v)
+
+
+def glued_urls(text, other=''):
+    """URLs in text that run straight into the next word. other: the same field in another language, if any."""
+    out = []
+    others = us.URL_RE.findall(other or '')
+    for u in us.URL_RE.findall(text or ''):
+        m = CJK.search(u)
+        if m: out.append((u, f'glued to the text after it ({u[m.start():m.start() + 6]!r}); put a space after the URL')); continue
+        if SITE_TAIL.search(u.rstrip('/')): out.append((u, 'a site name is glued to the end of the URL; put a space after the URL')); continue
+        for v in others:
+            v = v.rstrip('.。')
+            if len(v) < len(u) and u.startswith(v) and u[len(v)].isalnum() and v not in us.URL_RE.findall(text):
+                out.append((u, f'the other-language copy has {v}; the rest ({u[len(v):]!r}) is glued text')); break
+    return out
+
+
+def glue_violations(R, prices):
+    bad = []
+    for r in R:
+        seen = set()
+        for zh, en in PAIRS:
+            for u, why in glued_urls(_get(r, zh), _get(r, en)) + glued_urls(_get(r, en), _get(r, zh)):
+                if u not in seen: seen.add(u); bad.append(f"{r['id']}: {u}: {why}")
+        for t in _strings(r):
+            for u, why in glued_urls(t):
+                if u not in seen: seen.add(u); bad.append(f"{r['id']}: {u}: {why}")
+    for p in (prices.get('items', []) if isinstance(prices, dict) else prices):
+        for t in _strings(p):
+            for u, why in glued_urls(t): bad.append(f"prices.json {p.get('item')}: {u}: {why}")
+    return bad
+
+
 def violations():
     bad = []
     R = load('data/recipes.json')
     texts = [(r['id'], json.dumps(r, ensure_ascii=False)) for r in R]
     texts += [('repos.json', json.dumps(load('data/repos.json'), ensure_ascii=False)), ('sources.json', json.dumps(load('data/sources.json'), ensure_ascii=False))]
+    prices = load('data/prices.json')
+    texts += [('prices.json', json.dumps(prices, ensure_ascii=False))]
     for where, t in texts:
         for u in us.URL_RE.findall(t):
             for p in us.problems(u): bad.append(f'{where}: {u}: {p}')
+    bad += glue_violations(R, prices)
     for r in R:
         cp = us.cmd_problems(r.get('launch_command'))
         if cp and r['id'] not in KNOWN_UNSAFE_CMDS: bad.append(f"{r['id']}: launch_command: {', '.join(cp)}")
