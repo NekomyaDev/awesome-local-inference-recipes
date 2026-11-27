@@ -11,6 +11,9 @@ FAMILIES = [
     (r'ACE-Step', 'ACE-Step'), (r'Edge0', 'Edge0'), (r'Llama', 'Llama'), (r'Gemma', 'Gemma'),
     (r'Mistral', 'Mistral'), (r'Kimi', 'Kimi'), (r'gpt-oss', 'gpt-oss'), (r'Flux', 'Flux'),
     (r'Hunyuan', 'Hunyuan'),
+    # Families that had 10 or more rows under 'Other' (2026-11-27 audit).
+    (r'Inkling', 'Inkling'), (r'Nemotron', 'Nemotron'), (r'Ornith', 'Ornith'), (r'Recursive Flint|\bFlint 40B', 'Recursive'),
+    (r'Nanbeige', 'Nanbeige'), (r'\bLFM\d', 'LFM'),
 ]
 QUANT = [
     ('1bit', r'1-bit|\b1bit|\bI?Q1_'),
