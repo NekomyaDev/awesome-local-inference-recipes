@@ -52,9 +52,9 @@ MULTI_DEVICE_SAMPLES = {'5090': '2× RTX 5090 32GB', '4090': '双 RTX 4090', '30
                         'spark': '2× DGX Spark', 'strix': 'Strix Halo / RTX 4090'}
 SINGLE_DEVICE_SAMPLES = {'5090': '1× RTX 5090 32GB', '4090': '单 RTX 4090', '3090': 'RTX 3090 24GB', 'm3u': 'Mac Studio M3 Ultra 512GB',
                          'spark': '1× DGX Spark（GB10）', 'strix': 'AMD Ryzen AI Max+ 395'}
-MOBILE_SAMPLES = ['RTX 5090 Laptop', 'RTX 5090 Laptop GPU（5090M）', '笔记本 RTX 5070 Ti 12GB', 'MacBook Pro M5 Max 128GB', 'iPad Pro 11 英寸 M4 16GB',
+MOBILE_SAMPLES = ['RTX 5090 Laptop', 'Apple M5 Max 128GB（机型未注明）', 'RTX 5090 Laptop GPU（5090M）', '笔记本 RTX 5070 Ti 12GB', 'MacBook Pro M5 Max 128GB', 'iPad Pro 11 英寸 M4 16GB',
                   'Radeon 8060S（Ryzen AI Max+ 395，ASUS ROG Flow Z13 @80W，64GB UMA）', 'Strix Halo laptop (gfx1151, 128GB)', 'iPhone 17 Pro Max (A19 Pro)']
-MIXED_SAMPLES = ['Strix Halo + R9700', 'RTX 5060 Ti 16GB（Thunderbolt 外接）+ MacBook Pro M1 Max（Linux）', '1× RTX 7900 XTX 24GB + Ryzen AI Max+ 395 + 128GB RAM']
+MIXED_SAMPLES = ['Strix Halo + R9700', 'Mac Studio M4 Max+RTX 5090', 'Minisforum MS-S1 MAX（Ryzen AI Max+ 395，128GB）+ Radeon AI PRO R9700 32GB', 'RTX 5060 Ti 16GB（Thunderbolt 外接）+ MacBook Pro M1 Max（Linux）', '1× RTX 7900 XTX 24GB + Ryzen AI Max+ 395 + 128GB RAM']
 SINGLE_WITH_HOST_SAMPLES = ['RTX 5090 32GB + Core Ultra 9 285K + 247GB DDR5', 'Radeon 8060S（Ryzen AI Max+ 395，Vulkan）', '1× DGX Spark（GB10）',
                             'Geekom A9 Mega（Ryzen AI Max+ 395，128GB LPDDR5X）', '1× Radeon AI PRO R9700 32GB + Ryzen 7 7800X3D + 128GB DDR5']
 

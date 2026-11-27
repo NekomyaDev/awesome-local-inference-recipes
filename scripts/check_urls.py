@@ -63,6 +63,20 @@ def glued_urls(text, other=''):
     return out
 
 
+def prefix_glue(record):
+    """URLs in one record (a recipe row or a price item) that are another URL of the same record plus a run of letters,
+    such as ".../status/123" next to ".../status/123details". Only a URL that ends in a digit or '/' counts as the
+    prefix, so two real pages such as /wiki/Java and /wiki/JavaScript are not flagged. A glued ASCII word with no
+    second copy of the URL in the record cannot be told apart from a real path."""
+    urls = {u for t in _strings(record) for u in us.URL_RE.findall(t)}
+    out = []
+    for u in sorted(urls):
+        for v in sorted(urls):
+            if len(v) < len(u) and u.startswith(v) and re.search(r'[\d/]$', v) and re.fullmatch(r'[A-Za-z]+', u[len(v):]):
+                out.append((u, f'the same record has {v}; the rest ({u[len(v):]!r}) is glued text')); break
+    return out
+
+
 def glue_violations(R, prices):
     bad = []
     for r in R:
@@ -73,16 +87,12 @@ def glue_violations(R, prices):
         for t in _strings(r):
             for u, why in glued_urls(t):
                 if u not in seen: seen.add(u); bad.append(f"{r['id']}: {u}: {why}")
-        # A URL that is another URL of the same row plus a run of letters (".../123" and ".../123details") is glued text.
-        # A glued ASCII word with no second copy of the URL anywhere cannot be told apart from a real path.
-        urls = {u for t in _strings(r) for u in us.URL_RE.findall(t)}
-        for u in sorted(urls):
-            for v in urls:
-                if len(v) < len(u) and u.startswith(v) and re.fullmatch(r'[A-Za-z]+', u[len(v):]) and u not in seen:
-                    seen.add(u); bad.append(f"{r['id']}: {u}: the row also has {v}; the rest ({u[len(v):]!r}) is glued text"); break
+        for u, why in prefix_glue(r):
+            if u not in seen: seen.add(u); bad.append(f"{r['id']}: {u}: {why}")
     for p in (prices.get('items', []) if isinstance(prices, dict) else prices):
         for t in _strings(p):
             for u, why in glued_urls(t): bad.append(f"prices.json {p.get('item')}: {u}: {why}")
+        for u, why in prefix_glue(p): bad.append(f"prices.json {p.get('item')}: {u}: {why}")
     return bad
 
 

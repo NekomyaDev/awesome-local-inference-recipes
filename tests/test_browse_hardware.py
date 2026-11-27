@@ -95,6 +95,7 @@ class Headlines(unittest.TestCase):
         import gen_readme
         for lang, f in README.items():
             s = (R/f).read_text(encoding='utf-8'); lab = gen_readme.HL[lang]['lab']
+            self.assertEqual(set(self.H), set(lab), lang)
             for k, r in self.H.items():
                 row = [l for l in s.splitlines() if l.startswith('|') and l.split('|')[1].strip() == lab[k]]
                 self.assertEqual(len(row), 1, (lang, k))

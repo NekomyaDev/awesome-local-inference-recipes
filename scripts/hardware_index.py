@@ -31,23 +31,26 @@ MOBILE = re.compile(r'笔记本|移动工作站|平板|ノート|[Ll]aptop|[Nn]o
                     r'Steam Deck|ROG Ally|Legion Go|\b[3-5]0[5-9]0 ?M\b|[Mm]obile GPU')
 # Discrete devices joined with '+' at the top level (outside brackets): a mixed rig such as "Strix Halo + R9700" or
 # "RTX 5060 Ti + MacBook Pro M1 Max". Each top-level part is matched with its bracketed details, so
-# "MS-S1 MAX（Ryzen AI Max+ 395）+ R9700" counts two devices. The SoC name "Ryzen AI Max+" contains a '+' that is not a separator.
+# "MS-S1 MAX（Ryzen AI Max+ 395）+ R9700" counts two devices. Only the '+' of the SoC name "Ryzen AI Max+" is not a separator;
+# "Mac Studio M4 Max+RTX 5090" is two devices.
 _DEVICE = re.compile(r'RTX|GTX|Radeon|\bRX ?\d|R9700|Instinct|\bMI\d{2,3}|Tesla|\b[VPAHL]\d{2,3}\b|\bArc\b|DGX|Spark|GB10|Strix Halo|Ryzen AI Max|\bMac\b|MacBook|\bM\d (?:Pro|Max|Ultra)\b|CMP', re.I)
 def top_level_parts(hw):
     parts, cur, depth = [], '', 0
     for i, ch in enumerate(hw):
         if ch in '(（[': depth += 1
         elif ch in ')）]': depth = max(0, depth - 1)
-        if ch in '+＋' and depth == 0 and not re.search(r'Max$', hw[:i], re.I):
+        if ch in '+＋' and depth == 0 and not re.search(r'AI Max$', hw[:i], re.I):
             parts.append(cur); cur = ''
         else: cur += ch
     return parts + [cur]
 def mixed_devices(hw):
     return sum(bool(_DEVICE.search(p)) for p in top_level_parts(hw)) > 1
+# A Mac with an M Pro or M Max chip whose machine is not stated: the same chip ships in MacBooks, so it is not counted as a desktop.
+UNKNOWN_MAC = re.compile(r'\bM\d+ (?:Pro|Max)\b.*机型未注明')
 def single_device(hw, tags=()):
     """One desktop device: no multi-GPU tag, no 2-9× / 双 / N 台, no '/' or 'vs' comparison, no mixed '+' rig, no laptop or tablet."""
     return ('multi-GPU' not in tags and not re.search(r'[2-9] ?[x×] ?|双|[2-9] ?台', hw) and not COMPARE.search(hw)
-            and not mixed_devices(hw) and not MOBILE.search(hw))
+            and not mixed_devices(hw) and not MOBILE.search(hw) and not UNKNOWN_MAC.search(hw))
 def single(r):
     """The shared single-desktop, single-stream predicate behind the quick answers, the grid's ⚡ value, the headline numbers and the hw pages."""
     return single_device(r['hardware'], r['tags']) and single_stream(r)

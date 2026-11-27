@@ -32,6 +32,12 @@ class GluedUrls(unittest.TestCase):
         row['metric'] = '见 https://x.com/a/status/123 页面'
         self.assertFalse(check_urls.glue_violations([row], {'items': []}))
 
+    def test_prefix_glue_spares_real_pages_and_checks_price_items(self):
+        row = {'id': 't-2', 'source_url': 'https://en.wikipedia.org/wiki/Java', 'metric': '另见 https://en.wikipedia.org/wiki/JavaScript 页面'}
+        self.assertFalse(check_urls.glue_violations([row], {'items': []}))
+        item = {'item': 'x', 'source': 'https://gpusold.com/gpu/123', 'note': '见 https://gpusold.com/gpu/123details 页面'}
+        self.assertTrue(check_urls.glue_violations([], {'items': [item]}))
+
     def test_data_has_no_glued_urls(self):
         R_ = json.loads((R / 'data/recipes.json').read_text(encoding='utf-8'))
         P = json.loads((R / 'data/prices.json').read_text(encoding='utf-8'))
@@ -85,7 +91,9 @@ class Prices(unittest.TestCase):
     def test_readme_banner_in_every_language(self):
         for lang, f in README.items():
             s = (R / f).read_text(encoding='utf-8')
-            self.assertIn('(data/prices.json)', s, lang); self.assertIn(self.P['as_of'], s, lang); self.assertIn(self.P['next_review'], s, lang)
+            banner = [l for l in s.splitlines() if l.startswith('> ') and '(data/prices.json)' in l]
+            self.assertEqual(len(banner), 1, lang)
+            self.assertIn(self.P['as_of'], banner[0], lang); self.assertIn(self.P['next_review'], banner[0], lang)
 
 
 class TierOrder(unittest.TestCase):
