@@ -4,14 +4,8 @@
 from pathlib import Path
 import json, os, sys, re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SOURCED_PRICES_BY_HARDWARE = [
- (r"^RTX 5090", "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）", 5400),
- (r"^RTX 4090", "仅显卡 二手约 $2,214（2026-10-06 eBay 成交，见 prices.json）", 2214),
- (r"^RTX 3090 24GB$", "仅显卡 二手约 $1,206（2026-10-06 getpcparts，见 prices.json）", 1206),
- (r"^2× Tesla V100 32GB", "仅显卡 2×约 $650 = 约 $1,300（二手，见 prices.json）", 1300),
- (r"^Tesla V100 32GB", "仅显卡 二手约 $650（见 prices.json）", 650),
- (r"^MacBook M4 Pro 48GB$", "$2,399（MBP14 M4 Pro 48GB 定价，见 prices.json）", 2399),
-]
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import prices as sourced_prices
 LEGACY_MODEL = {"hf-prism-ml--Ternary-Bonsai-2-27B-gguf": "Ternary Bonsai 2 27B", "hf-prism-ml--Bonsai-27B-mlx-1bit": "Bonsai 27B 1-bit",
                 "hf-cdiamond--Qwen3.8-27B-iMatrix-NVFP4-MTP-GGUF": "Qwen3.8-27B"}
 def fam(hw):
@@ -36,9 +30,7 @@ def main():
         for i, y in enumerate(x["recipes"], 1):
             rid = f"hf-{slug}-{i}"
             if rid in ids: continue
-            hw = y["hardware"]; ct = cu = None
-            for pat, t, u in SOURCED_PRICES_BY_HARDWARE:
-                if re.search(pat, hw): ct, cu = t, u; break
+            hw = y["hardware"]; ct, cu = sourced_prices.cost_for_hardware(hw)
             notes = "; ".join(filter(None, ["HF 模型卡（" + ("卡内转载第三方数据" if y.get("level") == "转述" else "作者自报") + "）",
                     x.get("note_all"), y.get("note"), *(x.get("caveats") or []), "原文: " + y["quote"]]))
             metric = f"{y['gen_tok_s']} tok/s 生成" + (f"；{y['prefill_tok_s']} tok/s 读入" if y["prefill_tok_s"] else "")
