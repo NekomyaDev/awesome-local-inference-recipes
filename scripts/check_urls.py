@@ -73,6 +73,13 @@ def glue_violations(R, prices):
         for t in _strings(r):
             for u, why in glued_urls(t):
                 if u not in seen: seen.add(u); bad.append(f"{r['id']}: {u}: {why}")
+        # A URL that is another URL of the same row plus a run of letters (".../123" and ".../123details") is glued text.
+        # A glued ASCII word with no second copy of the URL anywhere cannot be told apart from a real path.
+        urls = {u for t in _strings(r) for u in us.URL_RE.findall(t)}
+        for u in sorted(urls):
+            for v in urls:
+                if len(v) < len(u) and u.startswith(v) and re.fullmatch(r'[A-Za-z]+', u[len(v):]) and u not in seen:
+                    seen.add(u); bad.append(f"{r['id']}: {u}: the row also has {v}; the rest ({u[len(v):]!r}) is glued text"); break
     for p in (prices.get('items', []) if isinstance(prices, dict) else prices):
         for t in _strings(p):
             for u, why in glued_urls(t): bad.append(f"prices.json {p.get('item')}: {u}: {why}")

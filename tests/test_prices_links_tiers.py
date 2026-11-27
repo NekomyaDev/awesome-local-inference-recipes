@@ -26,6 +26,12 @@ class GluedUrls(unittest.TestCase):
                   'https://reddit.com/r/subreddit/', 'https://github.com/foo/llm-speed']:
             self.assertFalse(check_urls.glued_urls(t), t)
 
+    def test_ascii_glue_is_caught_against_another_url_of_the_row(self):
+        row = {'id': 't-1', 'source_url': 'https://x.com/a/status/123', 'metric': '见 https://x.com/a/status/123details 页面'}
+        self.assertTrue(check_urls.glue_violations([row], {'items': []}))
+        row['metric'] = '见 https://x.com/a/status/123 页面'
+        self.assertFalse(check_urls.glue_violations([row], {'items': []}))
+
     def test_data_has_no_glued_urls(self):
         R_ = json.loads((R / 'data/recipes.json').read_text(encoding='utf-8'))
         P = json.loads((R / 'data/prices.json').read_text(encoding='utf-8'))
@@ -48,6 +54,17 @@ class LinkcheckLists(unittest.TestCase):
         strict = next(a for a in args if 'urls-strict.txt' in a); walled = next(a for a in args if 'urls-walled.txt' in a)
         self.assertNotIn('403', strict); self.assertNotIn('429', strict)
         self.assertIn('403', walled); self.assertIn('429', walled)
+        # The strict run also reads the Markdown files, so it must exclude X and Reddit; those go to the walled list.
+        ex = re.search(r"--exclude '([^']+)'", strict).group(1)
+        for u in ('https://x.com/a/status/1', 'https://www.reddit.com/r/LocalLLaMA/', 'https://twitter.com/a'): self.assertRegex(u, ex)
+        for u in ('https://github.com/x/y', 'https://example.com/x.com'): self.assertNotRegex(u, ex)
+        md_walled = {u for g in linkcheck_urls.MARKDOWN for f in R.glob(g) for u in linkcheck_urls.MD_URL.findall(f.read_text(encoding='utf-8'))
+                     if re.search(ex, u)}
+        walled_list = set(linkcheck_urls.split(linkcheck_urls.all_urls())[0])
+        self.assertTrue(md_walled); self.assertTrue({u.rstrip('.,;:。') for u in md_walled} <= walled_list)
+
+    def test_replaced_price_sources_are_not_checked(self):
+        self.assertFalse(any('clustermelt' in u for u in linkcheck_urls.all_urls()))
 
 
 class Prices(unittest.TestCase):
@@ -61,7 +78,9 @@ class Prices(unittest.TestCase):
             self.assertTrue({'item', 'price', 'date', 'source', 'status'} <= set(i), i['item'])
             self.assertIn(i['status'], ('verified', 'verified-secondary', 'unverified'), i['item'])
             if i['status'] != 'verified': self.assertTrue(i.get('note'), i['item'])
-        self.assertNotIn('clustermelt', json.dumps([i for i in self.P['items']], ensure_ascii=False).split('"previous"')[0])
+        self.assertFalse(any('clustermelt' in i['source'] for i in self.P['items']))
+        a100 = next(i for i in self.P['items'] if 'A100' in i['item'])
+        self.assertIn('clustermelt', json.dumps(a100.get('previous'), ensure_ascii=False))
 
     def test_readme_banner_in_every_language(self):
         for lang, f in README.items():

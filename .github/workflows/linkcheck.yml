@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Extract URLs
-        # Every URL in data/recipes.json (structured fields and free text), data/prices.json and data/sources.json.
+        # Every URL in data/recipes.json (structured fields and free text), data/prices.json, data/sources.json, docs/*.md and recipes/*.md.
         # X and Reddit go to urls-walled.txt; every other host goes to urls-strict.txt (scripts/linkcheck_urls.py).
         run: python3 scripts/linkcheck_urls.py
       - name: Check links (strict hosts, docs and guides)
@@ -24,8 +24,9 @@ jobs:
         with:
           lycheeVersion: v0.24.2
           # Only 2xx passes. A 403 or 429 from a host other than X or Reddit is reported, so a blocked or rate-limited
-          # page gets a look by hand instead of passing silently.
-          args: --no-progress --max-concurrency 4 --max-retries 3 --timeout 30 --accept 200..=299 urls-strict.txt docs/*.md recipes/*.md
+          # page gets a look by hand instead of passing silently. The Markdown files are scanned here for their relative
+          # links; their X and Reddit links are excluded from this run and checked in the next step (urls-walled.txt).
+          args: --no-progress --max-concurrency 4 --max-retries 3 --timeout 30 --accept 200..=299 --exclude '^https?://([a-z0-9-]+\.)*(x|twitter|reddit)\.com([/:?#]|$)' urls-strict.txt docs/*.md recipes/*.md
           fail: false
           output: lychee/strict.md
       - name: Check links (X and Reddit)

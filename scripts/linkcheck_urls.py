@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Write the URL lists for the weekly link check (.github/workflows/linkcheck.yml).
 Every URL in data/recipes.json (structured fields and free text such as metric and source_note), data/prices.json and
-data/sources.json goes into one of two files:
+data/sources.json, plus every absolute URL in docs/*.md and recipes/*.md, goes into one of two files. The "previous"
+entries in data/prices.json are a history of replaced sources (some are known dead) and are skipped:
 - urls-walled.txt: x.com, twitter.com and reddit.com. These sites block anonymous fetches, so lychee accepts 403 and 429.
 - urls-strict.txt: every other host. Only 2xx is accepted, so a 403, 429 or 404 there is reported.
 Run: python3 scripts/linkcheck_urls.py [OUT_DIR]"""
-import json, sys
+import json, re, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import url_safety as us
@@ -13,12 +14,15 @@ import url_safety as us
 ROOT = Path(__file__).resolve().parent.parent
 WALLED = ('x.com', 'twitter.com', 'reddit.com')
 FILES = ('data/recipes.json', 'data/prices.json', 'data/sources.json')
+MARKDOWN = ('docs/*.md', 'recipes/*.md')
+MD_URL = re.compile(r'https?://[^\s<>"`)\]]+')
 
 
 def strings(o):
     if isinstance(o, str): yield o
     elif isinstance(o, dict):
-        for v in o.values(): yield from strings(v)
+        for k, v in o.items():
+            if k != 'previous': yield from strings(v)
     elif isinstance(o, list):
         for v in o: yield from strings(v)
 
@@ -29,6 +33,11 @@ def all_urls():
         for t in strings(json.loads((ROOT / f).read_text(encoding='utf-8'))):
             for u in us.URL_RE.findall(t):
                 u = u.rstrip('.。:：')
+                if us.host_of(u): out.add(u)
+    for g in MARKDOWN:
+        for f in sorted(ROOT.glob(g)):
+            for u in MD_URL.findall(f.read_text(encoding='utf-8')):
+                u = u.rstrip('.,;:。')
                 if us.host_of(u): out.add(u)
     return sorted(out)
 

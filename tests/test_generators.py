@@ -104,6 +104,8 @@ class QuickAnswerHardware(unittest.TestCase):
 
 
 class HardwarePages(unittest.TestCase):
+    # The explorer's ?q= is one substring. Strix Halo rows name the chip three ways (Strix Halo / Ryzen AI Max+ 395 /
+    # Radeon 8060S) and no single substring covers them, so the page lists more rows than its explorer link finds.
     KNOWN_PARTIAL_EXPLORER_QUERY = {'amd-radeon', 'strix-halo'}
 
     def test_explorer_query_finds_every_row_the_page_lists(self):

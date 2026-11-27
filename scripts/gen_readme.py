@@ -210,7 +210,7 @@ def qa(lang, E):
     for k,slug in QA_HARDWARE:
         rows=qa_rows(slug)
         if rows: out.append(f"**{Q['q'][k]}**  \n{ans(rows,'s_hw')}\n")
-    b=[r for r in D if r['category']=='text' and r.get('hardware_cost_usd') and r['hardware_cost_usd']<=BUDGET_TIER_BOUNDS_USD[0][1]]
+    b=[r for r in D if r['category']=='text' and r.get('hardware_cost_usd') and r['hardware_cost_usd']<=BUDGET_TIER_BOUNDS_USD[0][1] and hardware_index.single(r)]
     out.append(f"**{Q['q']['b25']}**  \n{ans(b,'s_b')}\n")
     return '\n'.join(out)
 def build(lang):

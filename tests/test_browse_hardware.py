@@ -92,10 +92,13 @@ class Headlines(unittest.TestCase):
         self.assertEqual(self.H['cheap']['hardware_cost_usd'], lo)
 
     def test_readme_shows_the_computed_rows(self):
+        import gen_readme
         for lang, f in README.items():
-            s = (R/f).read_text(encoding='utf-8')
+            s = (R/f).read_text(encoding='utf-8'); lab = gen_readme.HL[lang]['lab']
             for k, r in self.H.items():
-                self.assertIn(f"**{r['tok_s']:g} tok/s**", s, (lang, k)); self.assertIn(r['source_url'], s, (lang, k))
+                row = [l for l in s.splitlines() if l.startswith('|') and l.split('|')[1].strip() == lab[k]]
+                self.assertEqual(len(row), 1, (lang, k))
+                self.assertIn(f"**{r['tok_s']:g} tok/s**", row[0], (lang, k)); self.assertIn(f"({r['source_url']})", row[0], (lang, k))
             row = next(l for l in s.splitlines() if l.startswith('| ' + self.LABELS[lang]))
             self.assertIn(f"**{self.H['5090']['tok_s']:g} tok/s**", row, lang)
 
