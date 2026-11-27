@@ -3,7 +3,7 @@
 Run: python3 scripts/gen_recipe_pages.py"""
 import json, re
 from pathlib import Path
-import gen_readme
+import gen_readme, ja_text
 R = Path(__file__).resolve().parent.parent
 D = {r['id']: r for r in json.load(open(R/'data/recipes.json'))}
 GUIDES = [
@@ -62,7 +62,10 @@ def page(r, lang):
     na = '未公开。见来源' if Z else ('未公開。出典を参照' if lang=='ja' else 'Not published. See the source.')
     repo = hf_repo(r); eu = engine_url(r.get('engine'))
     if Z: metric = r.get('metric')
-    else: metric = J(r.get('metric_en') or (f"{r['tok_s']} tok/s (generation)" if r.get('tok_s') else None))
+    elif lang=='ja':
+        metric = ja_text.metric(r) or (f"{r['tok_s']} tok/s（生成）" if r.get('tok_s') else None)
+        if ja_text.needs_en_mark(metric): metric = J(metric)
+    else: metric = r.get('metric_en') or (f"{r['tok_s']} tok/s (generation)" if r.get('tok_s') else None)
     cmd = r.get('launch_command') if Z else F('launch_command')
     if cmd and cmd.startswith('见'): cmd = None
     other = 'README'+SUF[lang]
