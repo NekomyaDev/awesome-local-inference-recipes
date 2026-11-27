@@ -24,7 +24,7 @@ CHIPS = [
  ('RTX 2080 Ti', r'2080 ?Ti', 11, 'gpu'), ('RTX A6000', r'A6000', 48, 'gpu'), ('RTX A5000', r'A5000', 24, 'gpu'), ('RTX A4000', r'A4000', 16, 'gpu'), ('Titan RTX', r'Titan RTX', 24, 'gpu'),
  ('Tesla P40', r'P40\b', 24, 'gpu'), ('Tesla P100', r'P100', 16, 'gpu'), ('V100', r'V100', 32, 'gpu'), ('A100', r'A100', 80, 'gpu'),
  ('CMP 170HX', r'CMP ?170', 8, 'gpu'), ('MI50', r'MI50', 32, 'gpu'), ('MI60', r'MI60', 32, 'gpu'),
- ('RX 6800 XT', r'6800 ?XT', 16, 'gpu'), ('RX 6800', r'RX 6800', 16, 'gpu'), ('RX Vega 64', r'Vega 64', 8, 'gpu'),
+ ('RX 480', r'RX 480', 8, 'gpu'), ('RX 6800 XT', r'6800 ?XT', 16, 'gpu'), ('RX 6800', r'RX 6800', 16, 'gpu'), ('RX Vega 64', r'Vega 64', 8, 'gpu'),
  ('RX 7900 XTX', r'7900 ?XTX', 24, 'gpu'), ('RX 7900 XT', r'7900 ?XT', 20, 'gpu'), ('RX 5700 XT', r'5700 ?XT', 8, 'gpu'), ('RX 9070 XT', r'9070 ?XT', 16, 'gpu'), ('R9700', r'R9700', 32, 'gpu'),
  ('Arc B580', r'B580', 12, 'gpu'), ('Arc A770', r'A770', 16, 'gpu'),
  ('DGX Spark', r'DGX Spark|GB10|Spark', None, 'unified'), ('Strix Halo', r'Strix Halo|AI Max\+? ?3\d\d|Ryzen AI Max', None, 'unified'), ('Jetson Thor', r'Jetson (AGX )?Thor', None, 'unified'), ('Jetson Orin', r'Jetson (AGX )?Orin', None, 'unified'),
@@ -34,10 +34,10 @@ CHIPS = [
  ('M2 Ultra', r'M2 Ultra', None, 'unified'), ('M2 Max', r'M2 Max', None, 'unified'), ('M2 Pro', r'M2 Pro', None, 'unified'), ('M2', r'\bM2\b', None, 'unified'),
  ('M1 Ultra', r'M1 Ultra', None, 'unified'), ('M1 Max', r'M1 Max', None, 'unified'), ('M1', r'\bM1\b', None, 'unified'),
  ('Apple Silicon', r'MacBook|iMac|Mac Studio|Mac [Mm]ini|Mac Pro|Apple Silicon|\bMac\b', None, 'unified'),
- ('Intel Arc iGPU', r'Arc B3\d\d|集成 ?Arc|integrated Arc|核显|Core Ultra \S+ ?\d{3}H', None, 'unified'),
+ ('Intel Arc iGPU', r'Arc B3\d\d|集成 ?Arc|integrated Arc|核显|Core Ultra \S+ ?\d{3}H|Lunar Lake', None, 'unified'),
  ('Intel Arc', r'Arc( Pro)? [AB]\d{2,3}', None, 'gpu'), ('RTX PRO', r'RTX PRO \d{4}', None, 'gpu'), ('RTX Ada', r'RTX \d000 Ada', None, 'gpu'),
  ('Quadro', r'Quadro', None, 'gpu'), ('GeForce', r'(RTX|GTX) ?\d{3,4}', None, 'gpu'), ('Radeon', r'RX ?\d{4}|Radeon', None, 'gpu'),
- ('iPhone', r'iPhone', None, 'phone'), ('Android phone', r'Snapdragon|iQOO|Samsung|RedMagic|红魔|手机|phone', None, 'phone'), ('PS5', r'PS5', None, 'console'),
+ ('iPhone', r'iPhone', None, 'phone'), ('Android phone', r'Snapdragon|iQOO|Samsung|RedMagic|红魔|手机|phone', None, 'phone'), ('PS5', r'PS5', None, 'console'), ('Xbox Series S', r'Xbox Series S', None, 'console'),
  ('CPU', r'^(AMD )?(Ryzen|EPYC|Threadripper|Xeon|Core (i[3579]|Ultra))|仅 ?CPU|CPU only|CPU-only', None, 'cpu'),
 ]
 UNIFIED_DEFAULT = {'DGX Spark': 128}
