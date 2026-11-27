@@ -127,9 +127,14 @@ def banner(data=None):
         if abs(n - round(n)) >= 0.005:
             return f"{int(round(n)):,}"
         return f"{int(round(n)):,}"
-    en_month, en_year, en_month_only = month_label(asof, 'en')
-    zh_month, _ = month_label(asof, 'zh')
-    ja_month, _ = month_label(asof, 'ja')
+    spike = (data.get('banner') or {}).get('spike_month') or '2026-11'
+    if len(spike) == 7:
+        spike = spike + '-01'
+    en_month, en_year, en_month_only = month_label(spike, 'en')
+    zh_month, _ = month_label(spike, 'zh')
+    ja_month, _ = month_label(spike, 'ja')
+    # "November 2026" / "2026 年 11 月" for the historical spike, independent of as_of.
+    spike_en = f'{en_month_only} {en_year}'
     if old_date:
         en_old = month_label(old_date, 'en')[0]
         zh_old = month_label(old_date, 'zh')[1]
@@ -143,5 +148,7 @@ def banner(data=None):
         'rtx_now': short(now), 'rtx_old': short(old),
         'month_en': en_month, 'year': en_year, 'month_en_only': en_month_only,
         'month_zh': zh_month, 'month_ja': ja_month, 'month_num': str(month_parts(asof)[1]),
+        'spike_en': spike_en, 'spike_zh': zh_month, 'spike_ja': ja_month,
+        'spike_num': str(month_parts(spike)[1]),
         'old_month_en': en_old, 'old_month_zh': zh_old, 'old_month_ja': ja_old,
     }

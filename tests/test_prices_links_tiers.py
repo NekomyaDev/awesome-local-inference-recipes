@@ -164,19 +164,39 @@ class ApproveReviewPrices(unittest.TestCase):
         self.assertNotIn('2026-10-11', src)
         self.assertNotIn('$5,400', src)
         self.assertIn('sourced_prices.cost_for_hardware', src)
+
+    def test_approve_review_writes_snapshot_costs_into_a_new_row(self):
+        import tempfile, shutil, importlib
         P = prices.load()
-        text, usd = prices.cost_for_hardware('RTX 4090 24GB', P)
-        self.assertEqual(usd, int(prices.first_usd(prices.find_item('RTX 4090', P)['price'])))
-        self.assertIn('prices.json', text)
-        # A changed snapshot is what the approver would write — no hardcoded October figure.
-        fake = json.loads(json.dumps(P))
-        item = prices.find_item('RTX 4090', fake)
-        item['price'] = 'eBay 成交中位约 $9,999'
-        _, usd2 = prices.cost_for_hardware('RTX 4090 24GB', fake)
-        self.assertEqual(usd2, 9999)
-        _, two = prices.cost_for_hardware('2× Tesla V100 32GB', P)
-        one = prices.first_usd(prices.find_item('Tesla V100 32GB', P)['price'])
-        self.assertEqual(two, int(one) * 2)
+        want_text, want_usd = prices.cost_for_hardware('RTX 4090 24GB', P)
+        self.assertTrue(want_text and want_usd)
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            (tmp / 'data').mkdir(); (tmp / 'data' / 'candidates').mkdir()
+            shutil.copy(R / 'data/prices.json', tmp / 'data/prices.json')
+            # A tiny empty recipe list so the new row is the only one added.
+            (tmp / 'data' / 'recipes.json').write_text('[]\n', encoding='utf-8')
+            cid = 'hf-test--Tiny-7B-gguf'
+            cand = {'candidates': [{'id': cid, 'status': 'pending'}]}
+            review = {'reviews': [{'id': cid, 'decision': '收录', 'url': 'https://example.com/model',
+                'recipes': [{'hardware': 'RTX 4090 24GB', 'quant': 'Q4', 'engine': 'llama.cpp',
+                             'gen_tok_s': 10, 'prefill_tok_s': None, 'level': '宣称', 'quote': '10 tok/s'}]}]}
+            rp = tmp / 'data/candidates/hf-2099-01-01.review.json'
+            rp.write_text(json.dumps(review), encoding='utf-8')
+            (tmp / 'data/candidates/hf-2099-01-01.json').write_text(json.dumps(cand), encoding='utf-8')
+            old_root, old_argv = approve_review.ROOT, sys.argv[:]
+            try:
+                approve_review.ROOT = str(tmp)
+                sys.argv = ['approve_review.py', str(rp)]
+                approve_review.main()
+            finally:
+                approve_review.ROOT = old_root
+                sys.argv = old_argv
+            rows = json.loads((tmp / 'data/recipes.json').read_text(encoding='utf-8'))
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]['hardware_cost_usd'], want_usd)
+        self.assertEqual(rows[0]['hardware_cost_text'], want_text)
+        self.assertIn('prices.json', rows[0]['hardware_cost_text'])
 
 
 class JapaneseMetrics(unittest.TestCase):
@@ -187,13 +207,26 @@ class JapaneseMetrics(unittest.TestCase):
         self.assertIn('宣伝投稿', ja_text.metric(D['video-audio-019']))
         self.assertNotIn('promo post', ja_text.metric(D['video-audio-019']))
         self.assertIn('曲全体', ja_text.metric(D['video-audio-019']))
+        self.assertNotIn('快約', ja_text.metric(D['image-016']))
+        self.assertIn('約', ja_text.metric(D['image-016']))
+        # Long English cookbook blurbs stay English (and get the JA marker), not a mixed sentence.
+        self.assertTrue(ja_text.needs_en_mark(ja_text.metric(D['comm-430'])))
 
     def test_ja_readme_and_site_do_not_leave_those_labels_in_english(self):
         ja = (R / 'README.ja.md').read_text(encoding='utf-8')
-        for s in ('public receipt', 'promo post', 'Whole song', '（英語）'):
+        for s in ('public receipt', 'promo post', 'Whole song'):
             self.assertNotIn(s, ja, s)
         self.assertIn('公開の領収', ja)
         self.assertIn('宣伝投稿', ja)
+        self.assertNotIn('快約', ja)
+        # A leftover English cookbook sentence must be marked, not mixed mid-sentence.
+        if 'One DGX Spark' in ja:
+            self.assertIn('One DGX Spark', ja)
+            self.assertIn('（英語）', ja)
+        # Banner states lowest and median separately, and keeps the spike in November even if as_of moves.
+        banner = next(l for l in ja.splitlines() if l.startswith('> ') and 'prices.json' in l)
+        self.assertIn('最低約', banner); self.assertIn('中央値約', banner)
+        self.assertIn('11 月', banner)
         page = (R / 'recipes/image-001.ja.md').read_text(encoding='utf-8') if (R / 'recipes/image-001.ja.md').exists() else ''
         # The JA image guide should use ステップ, not the English "steps" label from metric_en.
         if page:

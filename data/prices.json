@@ -183,7 +183,8 @@
         "price": "$9,499（30C CPU/64C GPU/1TB）；$10,799（36C/80C/1TB）",
         "date": "2026-10",
         "source": "https://prices.appleinsider.com/mac-studio-m5-max"
-      }
+      },
+      "note": "今日在 Apple 官方配置页的 JSON-LD Offer.price 读到 $9,499.00 与 $10,799.00（30C/64C 与 36C/80C，均为 256GB/1TB）"
     },
     {
       "item": "Mac mini M6（16 / 24 / 32GB，170 GB/s）",
@@ -235,7 +236,7 @@
     },
     {
       "item": "Mac Studio M4 Max（上代，546 GB/s）",
-      "price": "已停产新品。Apple 认证翻新 36GB/512GB $1,949（原价 $2,499）；二手 36GB 在售最低约 $1,795、要价中位约 $2,175（eBay）；Apple 认证翻新 128GB/4TB $5,689（未变）",
+      "price": "已停产新品。Apple 认证翻新 36GB/512GB $1,949（原价 $2,499；该档 410 GB/s）；二手 36GB 在售最低约 $1,795、要价中位约 $2,175（eBay / pergb，2026-11-27）；Apple 认证翻新 128GB/4TB $5,689（未变，546 GB/s）",
       "date": "2026-11-27",
       "source": "https://www.apple.com/shop/product/fu963ll/a · https://www.apple.com/shop/product/g1cdell/a · https://pergb.com/ai-workstations/mac-m4-max-36/",
       "status": "verified",
@@ -261,7 +262,7 @@
     },
     {
       "item": "Mac Studio M2 Ultra（上上代，800 GB/s）",
-      "price": "已停产（2025-03-05）。64GB 二手成交典型约 $2,800（近 30 天 18 笔，常见 $2,650–3,000）；翻新 Excellent 最低 $3,599（MacSales.com，11-26）",
+      "price": "已停产（2025-03-05）。64GB 转售成交典型约 $2,800（近 30 天 18 笔，含二手/翻新/开箱/新品，常见 $2,650–3,000）；翻新 Excellent 最低 $3,599（MacSales.com，11-26）",
       "date": "2026-11-27",
       "source": "https://siliconcents.com/computers/apple/mac-studio-m2-ultra/64gb/ · https://www.refurb.me/refurbished/mac-studio/sku/MQH73-25A",
       "status": "verified",
@@ -360,5 +361,8 @@
       "status": "verified",
       "note": "新增：11 月内存涨价参考"
     }
-  ]
+  ],
+  "banner": {
+    "spike_month": "2026-11"
+  }
 }

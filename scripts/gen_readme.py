@@ -114,7 +114,7 @@ HL = {
    lab={'mac':'Fastest on one Mac','5090':'Fastest on one RTX 5090','amd':'Fastest on one AMD device','dc':'Fastest on used datacenter GPUs','spark':'Fastest on one DGX Spark','cheap':'Cheapest measured rig'},
    note='Computed from the data with the same rule as the ⚡ values in Browse by Hardware: the fastest measured (✅) single-stream text result on one desktop device (laptops, tablets, mixed and multi-GPU rigs left out). Used datacenter GPUs allow any card count. The cheapest rig is the lowest published hardware price among measured rows. Models and engines differ between rows; "speculative decoding" marks a result that uses a draft model or MTP. Prices are the published price on the date the recipe was added.',
    spec=' (speculative decoding)',
-   warn='**⚠️ Hardware prices, {month_en} {year}:** DDR5 and GDDR7 memory prices spiked in {month_en_only} (a 64GB DDR5 kit is about ${ddr5_lo}–{ddr5_hi}), which pushed up new and used GPUs and self-built DDR5 rigs (a used RTX 4090 sells for about ${rtx_now}, against about ${rtx_old} in {old_month_en}). Machines with soldered memory (Mac Studio, Strix Halo, DGX Spark) changed less in {month_en_only}. A recipe shows the published price on the date it was added; current prices are in the [price snapshot](data/prices.json) (as of {asof}, next review {nxt}).',
+   warn='**⚠️ Hardware prices, {spike_en}:** DDR5 and GDDR7 memory prices spiked in {spike_en} (a 64GB DDR5 kit is about ${ddr5_lo} lowest, ${ddr5_hi} median), which pushed up new and used GPUs and self-built DDR5 rigs (a used RTX 4090 sells for about ${rtx_now}, against about ${rtx_old} in {old_month_en}). Machines with soldered memory (Mac Studio, Strix Halo, DGX Spark) changed less that month. A recipe shows the published price on the date it was added; current prices are in the [price snapshot](data/prices.json) (as of {asof}, next review {nxt}).',
    alt='Bar chart: top measured text setups per model-size group (dense ≥27B; big MoE ≥100B total; mid MoE <100B total, ≥5B active; small MoE <100B total, <5B active; with active parameters; only models with official parameter cards), ranked by tok/s per $1,000 of hardware, colored by hardware family', cost='≈ ${c:,}'),
  'zh': dict(h1='本地推理配方精选', tag='你的硬件到底能跑多快？{n} 条有出处的本地 AI 配方，从 {lo:,} 美元的显卡到 3 万美元的整机。',
    lang='<a href="README.md">English</a> · <b>简体中文</b> · <a href="README.ja.md">日本語</a>',
@@ -124,7 +124,7 @@ HL = {
    lab={'mac':'单台 Mac 最快','5090':'单张 RTX 5090 最快','amd':'单台 AMD 设备最快','dc':'二手数据中心卡最快','spark':'单台 DGX Spark 最快','cheap':'实测最便宜的配置'},
    note='按数据自动计算，规则与「按硬件浏览」中的 ⚡ 数值相同：单台桌面设备上实测（✅）最快的单路文字生成结果（不含笔记本、平板、混搭和多卡组合）。二手数据中心卡不限张数。最便宜的配置取实测条目中公开硬件价格最低的一条。各行的模型和引擎不同；标注「投机解码」的结果用了草稿模型或 MTP。价格为收录当日的公开价格。',
    spec='（投机解码）',
-   warn='**⚠️ {month_zh}硬件涨价：** {month_num} 月 DDR5 和 GDDR7 内存价格大涨（64GB DDR5 套条约 ${ddr5_lo}–{ddr5_hi}），新旧显卡和自组 DDR5 整机随之上涨（二手 RTX 4090 成交约 ${rtx_now}，{old_month_zh}约 ${rtx_old}）。内存焊在板上的整机（Mac Studio、Strix Halo、DGX Spark）本月变化较小。配方里的价格是收录当日的公开价格；最新行情见 [价格快照](data/prices.json)（截至 {asof}，下次复核 {nxt}）。',
+   warn='**⚠️ {spike_zh}硬件涨价：** {spike_zh} DDR5 和 GDDR7 内存价格大涨（64GB DDR5 套条最低约 ${ddr5_lo}、中位约 ${ddr5_hi}），新旧显卡和自组 DDR5 整机随之上涨（二手 RTX 4090 成交约 ${rtx_now}，{old_month_zh}约 ${rtx_old}）。内存焊在板上的整机（Mac Studio、Strix Halo、DGX Spark）当月变化较小。配方里的价格是收录当日的公开价格；最新行情见 [价格快照](data/prices.json)（截至 {asof}，下次复核 {nxt}）。',
    alt='条形图：按模型规模分组（稠密 ≥27B；大 MoE 总参数 ≥100B；中 MoE 总参数 <100B、激活 ≥5B；小 MoE 激活 <5B；标注激活参数；仅含有官方参数卡的模型），按每 $1000 硬件对应 tok/s 排名的实测文字配置，按硬件类别着色', cost='约 ${c:,}'),
  'ja': dict(h1='ローカル推論レシピ集', tag='あなたのハードウェアで、実際どれくらいの速度が出る？出典付きのローカル AI レシピ {n} 件。{lo:,} ドルの GPU から 3 万ドルの構成まで。',
    lang='<a href="README.md">English</a> · <a href="README.zh-CN.md">简体中文</a> · <b>日本語</b>',
@@ -134,7 +134,7 @@ HL = {
    lab={'mac':'Mac 1 台で最速','5090':'RTX 5090 1 枚で最速','amd':'AMD デバイス 1 台で最速','dc':'中古データセンター GPU で最速','spark':'DGX Spark 1 台で最速','cheap':'実測でいちばん安い構成'},
    note='データから自動で算出し、「ハードウェア別」の ⚡ と同じ規則を使います：デスクトップ機 1 台での実測（✅）最速の 1 ストリーム テキスト生成結果（ノート PC、タブレット、混在構成、マルチ GPU 構成は除外）。中古データセンター GPU は枚数を問いません。いちばん安い構成は、実測レシピのうち公開ハードウェア価格が最も低いものです。行ごとにモデルとエンジンは異なります。「投機的デコード」はドラフトモデルまたは MTP を使った結果です。価格はレシピ追加日の公開価格です。',
    spec='（投機的デコード）',
-   warn='**⚠️ {month_ja}のハードウェア価格：** {month_num} 月に DDR5 と GDDR7 のメモリ価格が急騰し（64GB の DDR5 キットは約 ${ddr5_lo}〜{ddr5_hi}）、新品・中古の GPU と DDR5 の自作機も値上がりしました（中古 RTX 4090 の落札価格は約 ${rtx_now}、{old_month_ja}は約 ${rtx_old}）。メモリがはんだ付けされたマシン（Mac Studio、Strix Halo、DGX Spark）は今月の値動きが小さめです。レシピの価格は追加日の公開価格です。最新の相場は[価格スナップショット](data/prices.json)（{asof} 時点、次回見直し {nxt}）を参照してください。',
+   warn='**⚠️ {spike_ja}のハードウェア価格：** {spike_num} 月に DDR5 と GDDR7 のメモリ価格が急騰し（64GB の DDR5 キットは最低約 ${ddr5_lo}、中央値約 ${ddr5_hi}）、新品・中古の GPU と DDR5 の自作機も値上がりしました（中古 RTX 4090 の落札価格は約 ${rtx_now}、{old_month_ja}は約 ${rtx_old}）。メモリがはんだ付けされたマシン（Mac Studio、Strix Halo、DGX Spark）はその月の値動きが小さめです。レシピの価格は追加日の公開価格です。最新の相場は[価格スナップショット](data/prices.json)（{asof} 時点、次回見直し {nxt}）を参照してください。',
    alt='棒グラフ：モデル規模別（Dense ≥27B・大型 MoE 総 ≥100B・中型 MoE 総 <100B／アクティブ ≥5B・小型 MoE アクティブ <5B、アクティブパラメータ表示、公式パラメータカードのあるモデルのみ）に、ハードウェア $1,000 あたりの tok/s で並べた実測テキスト構成（ハードウェア分類で色分け）', cost='約 {c:,} ドル'),
 }
 def hero(lang, E):
@@ -220,7 +220,12 @@ def build(lang):
     def key(r):
         if r['tok_s'] is not None: return f"**{r['tok_s']:g} tok/s**"
         if lang=='zh': m=r.get('metric')
-        elif lang=='ja': m=ja_text.metric(r)
+        elif lang=='ja':
+            raw=ja_text.metric(r)
+            # Clip first, then add （英語）, so the second clip below cannot trim the marker off.
+            if ja_text.needs_en_mark(raw):
+                return mark_ja_en(clip(raw,70)) if raw else T['see']
+            m=raw
         else: m=r.get('metric_en') or r['metric']
         if lang=='en' and m and CJK_OR_CURLY_QUOTE.search(m): m=None
         return (clip(m,70) if m else T['see'])

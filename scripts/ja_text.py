@@ -101,7 +101,7 @@ ZH_JA = [
     ('无 Sol', 'Sol なし'),
     ('质量 ', '品質 '),
     (' 胜', ' 勝ち'),
-    ('快约', '約'),
+    ('快约', '約'), ('快約', '約'),
     ('（快 ', '（'),
     ('共 ', '合計 '),
     ('共~', '合計約'),
@@ -209,11 +209,18 @@ EN_JA = [
 
 
 def _apply(s, pairs):
+    """Longest-leftmost replacement, so '快约 ' is not eaten by '约 '."""
     if not s:
         return s
-    for a, b in sorted(pairs, key=lambda kv: len(kv[0]), reverse=True):
-        s = s.replace(a, b)
-    return s
+    pairs = sorted(pairs, key=lambda kv: len(kv[0]), reverse=True)
+    out, i = [], 0
+    while i < len(s):
+        hit = next(((a, b) for a, b in pairs if a and s.startswith(a, i)), None)
+        if hit:
+            out.append(hit[1]); i += len(hit[0])
+        else:
+            out.append(s[i]); i += 1
+    return ''.join(out)
 
 
 _CJK = re.compile(r'[\u3400-\u9fff]')
@@ -232,10 +239,12 @@ def has_simplified(s):
 
 
 def needs_en_mark(s):
-    """True when the string is still English prose (no kana, has a 4+ letter English word)."""
-    if not s or s.endswith('（英語）') or _KANA.search(s) or has_simplified(s):
+    """True when the string is still English prose (several lowercase English words).
+    A few Latin tokens (SGLang, tok/s, RTX) are fine on a Japanese line; a leftover
+    English sentence is not, even if a glossary already swapped one word for kana."""
+    if not s or s.endswith('（英語）') or has_simplified(s):
         return False
-    return bool(_EN_WORD.search(s))
+    return len(_EN_WORD.findall(s)) >= 3
 
 
 def metric(r):
@@ -253,5 +262,8 @@ def metric(r):
             return out
     en = r.get('metric_en')
     if en:
-        return _apply(en, EN_JA)
+        out = _apply(en, EN_JA)
+        # If the English sentence is still mostly English, return it unchanged so the
+        # caller can mark it （英語） instead of emitting a mixed line.
+        return en if needs_en_mark(out) or needs_en_mark(en) else out
     return None
