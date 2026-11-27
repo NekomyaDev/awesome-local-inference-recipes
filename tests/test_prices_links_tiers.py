@@ -13,8 +13,8 @@ class GluedUrls(unittest.TestCase):
         self.assertTrue(check_urls.glued_urls('页 https://llm-speed.com/can-run/sage-a1-5/rtx-4090llm-speed 页面只有汇总'))
 
     def test_ascii_glue_is_caught_against_the_other_language(self):
-        zh = '见 https://example.com/blog/post-measuredfoo 页面'
-        en = 'See https://example.com/blog/post-measured for details'
+        zh = '见 https://example.com/blog/post/42measured 页面'
+        en = 'See https://example.com/blog/post/42 for details'
         self.assertTrue(check_urls.glued_urls(zh, en))
         self.assertFalse(check_urls.glued_urls(en, zh))
 
@@ -35,6 +35,9 @@ class GluedUrls(unittest.TestCase):
     def test_prefix_glue_spares_real_pages_and_checks_price_items(self):
         row = {'id': 't-2', 'source_url': 'https://en.wikipedia.org/wiki/Java', 'metric': '另见 https://en.wikipedia.org/wiki/JavaScript 页面'}
         self.assertFalse(check_urls.glue_violations([row], {'items': []}))
+        for a, b in (('https://example.com/', 'https://example.com/about'), ('https://en.wikipedia.org/wiki/Java', 'https://en.wikipedia.org/wiki/JavaScript')):
+            row = {'id': 't-3', 'source_url': a, 'metric': f'见 {b} 页面', 'metric_en': f'See {a} here'}
+            self.assertFalse(check_urls.glue_violations([row], {'items': []}), (a, b))
         item = {'item': 'x', 'source': 'https://gpusold.com/gpu/123', 'note': '见 https://gpusold.com/gpu/123details 页面'}
         self.assertTrue(check_urls.glue_violations([], {'items': [item]}))
 

@@ -49,7 +49,8 @@ def _strings(o):
 
 
 def glued_urls(text, other=''):
-    """URLs in text that run straight into the next word. other: the same field in another language, if any."""
+    """URLs in text that run straight into the next word. other: the same field in another language, if any.
+    Against the other language, only a URL ending in a digit (a post or item id) followed by letters counts as glued."""
     out = []
     others = us.URL_RE.findall(other or '')
     for u in us.URL_RE.findall(text or ''):
@@ -58,21 +59,21 @@ def glued_urls(text, other=''):
         if SITE_TAIL.search(u.rstrip('/')): out.append((u, 'a site name is glued to the end of the URL; put a space after the URL')); continue
         for v in others:
             v = v.rstrip('.。')
-            if len(v) < len(u) and u.startswith(v) and u[len(v)].isalnum() and v not in us.URL_RE.findall(text):
+            if len(v) < len(u) and u.startswith(v) and re.search(r'\d$', v) and u[len(v)].isalpha() and v not in us.URL_RE.findall(text):
                 out.append((u, f'the other-language copy has {v}; the rest ({u[len(v):]!r}) is glued text')); break
     return out
 
 
 def prefix_glue(record):
     """URLs in one record (a recipe row or a price item) that are another URL of the same record plus a run of letters,
-    such as ".../status/123" next to ".../status/123details". Only a URL that ends in a digit or '/' counts as the
-    prefix, so two real pages such as /wiki/Java and /wiki/JavaScript are not flagged. A glued ASCII word with no
+    such as ".../status/123" next to ".../status/123details". Only a URL that ends in a digit (a post or item id)
+    counts as the prefix, so real pairs such as /wiki/Java and /wiki/JavaScript, or a homepage and /about, pass. A glued ASCII word with no
     second copy of the URL in the record cannot be told apart from a real path."""
     urls = {u for t in _strings(record) for u in us.URL_RE.findall(t)}
     out = []
     for u in sorted(urls):
         for v in sorted(urls):
-            if len(v) < len(u) and u.startswith(v) and re.search(r'[\d/]$', v) and re.fullmatch(r'[A-Za-z]+', u[len(v):]):
+            if len(v) < len(u) and u.startswith(v) and re.search(r'\d$', v) and re.fullmatch(r'[A-Za-z]+', u[len(v):]):
                 out.append((u, f'the same record has {v}; the rest ({u[len(v):]!r}) is glued text')); break
     return out
 
