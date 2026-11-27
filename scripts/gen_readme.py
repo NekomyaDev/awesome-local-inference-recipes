@@ -223,7 +223,7 @@ def build(lang):
         elif lang=='ja':
             raw=ja_text.metric(r)
             # Clip first, then add （英語）, so the second clip below cannot trim the marker off.
-            if ja_text.needs_en_mark(raw):
+            if ja_text.english_fallback(r) or ja_text.needs_en_mark(raw):
                 return mark_ja_en(clip(raw,70)) if raw else T['see']
             m=raw
         else: m=r.get('metric_en') or r['metric']

@@ -210,7 +210,7 @@ class JapaneseMetrics(unittest.TestCase):
         self.assertNotIn('快約', ja_text.metric(D['image-016']))
         self.assertIn('約', ja_text.metric(D['image-016']))
         # Long English cookbook blurbs stay English (and get the JA marker), not a mixed sentence.
-        self.assertTrue(ja_text.needs_en_mark(ja_text.metric(D['comm-430'])))
+        self.assertTrue(ja_text.english_fallback(D['comm-430']) or ja_text.needs_en_mark(ja_text.metric(D['comm-430'])))
 
     def test_ja_readme_and_site_do_not_leave_those_labels_in_english(self):
         ja = (R / 'README.ja.md').read_text(encoding='utf-8')

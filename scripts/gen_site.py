@@ -30,7 +30,7 @@ def en(s):
 def met_en(r): return r.get('metric_en') or en(r.get('metric'))
 def ja_met(r):
     m = ja_text.metric(r) or ''
-    return gen_readme.mark_ja_en(m) if ja_text.needs_en_mark(m) else m
+    return gen_readme.mark_ja_en(m) if ja_text.english_fallback(r) or ja_text.needs_en_mark(m) else m
 def fen(r, k): return (r.get('en') or {}).get(k) or en(r.get(k))
 def safe_url(u): return u if re.match(r'(https?:)?//|[\w./#?=&%-]+$', u) and not u.lower().startswith('javascript:') else '#'
 

@@ -57,7 +57,7 @@ class JaEnglishMarker(unittest.TestCase):
         r = next(r for r in D if r.get('metric_en') and re.search(r'\b[a-z]{4,}\b', r['metric_en']))
         page = gen_recipe_pages.page(r, 'ja')
         jm = ja_text.metric(r)
-        if ja_text.needs_en_mark(jm):
+        if ja_text.english_fallback(r) or ja_text.needs_en_mark(jm):
             self.assertIn((jm or r['metric_en']) + '（英語）', page)
         else:
             self.assertTrue(jm and jm[:20] in page, jm)

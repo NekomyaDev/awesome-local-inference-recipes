@@ -64,7 +64,7 @@ def page(r, lang):
     if Z: metric = r.get('metric')
     elif lang=='ja':
         metric = ja_text.metric(r) or (f"{r['tok_s']} tok/s（生成）" if r.get('tok_s') else None)
-        if ja_text.needs_en_mark(metric): metric = J(metric)
+        if ja_text.english_fallback(r) or ja_text.needs_en_mark(metric): metric = J(metric)
     else: metric = r.get('metric_en') or (f"{r['tok_s']} tok/s (generation)" if r.get('tok_s') else None)
     cmd = r.get('launch_command') if Z else F('launch_command')
     if cmd and cmd.startswith('见'): cmd = None

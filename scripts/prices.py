@@ -118,8 +118,13 @@ def banner(data=None):
     rtx = find_item('RTX 4090', data)
     ddr = dollars(ddr5['price']) if ddr5 else []
     now = first_usd(rtx['price']) if rtx else None
-    old = first_usd((rtx.get('previous') or {}).get('price')) if rtx else None
-    old_date = (rtx.get('previous') or {}).get('date') or ''
+    meta = data.get('banner') or {}
+    # The October 4090 baseline is pinned on the banner object so a later snapshot
+    # refresh (which rolls `previous`) does not rewrite the November-spike comparison.
+    old = meta.get('rtx4090_baseline_usd')
+    if old is None:
+        old = first_usd((rtx.get('previous') or {}).get('price')) if rtx else None
+    old_date = meta.get('rtx4090_baseline_date') or (rtx.get('previous') or {}).get('date') or ''
     # 899.99 / 1,339.99 → 900 / 1,340 for a short banner; keep whole dollars as-is.
     def short(n):
         if n is None:

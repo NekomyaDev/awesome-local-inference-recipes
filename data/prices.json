@@ -363,6 +363,8 @@
     }
   ],
   "banner": {
-    "spike_month": "2026-11"
+    "spike_month": "2026-11",
+    "rtx4090_baseline_usd": 2214,
+    "rtx4090_baseline_date": "2026-10-06"
   }
 }

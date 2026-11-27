@@ -234,6 +234,17 @@ _KANA = re.compile(r'[\u3040-\u30ff]')
 _EN_WORD = re.compile(r'\b[a-z]{4,}\b')
 
 
+# Chinese residue that can remain after the glossary (often shared-looking kanji) and
+# should force a fallback to English so JA pages do not keep Chinese prose.
+ZH_RESIDUE = re.compile(
+    r'溢出|到 CPU|到内存|到 |以及|并且|而且|不是|没有|还在|只能|是否|并不|不会|'
+    r'在该|该 |并 |且 |个 |后 |的 |了 |与 |从 |为 |无 |开 |关 |显存|张量|解码|预填'
+)
+
+def has_residue(s):
+    return has_simplified(s) or bool(ZH_RESIDUE.search(s or ''))
+
+
 def has_simplified(s):
     return any(ch in SIMPLIFIED_ONLY for ch in (s or ''))
 
@@ -247,23 +258,33 @@ def needs_en_mark(s):
     return len(_EN_WORD.findall(s)) >= 3
 
 
-def metric(r):
-    """Japanese metric text for README, recipe pages and hardware pages.
-
-    Prefer metric_ja, then a fully converted Chinese metric (no simplified-only characters).
-    If the glossary cannot finish the Chinese text, use metric_en (also glossary-applied) so
-    JA pages stay language-pure; the caller may add the （英語） mark."""
+def _metric(r):
+    """Return (text, used_english_fallback)."""
     if r.get('metric_ja'):
-        return r['metric_ja']
+        return r['metric_ja'], False
     zh = r.get('metric')
     if zh:
         out = _apply(zh, ZH_JA)
-        if not has_simplified(out):
-            return out
+        if not has_residue(out):
+            return out, False
     en = r.get('metric_en')
     if en:
         out = _apply(en, EN_JA)
-        # If the English sentence is still mostly English, return it unchanged so the
-        # caller can mark it （英語） instead of emitting a mixed line.
-        return en if needs_en_mark(out) or needs_en_mark(en) else out
-    return None
+        if needs_en_mark(out) or needs_en_mark(en):
+            return en, True
+        return out, True
+    return None, False
+
+
+def metric(r):
+    """Japanese metric text for README, recipe pages and hardware pages.
+
+    Prefer metric_ja, then a fully converted Chinese metric (no simplified-only or residual
+    Chinese). If the glossary cannot finish the Chinese text, use metric_en so JA pages stay
+    language-pure; the caller should add the （英語） mark when english_fallback() is true."""
+    return _metric(r)[0]
+
+
+def english_fallback(r):
+    """True when metric() had to use the English field."""
+    return _metric(r)[1]
