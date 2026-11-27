@@ -1,345 +1,364 @@
 {
- "as_of": "2026-11-27",
- "next_review": "2026-12-27",
- "note": "价格快照，只用于说明行情；每条配方的 hardware_cost_usd 固定为收录当日价格，不随本文件更新（见 CONTRIBUTING）。status 为 unverified 的条目沿用旧价，当日未能在来源页面核对。previous 为上一次快照。 status：verified = 当日在来源页面读到；verified-secondary = 官方页面无法读取，改用转载当日价格的页面；unverified = 未能核对，沿用旧价。",
- "items": [
-  {
-   "item": "NVIDIA RTX 5090 32GB（新）",
-   "price": "新卡在售最低 $6,499.99（Newegg，GIGABYTE Gaming OC，11-27）；在售中位 $6,949.99；MSRP $1,999",
-   "date": "2026-11-27",
-   "source": "https://rtx.live/report · https://stockmaid.com/track/nvidia-rtx-5090",
-   "status": "verified",
-   "previous": {
-    "price": "$5,400 最低追踪报价；Amazon 美国 $6,995；10 月 eBay 最低三件均价 $6,173；MSRP $1,999",
-    "date": "2026-10-11/12",
-    "source": "https://thecomparator.tech/gpu/rtx-5090/ · https://pctechvault.com/market-watch/geforce-rtx-5090/ · https://gpupoet.com/gpu/learn/price/october-2026/nvidia-geforce-rtx-5090"
-   }
-  },
-  {
-   "item": "RTX 4090 24GB（二手）",
-   "price": "eBay 成交中位约 $3,282（90 天 189 笔，常见 $2,993–3,490）；GPU Sold 14 天成交约 $3,0xx",
-   "date": "2026-11-27",
-   "source": "https://www.pcprice.watch/gpu-buying-guide/rtx-4090-price-used-and-specs · https://www.gpusold.com/gpu/rtx-4090-24",
-   "status": "verified",
-   "previous": {
-    "price": "eBay 成交约 $2,214（30 日均 $2,584）",
-    "date": "2026-10-06",
-    "source": "https://www.getpcparts.com/market-prices/gpu-graphics-cards/rtx-4090"
-   }
-  },
-  {
-   "item": "RTX 3090 24GB（二手）",
-   "price": "eBay 成交中位约 $1,607（90 天 736 笔，常见 $1,494–1,733）；7 天中位约 $1,754",
-   "date": "2026-11-27",
-   "source": "https://www.pcprice.watch/gpu-buying-guide/rtx-3090-price-used-and-specs",
-   "status": "verified",
-   "previous": {
-    "price": "eBay 成交约 $1,206（getpcparts）；近 227 笔中位 $1,499（compsniper）；挂牌中位 $1,880",
-    "date": "2026-10-06 / 10-12 / 10-11",
-    "source": "https://www.getpcparts.com/market-prices/gpu-graphics-cards/rtx-3090 · https://compsniper.com/worth/rtx-3090 · https://siliconcomps.com/gpu/rtx-3090/"
-   }
-  },
-  {
-   "item": "DGX Spark 128GB",
-   "price": "$6,950（NVIDIA 商城，4TB，缺货；未变）；同芯片 ASUS Ascent GX10 128GB/1TB $5,999",
-   "date": "2026-11-27",
-   "source": "https://aliteq.com/dgx-spark-price",
-   "status": "verified-secondary",
-   "previous": {
-    "price": "$6,950（NVIDIA 商城，缺货）；2025-10 首发 $3,999 → 2026-02 $4,699 → 2026-10 $6,950",
-    "date": "2026-10-11",
-    "source": "https://gpuwerk.com/dgx-spark/price/ · https://www.theregister.com/systems/2026/10/02/nvidia-debuts-4999-dgx-spark-with-half-the-ram-and-storage-amid-memory-crunch/5300622"
-   },
-   "note": "NVIDIA 商城页面在核对机器上无法加载，改用二手来源核对"
-  },
-  {
-   "item": "DGX Spark 64GB（新 SKU）",
-   "price": "NVIDIA 官方仍写 $4,999 起（OEM 渠道）；Dell 配置器 64GB 约 $5,751",
-   "date": "2026-11-27",
-   "source": "https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/ · https://aliteq.com/dgx-spark-price",
-   "status": "verified",
-   "previous": {
-    "price": "$4,999 起，10 月 23 日 OEM 发售（NVIDIA 官方）",
-    "date": "2026-10",
-    "source": "https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/"
-   }
-  },
-  {
-   "item": "AMD RX 7900 XTX 24GB",
-   "price": "新卡最低 $1,699（Newegg 公版）；二手 eBay 成交约 $1,100（11-21）",
-   "date": "2026-11-27",
-   "source": "https://rigmarketcap.com/us/gpu/radeon-rx-7900-xtx · https://www.getpcparts.com/market-prices/gpu-graphics-cards/rx-7900-xtx",
-   "status": "verified",
-   "previous": {
-    "price": "10 月最低三件均价约 $1,007（区间 $850–1,083）",
-    "date": "2026-10",
-    "source": "https://gpupoet.com/gpu/learn/price/october-2026/amd-radeon-rx-7900-xtx"
-   }
-  },
-  {
-   "item": "AMD Radeon AI PRO R9700 32GB",
-   "price": "新卡最低 $1,700（Amazon，ASRock Creator）；多渠道最低 $1,900",
-   "date": "2026-11-27",
-   "source": "https://readygpu.com/us/gpu/radeon-ai-pro-r9700 · https://gpuprix.com/us/gpus/radeon-ai-pro-r9700",
-   "status": "verified",
-   "previous": {
-    "price": "新卡最低 $1,600（Micro Center）；eBay 中位 $2,099",
-    "date": "2026-10-13 / 10-12",
-    "source": "https://vga.live/gpus/radeon-ai-pro-r9700 · https://vramglass.com/gpu/radeon-ai-pro-r9700"
-   }
-  },
-  {
-   "item": "AMD Strix Halo（Framework Desktop 128GB）",
-   "price": "$3,449（Framework 官方 DIY 版，不含存储，预订）",
-   "date": "2026-11-27",
-   "source": "https://thesiliconindex.com/products/framework-desktop-395-128gb/",
-   "status": "verified-secondary",
-   "previous": {
-    "price": "$3,149（缺货）；其他渠道 $3,449",
-    "date": "2026-10",
-    "source": "https://frame.work/products/framework-desktop-mainboard-amd-ryzen-ai-max-300-series"
-   },
-   "note": "frame.work 对核对机器返回 403，改用二手来源核对"
-  },
-  {
-   "item": "Tesla V100 32GB（退役，二手）",
-   "price": "eBay 成交约 $987（14 天 24 笔，常见 $936–1,018，含运费）",
-   "date": "2026-11-27",
-   "source": "https://gpusold.com/gpu/tesla-v100-32",
-   "status": "verified",
-   "previous": {
-    "price": "eBay 约 $650（gpudojo）；深圳卖家 $669.98；英国 £620–696",
-    "date": "2026-09-24 / 10-05",
-    "source": "https://gpudojo.com/tesla-v100 · https://www.ebay.co.uk/itm/407093226208"
-   }
-  },
-  {
-   "item": "AMD Instinct MI50 32GB（退役，二手）",
-   "price": "eBay 成交约 $656（30 天 12 笔，常见 $555–757，含运费）",
-   "date": "2026-11-27",
-   "source": "https://gpusold.com/gpu/instinct-mi50-32",
-   "status": "verified",
-   "previous": {
-    "price": "eBay 约 $734（区间 $600–839）；阿里系供应商 $120–210（2026 年中指南）",
-    "date": "2026-10-13",
-    "source": "https://vramglass.com/gpu/instinct-mi50-32gb · https://localaimaster.com/blog/amd-mi50-local-llm"
-   }
-  },
-  {
-   "item": "Tesla P40 24GB（退役，二手）",
-   "price": "eBay 成交约 $310（14 天 21 笔，常见 $294–339，含运费）",
-   "date": "2026-11-27",
-   "source": "https://gpusold.com/gpu/tesla-p40",
-   "status": "verified",
-   "previous": {
-    "price": "eBay 挂牌中位约 $405（8 月约 $300–325）",
-    "date": "2026-10",
-    "source": "https://siliconcomps.com/gpu/tesla-p40/"
-   }
-  },
-  {
-   "item": "NVIDIA CMP 170HX（矿卡，解锁 64GB）",
-   "price": "eBay 成交约 $4,564（14 天 34 笔，常见 $4,108–4,814）",
-   "date": "2026-11-27",
-   "source": "https://gpusold.com/gpu/cmp-170hx",
-   "status": "verified",
-   "previous": {
-    "price": "约 $3,195（区间 $2,999–4,000）；8 月 X 帖称“约 $1,000”购入 → 价格已涨约 3×",
-    "date": "2026-10-13",
-    "source": "https://vramglass.com/gpu/cmp-170hx-64g-mod · https://x.com/ItStillBoots/status/2092962333400408285"
-   }
-  },
-  {
-   "item": "A100 40GB PCIe（退役，二手）",
-   "price": "eBay 成交约 $5,160（14 天 9 笔，常见 $3,650–5,160）；在售挂牌 $5,000–9,998（当前 $6,995）。原来源 clustermelt 页面已 404，换源",
-   "date": "2026-11-27",
-   "source": "https://gpusold.com/gpu/a100-40 · https://vramglass.com/gpu/a100-40gb-pcie",
-   "status": "verified",
-   "previous": {
-    "price": "eBay 挂牌约 $3,150–5,870（仅来自搜索摘要，未逐条核实）；本次未找到消费级本地推理实测行",
-    "date": "2026-10",
-    "source": "https://clustermelt.com/gpus/a100-pcie-40gb/price"
-   }
-  },
-  {
-   "item": "MacBook Pro 14 M4 Pro 48GB",
-   "price": "$2,399（12C/16C）/ $2,599（14C/20C）定价未变；AppleInsider 各渠道均缺货",
-   "date": "2026-11-27",
-   "source": "https://prices.appleinsider.com/macbook-pro-14-inch-m4-pro",
-   "status": "verified",
-   "previous": {
-    "price": "$2,399（12C/16C）/ $2,599（14C/20C）；AppleInsider 显示多渠道缺货",
-    "date": "2026-10-12",
-    "source": "https://prices.appleinsider.com/macbook-pro-14-inch-m4-pro"
-   }
-  },
-  {
-   "item": "Mac Studio M5 Ultra 256GB",
-   "price": "$9,499（30C CPU/64C GPU/1TB）；$10,799（36C/80C/1TB）",
-   "date": "2026-10",
-   "source": "https://prices.appleinsider.com/mac-studio-m5-max",
-   "status": "unverified",
-   "note": "只核对到 M5 Ultra 96GB 起价 $5,499 未变；256GB 配置价格在 Apple 页面需脚本渲染，未能读取"
-  },
-  {
-   "item": "Mac mini M6（16 / 24 / 32GB，170 GB/s）",
-   "price": "$899 / $1,099 / $1,299（MSRP 未变）；Amazon 低至 $779",
-   "date": "2026-11-27",
-   "source": "https://www.macprices.net/mac-mini/",
-   "status": "verified",
-   "previous": {
-    "price": "$899 / $1,099 / $1,299（256GB SSD）；16GB 款 Amazon 低至 $780",
-    "date": "2026-10-12",
-    "source": "https://prices.appleinsider.com/mac-mini-m6 · https://techcrunch.com/2026/08/25/apples-latest-mac-mini-runs-on-a-new-m6-chip-and-starts-at-899/"
-   }
-  },
-  {
-   "item": "Mac mini M5 Pro（24 / 48 / 64GB，307 GB/s）",
-   "price": "24GB/512GB MSRP $1,699 未变（Amazon $1,549）；48GB / 64GB 配置未逐一核对",
-   "date": "2026-11-27",
-   "source": "https://www.macprices.net/mac-mini/",
-   "status": "verified",
-   "previous": {
-    "price": "$1,699 / $2,299 / $2,699（15C/16C，512GB）；18C/20C 64GB 1TB $3,199",
-    "date": "2026-10",
-    "source": "https://www.apple.com/shop/buy-mac/mac-mini/m5-pro-chip-15-core-cpu-16-core-gpu-64gb-memory-2tb-storage · https://hard.bargains/posts/m5-pro-mac-mini-local-ai/"
-   }
-  },
-  {
-   "item": "Mac Studio M5 Max（614 GB/s）",
-   "price": "36GB/512GB MSRP $2,499 未变（Amazon 黑五 $2,299）；更高内存配置未逐一核对",
-   "date": "2026-11-27",
-   "source": "https://www.macprices.net/mac-studio/",
-   "status": "verified",
-   "previous": {
-    "price": "36GB $2,499（Amazon $2,299）/ 48GB $3,099 / 64GB $3,499 / 128GB $5,099",
-    "date": "2026-10-13",
-    "source": "https://prices.appleinsider.com/mac-studio-m5-max"
-   }
-  },
-  {
-   "item": "Mac Studio M5 Ultra 96GB（1.2 TB/s）",
-   "price": "30C/64C 96GB/1TB MSRP $5,499 未变",
-   "date": "2026-11-27",
-   "source": "https://www.macprices.net/mac-studio/",
-   "status": "verified",
-   "previous": {
-    "price": "$5,499（30C/64C）/ $6,799（36C/80C）；512GB 版 10 月下旬上市，价格未公布",
-    "date": "2026-10-13",
-    "source": "https://prices.appleinsider.com/mac-studio-m5-max"
-   }
-  },
-  {
-   "item": "Mac Studio M4 Max（上代，546 GB/s）",
-   "price": "翻新 36GB 起 $2,329（eBay，9 月中）；Apple 翻新 128GB/4TB $5,689",
-   "date": "2026-09 / 10",
-   "source": "https://www.refurb.me/blog/mac-studio · https://www.apple.com/shop/product/g1cdell/a/Refurbished-Mac-Studio-Apple-M4-Max-chip-with-16%E2%80%91Core-CPU-and-40%E2%80%91Core-GPU",
-   "status": "unverified",
-   "note": "翻新价页面（refurb.me）需脚本渲染，未能读取当日价格"
-  },
-  {
-   "item": "Mac Studio M3 Ultra（上代，819 GB/s）",
-   "price": "翻新 96GB 起 $5,649；256GB 二手约 $8,299–9,999（搜索摘要）；512GB 二手价未核实",
-   "date": "2026-09 / 10",
-   "source": "https://www.refurb.me/blog/mac-studio · https://macpro-la.com/blogs/news/mac-studio-price-guide-2026",
-   "status": "unverified",
-   "note": "翻新价页面需脚本渲染，未能读取当日价格"
-  },
-  {
-   "item": "Mac Studio M2 Ultra（上上代，800 GB/s）",
-   "price": "翻新约 $3,599 起",
-   "date": "2026-09",
-   "source": "https://www.refurb.me/blog/mac-studio",
-   "status": "unverified",
-   "note": "翻新价页面需脚本渲染，未能读取当日价格"
-  },
-  {
-   "item": "NVIDIA RTX PRO 6000 Blackwell 96GB（新）",
-   "price": "Workstation Edition 在售最低 $16,500（PNY，rtx.live，6 款中 5 款有货）",
-   "date": "2026-11-27",
-   "source": "https://rtx.live/gpus/rtx-pro-6000-blackwell-workstation-edition",
-   "status": "verified",
-   "previous": {
-    "price": "$15,999 最低追踪报价；B&H Workstation $17,999.99 / Max-Q $17,499；Newegg Max-Q $16,499.99；12 个月中位 $10,458",
-    "date": "2026-10-13/14",
-    "source": "https://gpuprix.com/us/gpus/rtx-pro-6000-blackwell · https://www.bhphotovideo.com/c/product/1895402-REG/nvidia_900_5g144_2200_000_rtx_pro_6000_blackwell.html · https://www.newegg.com/p/pl?d=rtx+pro+6000+blackwell+max+q"
-   }
-  },
-  {
-   "item": "Intel Arc Pro B70 32GB（新）",
-   "price": "在售最低 $1,599.99（第三方卖家）；B&H $1,949.95；Newegg 自营 $1,999.99",
-   "date": "2026-11-27",
-   "source": "https://vga.live/cards/intel-arc-pro-b70-32gb-gddr6",
-   "status": "verified",
-   "previous": {
-    "price": "ASRock B70 CT $1,299.99（Newegg 自营）；Intel 公版 $1,999.99–2,099（Newegg）",
-    "date": "2026-10-14",
-    "source": "https://www.newegg.com/asrock-b70-ct-intel-arc-pro-b70-32gb-graphics-card/p/N82E16814930149 · https://www.newegg.com/p/pl?d=arc+pro+b70"
-   }
-  },
-  {
-   "item": "NVIDIA RTX 5060 Ti 16GB（新）",
-   "price": "在售最低 $769.99，中位 $839.99",
-   "date": "2026-11-27",
-   "source": "https://rtx.live/report",
-   "status": "verified",
-   "previous": {
-    "price": "$740 起（Micro Center PNY OC）；Best Buy/Amazon $789，B&H $790，Newegg $800；90 日中位 $789；MSRP $429",
-    "date": "2026-10-13/14",
-    "source": "https://rtx.live/gpus/geforce-rtx-5060-ti-16gb · https://pctechvault.com/market-watch/geforce-rtx-5060-ti-16-gb/"
-   }
-  },
-  {
-   "item": "Gigabyte AI TOP ATOM（GB10，128GB）",
-   "price": "$7,279.99（eBay，4TB）",
-   "date": "2026-11-27",
-   "source": "https://buyaigear.com/boxes",
-   "status": "verified",
-   "previous": {
-    "price": "1TB 版 $5,999.99（Newegg 自营，缺货）；4TB 版 CDW $7,999.99，Aftershock $8,699",
-    "date": "2026-10-14",
-    "source": "https://www.newegg.com/gigabyte-atagb10-9002-thin-client/p/N82E16859252049 · https://www.cdw.com/product/gigabyte-ai-top-atom-compact-pc-ai-pc-gb10-grace-blackwell-superchip/9096513"
-   }
-  },
-  {
-   "item": "MacBook Pro 14 M5 Pro 18C/20C 64GB/1TB（新）",
-   "price": "Apple $3,699（未变）",
-   "date": "2026-11-27",
-   "source": "https://prices.appleinsider.com/product/macbook-pro-14-inch-m5-pro/Z1ML00051",
-   "status": "verified",
-   "previous": {
-    "price": "Apple $3,699；经销商低至 $3,519",
-    "date": "2026-10-13",
-    "source": "https://prices.appleinsider.com/macbook-pro-14-inch-m5-pro"
-   }
-  },
-  {
-   "item": "Mac Studio M1 Ultra 64GB（二手，已停产）",
-   "price": "eBay 二手挂牌中位 $2,900（11-26，6 件）",
-   "date": "2026-11-27",
-   "source": "https://cresvament.com/prices/mac-studio/mac-studio-m1-ultra",
-   "status": "verified",
-   "previous": {
-    "price": "64GB/2TB eBay 翻新 $3,810.95；全配置二手要价中位 $4,434.64",
-    "date": "2026-10-10",
-    "source": "https://hard.bargains/used-mac-studio-m1-ultra-2022/"
-   }
-  },
-  {
-   "item": "DDR5 台式机内存 64GB 套条（2×32GB）",
-   "price": "在售最低 $899.99、中位 $1,339.99（rams.live，11-20 至 11-26）；最低 $799.95、中位 $1,279.99（pgrid，11-26）",
-   "date": "2026-11-27",
-   "source": "https://rams.live/report · https://www.pgrid.app/us/advice/compare-64gb-ddr5-ram",
-   "status": "verified",
-   "note": "新增：11 月内存涨价参考"
-  },
-  {
-   "item": "DDR5 台式机内存 32GB 套条（2×16GB）",
-   "price": "在售最低 $379.99、中位 $569.99（rams.live，11-20 至 11-26）",
-   "date": "2026-11-27",
-   "source": "https://rams.live/report",
-   "status": "verified",
-   "note": "新增：11 月内存涨价参考"
-  }
- ]
+  "as_of": "2026-11-27",
+  "next_review": "2026-12-11",
+  "note": "价格快照，只用于说明行情；每条配方的 hardware_cost_usd 固定为收录当日价格，不随本文件更新（见 CONTRIBUTING）。status 为 unverified 的条目沿用旧价，当日未能在来源页面核对。previous 为上一次快照。 status：verified = 当日在来源页面读到；verified-secondary = 官方页面无法读取，改用转载当日价格的页面；unverified = 未能核对，沿用旧价。快照每两周核对一次（next_review）。",
+  "items": [
+    {
+      "item": "NVIDIA RTX 5090 32GB（新）",
+      "price": "新卡在售最低 $6,499.99（Newegg，GIGABYTE Gaming OC，11-27）；在售中位 $6,949.99；MSRP $1,999",
+      "date": "2026-11-27",
+      "source": "https://rtx.live/report · https://stockmaid.com/track/nvidia-rtx-5090",
+      "status": "verified",
+      "previous": {
+        "price": "$5,400 最低追踪报价；Amazon 美国 $6,995；10 月 eBay 最低三件均价 $6,173；MSRP $1,999",
+        "date": "2026-10-11/12",
+        "source": "https://thecomparator.tech/gpu/rtx-5090/ · https://pctechvault.com/market-watch/geforce-rtx-5090/ · https://gpupoet.com/gpu/learn/price/october-2026/nvidia-geforce-rtx-5090"
+      }
+    },
+    {
+      "item": "RTX 4090 24GB（二手）",
+      "price": "eBay 成交中位约 $3,282（90 天 189 笔，常见 $2,993–3,490）；GPU Sold 14 天成交约 $3,0xx",
+      "date": "2026-11-27",
+      "source": "https://www.pcprice.watch/gpu-buying-guide/rtx-4090-price-used-and-specs · https://www.gpusold.com/gpu/rtx-4090-24",
+      "status": "verified",
+      "previous": {
+        "price": "eBay 成交约 $2,214（30 日均 $2,584）",
+        "date": "2026-10-06",
+        "source": "https://www.getpcparts.com/market-prices/gpu-graphics-cards/rtx-4090"
+      }
+    },
+    {
+      "item": "RTX 3090 24GB（二手）",
+      "price": "eBay 成交中位约 $1,607（90 天 736 笔，常见 $1,494–1,733）；7 天中位约 $1,754",
+      "date": "2026-11-27",
+      "source": "https://www.pcprice.watch/gpu-buying-guide/rtx-3090-price-used-and-specs",
+      "status": "verified",
+      "previous": {
+        "price": "eBay 成交约 $1,206（getpcparts）；近 227 笔中位 $1,499（compsniper）；挂牌中位 $1,880",
+        "date": "2026-10-06 / 10-12 / 10-11",
+        "source": "https://www.getpcparts.com/market-prices/gpu-graphics-cards/rtx-3090 · https://compsniper.com/worth/rtx-3090 · https://siliconcomps.com/gpu/rtx-3090/"
+      }
+    },
+    {
+      "item": "DGX Spark 128GB",
+      "price": "$6,950（NVIDIA 商城，4TB，缺货；未变）；同芯片 ASUS Ascent GX10 128GB/1TB $5,999",
+      "date": "2026-11-27",
+      "source": "https://aliteq.com/dgx-spark-price",
+      "status": "verified-secondary",
+      "previous": {
+        "price": "$6,950（NVIDIA 商城，缺货）；2025-10 首发 $3,999 → 2026-02 $4,699 → 2026-10 $6,950",
+        "date": "2026-10-11",
+        "source": "https://gpuwerk.com/dgx-spark/price/ · https://www.theregister.com/systems/2026/10/02/nvidia-debuts-4999-dgx-spark-with-half-the-ram-and-storage-amid-memory-crunch/5300622"
+      },
+      "note": "NVIDIA 商城页面在核对机器上无法加载，改用二手来源核对"
+    },
+    {
+      "item": "DGX Spark 64GB（新 SKU）",
+      "price": "NVIDIA 官方仍写 $4,999 起（OEM 渠道）；Dell 配置器 64GB 约 $5,751",
+      "date": "2026-11-27",
+      "source": "https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/ · https://aliteq.com/dgx-spark-price",
+      "status": "verified",
+      "previous": {
+        "price": "$4,999 起，10 月 23 日 OEM 发售（NVIDIA 官方）",
+        "date": "2026-10",
+        "source": "https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/"
+      }
+    },
+    {
+      "item": "AMD RX 7900 XTX 24GB",
+      "price": "新卡最低 $1,699（Newegg 公版）；二手 eBay 成交约 $1,100（11-21）",
+      "date": "2026-11-27",
+      "source": "https://rigmarketcap.com/us/gpu/radeon-rx-7900-xtx · https://www.getpcparts.com/market-prices/gpu-graphics-cards/rx-7900-xtx",
+      "status": "verified",
+      "previous": {
+        "price": "10 月最低三件均价约 $1,007（区间 $850–1,083）",
+        "date": "2026-10",
+        "source": "https://gpupoet.com/gpu/learn/price/october-2026/amd-radeon-rx-7900-xtx"
+      }
+    },
+    {
+      "item": "AMD Radeon AI PRO R9700 32GB",
+      "price": "新卡最低 $1,700（Amazon，ASRock Creator）；多渠道最低 $1,900",
+      "date": "2026-11-27",
+      "source": "https://readygpu.com/us/gpu/radeon-ai-pro-r9700 · https://gpuprix.com/us/gpus/radeon-ai-pro-r9700",
+      "status": "verified",
+      "previous": {
+        "price": "新卡最低 $1,600（Micro Center）；eBay 中位 $2,099",
+        "date": "2026-10-13 / 10-12",
+        "source": "https://vga.live/gpus/radeon-ai-pro-r9700 · https://vramglass.com/gpu/radeon-ai-pro-r9700"
+      }
+    },
+    {
+      "item": "AMD Strix Halo（Framework Desktop 128GB）",
+      "price": "$3,449（Framework 官方 DIY 版，不含存储，预订）",
+      "date": "2026-11-27",
+      "source": "https://thesiliconindex.com/products/framework-desktop-395-128gb/",
+      "status": "verified-secondary",
+      "previous": {
+        "price": "$3,149（缺货）；其他渠道 $3,449",
+        "date": "2026-10",
+        "source": "https://frame.work/products/framework-desktop-mainboard-amd-ryzen-ai-max-300-series"
+      },
+      "note": "frame.work 对核对机器返回 403，改用二手来源核对"
+    },
+    {
+      "item": "Tesla V100 32GB（退役，二手）",
+      "price": "eBay 成交约 $987（14 天 24 笔，常见 $936–1,018，含运费）",
+      "date": "2026-11-27",
+      "source": "https://gpusold.com/gpu/tesla-v100-32",
+      "status": "verified",
+      "previous": {
+        "price": "eBay 约 $650（gpudojo）；深圳卖家 $669.98；英国 £620–696",
+        "date": "2026-09-24 / 10-05",
+        "source": "https://gpudojo.com/tesla-v100 · https://www.ebay.co.uk/itm/407093226208"
+      }
+    },
+    {
+      "item": "AMD Instinct MI50 32GB（退役，二手）",
+      "price": "eBay 成交约 $656（30 天 12 笔，常见 $555–757，含运费）",
+      "date": "2026-11-27",
+      "source": "https://gpusold.com/gpu/instinct-mi50-32",
+      "status": "verified",
+      "previous": {
+        "price": "eBay 约 $734（区间 $600–839）；阿里系供应商 $120–210（2026 年中指南）",
+        "date": "2026-10-13",
+        "source": "https://vramglass.com/gpu/instinct-mi50-32gb · https://localaimaster.com/blog/amd-mi50-local-llm"
+      }
+    },
+    {
+      "item": "Tesla P40 24GB（退役，二手）",
+      "price": "eBay 成交约 $310（14 天 21 笔，常见 $294–339，含运费）",
+      "date": "2026-11-27",
+      "source": "https://gpusold.com/gpu/tesla-p40",
+      "status": "verified",
+      "previous": {
+        "price": "eBay 挂牌中位约 $405（8 月约 $300–325）",
+        "date": "2026-10",
+        "source": "https://siliconcomps.com/gpu/tesla-p40/"
+      }
+    },
+    {
+      "item": "NVIDIA CMP 170HX（矿卡，解锁 64GB）",
+      "price": "eBay 成交约 $4,564（14 天 34 笔，常见 $4,108–4,814）",
+      "date": "2026-11-27",
+      "source": "https://gpusold.com/gpu/cmp-170hx",
+      "status": "verified",
+      "previous": {
+        "price": "约 $3,195（区间 $2,999–4,000）；8 月 X 帖称“约 $1,000”购入 → 价格已涨约 3×",
+        "date": "2026-10-13",
+        "source": "https://vramglass.com/gpu/cmp-170hx-64g-mod · https://x.com/ItStillBoots/status/2092962333400408285"
+      }
+    },
+    {
+      "item": "A100 40GB PCIe（退役，二手）",
+      "price": "eBay 成交约 $5,160（14 天 9 笔，常见 $3,650–5,160）；在售挂牌 $5,000–9,998（当前 $6,995）。原来源 clustermelt 页面已 404，换源",
+      "date": "2026-11-27",
+      "source": "https://gpusold.com/gpu/a100-40 · https://vramglass.com/gpu/a100-40gb-pcie",
+      "status": "verified",
+      "previous": {
+        "price": "eBay 挂牌约 $3,150–5,870（仅来自搜索摘要，未逐条核实）；本次未找到消费级本地推理实测行",
+        "date": "2026-10",
+        "source": "https://clustermelt.com/gpus/a100-pcie-40gb/price"
+      }
+    },
+    {
+      "item": "MacBook Pro 14 M4 Pro 48GB",
+      "price": "$2,399（12C/16C）/ $2,599（14C/20C）定价未变；AppleInsider 各渠道均缺货",
+      "date": "2026-11-27",
+      "source": "https://prices.appleinsider.com/macbook-pro-14-inch-m4-pro",
+      "status": "verified",
+      "previous": {
+        "price": "$2,399（12C/16C）/ $2,599（14C/20C）；AppleInsider 显示多渠道缺货",
+        "date": "2026-10-12",
+        "source": "https://prices.appleinsider.com/macbook-pro-14-inch-m4-pro"
+      }
+    },
+    {
+      "item": "Mac Studio M5 Ultra 256GB",
+      "price": "$9,499（30C CPU/64C GPU/1TB）；$10,799（36C/80C/1TB）；定价未变",
+      "date": "2026-11-27",
+      "source": "https://www.apple.com/shop/buy-mac/mac-studio/m5-ultra-chip-30-core-cpu-64-core-gpu-256gb-memory-1tb-storage · https://www.apple.com/shop/buy-mac/mac-studio/m5-ultra-chip-36-core-cpu-80-core-gpu-256gb-memory-1tb-storage",
+      "status": "verified",
+      "previous": {
+        "price": "$9,499（30C CPU/64C GPU/1TB）；$10,799（36C/80C/1TB）",
+        "date": "2026-10",
+        "source": "https://prices.appleinsider.com/mac-studio-m5-max"
+      }
+    },
+    {
+      "item": "Mac mini M6（16 / 24 / 32GB，170 GB/s）",
+      "price": "$899 / $1,099 / $1,299（MSRP 未变）；Amazon 低至 $779",
+      "date": "2026-11-27",
+      "source": "https://www.macprices.net/mac-mini/",
+      "status": "verified",
+      "previous": {
+        "price": "$899 / $1,099 / $1,299（256GB SSD）；16GB 款 Amazon 低至 $780",
+        "date": "2026-10-12",
+        "source": "https://prices.appleinsider.com/mac-mini-m6 · https://techcrunch.com/2026/08/25/apples-latest-mac-mini-runs-on-a-new-m6-chip-and-starts-at-899/"
+      }
+    },
+    {
+      "item": "Mac mini M5 Pro（24 / 48 / 64GB，307 GB/s）",
+      "price": "24GB/512GB MSRP $1,699 未变（Amazon $1,549）；48GB / 64GB 配置未逐一核对",
+      "date": "2026-11-27",
+      "source": "https://www.macprices.net/mac-mini/",
+      "status": "verified",
+      "previous": {
+        "price": "$1,699 / $2,299 / $2,699（15C/16C，512GB）；18C/20C 64GB 1TB $3,199",
+        "date": "2026-10",
+        "source": "https://www.apple.com/shop/buy-mac/mac-mini/m5-pro-chip-15-core-cpu-16-core-gpu-64gb-memory-2tb-storage · https://hard.bargains/posts/m5-pro-mac-mini-local-ai/"
+      }
+    },
+    {
+      "item": "Mac Studio M5 Max（614 GB/s）",
+      "price": "36GB/512GB MSRP $2,499 未变（Amazon 黑五 $2,299）；更高内存配置未逐一核对",
+      "date": "2026-11-27",
+      "source": "https://www.macprices.net/mac-studio/",
+      "status": "verified",
+      "previous": {
+        "price": "36GB $2,499（Amazon $2,299）/ 48GB $3,099 / 64GB $3,499 / 128GB $5,099",
+        "date": "2026-10-13",
+        "source": "https://prices.appleinsider.com/mac-studio-m5-max"
+      }
+    },
+    {
+      "item": "Mac Studio M5 Ultra 96GB（1.2 TB/s）",
+      "price": "30C/64C 96GB/1TB MSRP $5,499 未变",
+      "date": "2026-11-27",
+      "source": "https://www.macprices.net/mac-studio/",
+      "status": "verified",
+      "previous": {
+        "price": "$5,499（30C/64C）/ $6,799（36C/80C）；512GB 版 10 月下旬上市，价格未公布",
+        "date": "2026-10-13",
+        "source": "https://prices.appleinsider.com/mac-studio-m5-max"
+      }
+    },
+    {
+      "item": "Mac Studio M4 Max（上代，546 GB/s）",
+      "price": "已停产新品。Apple 认证翻新 36GB/512GB $1,949（原价 $2,499）；二手 36GB 在售最低约 $1,795、要价中位约 $2,175（eBay）；Apple 认证翻新 128GB/4TB $5,689（未变）",
+      "date": "2026-11-27",
+      "source": "https://www.apple.com/shop/product/fu963ll/a · https://www.apple.com/shop/product/g1cdell/a · https://pergb.com/ai-workstations/mac-m4-max-36/",
+      "status": "verified",
+      "note": "上代已停产新品；今日核到的是认证翻新与二手市场价",
+      "previous": {
+        "price": "翻新 36GB 起 $2,329（eBay，9 月中）；Apple 翻新 128GB/4TB $5,689",
+        "date": "2026-09 / 10",
+        "source": "https://www.refurb.me/blog/mac-studio · https://www.apple.com/shop/product/g1cdell/a/Refurbished-Mac-Studio-Apple-M4-Max-chip-with-16%E2%80%91Core-CPU-and-40%E2%80%91Core-GPU"
+      }
+    },
+    {
+      "item": "Mac Studio M3 Ultra（上代，819 GB/s）",
+      "price": "已停产（2026-09-22）。Apple 认证翻新 96GB/1TB $4,329（原价 $5,299，页面显示缺货）；二手/翻新市场 96GB 约 $4,389 起（Amazon Renewed，11-26）、MacPro-LA 二手 $4,469 起（11-26）",
+      "date": "2026-11-27",
+      "source": "https://www.apple.com/shop/product/fu973ll/a · https://www.refurb.me/refurbished/mac-studio/sku/MU963-27C · https://macpro-la.com/pages/used-mac-studio-m3-ultra-price",
+      "status": "verified",
+      "note": "已停产；256GB/512GB 今日未在可读取的在售页单独核到，故未写入新价",
+      "previous": {
+        "price": "翻新 96GB 起 $5,649；256GB 二手约 $8,299–9,999（搜索摘要）；512GB 二手价未核实",
+        "date": "2026-09 / 10",
+        "source": "https://www.refurb.me/blog/mac-studio · https://macpro-la.com/blogs/news/mac-studio-price-guide-2026"
+      }
+    },
+    {
+      "item": "Mac Studio M2 Ultra（上上代，800 GB/s）",
+      "price": "已停产（2025-03-05）。64GB 二手成交典型约 $2,800（近 30 天 18 笔，常见 $2,650–3,000）；翻新 Excellent 最低 $3,599（MacSales.com，11-26）",
+      "date": "2026-11-27",
+      "source": "https://siliconcents.com/computers/apple/mac-studio-m2-ultra/64gb/ · https://www.refurb.me/refurbished/mac-studio/sku/MQH73-25A",
+      "status": "verified",
+      "note": "已停产；今日核到的是二手成交与翻新市场价",
+      "previous": {
+        "price": "翻新约 $3,599 起",
+        "date": "2026-09",
+        "source": "https://www.refurb.me/blog/mac-studio"
+      }
+    },
+    {
+      "item": "NVIDIA RTX PRO 6000 Blackwell 96GB（新）",
+      "price": "Workstation Edition 在售最低 $16,500（PNY，rtx.live，6 款中 5 款有货）",
+      "date": "2026-11-27",
+      "source": "https://rtx.live/gpus/rtx-pro-6000-blackwell-workstation-edition",
+      "status": "verified",
+      "previous": {
+        "price": "$15,999 最低追踪报价；B&H Workstation $17,999.99 / Max-Q $17,499；Newegg Max-Q $16,499.99；12 个月中位 $10,458",
+        "date": "2026-10-13/14",
+        "source": "https://gpuprix.com/us/gpus/rtx-pro-6000-blackwell · https://www.bhphotovideo.com/c/product/1895402-REG/nvidia_900_5g144_2200_000_rtx_pro_6000_blackwell.html · https://www.newegg.com/p/pl?d=rtx+pro+6000+blackwell+max+q"
+      }
+    },
+    {
+      "item": "Intel Arc Pro B70 32GB（新）",
+      "price": "在售最低 $1,599.99（第三方卖家）；B&H $1,949.95；Newegg 自营 $1,999.99",
+      "date": "2026-11-27",
+      "source": "https://vga.live/cards/intel-arc-pro-b70-32gb-gddr6",
+      "status": "verified",
+      "previous": {
+        "price": "ASRock B70 CT $1,299.99（Newegg 自营）；Intel 公版 $1,999.99–2,099（Newegg）",
+        "date": "2026-10-14",
+        "source": "https://www.newegg.com/asrock-b70-ct-intel-arc-pro-b70-32gb-graphics-card/p/N82E16814930149 · https://www.newegg.com/p/pl?d=arc+pro+b70"
+      }
+    },
+    {
+      "item": "NVIDIA RTX 5060 Ti 16GB（新）",
+      "price": "在售最低 $769.99，中位 $839.99",
+      "date": "2026-11-27",
+      "source": "https://rtx.live/report",
+      "status": "verified",
+      "previous": {
+        "price": "$740 起（Micro Center PNY OC）；Best Buy/Amazon $789，B&H $790，Newegg $800；90 日中位 $789；MSRP $429",
+        "date": "2026-10-13/14",
+        "source": "https://rtx.live/gpus/geforce-rtx-5060-ti-16gb · https://pctechvault.com/market-watch/geforce-rtx-5060-ti-16-gb/"
+      }
+    },
+    {
+      "item": "Gigabyte AI TOP ATOM（GB10，128GB）",
+      "price": "$7,279.99（eBay，4TB）",
+      "date": "2026-11-27",
+      "source": "https://buyaigear.com/boxes",
+      "status": "verified",
+      "previous": {
+        "price": "1TB 版 $5,999.99（Newegg 自营，缺货）；4TB 版 CDW $7,999.99，Aftershock $8,699",
+        "date": "2026-10-14",
+        "source": "https://www.newegg.com/gigabyte-atagb10-9002-thin-client/p/N82E16859252049 · https://www.cdw.com/product/gigabyte-ai-top-atom-compact-pc-ai-pc-gb10-grace-blackwell-superchip/9096513"
+      }
+    },
+    {
+      "item": "MacBook Pro 14 M5 Pro 18C/20C 64GB/1TB（新）",
+      "price": "Apple $3,699（未变）",
+      "date": "2026-11-27",
+      "source": "https://prices.appleinsider.com/product/macbook-pro-14-inch-m5-pro/Z1ML00051",
+      "status": "verified",
+      "previous": {
+        "price": "Apple $3,699；经销商低至 $3,519",
+        "date": "2026-10-13",
+        "source": "https://prices.appleinsider.com/macbook-pro-14-inch-m5-pro"
+      }
+    },
+    {
+      "item": "Mac Studio M1 Ultra 64GB（二手，已停产）",
+      "price": "eBay 二手挂牌中位 $2,900（11-26，6 件）",
+      "date": "2026-11-27",
+      "source": "https://cresvament.com/prices/mac-studio/mac-studio-m1-ultra",
+      "status": "verified",
+      "previous": {
+        "price": "64GB/2TB eBay 翻新 $3,810.95；全配置二手要价中位 $4,434.64",
+        "date": "2026-10-10",
+        "source": "https://hard.bargains/used-mac-studio-m1-ultra-2022/"
+      }
+    },
+    {
+      "item": "DDR5 台式机内存 64GB 套条（2×32GB）",
+      "price": "在售最低 $899.99、中位 $1,339.99（rams.live，11-20 至 11-26）；最低 $799.95、中位 $1,279.99（pgrid，11-26）",
+      "date": "2026-11-27",
+      "source": "https://rams.live/report · https://www.pgrid.app/us/advice/compare-64gb-ddr5-ram",
+      "status": "verified",
+      "note": "新增：11 月内存涨价参考"
+    },
+    {
+      "item": "DDR5 台式机内存 32GB 套条（2×16GB）",
+      "price": "在售最低 $379.99、中位 $569.99（rams.live，11-20 至 11-26）",
+      "date": "2026-11-27",
+      "source": "https://rams.live/report",
+      "status": "verified",
+      "note": "新增：11 月内存涨价参考"
+    }
+  ]
 }
