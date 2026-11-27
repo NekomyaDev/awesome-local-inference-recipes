@@ -84,13 +84,13 @@
 データ時点 2026-11-26。各回答は、デスクトップ機 1 台での実測最速の 1 ストリーム テキスト生成結果です（ノート PC、タブレット、混在構成、マルチ GPU 構成は除外）。「ハードウェア別」の ⚡ と同じ値です。✅ = 投稿者本人の実測。回答ごとにモデルは異なります。
 
 **RTX 5090 1 枚でローカル LLM はどれくらい速い？**  
-実測最速：**538.1 tok/s** — Qwen3.8-27B · TensorFold、1× RTX 5090（✅ 実測、2026-10-26、[出典](https://x.com/BobClawblaw/status/2114570274511405354)）。このハードウェアのレシピ 93 件、うち実測 41 件。
+実測最速：**538.1 tok/s** — Qwen3.8-27B · TensorFold、1× RTX 5090（✅ 実測、2026-10-26、[出典](https://x.com/BobClawblaw/status/2114570274511405354)）。このハードウェアのレシピ 91 件、うち実測 41 件。
 
 **RTX 4090 1 枚でローカル LLM はどれくらい速い？**  
 実測最速：**121 tok/s** — Qwen3.8-27B · DFlash、RTX 4090 24GB（✅ 実測、日付不明、[出典](https://x.com/yume_arasaki/status/2100595901006008791)）。このハードウェアのレシピ 29 件、うち実測 7 件。
 
 **RTX 3090 1 枚でローカル LLM はどれくらい速い？**  
-実測最速：**384 tok/s** — LFM3-1.7B · llama.cpp、RTX 3090 24GB（✅ 実測、2026-10-28、[出典](https://x.com/Layton_Gott/status/2115244678056464384)）。このハードウェアのレシピ 50 件、うち実測 18 件。
+実測最速：**384 tok/s** — LFM3-1.7B · llama.cpp、RTX 3090 24GB（✅ 実測、2026-10-28、[出典](https://x.com/Layton_Gott/status/2115244678056464384)）。このハードウェアのレシピ 48 件、うち実測 18 件。
 
 **Mac Studio M3 Ultra でローカル LLM はどれくらい速い？**  
 実測最速：**130 tok/s** — Qwen3.8-Flash-Next · TensorFold、Mac Studio M3 Ultra（✅ 実測、日付不明、[出典](https://x.com/ivanfioravanti/status/2104183112611614780)）。このハードウェアのレシピ 29 件、うち実測 7 件。
@@ -99,10 +99,10 @@
 実測最速：**130.1 tok/s** — Qwen3.8-Flash-Next · TensorFold、1× DGX Spark（✅ 実測、2026-10-28、[出典](https://x.com/Leoskie_L/status/2115262189506535697)）。このハードウェアのレシピ 80 件、うち実測 37 件。
 
 **AMD Strix Halo（Ryzen AI Max+ 395）でローカル LLM はどれくらい速い？**  
-実測最速：**98 tok/s** — Recursive Flint 40B-A2.5B · Halogen、AMD Ryzen AI Max+ 395 128GB（✅ 実測、2026-10-23、[出典](https://www.reddit.com/r/StrixHalo/comments/1xcxjpv/)）。このハードウェアのレシピ 32 件、うち実測 12 件。
+実測最速：**98 tok/s** — Recursive Flint 40B-A2.5B · Halogen、AMD Ryzen AI Max+ 395 128GB（✅ 実測、2026-10-23、[出典](https://www.reddit.com/r/StrixHalo/comments/1xcxjpv/)）。このハードウェアのレシピ 30 件、うち実測 12 件。
 
 **2,500 ドル以下で実測最速の構成は？**  
-実測最速：**190 tok/s** — Qwen3.8-27B · Geezuz、2× RTX 3090（✅ 実測、2026-10-20、[出典](https://github.com/ohgeebtw/geezuz-qwen3.8-27b-dual-gpu)）。この予算内のレシピ 71 件、うち実測 33 件。
+実測最速：**162 tok/s** — LFM2.5-24B-A2B · llama.cpp、RTX 5060 Ti 16GB（✅ 実測、2026-10-15、[出典](https://x.com/niklaslenz_ai/status/2110469931011612895)）。この予算内のレシピ 55 件、うち実測 27 件。
 
 
 ## X で話題のレシピ

@@ -84,13 +84,13 @@
 数据截至 2026-11-26。每条回答取单台桌面设备上实测最快的单路文字生成结果（不含笔记本、平板、混搭和多卡组合），与「按硬件浏览」中的 ⚡ 数值一致；✅ = 发帖人实测。不同回答的模型不同。
 
 **单张 RTX 5090 跑本地大模型有多快？**  
-实测最快：**538.1 tok/s**，Qwen3.8-27B · TensorFold，硬件 1× RTX 5090（✅ 实测，2026-10-26，[来源](https://x.com/BobClawblaw/status/2114570274511405354)）。该硬件共 93 条配方，其中实测 41 条。
+实测最快：**538.1 tok/s**，Qwen3.8-27B · TensorFold，硬件 1× RTX 5090（✅ 实测，2026-10-26，[来源](https://x.com/BobClawblaw/status/2114570274511405354)）。该硬件共 91 条配方，其中实测 41 条。
 
 **单张 RTX 4090 跑本地大模型有多快？**  
 实测最快：**121 tok/s**，Qwen3.8-27B · DFlash，硬件 RTX 4090 24GB（✅ 实测，日期未注明，[来源](https://x.com/yume_arasaki/status/2100595901006008791)）。该硬件共 29 条配方，其中实测 7 条。
 
 **单张 RTX 3090 跑本地大模型有多快？**  
-实测最快：**384 tok/s**，LFM3-1.7B · llama.cpp，硬件 RTX 3090 24GB（✅ 实测，2026-10-28，[来源](https://x.com/Layton_Gott/status/2115244678056464384)）。该硬件共 50 条配方，其中实测 18 条。
+实测最快：**384 tok/s**，LFM3-1.7B · llama.cpp，硬件 RTX 3090 24GB（✅ 实测，2026-10-28，[来源](https://x.com/Layton_Gott/status/2115244678056464384)）。该硬件共 48 条配方，其中实测 18 条。
 
 **Mac Studio M3 Ultra 跑本地大模型有多快？**  
 实测最快：**130 tok/s**，Qwen3.8-Flash-Next · TensorFold，硬件 Mac Studio M3 Ultra（✅ 实测，日期未注明，[来源](https://x.com/ivanfioravanti/status/2104183112611614780)）。该硬件共 29 条配方，其中实测 7 条。
@@ -99,10 +99,10 @@
 实测最快：**130.1 tok/s**，Qwen3.8-Flash-Next · TensorFold，硬件 1× DGX Spark（✅ 实测，2026-10-28，[来源](https://x.com/Leoskie_L/status/2115262189506535697)）。该硬件共 80 条配方，其中实测 37 条。
 
 **AMD Strix Halo（Ryzen AI Max+ 395）跑本地大模型有多快？**  
-实测最快：**98 tok/s**，Recursive Flint 40B-A2.5B · Halogen，硬件 AMD Ryzen AI Max+ 395 128GB（✅ 实测，2026-10-23，[来源](https://www.reddit.com/r/StrixHalo/comments/1xcxjpv/)）。该硬件共 32 条配方，其中实测 12 条。
+实测最快：**98 tok/s**，Recursive Flint 40B-A2.5B · Halogen，硬件 AMD Ryzen AI Max+ 395 128GB（✅ 实测，2026-10-23，[来源](https://www.reddit.com/r/StrixHalo/comments/1xcxjpv/)）。该硬件共 30 条配方，其中实测 12 条。
 
 **2500 美元以内实测最快的配置是什么？**  
-实测最快：**190 tok/s**，Qwen3.8-27B · Geezuz，硬件 2× RTX 3090（280W，PCIe，无 NVLink）（✅ 实测，2026-10-20，[来源](https://github.com/ohgeebtw/geezuz-qwen3.8-27b-dual-gpu)）。该预算内共 71 条配方，其中实测 33 条。
+实测最快：**162 tok/s**，LFM2.5-24B-A2B · llama.cpp，硬件 RTX 5060 Ti 16GB（✅ 实测，2026-10-15，[来源](https://x.com/niklaslenz_ai/status/2110469931011612895)）。该预算内共 55 条配方，其中实测 27 条。
 
 
 ## X 上的热门配方
@@ -457,7 +457,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 | 项目                                                                 | ⭐ Star | 实时                                                                                              | 最后推送       | 简介                                                                                                           |
 | ------------------------------------------------------------------ | ------ | ----------------------------------------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------ |
 | [llama.cpp](https://github.com/ggml-org/llama.cpp)                 | 132.8k | ![stars](https://img.shields.io/github/stars/ggml-org/llama.cpp?style=flat&label=)              | 2026-10-30 | 基准 GGUF 引擎，支持 CPU/CUDA/ROCm/Vulkan/Metal。                                                                    |
-| [vLLM](https://github.com/vllm-project/vllm)                       | 95.9k  | ![stars](https://img.shields.io/github/stars/vllm-project/vllm?style=flat&label=)               | 2026-10-30 | 高吞吐推理服务；Spark 上的 MTP 和多路并发配方。                                                                                |
+| [vLLM](https://github.com/vllm-project/vllm)                       | 95.9k  | ![stars](https://img.shields.io/github/stars/vllm-project/vllm?style=flat&label=)               | 2026-10-30 | 高吞吐推理服务；Spark 上的 MTP 和多请求同时处理配方。                                                                             |
 | [SGLang](https://github.com/sgl-project/sglang)                    | 38.3k  | ![stars](https://img.shields.io/github/stars/sgl-project/sglang?style=flat&label=)              | 2026-10-30 | 推理服务框架；DGX Spark 上与 DFlash2 搭配。                                                                              |
 | [Strata](https://github.com/Niko1221/Strata)                       | 36.3k  | ![stars](https://img.shields.io/github/stars/Niko1221/Strata?style=flat&label=)                 | 2026-10-29 | 把 MoE 专家拆到显存、内存和 SSD 的推理引擎，面向 12–24GB 显卡；本库多数 Flash-Next 配方用它。从 0.2.8 起，12GB 及以下的 RTX 显卡默认关闭 route prior。    |
 | [MLX](https://github.com/ml-explore/mlx)                           | 29.0k  | ![stars](https://img.shields.io/github/stars/ml-explore/mlx?style=flat&label=)                  | 2026-10-30 | Apple 的数组框架，多数 Mac 配方基于它。                                                                                    |
@@ -508,7 +508,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 
 本地开发：`python3 -m http.server 5190` → `index.html`（首页）· `explore.html`（筛选、排序、散点图）· 数据格式见 [`schema/recipe.schema.json`](schema/recipe.schema.json)。
 
-给 AI agent：技能 [`.agents/skills/local-inference-recipe-finder`](.agents/skills/local-inference-recipe-finder/SKILL.md) 检测本机硬件，并从 [`data/hw_index.json`](docs/hw_index.md) 推荐配方。详见 [AGENTS.md](AGENTS.md)。
+给 AI 智能体：技能 [`.agents/skills/local-inference-recipe-finder`](.agents/skills/local-inference-recipe-finder/SKILL.md) 检测本机硬件，并从 [`data/hw_index.json`](docs/hw_index.md) 推荐配方。详见 [AGENTS.md](AGENTS.md)。
 
 <details><summary>网站预览</summary>
 
