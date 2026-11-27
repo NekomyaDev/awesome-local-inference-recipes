@@ -14,25 +14,48 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Extract source URLs
-        run: python3 -c "import json;print('\n'.join(sorted({r['source_url'] for r in json.load(open('data/recipes.json'))}|{s['url'] for s in json.load(open('data/sources.json'))['sources']})))" > urls.txt
-      - name: Check links
-        id: lychee
+      - name: Extract URLs
+        # Every URL in data/recipes.json (structured fields and free text), data/prices.json, data/sources.json, docs/*.md and recipes/*.md.
+        # X and Reddit go to urls-walled.txt; every other host goes to urls-strict.txt (scripts/linkcheck_urls.py).
+        run: python3 scripts/linkcheck_urls.py
+      - name: Check links (strict hosts, docs and guides)
+        id: strict
         uses: lycheeverse/lychee-action@v2
         with:
           lycheeVersion: v0.24.2
-          # Accept 403/429: some sites block anonymous fetches.
-          args: --no-progress --max-concurrency 4 --max-retries 3 --timeout 30 --accept 200..=299,403,429 urls.txt docs/*.md recipes/*.md
+          # Only 2xx passes. A 403 or 429 from a host other than X or Reddit is reported, so a blocked or rate-limited
+          # page gets a look by hand instead of passing silently. The Markdown files are scanned here for their relative
+          # links; their X and Reddit links are excluded from this run and checked in the next step (urls-walled.txt).
+          args: --no-progress --max-concurrency 4 --max-retries 3 --timeout 30 --accept 200..=299 --exclude '^https?://([a-z0-9-]+\.)*(x|twitter|reddit)\.com([/:?#]|$)' urls-strict.txt docs/*.md recipes/*.md
           fail: false
-          output: lychee/out.md
+          output: lychee/strict.md
+      - name: Check links (X and Reddit)
+        id: walled
+        uses: lycheeverse/lychee-action@v2
+        with:
+          lycheeVersion: v0.24.2
+          # X and Reddit answer anonymous fetches with 403 or 429, so those codes are not failures here. A deleted X post
+          # can still return 200; this run only catches 404s and dead hosts.
+          args: --no-progress --max-concurrency 2 --max-retries 3 --timeout 30 --accept 200..=299,403,429 urls-walled.txt
+          fail: false
+          output: lychee/walled.md
       - name: Fail on lychee error
         # Exit code 2 means broken links. Other nonzero codes mean lychee failed.
-        if: steps.lychee.outputs.exit_code != 0 && steps.lychee.outputs.exit_code != 2
+        if: (steps.strict.outputs.exit_code != 0 && steps.strict.outputs.exit_code != 2) || (steps.walled.outputs.exit_code != 0 && steps.walled.outputs.exit_code != 2)
         run: |
-          echo "::error::lychee failed with exit code ${{ steps.lychee.outputs.exit_code }}. No links were checked."
+          echo "::error::lychee failed (strict ${{ steps.strict.outputs.exit_code }}, walled ${{ steps.walled.outputs.exit_code }}). Not all links were checked."
           exit 1
+      - name: Merge reports
+        id: report
+        if: steps.strict.outputs.exit_code == 2 || steps.walled.outputs.exit_code == 2
+        run: |
+          set -euo pipefail
+          : > lychee/out.md
+          if [ "${{ steps.strict.outputs.exit_code }}" = "2" ]; then { echo "## Hosts other than X and Reddit (only 2xx passes)"; echo; cat lychee/strict.md; echo; } >> lychee/out.md; fi
+          if [ "${{ steps.walled.outputs.exit_code }}" = "2" ]; then { echo "## X and Reddit (403 and 429 accepted)"; echo; cat lychee/walled.md; } >> lychee/out.md; fi
+          echo "broken=true" >> "$GITHUB_OUTPUT"
       - name: Open or update the link issue
-        if: steps.lychee.outputs.exit_code == 2 && hashFiles('lychee/out.md') != ''
+        if: steps.report.outputs.broken == 'true' && hashFiles('lychee/out.md') != ''
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}

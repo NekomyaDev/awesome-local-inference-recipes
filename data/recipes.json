@@ -7943,7 +7943,7 @@
       "reposts": 11,
       "as_of": "2026-10-30"
     },
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "MoE",
       "long-context"
@@ -9281,7 +9281,7 @@
       "reposts": 1,
       "as_of": "2026-10-30"
     },
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "4bit",
       "MoE"
@@ -9319,7 +9319,7 @@
       "reposts": 1,
       "as_of": "2026-10-30"
     },
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "4bit",
       "MoE"
@@ -9695,7 +9695,7 @@
       "reposts": 2,
       "as_of": "2026-10-30"
     },
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "3bit",
       "MoE"
@@ -9733,7 +9733,7 @@
       "reposts": 0,
       "as_of": "2026-10-30"
     },
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "MoE"
     ],
@@ -9763,7 +9763,7 @@
     "source_note": "Liquid AI 官方模型卡（Edge Inference 节）",
     "source_level": "官方",
     "date": "2026-10-12",
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "4bit",
       "MoE"
@@ -9794,7 +9794,7 @@
     "source_note": "Liquid AI 官方模型卡（Edge Inference 节）",
     "source_level": "官方",
     "date": "2026-10-12",
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "4bit",
       "MoE"
@@ -11993,7 +11993,7 @@
       "context": "262K",
       "source_note": "sxuff/nemotron-3.5-bolt-gb10 README (pinned commit/hash)"
     },
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "2bit",
       "MoE",
@@ -13185,7 +13185,7 @@
       "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
     },
     "engine_note": "llama.cpp b11750（CUDA 12.8 发布包；draft-dflash + LiLiCorr 草稿模型，n-max 6）",
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "2bit",
       "MoE",
@@ -13309,7 +13309,7 @@
       "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
       "context": "262K (262,144)"
     },
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "4bit",
       "MoE",
@@ -13361,7 +13361,7 @@
       "source_note": "X post (engine author test, with screenshot; weights HF 0xBakeer/TandemLLM-Ornith-1.5-122B-EXL3-4.0)",
       "hardware_cost_text": "$6,950 (128GB, 2026-10-11)"
     },
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "4bit",
       "MoE",
@@ -13597,7 +13597,7 @@
       "hardware_cost_text": "Price not checked",
       "context": "262K (262,144)"
     },
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "4bit",
       "MoE",
@@ -13638,7 +13638,7 @@
       "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
       "context": "262K (262,144)"
     },
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "6bit",
       "MoE",
@@ -13679,7 +13679,7 @@
       "source_note": "X post",
       "hardware_cost_text": "$6,950 (128GB, 2026-10-11)"
     },
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "4bit",
       "MoE"
@@ -13965,7 +13965,7 @@
       "concurrency": "Single stream",
       "source_note": "llm-speed test on rented hardware; the signed-run page has no raw data for each run (run ID r_0i0a9uq6fdx; X post @llmspeed/status/2113115152140656822)"
     },
-    "model_family": "Other",
+    "model_family": "Recursive",
     "tags": [
       "4bit",
       "MoE"
@@ -14001,7 +14001,7 @@
       "engine_note": "llama.cpp b11803 (commit a37cc4610, all layers on the GPU)",
       "source_note": "llm-speed test on rented hardware; the signed-run page has no raw data for each run (run ID r_-yeg4qnhjp7; X post @llmspeed/status/2113115152140656822)"
     },
-    "model_family": "Other",
+    "model_family": "Recursive",
     "tags": [
       "3bit",
       "MoE"
@@ -14036,7 +14036,7 @@
       "engine_note": "llama.cpp b11803 (commit a37cc4610, all layers on the GPU)",
       "source_note": "llm-speed test on rented hardware; the signed-run page has no raw data for each run (run ID r_e8r7fxw1ke9; X post @llmspeed/status/2113115152140656822)"
     },
-    "model_family": "Other",
+    "model_family": "Recursive",
     "tags": [
       "3bit",
       "MoE"
@@ -14078,7 +14078,7 @@
       "concurrency": "Single stream",
       "source_note": "X post (Ollama output screenshot; long task in @pratikg/status/2113087627503256038)"
     },
-    "model_family": "Other",
+    "model_family": "Recursive",
     "tags": [
       "4bit",
       "MoE"
@@ -14118,7 +14118,7 @@
       "context": "Up to 512K (256K or less recommended)",
       "source_note": "Recursive official launch post; engine https://github.com/recursive-oss/rec"
     },
-    "model_family": "Other",
+    "model_family": "Recursive",
     "tags": [
       "4bit",
       "MoE",
@@ -14154,7 +14154,7 @@
       "context": "128K tested",
       "source_note": "r/LocalLLaMA u/DotaMate (Kapitsa contributor, project team test; scripts in nace-ai/kapitsa bench/results/2026-10-22-flint-m4pro)"
     },
-    "model_family": "Other",
+    "model_family": "Recursive",
     "tags": [
       "4bit",
       "MoE",
@@ -14189,7 +14189,7 @@
       "concurrency": "Single stream (64 concurrent also tested: peak about 2,500)",
       "source_note": "r/LocalLLaMA u/DataCraftsman (docker compose included; text only, no screenshot/log, counted as claimed)"
     },
-    "model_family": "Other",
+    "model_family": "Recursive",
     "tags": [
       "4bit",
       "MoE",
@@ -14232,7 +14232,7 @@
       "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
       "source_note": "X post (results image; recipe repo github.com/atakann/dgx-spark-recipes)"
     },
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "4bit",
       "MoE"
@@ -14272,7 +14272,7 @@
       "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
       "source_note": "X post (results image; recipe repo github.com/atakann/dgx-spark-recipes)"
     },
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "4bit",
       "MoE"
@@ -14313,7 +14313,7 @@
       "concurrency": "Single stream",
       "source_note": "X post (results image)"
     },
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "4bit",
       "MoE",
@@ -14358,7 +14358,7 @@
       "concurrency": "Single stream",
       "source_note": "X post (Japanese; text only, no screenshot/log, counted as claimed)"
     },
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "8bit",
       "MoE"
@@ -15204,7 +15204,7 @@
     "source_level": "实测",
     "date": "2026-10-23",
     "measured_by": "peonist-ai",
-    "model_family": "Other",
+    "model_family": "Recursive",
     "tags": [
       "4bit",
       "MoE"
@@ -15249,7 +15249,7 @@
     "source_level": "实测",
     "date": "2026-10-23",
     "measured_by": "GapNew4766",
-    "model_family": "Other",
+    "model_family": "Recursive",
     "tags": [
       "8bit",
       "MoE"
@@ -15285,7 +15285,7 @@
     "source_level": "官方",
     "date": "2026-10-23",
     "measured_by": "nace-ai",
-    "model_family": "Other",
+    "model_family": "Recursive",
     "tags": [
       "4bit",
       "MoE"
@@ -17498,7 +17498,7 @@
     "tok_s": 44,
     "concurrency": "单流",
     "source_note": "TensorFold 项目方（ashhart）1.1.5 发布说明 Models 节（新模型族 dory）",
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "4bit",
       "dense"
@@ -17847,7 +17847,7 @@
     "tok_s": 40.6,
     "concurrency": "单流",
     "source_note": "X 帖，测试者本人",
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "4bit",
       "dense",
@@ -18367,7 +18367,7 @@
     "tok_s": 4,
     "concurrency": "单流",
     "source_note": "X 帖，测试者本人",
-    "model_family": "Other",
+    "model_family": "Nanbeige",
     "tags": [
       "bf16",
       "dense"
@@ -18785,7 +18785,7 @@
     "tok_s": 66,
     "concurrency": "单流",
     "source_note": "X 帖，测试者本人；recipe https://github.com/tonyd2wild/Nanbeige4.3-33B-W4A16-2x-RTX-3090",
-    "model_family": "Other",
+    "model_family": "Nanbeige",
     "tags": [
       "4bit",
       "dense",
@@ -18824,7 +18824,7 @@
     "tok_s": 39.6,
     "concurrency": "单流",
     "source_note": "X 帖，测试者本人",
-    "model_family": "Other",
+    "model_family": "Nanbeige",
     "tags": [
       "4bit",
       "dense"
@@ -18862,7 +18862,7 @@
     "tok_s": 14.4,
     "concurrency": "单流",
     "source_note": "X 帖，测试者本人",
-    "model_family": "Other",
+    "model_family": "Nanbeige",
     "tags": [
       "4bit",
       "dense"
@@ -18898,7 +18898,7 @@
     "tok_s": 70,
     "concurrency": "单流",
     "source_note": "X 帖，引擎作者本人，条件不全",
-    "model_family": "Other",
+    "model_family": "Nanbeige",
     "tags": [
       "2bit",
       "dense"
@@ -19520,7 +19520,7 @@
     "tok_s": 22,
     "concurrency": "单流",
     "source_note": "Reddit 帖，测试者本人（Financial_Gas_9528）；仓库 github.com/lapadatbogdan/ornith-122b-24gb；IQ2_XXS 有质量损失（KLD 见量化栏）",
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "2bit",
       "MoE",
@@ -19596,7 +19596,7 @@
     "tok_s": 36.6,
     "concurrency": "单流",
     "source_note": "Reddit 帖，Kapitsa 作者（DotaMate）自测并披露利益关系；Kapitsa 0.2.19；脚本和原始输出在帖中链接",
-    "model_family": "Other",
+    "model_family": "Nanbeige",
     "tags": [
       "4bit",
       "dense"
@@ -19633,7 +19633,7 @@
     "tok_s": 27.1,
     "concurrency": "单流",
     "source_note": "Reddit 帖，Kapitsa 作者（DotaMate）自测并披露利益关系；mlx-lm 0.32.2；同帖对照行",
-    "model_family": "Other",
+    "model_family": "Nanbeige",
     "tags": [
       "4bit",
       "dense"
@@ -19672,7 +19672,7 @@
     "tok_s": 24.9,
     "concurrency": "单流",
     "source_note": "Reddit 帖，Kapitsa 作者（DotaMate）自测并披露利益关系；llama.cpp b11871；同帖对照行",
-    "model_family": "Other",
+    "model_family": "Nanbeige",
     "tags": [
       "4bit",
       "dense"
@@ -19783,7 +19783,7 @@
     "tok_s": 116.92,
     "concurrency": "单流",
     "source_note": "acrogenesis/nanbeige-exl3-kit README（测量日 2026-10-26）；作者自测；量化和草稿模型由 ProCreations 制作，引擎为 ExLlamaV3 1.6.5；X 帖 @acrogenesis 同步发布",
-    "model_family": "Other",
+    "model_family": "Nanbeige",
     "tags": [
       "3bit",
       "dense",
@@ -20097,7 +20097,7 @@
     "tok_s": 40,
     "concurrency": "单流",
     "source_note": "X 帖，运行器作者本人（@lxe），条件不全；运行器 github.com/lxe/dsx；与 x-156（2.5bpw，约 70）是不同量化",
-    "model_family": "Other",
+    "model_family": "Nanbeige",
     "tags": [
       "4bit",
       "dense"
@@ -20333,7 +20333,7 @@
     "source_level": "实测",
     "date": "2026-10-28",
     "measured_by": "sargetun123",
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "4bit",
       "MoE",
@@ -20450,7 +20450,7 @@
     "source_level": "宣称",
     "date": "2026-10-28",
     "measured_by": "WritHerAI",
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "4bit",
       "MoE",
@@ -20563,7 +20563,7 @@
     "source_level": "实测",
     "date": "2026-10-28",
     "measured_by": "DogukanUrker",
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "4bit",
       "dense",
@@ -20602,7 +20602,7 @@
     "source_level": "实测",
     "date": "2026-10-28",
     "measured_by": "Layton_Gott",
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "dense",
       "long-context"
@@ -21187,7 +21187,7 @@
     "source_level": "实测",
     "date": "2026-10-29",
     "measured_by": "Specialist-Leek-357",
-    "model_family": "Other",
+    "model_family": "Recursive",
     "tags": [
       "1bit",
       "MoE"
@@ -21378,7 +21378,7 @@
     "source_level": "实测",
     "date": "2026-10-29",
     "measured_by": "SergiiioBS",
-    "model_family": "Other",
+    "model_family": "Nanbeige",
     "tags": [
       "dense",
       "speculative",
@@ -21416,7 +21416,7 @@
     "source_level": "宣称",
     "date": "2026-10-29",
     "measured_by": "dumblebackdoor",
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [],
     "en": {
       "quant": "not stated",
@@ -21624,7 +21624,7 @@
     "source_level": "宣称",
     "date": "2026-10-29",
     "measured_by": "confidencechaos",
-    "model_family": "Other",
+    "model_family": "Nanbeige",
     "tags": [
       "dense",
       "long-context"
@@ -22087,7 +22087,7 @@
     "source_level": "实测",
     "date": "2026-10-29",
     "measured_by": "atasrb",
-    "model_family": "Other",
+    "model_family": "Nanbeige",
     "tags": [
       "4bit",
       "dense",
@@ -22480,7 +22480,7 @@
     "source_level": "实测",
     "date": "2026-10-29",
     "measured_by": "OsmanthusBloom",
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "8bit",
       "dense",
@@ -23191,7 +23191,7 @@
     "tok_s": 224.8,
     "concurrency": "单流",
     "source_note": "测试者本人的结果页（含命令与原始输出）；同步 X @niklaslenz_ai/status/2116794873785303331",
-    "model_family": "Other",
+    "model_family": "Recursive",
     "tags": [
       "4bit",
       "MoE"
@@ -23440,7 +23440,7 @@
     "tok_s": 51,
     "concurrency": "单流（聚合另计）",
     "source_note": "配方作者本人的仓库（配方与测试证据）；同步 X @luisefigueroa/status/2116217214714130512",
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "4bit",
       "dense"
@@ -23740,7 +23740,7 @@
     "tok_s": 109,
     "concurrency": "单流",
     "source_note": "X 帖，测试者本人；Ornith-1.0-35B 是基于 Qwen3.5 的 MoE",
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "4bit",
       "dense",
@@ -24403,7 +24403,7 @@
     "tok_s": 105.3,
     "concurrency": "单流",
     "source_note": "X 帖，测试者本人；LocalMaxxing 标为 Verified 运行",
-    "model_family": "Other",
+    "model_family": "Nanbeige",
     "tags": [
       "4bit",
       "dense",
@@ -24603,7 +24603,7 @@
     "tok_s": 126.9,
     "concurrency": "单流",
     "source_note": "NVIDIA 技术博客（2026-10-30），含安装和启动命令；TensorRT Edge-LLM 0.11.1。线索来自 X @bussyjd",
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "4bit",
       "MoE",
@@ -24639,7 +24639,7 @@
     "tok_s": 100,
     "concurrency": "单流",
     "source_note": "X 帖，测试者本人；移植和修复 PR 是测试者自己提交的，尚未合并，未附原始数据",
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "speculative"
     ],
@@ -25051,7 +25051,7 @@
     "tok_s": 78,
     "concurrency": "单流",
     "source_note": "Reddit 帖，测试者本人",
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "8bit",
       "dense"
@@ -25623,7 +25623,7 @@
     "tok_s": 265.5,
     "concurrency": "单流",
     "source_note": "X 帖，测试者本人；配方 MiaAI_lab，引擎 TensorFold",
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "2bit",
       "MoE",
@@ -25660,7 +25660,7 @@
     "tok_s": 72.5,
     "concurrency": "单流",
     "source_note": "X 帖，测试者本人；配方 MiaAI_lab，引擎 TensorFold",
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "2bit",
       "MoE",
@@ -27111,7 +27111,7 @@
     "tok_s": 115.8,
     "concurrency": "单流",
     "source_note": "X 帖文（测试者本人，附方法和设置）",
-    "model_family": "Other",
+    "model_family": "Recursive",
     "tags": [
       "2bit",
       "MoE"
@@ -27228,7 +27228,7 @@
     "tok_s": 64,
     "concurrency": "单流",
     "source_note": "X 帖文（作者本人，无原始数据）",
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "4bit",
       "long-context",
@@ -27264,7 +27264,7 @@
     "tok_s": 109,
     "concurrency": "单流",
     "source_note": "X 帖文（作者本人，无原始数据）（附截图）；原帖已不公开（@ffaebi 账号设为仅关注者可见，2026-11-26 核查），无存档",
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "MoE"
     ],
@@ -28256,7 +28256,7 @@
     "metric_en": "llm-speed (llama.cpp) short-prompt: 4090@4K 107.3; same post 5090@32K 157.3 (see x-272). Signed llm-speed run r_vkjsinuhlyl (2026-10-15, suite-v1, llama.cpp b11669): chat-short decode 107.3, same as the headline. The page shows only a summary and a signature, with no raw records and no full server settings, so this stays a claim. https://llm-speed.com/r/r_vkjsinuhlyl",
     "tok_s": 107.3,
     "source_note": "第一手来源；独立复核，未独立复现",
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "source_id": "src-d516be37bb"
   },
   {
@@ -28291,7 +28291,7 @@
     "metric_en": "llm-speed (llama.cpp) short-prompt: 5090@32K 157.3. Same model on TensorFold is x-229 (265.5). Same-suite 4K signed run r_z-l1yelv_67, chat-short decode 154.7, is a note only; the headline stays the original 32K 157.3 and remains a claim. https://llm-speed.com/r/r_z-l1yelv_67",
     "tok_s": 157.3,
     "source_note": "X 帖文（基准站账号，无原始数据）",
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "source_id": "src-d516be37bb"
   },
   {
@@ -28506,7 +28506,7 @@
       "concurrency": "single stream",
       "source_note": "Reddit post by the engine author; same post as the Swift table"
     },
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "4bit",
       "MoE",
@@ -29450,7 +29450,7 @@
       "context": "262144",
       "engine_note": "llama.cpp (v0.7.0 Metal, MTP + ngram-mod)"
     },
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "4bit",
       "MoE",
@@ -29991,7 +29991,7 @@
       "context": "2048",
       "source_note": "First-hand source; independently checked, not rerun"
     },
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "4bit",
       "dense"
@@ -30565,7 +30565,7 @@
       "source_note": "First-hand source; independently checked, not rerun",
       "engine_note": "llama-modchip v2.4"
     },
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "4bit",
       "MoE",
@@ -30602,7 +30602,7 @@
       "source_note": "First-hand source; independently checked, not rerun",
       "engine_note": "llama-modchip v2.1"
     },
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "4bit",
       "MoE",
@@ -30639,7 +30639,7 @@
       "source_note": "First-hand source; independently checked, not rerun",
       "engine_note": "llama-modchip v2.1"
     },
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "4bit",
       "MoE",
@@ -30676,7 +30676,7 @@
       "source_note": "First-hand source; independently checked, not rerun",
       "engine_note": "llama-modchip (version not printed in scorecard)"
     },
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "4bit",
       "MoE",
@@ -30713,7 +30713,7 @@
       "source_note": "First-hand source; independently checked, not rerun",
       "engine_note": "llama-modchip v2.4"
     },
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "4bit",
       "MoE",
@@ -32579,7 +32579,7 @@
       "context": null,
       "engine_note": "llama.cpp b12248 official win-arm64 CPU build"
     },
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "4bit",
       "MoE"
@@ -34044,7 +34044,7 @@
     "source_level": "宣称",
     "date": "2026-10-22",
     "measured_by": "llm-speed",
-    "metric": "窗口外补录（测于 2026-10-22，由 @llmspeed 窗口内引用）。llm-speed 签名跑分 r_-i4k-ieitrk，suite-v1，llama.cpp b11803。chat-short 解码 216.8；chat-long 212.0 另标。帖文写 128K 为已配置上限（短提示，不是填满的 128K 窗口）。基线无同组合（llama.cpp × Q4_K_M × 4090 × Sage-A1.5）条目。页 https://llm-speed.com/can-run/sage-a1-5/rtx-4090llm-speed 页面只有汇总与签名，没有原始记录和完整服务设置，记为宣称。",
+    "metric": "窗口外补录（测于 2026-10-22，由 @llmspeed 窗口内引用）。llm-speed 签名跑分 r_-i4k-ieitrk，suite-v1，llama.cpp b11803。chat-short 解码 216.8；chat-long 212.0 另标。帖文写 128K 为已配置上限（短提示，不是填满的 128K 窗口）。基线无同组合（llama.cpp × Q4_K_M × 4090 × Sage-A1.5）条目。页 https://llm-speed.com/can-run/sage-a1-5/rtx-4090 llm-speed 页面只有汇总与签名，没有原始记录和完整服务设置，记为宣称。",
     "metric_en": "Out-of-window makeup (measured 2026-10-22, cited in-window by @llmspeed). Signed llm-speed run r_-i4k-ieitrk, suite-v1, llama.cpp b11803. chat-short decode 216.8; chat-long 212.0 is separate. The post says 128K is the configured limit (short prompt, not a filled 128K window). No baseline row for llama.cpp × Q4_K_M × 4090 × Sage-A1.5. Page https://llm-speed.com/can-run/sage-a1-5/rtx-4090 The llm-speed page shows only a summary and a signature, with no raw records and no full server settings, so this is a claim.",
     "tok_s": 216.8,
     "concurrency": "单流",
@@ -34081,7 +34081,7 @@
     "source_level": "宣称",
     "date": "2026-10-15",
     "measured_by": "llm-speed",
-    "metric": "窗口外补录（测于 2026-10-15，由 @llmspeed 窗口内引用）。llm-speed 签名跑分 r_-sifd5otbpy，suite-v1，llama.cpp b11669。chat-short 解码 87.75，主值记 87.8（预填 1,183.4，TTFT 462 ms）。博客写明在 4K 上下文测量。基线无 3090 同行（x-271/x-272 为 4090/5090）。页 https://llm-speed.com/blog/nemotron-3-5-bolt-74b-24gb-measuredllm-speed 页面只有汇总与签名，没有原始记录和完整服务设置，记为宣称。",
+    "metric": "窗口外补录（测于 2026-10-15，由 @llmspeed 窗口内引用）。llm-speed 签名跑分 r_-sifd5otbpy，suite-v1，llama.cpp b11669。chat-short 解码 87.75，主值记 87.8（预填 1,183.4，TTFT 462 ms）。博客写明在 4K 上下文测量。基线无 3090 同行（x-271/x-272 为 4090/5090）。页 https://llm-speed.com/blog/nemotron-3-5-bolt-74b-24gb-measured llm-speed 页面只有汇总与签名，没有原始记录和完整服务设置，记为宣称。",
     "metric_en": "Out-of-window makeup (measured 2026-10-15, cited in-window by @llmspeed). Signed llm-speed run r_-sifd5otbpy, suite-v1, llama.cpp b11669. chat-short decode 87.75, recorded as 87.8 (prefill 1,183.4, TTFT 462 ms). The blog states the measurement is at 4K context. No 3090 sibling in the baseline (x-271/x-272 are 4090/5090). Page https://llm-speed.com/blog/nemotron-3-5-bolt-74b-24gb-measured The llm-speed page shows only a summary and a signature, with no raw records and no full server settings, so this is a claim.",
     "tok_s": 87.8,
     "concurrency": "单流",
@@ -34095,7 +34095,7 @@
       "context": "4K",
       "engine_note": "llama.cpp b11669 (620d2225), llm-speed suite-v1, signed"
     },
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "2bit",
       "MoE"
@@ -35605,7 +35605,7 @@
       "context": "8K",
       "engine_note": "llama.cpp commit a0e6dc7 (llama-server, all layers on GPU)"
     },
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "4bit",
       "MoE"
@@ -35642,7 +35642,7 @@
       "context": "8K",
       "engine_note": "llama.cpp commit a0e6dc7 (llama-server, all layers on GPU)"
     },
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "4bit",
       "MoE"
@@ -35679,7 +35679,7 @@
       "context": "16K",
       "engine_note": "llama.cpp commit b76b133 (llama-server, all layers on GPU)"
     },
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "4bit",
       "MoE"
@@ -36072,7 +36072,7 @@
       "context": "262144",
       "engine_note": "tensorfold-native 1.2.8 official macOS arm64 archive, unmodified; Metal backend, context 262144"
     },
-    "model_family": "Other",
+    "model_family": "Recursive",
     "tags": [
       "4bit",
       "MoE",
@@ -36684,7 +36684,7 @@
       "context": null,
       "engine_note": "0xSero's Inkling 2 engine. The 2026-11-17 headline post does not state the build; the earlier 58.3 run was inkling2-exl3 at 5cf1465d (Nipale-ai/inkling2-exl3-dgx-spark recipe), EP2xTP2, b12x kernels, speculative decoding always on, 16 slots, --kv-gb 24"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "8bit",
@@ -37338,7 +37338,7 @@
       "context": "131072",
       "engine_note": "inkling2-sparks v0.2 (release tensorfold-inkling2-tp4-v0.2; upstream TensorFold 223da7659 + patches, fork commit c55b38d79); TP4, NCCL over RoCE, DSpark on by default"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -38999,7 +38999,7 @@
       "engine_note": "llama.cpp b12602",
       "context": "32K"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE"
@@ -39078,7 +39078,7 @@
       "engine_note": "llama.cpp Unsloth prebuilt b12588-mix-c0c3de8 (CUDA 13 portable) + -bs backend sampling",
       "context": "131072"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -39162,7 +39162,7 @@
       "engine_note": "vllm/vllm-openai:inkling-2-mini image (pinned by digest c2dc759f) + SM120 patch, DSpark-7",
       "context": "262144"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -39201,7 +39201,7 @@
       "engine_note": "maya-ik2 v1.1.74 (e8d4f29), ./maya.sh --setup defaults, --drafting auto",
       "context": "262144"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -39238,7 +39238,7 @@
       "source_note": "First-hand source; independently checked, not rerun",
       "engine_note": "llama.cpp b12590"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE"
@@ -39589,7 +39589,7 @@
       "engine_note": "maya-ik2 v1.1.74 (e8d4f29), HIP build, ./maya.sh --bench",
       "context": "131072"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -39626,7 +39626,7 @@
       "source_note": "Engine author's docs at the v0.5.6 tag and release notes; no per-run raw data",
       "engine_note": "Basalt 0.5.6, DSpark drafting on by default, basalt-bench seeded"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -39664,7 +39664,7 @@
       "engine_note": "vllm/vllm-openai:inkling-2-mini image (pinned by digest c2dc759f5984…)",
       "context": "128K"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "long-context"
@@ -39701,7 +39701,7 @@
       "engine_note": "maya-ik2 v1.1.74 (e8d4f29), local MSVC 19.44 + CUDA 13.4 build, two-card TwoGpu",
       "context": "32768"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -39739,7 +39739,7 @@
       "source_note": "Fork repo llama-bench comparison page with per-process raw JSON in raw/, the manifest and the rerun script",
       "engine_note": "llama.cpp-inkling-rdna3 v0.1.0 (based on b12606; the measured source is v0.1.0 without the loop-scale patch), default eight-wave mode"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE"
@@ -39776,7 +39776,7 @@
       "source_note": "First-hand source; independently checked, not rerun",
       "engine_note": "inkling2-mlx v0.2.4 (mlx-vlm 0.8.0+inkling2mini.6)"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -39813,7 +39813,7 @@
       "source_note": "First-hand source; independently checked, not rerun",
       "engine_note": "Basalt 0.5.5, speculative decoding --spec 8"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "8bit",
@@ -39851,7 +39851,7 @@
       "source_note": "README by the YASAKANI author, pinned at the v0.3.3 tag commit 380e8c3; no per-run raw data",
       "engine_note": "YASAKANI v0.3.3, fast path (default on RTX 50), --draft auto, --scheme quality"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "speculative"
@@ -39888,7 +39888,7 @@
       "engine_note": "Basalt 0.5.5",
       "context": "262K"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "8bit",
@@ -39928,7 +39928,7 @@
       "engine_note": "llama.cpp b12631, no draft model",
       "context": "104960"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE"
@@ -39965,7 +39965,7 @@
       "engine_note": "maya-ik2 be849daa (Nov 21), no draft model",
       "context": "344K"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -40002,7 +40002,7 @@
       "source_note": "First-hand source; independently checked, not rerun",
       "engine_note": "oMLX 0.8.3, Lightning MTP on"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -40040,7 +40040,7 @@
       "source_note": "First-hand source; independently checked, not rerun",
       "engine_note": "oMLX 0.8.3"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -40150,7 +40150,7 @@
       "source_note": "First-hand source; independently checked, not rerun",
       "engine_note": "llama.cpp b12613 (-fa 1, -b 512 -ub 128), CPU only"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE"
@@ -40186,7 +40186,7 @@
       "source_note": "First-hand source; independently checked, not rerun",
       "engine_note": "llama.cpp Unsloth build b12588-mix"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "2bit",
       "MoE"
@@ -40222,7 +40222,7 @@
       "source_note": "First-hand source; independently checked, not rerun",
       "engine_note": "oMLX 0.8.2"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE"
@@ -40259,7 +40259,7 @@
       "engine_note": "Ferrite 0.9.0, the model's own draft head",
       "context": "128K"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "long-context",
@@ -40426,7 +40426,7 @@
       "engine_note": "Strata 0.2.19 (control 0.1.65, engine 0.1.65-windows-x86_64-hip-rdna3)",
       "context": "131072"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "long-context"
@@ -40463,7 +40463,7 @@
       "engine_note": "Strata 0.2.19 built from source (tag commit c6f6427d); strata-inkling 0.1.65 built from the same tree",
       "context": "131072"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "long-context",
@@ -40501,7 +40501,7 @@
       "engine_note": "Strata terminal 0.2.20, strata-inkling engine 0.1.66 (linux-x86_64-cuda-cuda13)",
       "context": "262144"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "long-context",
@@ -40539,7 +40539,7 @@
       "engine_note": "Project Maya maya-ik2 v1.1.75, built by hand for sm_75",
       "context": "262144"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -40576,7 +40576,7 @@
       "source_note": "Release notes by the Strata engine author",
       "engine_note": "Strata 0.2.21 (engines 0.1.67)"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE"
@@ -40612,7 +40612,7 @@
       "source_note": "Release notes by the Strata engine author",
       "engine_note": "Strata 0.2.21 (engines 0.1.67)"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -40647,7 +40647,7 @@
       "source_note": "Release notes by the Strata engine author",
       "engine_note": "Strata 0.2.21 (engines 0.1.67)"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -40682,7 +40682,7 @@
       "source_note": "Release notes by the Strata engine author",
       "engine_note": "Strata 0.2.21 (engines 0.1.67)"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "3bit",
       "MoE"
@@ -40719,7 +40719,7 @@
       "engine_note": "Strata 0.1.66 (engine 0.1.66-windows-x86_64-cuda-cuda13, control 0.1.66)",
       "context": "131072"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "long-context",
@@ -40757,7 +40757,7 @@
       "source_note": "First-hand source; independently checked, not rerun",
       "engine_note": "LexiEngine in LexiSuite T21 (development image)"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "8bit",
@@ -40796,7 +40796,7 @@
       "engine_note": "llama.cpp b11671 (official macOS arm64 build)",
       "context": "262144"
     },
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "4bit",
       "MoE",
@@ -40834,7 +40834,7 @@
       "engine_note": "llama.cpp b11671 (official macOS arm64 build)",
       "context": "262144"
     },
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "4bit",
       "MoE",
@@ -41022,7 +41022,7 @@
       "engine_note": "llama.cpp Unsloth prebuilt b12649-mix-c7059d6 (CUDA 12 newer, sha256 pinned)",
       "context": "131072"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -41160,7 +41160,7 @@
       "source_note": "X post by the tester with method; no per-run raw data",
       "engine_note": "MTPLX 2.13.3, draft head on"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -41198,7 +41198,7 @@
       "source_note": "X post by the tester with method; no per-run raw data",
       "engine_note": "mlx-serve v26.11.4-pre-release.1 (tagged pre-release), draft head on, prompt lookup on"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE"
@@ -41234,7 +41234,7 @@
       "source_note": "X post by the tester with method; no per-run raw data",
       "engine_note": "oMLX 0.8.3, draft head on"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE"
@@ -41270,7 +41270,7 @@
       "source_note": "X post by the tester with method; no per-run raw data",
       "engine_note": "mlx-vlm 0.8.1, draft head on"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE"
@@ -41341,7 +41341,7 @@
       "source_note": "X post by the tester with method; no per-run raw data",
       "engine_note": "MTPLX 2.13.3, the model's own sampler"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "speculative",
@@ -41378,7 +41378,7 @@
       "source_note": "X post by the tester with method; no per-run raw data",
       "engine_note": "oMLX 0.8.1, the model's own sampler"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "speculative",
@@ -41452,7 +41452,7 @@
       "source_note": "X post by the tester with method; no per-run raw data",
       "engine_note": "oMLX 0.8.3"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -41487,7 +41487,7 @@
       "source_note": "X post by the tester with method; no per-run raw data",
       "engine_note": "llama.cpp b12568 (Unsloth build), llama-bench, no drafter"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE"
@@ -41524,7 +41524,7 @@
       "engine_note": "Splash 1.7.2, DFlash2 drafter",
       "context": "512K"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -41563,7 +41563,7 @@
       "engine_note": "Strata v0.2.21 source build for gfx906 (commit d46f5f268f8e), standalone strata-inkling 0.1.67, hip-ep2 expert parallel",
       "context": "8192"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "speculative",
@@ -41601,7 +41601,7 @@
       "engine_note": "Strata control 0.1.67 (commit d46f5f268f8e), engine strata-inkling 0.1.67 linux-x86_64-cuda-cuda13 release build, strata bench run standard-v1",
       "context": "131072"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "long-context",
@@ -41698,7 +41698,7 @@
       "engine_note": "strata-inkling 0.1.67-linux-x86_64-hip-rx9070, --draft off, --vram-experts-gb 14.66",
       "context": "131072"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "long-context",
@@ -41736,7 +41736,7 @@
       "engine_note": "llama.cpp b12588 (official macOS arm64 build), Metal",
       "context": "262144"
     },
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "4bit",
       "dense",
@@ -41774,7 +41774,7 @@
       "engine_note": "llama.cpp b12588 (official macOS arm64 build), Metal",
       "context": "262144"
     },
-    "model_family": "Other",
+    "model_family": "Ornith",
     "tags": [
       "4bit",
       "dense",
@@ -41812,7 +41812,7 @@
       "engine_note": "llama.cpp b12588 (official macOS arm64 build), Metal",
       "context": "131072"
     },
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "4bit",
       "long-context"
@@ -41849,7 +41849,7 @@
       "engine_note": "llama.cpp b12588 (official macOS arm64 build), Metal",
       "context": "131072"
     },
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "4bit",
       "long-context"
@@ -42038,7 +42038,7 @@
       "engine_note": "llama.cpp b12588 (official macOS arm64 build), Metal",
       "context": "147456"
     },
-    "model_family": "Other",
+    "model_family": "Nanbeige",
     "tags": [
       "2bit",
       "dense",
@@ -42076,7 +42076,7 @@
       "engine_note": "llama.cpp b12588 (official macOS arm64 build), Metal",
       "context": "147456"
     },
-    "model_family": "Other",
+    "model_family": "Nanbeige",
     "tags": [
       "2bit",
       "dense",
@@ -42114,7 +42114,7 @@
       "engine_note": "llama.cpp b12588 (official macOS arm64 build), Metal",
       "context": "131072"
     },
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "4bit",
       "MoE",
@@ -42152,7 +42152,7 @@
       "engine_note": "llama.cpp Unsloth prebuilt b12649-mix-c7059d6 (CUDA 12 portable, sha256 pinned)",
       "context": "131072"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "2bit",
       "MoE",
@@ -42231,7 +42231,7 @@
       "engine_note": "llama.cpp b12588 (official macOS arm64 build), Metal",
       "context": "256000"
     },
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "4bit",
       "8bit",
@@ -42270,7 +42270,7 @@
       "engine_note": "llama.cpp b12588 (official macOS arm64 build), Metal",
       "context": "256000"
     },
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "4bit",
       "8bit",
@@ -42309,7 +42309,7 @@
       "engine_note": "llama.cpp b12588 (official macOS arm64 build), Metal",
       "context": "262144"
     },
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "4bit",
       "dense",
@@ -42347,7 +42347,7 @@
       "engine_note": "llama.cpp b12588 (official macOS arm64 build), Metal",
       "context": "262144"
     },
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "4bit",
       "dense",
@@ -42385,7 +42385,7 @@
       "engine_note": "llama.cpp b12588 (official macOS arm64 build), Metal",
       "context": "131072"
     },
-    "model_family": "Other",
+    "model_family": "Recursive",
     "tags": [
       "4bit",
       "MoE",
@@ -42423,7 +42423,7 @@
       "engine_note": "llama.cpp b12588 (official macOS arm64 build), Metal",
       "context": "131072"
     },
-    "model_family": "Other",
+    "model_family": "Recursive",
     "tags": [
       "4bit",
       "MoE",
@@ -42549,7 +42549,7 @@
       "engine_note": "vLLM 0.34.0rc1.dev1163 (version string written by the tester; image vllm/vllm-openai:nightly, no digest), TP1, --gpu-memory-utilization 0.5",
       "context": "262144"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -42627,7 +42627,7 @@
       "source_note": "Engine author's docs at the v0.5.6 tag; no per-run raw data",
       "engine_note": "Basalt 0.5.6, two-card layer split picked at layer 17, basalt-bench seeded"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "speculative",
@@ -42665,7 +42665,7 @@
       "engine_note": "YASAKANI 0.3.3 (yasakani-0.3.3-win-x64.zip, SHA-256 matches the release), --fast on, --draft auto",
       "context": "32768"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "speculative",
@@ -42721,7 +42721,7 @@
       "engine_note": "tensorfold-native (TensorFold Zig engine) at commit dc2ca8a1785df6ee5c8489ee7cd18e29cf7b4568 from jschmied/TensorFold (PR #4441 head at the time) + recipe patches 0001-0017 (recipe commit 6061fa8)",
       "context": "262144"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -42760,7 +42760,7 @@
       "engine_note": "Basalt commit 400b411c58, community-1 preset (basalt-bench --community), --gpu 0 --max-context 63233 --kv int8",
       "context": "63233"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -42799,7 +42799,7 @@
       "engine_note": "Basalt commit f7b04c01c3, community-1 preset (basalt-bench --community), --gpu 0 --max-context 63233, fp16 KV (engine default)",
       "context": "63233"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -42953,7 +42953,7 @@
       "source_note": "Release notes by the Strata engine author; test conditions incomplete",
       "engine_note": "Strata 0.2.21 (engines 0.1.67)"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -42989,7 +42989,7 @@
       "engine_note": "strata-inkling 0.1.65 (Strata v0.2.19 SYCL release asset, SHA-256 66cb6a0e...), serve/server.py from source checkout baf16363b4, --parallel 1 --draft dspark --kv fp16 --chunk 256",
       "context": "8192"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "speculative"
@@ -43025,7 +43025,7 @@
       "source_note": "GitHub issue by the tester; the comparison table gives no test conditions and no per-run raw data",
       "engine_note": "llama.cpp b12602, one card"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "3bit",
       "MoE"
@@ -43099,7 +43099,7 @@
       "engine_note": "Project Maya v1.1.77 built from source (maya-ik2 engine), default setup, draft model on with two cards",
       "context": "32K"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -43175,7 +43175,7 @@
       "source_note": "NVIDIA official performance page (v0.10.0 Results table), vendor test; the page has no date, so the date is the v0.10.0 release date; the table does not state the power mode, still official under the 2026-11-26 rule",
       "engine_note": "TensorRT Edge-LLM 0.10.0 (JetPack 7.2, CUDA 13.2, TensorRT 10.16); llm_inference, MTBench dataset, table model name NVIDIA-Nemotron-3.5-Lightning-30B-A3B, precision NVFP4 / NVFP4"
     },
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "4bit",
       "MoE",
@@ -43626,7 +43626,7 @@
       "source_note": "NVIDIA official performance page (v0.10.0 Results table), vendor test; the page has no date, so the date is the v0.10.0 release date; the table does not state the power mode, still official under the 2026-11-26 rule",
       "engine_note": "TensorRT Edge-LLM 0.10.0 (JetPack 7.2, CUDA 13.2, TensorRT 10.16); llm_inference, MTBench dataset, table model name NVIDIA-Nemotron-3-Nano-4B, precision NVFP4"
     },
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "4bit",
       "dense"
@@ -43812,7 +43812,7 @@
       "source_note": "NVIDIA official performance page (v0.10.0 Results table), vendor test; the page has no date, so the date is the v0.10.0 release date; the table does not state the power mode, still official under the 2026-11-26 rule",
       "engine_note": "TensorRT Edge-LLM 0.10.0 (DGX Spark: CUDA 13.0, TensorRT 10.16); llm_inference, MTBench dataset, table model name NVIDIA-Nemotron-3.5-Lightning-30B-A3B, precision NVFP4 / NVFP4"
     },
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "4bit",
       "MoE",
@@ -44207,7 +44207,7 @@
       "source_note": "GitHub repo history.jsonl per-run values and the Thor platform page; tested by the engine author",
       "engine_note": "Mjolnir (narandill/mjolnir-vllm:v0.35.0rc0.dev-b12 image, vLLM based); the attention backend is FlashInfer"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -44507,7 +44507,7 @@
       "source_note": "GitHub gist, tested by the author; summary figures only",
       "engine_note": "vLLM built from Inkling PR #69028 commit fc1443152c0e with Thor (11.0f) kernels, version string 0.1.dev25855+thor, installed over the official vllm/vllm-openai:inkling-2-mini image; --gpu-memory-utilization 0.65"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -45043,7 +45043,7 @@
       "engine_note": "PolyStrata v0.2.20-poly.5 official package (engine 0.1.66, src 44f8847bd6b7fd1a)",
       "context": "131072"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -45159,7 +45159,7 @@
       "engine_note": "vLLM nightly 153dc046 (image digest cfa6d27b...)",
       "context": "262144"
     },
-    "model_family": "Other",
+    "model_family": "LFM",
     "tags": [
       "4bit",
       "dense",
@@ -45197,7 +45197,7 @@
       "engine_note": "gufo 0.37.0 (0.37.0-46), image digest sha256:9a2b08be7e44...",
       "context": "262144"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -45236,7 +45236,7 @@
       "engine_note": "llama.cpp Vulkan, local container build (digest sha256:fc88ab02532f...) with upstream Vulkan patches",
       "context": "131072"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -45274,7 +45274,7 @@
       "engine_note": "TensorFold recipe 0f0e768, image tensorfold-inkling2:c4-dc2ca8a-sm120 (pinned tag)",
       "context": "262144"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "long-context",
@@ -45311,7 +45311,7 @@
       "source_note": "NVIDIA developer forum post by the engine author; mean and range only, no per-run raw values",
       "engine_note": "Mjolnir release-2026.11.25, image narandill/mjolnir-vllm:v0.35.0rc0.dev (vLLM 0.35.0rc0.dev nightly ported to sm_110)"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "8bit",
@@ -45349,7 +45349,7 @@
       "source_note": "GitHub issue by the tester; speed mentioned only in one validation line, no per-run raw data",
       "engine_note": "Xolotl main, STRATA_VERSION 0.1.54, llama.cpp 6050b467 + xolotl-ggml.patch"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -45384,7 +45384,7 @@
       "source_note": "GitHub PR description relaying results from a private lab repository; raw data not verifiable",
       "engine_note": "vLLM, version not stated (private lab repository)"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE"
@@ -45420,7 +45420,7 @@
       "source_note": "GitHub issue by the tester with the full environment; raw files not public",
       "engine_note": "Strata 0.2.21 (strata-inkling 0.1.67, SYCL)"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -45493,7 +45493,7 @@
       "source_note": "GitHub release note, one sentence from the engine author; incomplete data",
       "engine_note": "RustingStrata v1.3.6"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE"
@@ -45606,7 +45606,7 @@
       "source_note": "Reddit post by the engine author; no per-run raw data",
       "engine_note": "RustingStrata, version not stated"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "2bit",
       "MoE"
@@ -45642,7 +45642,7 @@
       "source_note": "Reddit post by the tester; no per-run raw data",
       "engine_note": "radiance unreleased Inkling branches plus one small change, version not stated"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "8bit",
@@ -45680,7 +45680,7 @@
       "source_note": "Reddit post by the engine author; one run per figure, no per-run raw data",
       "engine_note": "LexiEngine (closed source, version not stated)"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "8bit",
@@ -45718,7 +45718,7 @@
       "source_note": "Reddit post, a comparison run by a competing engine's author; no per-run raw data",
       "engine_note": "Strata 0.2.21"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -45753,7 +45753,7 @@
       "source_note": "Reddit post by the tester; one run per cell, no per-run raw data",
       "engine_note": "oMLX 0.8.2 (stock)"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE"
@@ -45866,7 +45866,7 @@
       "source_note": "omlx.ai community benchmark page, anonymous upload; no raw logs",
       "engine_note": "oMLX v0.8.3"
     },
-    "model_family": "Other",
+    "model_family": "Nemotron",
     "tags": [
       "4bit",
       "speculative",
@@ -45938,7 +45938,7 @@
       "source_note": "omlx.ai community benchmark page, anonymous upload; no raw logs",
       "engine_note": "oMLX v0.8.3"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -45976,7 +45976,7 @@
       "source_note": "omlx.ai community benchmark page, anonymous upload; no raw logs",
       "engine_note": "oMLX v0.8.3"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -46014,7 +46014,7 @@
       "source_note": "omlx.ai community benchmark page, anonymous upload; no raw logs",
       "engine_note": "oMLX v0.8.3"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -46210,7 +46210,7 @@
       "engine_note": "TensorFold, build version not stated",
       "context": "262144"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -46320,7 +46320,7 @@
       "source_note": "X post (port author), incomplete data",
       "engine_note": "vllm-sly-radiance (R9700 port, work in progress, version not stated)"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "bf16",
       "MoE",
@@ -46435,7 +46435,7 @@
       "source_note": "X post by the tester; no per-run raw data",
       "engine_note": "SGLang, version not stated, with Inco AI's DFlash2 compatibility patch"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "speculative"
@@ -46471,7 +46471,7 @@
       "source_note": "X post by the tester; no per-run raw data",
       "engine_note": "SGLang, version not stated"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "speculative"
@@ -46543,7 +46543,7 @@
       "source_note": "X post by the tester; no per-run raw data",
       "engine_note": "arcint 1.8.2 (OpenCL)"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE"
@@ -46579,7 +46579,7 @@
       "source_note": "X post by the tester; no per-run raw data",
       "engine_note": "llama.cpp b12648 (Vulkan)"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE"
@@ -46615,7 +46615,7 @@
       "source_note": "X post by the tester; no per-run raw data",
       "engine_note": "Strata 0.2.21"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -46650,7 +46650,7 @@
       "source_note": "X post written by an AI assistant; no per-run raw data",
       "engine_note": "Splash 1.7.3"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "speculative"
@@ -46686,7 +46686,7 @@
       "source_note": "X post by the tester; no per-run raw data",
       "engine_note": "Splash (version not stated) driving Tenaz 0.9.0"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -46758,7 +46758,7 @@
       "source_note": "X post by the tester; says CSV raw data is on GitHub, not checked",
       "engine_note": "InklingEngine, version not stated"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -46794,7 +46794,7 @@
       "engine_note": "engine not stated",
       "context": "262144"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "long-context",
@@ -46831,7 +46831,7 @@
       "source_note": "X post by the tester; no per-run raw data",
       "engine_note": "maya-ik2 HIP port (Project Maya), version not stated"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -46866,7 +46866,7 @@
       "source_note": "X post by the tester; no per-run raw data",
       "engine_note": "custom kernels, engine and version not stated"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE"
@@ -46902,7 +46902,7 @@
       "source_note": "X post by the tester; no per-run raw data",
       "engine_note": "ik_llama.cpp, build from the day DFlash2 drafting was merged, version not stated"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",
@@ -46939,7 +46939,7 @@
       "source_note": "X post by the tester; no per-run raw data",
       "engine_note": "llama.cpp with one patch, build and version not stated"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -46975,7 +46975,7 @@
       "engine_note": "self-patched llama.cpp (loop-aware physical MoE cache, cache-aware routing, tail pruning), version not stated",
       "context": "102400"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -47010,7 +47010,7 @@
       "source_note": "X post by the tester; no per-run raw data",
       "engine_note": "tuned engine, name and version not stated (started from stock llama.cpp)"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -47045,7 +47045,7 @@
       "source_note": "X post by the tester; no per-run raw data",
       "engine_note": "engine not stated; flags tuned with the sybil inference-optimisation skill"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -47265,7 +47265,7 @@
       "source_note": "X post by the tester; no per-run raw data",
       "engine_note": "MLX-Serve main branch (unreleased)"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "8bit",
       "speculative"
@@ -47337,7 +47337,7 @@
       "source_note": "X post by the tester; no per-run raw data",
       "engine_note": "Strata \"v2.2.1\" as written in the post"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -47372,7 +47372,7 @@
       "source_note": "X post by the tester; no per-run raw data",
       "engine_note": "Strata 0.2.21"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE"
     ],
@@ -47408,7 +47408,7 @@
       "engine_note": "Strata v0.2.21",
       "context": "32768"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "multi-GPU",
@@ -47446,7 +47446,7 @@
       "engine_note": "Strata v0.2.21",
       "context": "32768"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "MoE",
       "multi-GPU",
@@ -47484,7 +47484,7 @@
       "engine_note": "llama.cpp b12625 (stock)",
       "context": "131072"
     },
-    "model_family": "Other",
+    "model_family": "Inkling",
     "tags": [
       "4bit",
       "MoE",

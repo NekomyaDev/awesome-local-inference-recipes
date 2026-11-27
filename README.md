@@ -4,6 +4,8 @@
 
 <p align="center"><b>English</b> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.ja.md">日本語</a></p>
 
+> **⚠️ Hardware prices, November 2026:** DDR5 and GDDR7 memory prices spiked in November (a 64GB DDR5 kit is about $900–1,340), which pushed up new and used GPUs and self-built DDR5 rigs (a used RTX 4090 sells for about $3,280, against about $2,214 in early October). Machines with soldered memory (Mac Studio, Strix Halo, DGX Spark) changed less in November. A recipe shows the published price on the date it was added; current prices are in the [price snapshot](data/prices.json) (as of 2026-11-27, next review 2026-12-27).
+
 <p align="center"><a href="https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=en"><img src="https://img.shields.io/badge/recipes-1245-0891B2?style=flat-square" alt="1245 recipes"></a> <img src="https://img.shields.io/badge/data%20as%20of-2026--11--26-4B5563?style=flat-square" alt="data as of 2026-11-26"> <a href="https://github.com/raytone-lab/awesome-local-inference-recipes/actions/workflows/validate.yml"><img src="https://img.shields.io/github/actions/workflow/status/raytone-lab/awesome-local-inference-recipes/validate.yml?branch=main&style=flat-square&label=validate" alt="validate"></a> <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-22C55E?style=flat-square" alt="MIT"></a> <a href="LICENSE-DATA"><img src="https://img.shields.io/badge/data-CC%20BY%204.0-22C55E?style=flat-square" alt="CC BY 4.0"></a> <a href="https://github.com/raytone-lab/awesome-local-inference-recipes/stargazers"><img src="https://img.shields.io/github/stars/raytone-lab/awesome-local-inference-recipes?style=flat-square" alt="GitHub stars"></a> <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-7C3AED?style=flat-square" alt="PRs welcome"></a></p>
 
 <p align="center"><a href="https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=en"><b>Explore live</b></a> · <a href="recipes/README.md"><b>Recipe guides</b></a> · <a href="docs/getting-started.md"><b>Getting started</b></a> · <a href="https://raytone-lab.github.io/awesome-local-inference-recipes/submit.html?lang=en"><b>Submit a recipe</b></a></p>
@@ -16,20 +18,20 @@
 
 <p align="center">Same answer, real Qwen3 tokens, streamed at 10 / 20 / 50 / 100 / 200 / 500 tok/s (log-spaced) vs. silent reading (≈5 tok/s, Brysbaert 2019), with cloud-API medians from Artificial Analysis for comparison. <a href="https://raytone-lab.github.io/awesome-local-inference-recipes/speed.html?lang=en"><b>Try it interactively →</b></a></p>
 
-**1245 recipes** (1198 text · 21 image · 26 video & audio) · **6 hardware families** · **144 engines** · **17 model families** · every number linked to its source · budget up to **$30k**
+**1245 recipes** (1198 text · 21 image · 26 video & audio) · **6 hardware families** · **144 engines** · **23 model families** · every number linked to its source · budget up to **$30k**
 
 ### Headline numbers
 
-| Record                   | Model · engine                  | Hardware                                                                                                                              | Result            | Source                                                                    |
-| ------------------------ | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------- |
-| Fastest on a Mac         | Qwen3.8-Flash-Next · TensorFold | Mac Studio M3 Ultra (peak figure; test machine memory not stated, so no single price; launch price $3,999–$9,499 depending on memory) | **130 tok/s** ✅   | [source](https://x.com/ivanfioravanti/status/2104183112611614780)         |
-| Fastest on one RTX 5090  | Qwen3.8-Flash-Next · Strata     | RTX 5090 + 256GB RAM · ≈ $5,400 (card only, excl. 256GB RAM; street price, MSRP $1,999)                                               | **176 tok/s** ✅   | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483)  |
-| Fastest on AMD           | Qwen3.8-Flash-Next · Strata     | AMD Radeon AI PRO R9700 · ≈ $1,600                                                                                                    | **100 tok/s** ✅   | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376)  |
-| Used datacenter GPUs     | Qwen3.8-Flash-Next · Strata     | 2× Tesla V100 32GB PCIe                                                                                                               | **120 tok/s** ✅   | [@rewin123](https://x.com/rewin123/status/2108669905616736529)            |
-| Fastest on one DGX Spark | Qwen3.8-Flash-Next · TensorFold | 1× DGX Spark · ≈ $6,950                                                                                                               | **130.1 tok/s** ✅ | [source](https://x.com/Leoskie_L/status/2115262189506535697)              |
-| Cheapest rig in the list | Qwen3.8-Flash-Next · Strata     | Tesla P40 24GB · ≈ $405                                                                                                               | **30 tok/s** ✅    | [source](https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md) |
+| Record                          | Model · engine                                         | Hardware                                     | Result            | Source                                                                    |
+| ------------------------------- | ------------------------------------------------------ | -------------------------------------------- | ----------------- | ------------------------------------------------------------------------- |
+| Fastest on one Mac              | Qwen3.8-Flash-Next · Strata (speculative decoding)     | Mac Studio M5 Ultra 96GB                     | **153.8 tok/s** ✅ | [source](https://github.com/Niko1221/Strata/pull/5675)                    |
+| Fastest on one RTX 5090         | Qwen3.8-27B · TensorFold (speculative decoding)        | 1× RTX 5090                                  | **538.1 tok/s** ✅ | [source](https://x.com/BobClawblaw/status/2114570274511405354)            |
+| Fastest on one AMD device       | Qwen3.8-Flash-Next · Strata                            | 1× Radeon AI PRO R9700 32GB + Ryzen 7 7800X… | **109.9 tok/s** ✅ | [source](https://www.reddit.com/r/LocalLLM/comments/1xly1o0/)             |
+| Fastest on used datacenter GPUs | Qwen3.8-Flash-Next · Strata                            | 2× Tesla V100 32GB PCIe                      | **120 tok/s** ✅   | [@rewin123](https://x.com/rewin123/status/2108669905616736529)            |
+| Fastest on one DGX Spark        | Qwen3.8-Flash-Next · TensorFold (speculative decoding) | 1× DGX Spark · ≈ $6,950                      | **130.1 tok/s** ✅ | [source](https://x.com/Leoskie_L/status/2115262189506535697)              |
+| Cheapest measured rig           | Qwen3.8-Flash-Next · Strata                            | Tesla P40 24GB · ≈ $405                      | **30 tok/s** ✅    | [source](https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md) |
 
-<sub>Single-stream generation speed, copied from each source; prices are the lowest published hardware price. ✅ = measured by the poster.</sub>
+<sub>Computed from the data with the same rule as the ⚡ values in Browse by Hardware: the fastest measured (✅) single-stream text result on one desktop device (laptops, tablets, mixed and multi-GPU rigs left out). Used datacenter GPUs allow any card count. The cheapest rig is the lowest published hardware price among measured rows. Models and engines differ between rows; "speculative decoding" marks a result that uses a draft model or MTP. Prices are the published price on the date the recipe was added.</sub>
 
 ## Contents
 
@@ -79,28 +81,28 @@ We record the price on the date that we add the recipe. When the price goes up l
 
 ## Quick answers
 
-Data as of 2026-11-26. Each answer is the fastest single-stream text result in the dataset with its trust level; ✅ = measured by the poster. Models differ between answers.
+Data as of 2026-11-26. Each answer is the fastest measured single-stream text result on one desktop device (laptops, tablets, mixed and multi-GPU rigs left out), the same value as the ⚡ in Browse by Hardware; ✅ = measured by the poster. Models differ between answers.
 
 **How fast is a single RTX 5090 for local LLMs?**  
-Fastest measured: **351.5 tok/s** — LFM2.5-24B-A2B · llama.cpp on RTX 5090 32GB (✅ measured, 2026-10-15, [source](https://x.com/niklaslenz_ai/status/2110469931011612895)). 42 recipe(s) for this hardware, 26 measured.
+Fastest measured: **538.1 tok/s** — Qwen3.8-27B · TensorFold on 1× RTX 5090 (✅ measured, 2026-10-26, [source](https://x.com/BobClawblaw/status/2114570274511405354)). 91 recipe(s) for this hardware, 41 measured.
 
 **How fast is a single RTX 4090 for local LLMs?**  
-Fastest measured: **121 tok/s** — Qwen3.8-27B · DFlash on RTX 4090 24GB (✅ measured, date not stated, [source](https://x.com/yume_arasaki/status/2100595901006008791)). 13 recipe(s) for this hardware, 4 measured.
+Fastest measured: **121 tok/s** — Qwen3.8-27B · DFlash on RTX 4090 24GB (✅ measured, date not stated, [source](https://x.com/yume_arasaki/status/2100595901006008791)). 29 recipe(s) for this hardware, 7 measured.
 
 **How fast is a single RTX 3090 for local LLMs?**  
-Fastest measured: **384 tok/s** — LFM3-1.7B · llama.cpp on RTX 3090 24GB (✅ measured, 2026-10-28, [source](https://x.com/Layton_Gott/status/2115244678056464384)). 21 recipe(s) for this hardware, 9 measured.
+Fastest measured: **384 tok/s** — LFM3-1.7B · llama.cpp on RTX 3090 24GB (✅ measured, 2026-10-28, [source](https://x.com/Layton_Gott/status/2115244678056464384)). 48 recipe(s) for this hardware, 18 measured.
 
 **How fast is a Mac Studio M3 Ultra for local LLMs?**  
-Fastest measured: **130 tok/s** — Qwen3.8-Flash-Next · TensorFold on Mac Studio M3 Ultra (✅ measured, date not stated, [source](https://x.com/ivanfioravanti/status/2104183112611614780)). 28 recipe(s) for this hardware, 7 measured.
+Fastest measured: **130 tok/s** — Qwen3.8-Flash-Next · TensorFold on Mac Studio M3 Ultra (✅ measured, date not stated, [source](https://x.com/ivanfioravanti/status/2104183112611614780)). 29 recipe(s) for this hardware, 7 measured.
 
 **How fast is one NVIDIA DGX Spark for local LLMs?**  
-Fastest measured: **130.1 tok/s** — Qwen3.8-Flash-Next · TensorFold on 1× DGX Spark (✅ measured, 2026-10-28, [source](https://x.com/Leoskie_L/status/2115262189506535697)). 91 recipe(s) for this hardware, 39 measured.
+Fastest measured: **130.1 tok/s** — Qwen3.8-Flash-Next · TensorFold on 1× DGX Spark (✅ measured, 2026-10-28, [source](https://x.com/Leoskie_L/status/2115262189506535697)). 80 recipe(s) for this hardware, 37 measured.
 
 **How fast is an AMD Strix Halo (Ryzen AI Max+ 395) for local LLMs?**  
-Fastest measured: **108.7 tok/s** — Ornith-1.5-35B-A3B · WHIRL on Radeon 8060S (✅ measured, 2026-11-06, [source](https://www.reddit.com/r/LocalLLM/comments/1xpb37p/)). 38 recipe(s) for this hardware, 16 measured.
+Fastest measured: **98 tok/s** — Recursive Flint 40B-A2.5B · Halogen on AMD Ryzen AI Max+ 395 128GB (✅ measured, 2026-10-23, [source](https://www.reddit.com/r/StrixHalo/comments/1xcxjpv/)). 30 recipe(s) for this hardware, 12 measured.
 
 **What is the fastest measured setup under $2,500?**  
-Fastest measured: **190 tok/s** — Qwen3.8-27B · Geezuz on 2× RTX 3090 (✅ measured, 2026-10-20, [source](https://github.com/ohgeebtw/geezuz-qwen3.8-27b-dual-gpu)). 71 recipe(s) in this budget, 33 measured.
+Fastest measured: **162 tok/s** — LFM2.5-24B-A2B · llama.cpp on RTX 5060 Ti 16GB (✅ measured, 2026-10-15, [source](https://x.com/niklaslenz_ai/status/2110469931011612895)). 53 recipe(s) in this budget, 25 measured.
 
 
 ## Popular on X
@@ -118,15 +120,15 @@ Most-engaged recipe posts on X (likes + 3×reposts; one entry per post, claimed-
 
 ## Browse by Hardware
 
-Recipe count and the fastest measured single-stream tok/s for each device (multi-GPU rigs: fastest measured on any rig). Links open the hardware page, or the explorer pre-filtered when a device has fewer than 5 recipes.
+Recipe count and the fastest measured single-stream tok/s on one desktop device for each chip (laptops, tablets and mixed rigs left out; multi-GPU rigs: fastest measured on any rig). Links open the hardware page, or the explorer pre-filtered when a device has fewer than 5 recipes.
 
-| Family                      | Device (recipes · ⚡ fastest measured tok/s)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| NVIDIA&nbsp;RTX             | [RTX 5090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/rtx-5090.html) (130 · ⚡**538.1**) &nbsp;·&nbsp; [RTX 3090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/rtx-3090.html) (88 · ⚡**384**) &nbsp;·&nbsp; [RTX 4090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/rtx-4090.html) (40 · ⚡**121**) &nbsp;·&nbsp; [RTX 5070 / 5070 Ti](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=RTX%205070&lang=en) (40 · ⚡**141.3**) &nbsp;·&nbsp; [RTX 5060 Ti](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/rtx-5060-ti.html) (39 · ⚡**162**) &nbsp;·&nbsp; [RTX 3060](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=RTX%203060&lang=en) (38 · ⚡**244**)              |
-| Apple&nbsp;Silicon          | [M5 Pro / M5 Max](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/mac-m5.html) (88 · ⚡**157**) &nbsp;·&nbsp; [M5 Ultra](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=M5%20Ultra&lang=en) (60 · ⚡**153.8**) &nbsp;·&nbsp; [M3 Ultra](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/mac-studio-m3-ultra.html) (38 · ⚡**130**) &nbsp;·&nbsp; [M4 Pro](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=M4%20Pro&lang=en) (33 · ⚡**127.9**) &nbsp;·&nbsp; [M4 Max](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/mac-m4-max.html) (22 · ⚡**78.7**) &nbsp;·&nbsp; [M2 Ultra](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=M2%20Ultra&lang=en) (4 · ⚡**59.9**) |
-| DGX&nbsp;Spark              | [DGX Spark](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/dgx-spark.html) (193 · ⚡**130.1**)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| AMD                         | [Radeon R9700 / RX 7900](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/amd-radeon.html) (85 · ⚡**109.9**) &nbsp;·&nbsp; [Strix Halo](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/strix-halo.html) (29 · ⚡**78**) &nbsp;·&nbsp; [Instinct MI50](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=MI50&lang=en) (7 · ⚡**36.8**)                                                                                                                                                                                                                                                                                                                                                                                                           |
-| Multi-GPU&nbsp;&&nbsp;other | [Multi-GPU rigs](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=multi-GPU&lang=en) (278 · ⚡**370**) &nbsp;·&nbsp; [Tesla V100](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=V100&lang=en) (27 · ⚡**74.7**) &nbsp;·&nbsp; [iPhone](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=iPhone&lang=en) (4)                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Family                      | Device (recipes · ⚡ fastest measured tok/s)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| NVIDIA&nbsp;RTX             | [RTX 5090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/rtx-5090.html) (130 · ⚡**538.1**) &nbsp;·&nbsp; [RTX 3090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/rtx-3090.html) (88 · ⚡**384**) &nbsp;·&nbsp; [RTX 4090](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/rtx-4090.html) (40 · ⚡**121**) &nbsp;·&nbsp; [RTX 5070 / 5070 Ti](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=RTX%205070&lang=en) (40 · ⚡**141.3**) &nbsp;·&nbsp; [RTX 5060 Ti](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/rtx-5060-ti.html) (39 · ⚡**162**) &nbsp;·&nbsp; [RTX 3060](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=RTX%203060&lang=en) (38 · ⚡**244**) &nbsp;·&nbsp; [RTX PRO 6000](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/rtx-pro-6000.html) (31 · ⚡**300**) |
+| Apple&nbsp;Silicon          | [M5 Pro / M5 Max](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/mac-m5.html) (88 · ⚡**115.34**) &nbsp;·&nbsp; [M5 Ultra](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=M5%20Ultra&lang=en) (60 · ⚡**153.8**) &nbsp;·&nbsp; [M3 Ultra](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/mac-studio-m3-ultra.html) (38 · ⚡**130**) &nbsp;·&nbsp; [M4 Pro](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=M4%20Pro&lang=en) (33 · ⚡**74**) &nbsp;·&nbsp; [M4 Max](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/mac-m4-max.html) (22 · ⚡**78.7**) &nbsp;·&nbsp; [M2 Ultra](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=M2%20Ultra&lang=en) (4 · ⚡**59.9**)                                                                                                                     |
+| DGX&nbsp;Spark              | [DGX Spark](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/dgx-spark.html) (193 · ⚡**130.1**)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| AMD                         | [Radeon R9700 / RX 7900](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/amd-radeon.html) (85 · ⚡**109.9**) &nbsp;·&nbsp; [Strix Halo](https://raytone-lab.github.io/awesome-local-inference-recipes/hw/strix-halo.html) (49 · ⚡**98**) &nbsp;·&nbsp; [Instinct MI50](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=MI50&lang=en) (7 · ⚡**36.8**)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Multi-GPU&nbsp;&&nbsp;other | [Multi-GPU rigs](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?tag=multi-GPU&lang=en) (278 · ⚡**370**) &nbsp;·&nbsp; [Tesla V100](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=V100&lang=en) (27 · ⚡**74.7**) &nbsp;·&nbsp; [iPhone](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=iPhone&lang=en) (4) &nbsp;·&nbsp; [Tesla P40](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?q=Tesla%20P40&lang=en) (3 · ⚡**60.8**)                                                                                                                                                                                                                                                                                                                                                                                  |
 
 ## Browse by Model Family
 
@@ -136,10 +138,16 @@ Click a family to open the explorer pre-filtered. Tags: [`MoE`](https://raytone-
 | -------------------------------------------------------------------------------------------------------------------- | ------- | ---- | ----- | ------------- |
 | [Qwen](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Qwen&lang=en)               | 604     | 604  |       |               |
 | [DeepSeek](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=DeepSeek&lang=en)       | 162     | 162  |       |               |
+| [Inkling](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Inkling&lang=en)         | 101     | 101  |       |               |
 | [GLM](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=GLM&lang=en)                 | 62      | 62   |       |               |
 | [Bonsai](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Bonsai&lang=en)           | 35      | 35   |       |               |
 | [Gemma](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Gemma&lang=en)             | 28      | 28   |       |               |
+| [Nemotron](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Nemotron&lang=en)       | 28      | 28   |       |               |
 | [MiniMax H3](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=MiniMax%20H3&lang=en) | 24      |      | 6     | 18            |
+| [LFM](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=LFM&lang=en)                 | 20      | 20   |       |               |
+| [Ornith](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Ornith&lang=en)           | 19      | 19   |       |               |
+| [Nanbeige](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Nanbeige&lang=en)       | 16      | 16   |       |               |
+| [Recursive](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Recursive&lang=en)     | 16      | 16   |       |               |
 | [Qwen-Image](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Qwen-Image&lang=en)   | 13      |      | 13    |               |
 | [Edge0](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Edge0&lang=en)             | 10      | 10   |       |               |
 | [MiniMax](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=MiniMax&lang=en)         | 10      | 10   |       |               |
@@ -151,7 +159,7 @@ Click a family to open the explorer pre-filtered. Tags: [`MoE`](https://raytone-
 | [Wan](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Wan&lang=en)                 | 2       |      |       | 2             |
 | [Z-Image](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Z-Image&lang=en)         | 2       |      | 2     |               |
 | [Llama](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Llama&lang=en)             | 1       | 1    |       |               |
-| [Other](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Other&lang=en)             | 273     | 273  |       |               |
+| [Other](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?family=Other&lang=en)             | 73      | 73   |       |               |
 
 ## Browse by Engine
 
@@ -310,105 +318,105 @@ Engine names are normalized (`scripts/normalize_engines.py`); original strings a
 
 ## Tier 1 · up to $2.5k
 
-*Used 3090/4090, MI50/V100 cards, Strix Halo, R9700* · 80 recipes
+*Used 3090/4090, MI50/V100 cards, Strix Halo, R9700* · 80 recipes · measured first, then official, then claimed and relayed; fastest first within each level
 
 
 **📝 Text**
 
-- **Bonsai-8B** · llama.cpp (PrismML fork) `1-bit Q1_0` — RTX 4090 → **368 tok/s** 📣 [source](https://huggingface.co/prism-ml/Bonsai-8B-gguf)
-- **Qwen3.8-27B** · tqLLM `TQ3_4S-v2 · DFlash2` — RTX 3090 24GB → **273 tok/s** 🏛️ [source](https://x.com/coffeecup2020/status/2110624499901075769)
-- **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2` — RTX 4090 24GB → **225 tok/s** 📣 [source](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
-- **Qwen3.8-Flash-Next** · Strata `Strata· Swift 1.5 IQ2_XS` — RTX 4090 24GB + 32GB DDR5 → **220 tok/s** 📣 [source](https://x.com/Knuckles_XBT/status/2105245662657011841)
 - **Qwen3.8-27B** · Geezuz `Q4_K_M` — 2× RTX 3090 → **190 tok/s** ✅ [source](https://github.com/ohgeebtw/geezuz-qwen3.8-27b-dual-gpu)
-- **Recursive Flint 40B-A2.5B** · llama.cpp `NVFP4 GGUF` — RTX 4090 24GB → **179.4 tok/s** 📣 [source](https://llm-speed.com/m/flint-40b-a2-5b)
-- **Qwen3.8-27B** · tqLLM `TQ_XS· DFlash2` — RTX 5060 Ti 16GB → **175.9 tok/s** 🏛️ [source](https://x.com/coffeecup2020/status/2110719638518526343)
-- **Qwen3.6-35B-A3B** · FreeToken `FreeToken · NVFP4` — RTX 4090 → **167 tok/s** 🔁 [source](https://x.com/shipfrontierai/status/2092602493213577481)
 - **LFM2.5-24B-A2B** · llama.cpp `Q4` — RTX 5060 Ti 16GB → **162 tok/s** ✅ [source](https://x.com/niklaslenz_ai/status/2110469931011612895)
-- **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2` — RTX 3090 24GB → **154 tok/s** 📣 [source](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
+- **Qwen3.8-27B** · DFlash `EXL3 4.0bpw + DFlash2 3-bit…` — RTX 4090 24GB → **121 tok/s** ✅ [source](https://x.com/yume_arasaki/status/2100595901006008791)
+- **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 3090 24GB + 64GB RAM → **120.8 tok/s** ✅ [source](https://x.com/needmorevram/status/2105050786938118599)
+- **Qwen3.8-Flash-Next** · Strata `Q2_0` — AMD Radeon AI PRO R9700 → **100 tok/s** ✅ [source](https://x.com/TechPractice1/status/2105338176055509376) · [guide](recipes/x-009.md)
+- **Qwen3.8-Flash-Next** · Strata `Mirai 2-bit S` — RTX 3090 24GB+ 41GiB RAM → **91 tok/s** ✅ [source](https://x.com/superalesha/status/2112538913076056285)
+- **Qwen3.8-Flash-Next** · Strata `Unsloth UD-IQ4_XS` — RTX 4090 24GB + 64GB DDR5-5800 + i9-14900K → **87 tok/s** ✅ [source](https://www.reddit.com/r/LocalLLaMA/comments/1x8l18e/)
+- **Qwen3.8-27B** · llama.cpp `llama.cpp + MTP` — AMD RX 7900 XTX → **85.4 tok/s** ✅ [source](https://x.com/sudoingX/status/2094673741125140658)
+- **Qwen3.8-Flash-Next Abliterated** · Strata `GSQ-RCO IQ3_S` — RX 7900 XTX 24GB + 96GB DDR5-6400 + Ryzen 9 9950X → **82.5 tok/s** ✅ [source](https://github.com/Niko1221/Strata/issues/2938)
+- **Qwen3.8-Flash-Next** · Strata `GSQ-RCO IQ3_XXS` — RTX 4090 24GB + RAM → **78.6 tok/s** ✅ [source](https://x.com/BrianMRey/status/2103789711311413320)
 - *…and 61 more in the [explorer](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=en).*
 
 **🖼️ Image**
 
 - **Qwen-Image 2.1** · ComfyUI `Comfy-Org INT8 · ComfyUI` — RTX 4090 24GB → 8.1 s / 1024² (40 steps); 30.2 s / 2048×1152 (50 steps); peak 16.2GB ✅ [source](https://x.com/yume_arasaki/status/2102176739359404499) · [guide](recipes/image-001.md)
-- **Qwen-Image 2.1** `INT8` — RTX 3090 → 82–96 s / 2K (public receipt) 🔁 [source](https://x.com/yume_arasaki/status/2102176739359404499)
 - **Qwen-Image 2.1** · ComfyUI `ComfyUI` — Mac M4 Pro → 3 min 52 s / image (768 edit) ✅ [source](https://x.com/gabeciii/status/2116171024106401889)
 - **Z-Image Turbo** · ComfyUI `ComfyUI` — RTX 3090 24GB → 2048px about 8 s / image; another user 12 s after warm-up ✅ [source](https://x.com/michaelricks/status/2104959036353356058)
+- **Qwen-Image 2.1** `INT8` — RTX 3090 → 82–96 s / 2K (public receipt) 🔁 [source](https://x.com/yume_arasaki/status/2102176739359404499)
 
 **🎬 Video & Audio**
 
-- **FastH3 V2 / Trim** `FP8` — RTX 4090 24GB → 480p 5s: 54.6 / 43.9 s; 768p: 154.6 / 132.8 s; 8GB limit Trim 82.0 s 🏛️ [source](https://haoailab.com/blogs/fasth3-rtx/)
 - **MiniMax H3** · ComfyUI `ComfyUI` — RTX 4090 → 5 s clip ~91 s; 15 s ~8 minutes; 960×544×5s about 50 s ✅ [source](https://x.com/yume_arasaki/status/2097790831323427046)
 - **MiniMax H3** · ComfyUI `ComfyUI` — RTX 3090 → 11 s video 13 minutes ✅ [source](https://x.com/natehalko/status/2103538997146611890)
-- **ACE-Step 1.5** — RTX 3090 → Whole song <10 s (promo post) 🔁 [source](https://x.com/simplifyinAI/status/2091935190335754493)
+- **FastH3 V2 / Trim** `FP8` — RTX 4090 24GB → 480p 5s: 54.6 / 43.9 s; 768p: 154.6 / 132.8 s; 8GB limit Trim 82.0 s 🏛️ [source](https://haoailab.com/blogs/fasth3-rtx/)
 - **MiniMax H3 Ref2VA** · ComfyUI `INT8 DiT+ NVFP4 + Turbo 4-s…` — RTX 4090 24GB → 1344×768×5.16s (24 fps / 124 frames): warm wall time ~72 s (first run… 🏛️ [source](https://github.com/Kablex/ComfyUI-Ref2VA-VSA)
+- **ACE-Step 1.5** — RTX 3090 → Whole song <10 s (promo post) 🔁 [source](https://x.com/simplifyinAI/status/2091935190335754493)
 
 ## Tier 2 · $2.5k–7k
 
-*One RTX 5090, one DGX Spark, Mac Studio Max* · 192 recipes
+*One RTX 5090, one DGX Spark, Mac Studio Max* · 192 recipes · measured first, then official, then claimed and relayed; fastest first within each level
 
 
 **📝 Text**
 
-- **Qwen3.6-35B-A3B** · sparkinfer `sparkinfer v0.4.4` — RTX 5090 → **512 tok/s** 📣 [source](https://x.com/kysstalol/status/2105042922643321008)
 - **Qwen3.8-Flash-Next** · Basalt `GSQ-RCO Q2_0` — 1× RTX 5090 32GB + 59GB RAM → **500.4 tok/s** ✅ [source](https://x.com/witcheer/status/2120154520843882651)
-- **Inkling 2 Mini** · Basalt `Basalt NVFP4-q8` — 1× RTX 5090 32GB → **388.3 tok/s** 📣 [source](https://x.com/niklaslenz_ai/status/2124490414337999359)
-- **Qwen3.8-27B** · QEngine `RedHatAI/Qwen3.8-27B-INT4+ …` — 1× RTX 5090 32GB → **358.5 tok/s** 📣 [source](https://ai-muninn.com/en/blog/qengine-rtx5090-qwen38-27b-wsl2)
-- **Inkling 2 Mini** · Basalt `Basalt` — 1× RTX 5090 32GB → **355 tok/s** 📣 [source](https://github.com/jesdga95/basalt/blob/v0.5.6/docs/models/inkling2.md)
 - **LFM2.5-24B-A2B** · llama.cpp `Q4` — RTX 5090 32GB → **351.5 tok/s** ✅ [source](https://x.com/niklaslenz_ai/status/2110469931011612895)
 - **NVIDIA Nemotron 3.5 Bolt 74B-A9B** · llama.cpp `NVIDIA IQ2_XXS 24GB GGUF + …` — RTX 5090 32GB → **343 tok/s** ✅ [source](https://www.reddit.com/r/LocalLLM/comments/1xap599/)
-- **gpt-oss-20b** · llama.cpp `Q4_K_M` — RTX 5090 32GB → **324.2 tok/s** 📣 [source](https://llm-speed.com/r/r_dwp5fgdapmw)
-- **Qwen3.8-Flash-Next** · Basalt `KV` — 1× RTX 5090 32GB+ Ryzen 7 9800X3D + 64GiB → **315.1 tok/s** 📣 [source](https://github.com/jesdga95/basalt/blob/620b6a993974bade52aa5ba6b39aee95c097658d/docs/community/runs/qwen3.8-flash-next/fdbd61d3ae32.json)
-- **Qwen3.8-27B** · TensorFold (BLACKFURY fork) `NVFP4` — 1× RTX 5090 32GB → **309.53 tok/s** 📣 [source](https://x.com/ToolBraidComp/status/2122784426463477769)
+- **Qwen3.8-Flash-Next** · Basalt `NVIDIA NVFP4+ KV` — RTX 5090 32GB + Core Ultra 9 285K + 247GB DDR5 → **242 tok/s** ✅ [source](https://www.reddit.com/r/LocalLLaMA/comments/1xcp0mf/)
+- **Qwen3.8-Flash-Next** · Strata `Q2_0` — 1× RTX 5090 32GB+ Xeon Gold 5218 → **231.5 tok/s** ✅ [source](https://github.com/Niko1221/Strata/pull/5875)
+- **Qwen3.8-Flash-Next** · Strata `ISTA-DASLab GSQ-RCO IQ3_S` — RTX 5090 32GB + 121GB DDR5 → **227 tok/s** ✅ [source](https://x.com/lyesbahi/status/2117545259358196187)
+- **MiniCPM-V 4.7 35B-A3B** · llama.cpp `Q4_K_M` — RTX 5090 → **208 tok/s** ✅ [source](https://x.com/Blackwellboy/status/2110717843121881380)
+- **Qwen3.8-Flash-Next** · Strata `ISTA-DASLab GSQ-RCO GGUF IQ…` — RTX 5090 32GB → **204 tok/s** ✅ [source](https://x.com/niklaslenz_ai/status/2110132306061013386)
+- **Qwen3.8-Flash-Next** · Strata `GSQ RCO IQ3_XXS` — RTX 5090 32GB+ Ryzen 7 9800X3D + 60.5GB DDR5 → **202.1 tok/s** ✅ [source](https://github.com/Niko1221/Strata/pull/2165)
+- **Qwen3.8-Flash-Next** · Radiance (fork) `Q4` — 2× AMD R9700 32GB + 64GB DDR5 → **176 tok/s** ✅ [source](https://www.reddit.com/r/LocalLLaMA/comments/1x640u6/)
 - *…and 162 more in the [explorer](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=en).*
 
 **🖼️ Image**
 
-- **Qwen-Image 2.1** `LightX2V / BennyDaBall NVFP…` — RTX 5090 32GB → 5.93 s; NVFP4 6.7 s vs INT8 7.6 s vs BF16 15.6 s (1024²) 🔁 [source](https://x.com/yume_arasaki/status/2103277400234860878)
 - **Qwen-Image 2.1** · TensorFold `TensorFold NVFP4 / FP8 / GG…` — RTX 5090 @450W → 4.53 s / 6.94 s / 13.87 s (1024², 25 steps; NVFP4 peak 22.9GB; images… ✅ [source](https://x.com/niklaslenz_ai/status/2106465941177487871)
-- **Qwen-Image 2.1** — RTX 5090 → 13.5 s → 1.9 s / image (vendor claim) 📣 [source](https://x.com/fractalyze_io/status/2105207217452695841)
 - **Qwen-Image 2.1** `int8 · 25 · 1MP` — RTX 5090 32GB → Qwen-Image 2.1 base model, int8, 25 steps, 1MP: 5.2 s per image (medi… ✅ [source](https://x.com/MoonlitMaven/status/2109206953507291214)
-- **Qwen-Image 2.1** · SGLang `spark-image-lab BF16 / SGLa…` — 1× DGX Spark → 52.6 s / 1024²; SGLang table: Spark 35.4 s, 4090 18.7 s 🔁 [source](https://x.com/yume_arasaki/status/2103277400234860878)
 - **Qwen-Image-2.1-Turbo** `Turbo 8 vs Base 40` — RTX 5090 → 29 s vs 108 s / image (2048²) ✅ [source](https://x.com/niklaslenz_ai/status/2108609693941920176)
 - **Z-Image Turbo vs Qwen-Image 2.1** `prompt seed 20` — RTX 5090 → Z-Image ~2× faster (no absolute times); quality: Qwen wins 9:6 ✅ [source](https://x.com/princedoesai/status/2109376490009743713)
 - **MiniMax-H3-Image** · SGLang `6 · Auto` — 1× DGX Spark → Official SGLang Diffusion cookbook. One DGX Spark, Auto resident nati… 🏛️ [source](https://docs.sglang.io/cookbook/diffusion/MiniMax/MiniMax-H3-Image)
+- **Qwen-Image 2.1** — RTX 5090 → 13.5 s → 1.9 s / image (vendor claim) 📣 [source](https://x.com/fractalyze_io/status/2105207217452695841)
+- **Qwen-Image 2.1** `LightX2V / BennyDaBall NVFP…` — RTX 5090 32GB → 5.93 s; NVFP4 6.7 s vs INT8 7.6 s vs BF16 15.6 s (1024²) 🔁 [source](https://x.com/yume_arasaki/status/2103277400234860878)
+- **Qwen-Image 2.1** · SGLang `spark-image-lab BF16 / SGLa…` — 1× DGX Spark → 52.6 s / 1024²; SGLang table: Spark 35.4 s, 4090 18.7 s 🔁 [source](https://x.com/yume_arasaki/status/2103277400234860878)
 
 **🎬 Video & Audio**
 
-- **FastH3 V2** `NVFP4` — RTX 5090 32GB → 832×480×5s: 14.8 s; 1344×768×5s: 38.6 s (with audio, end-to-end) 🏛️ [source](https://haoailab.com/blogs/fasth3-rtx/) · [guide](recipes/video-audio-001.md)
-- **FastH3 Trim** `NVFP4` — RTX 5090 → 480p 5s: 13.4 s; 768p: 35.4 s 🏛️ [source](https://haoailab.com/blogs/fasth3-rtx/)
-- **FastH3 V2 / Trim** `NVFP4` — 1× / 2× DGX Spark → 1×: 480p 141.4 / 125.8 s, Trim 768p 340.1 s; 2×: 87.2 / 78.3 s 🏛️ [source](https://haoailab.com/blogs/fasth3-rtx/)
 - **MiniMax H3** · ComfyUI `ComfyUI + SageAttention` — RTX 5090 → 1280×736×5s: 242 s → 168 s ✅ [source](https://x.com/RKAScope/status/2084359480926503182)
 - **MiniMax H3 vs FastH3 Turbo** `seed` — RTX 5090 → 15 s clip: 11 min 55 s vs 2 min 6 s ✅ [source](https://x.com/Sogni_Protocol/status/2097254959729246550)
 - **MiniMax H3** · NVIDIA Sol `NVIDIA Sol` — 1× DGX Spark → Sol: 480p 5 s ≈ 68 s (NVIDIA published 56 s); without Sol >400 s; wit… ✅ [source](https://x.com/yume_arasaki/status/2100734364908986511)
 - **MiniMax H3 vs LTX-2.3 Eros** `3 prompt` — 1× DGX Spark → 864×480×5s: H3 average 270 s; LTX 154 s (1.76× faster) ✅ [source](https://x.com/YRSM_Simon/status/2084222856972456336)
 - **LTX-2.3** · ComfyUI `ComfyUI` — RTX 5090 → 10 s about 90 s (weaker GPU about 6×) ✅ [source](https://x.com/freshstartsnow/status/2092263835591655773)
 - **LTX-2.5** `LoRA` — RTX 5090 → 720p/10 s: 61.11 s; 1080p/10 s: 189.90 s ✅ [source](https://x.com/PhotogenicWeekE/status/2087298681137701274)
-- **ACE-Step 1.5 + LTX-2.3** · ComfyUI `ComfyUI` — 1× DGX Spark → 2 min 05 s song generated in one pass; +2:28 lip-sync video end to en… 🔁 [source](https://x.com/yume_arasaki/status/2100734364908986511)
+- **FastH3 V2** `NVFP4` — RTX 5090 32GB → 832×480×5s: 14.8 s; 1344×768×5s: 38.6 s (with audio, end-to-end) 🏛️ [source](https://haoailab.com/blogs/fasth3-rtx/) · [guide](recipes/video-audio-001.md)
+- **FastH3 Trim** `NVFP4` — RTX 5090 → 480p 5s: 13.4 s; 768p: 35.4 s 🏛️ [source](https://haoailab.com/blogs/fasth3-rtx/)
+- **FastH3 V2 / Trim** `NVFP4` — 1× / 2× DGX Spark → 1×: 480p 141.4 / 125.8 s, Trim 768p 340.1 s; 2×: 87.2 / 78.3 s 🏛️ [source](https://haoailab.com/blogs/fasth3-rtx/)
 - **Wan2.1 14B** `97% + 3 + FP8` — RTX 5090 → Wan2.1-T2V-14B 720P: 50-step CFG dense baseline 4,769 s → 3-step CFG-… 🏛️ [source](https://arxiv.org/abs/2609.23153)
 - **MiniMax H3** · LightX2V — RTX 5090 → 768×1344 15s video + audio ≈72 s (steady state, excl. MP4 export; bas… 🏛️ [source](https://x.com/LightX2V/status/2108769912009424976)
+- **ACE-Step 1.5 + LTX-2.3** · ComfyUI `ComfyUI` — 1× DGX Spark → 2 min 05 s song generated in one pass; +2:28 lip-sync video end to en… 🔁 [source](https://x.com/yume_arasaki/status/2100734364908986511)
 
 ## Tier 3 · $7k–14k
 
-*Two Sparks, Mac Studio Ultra* · 65 recipes
+*Two Sparks, Mac Studio Ultra* · 65 recipes · measured first, then official, then claimed and relayed; fastest first within each level
 
 
 **📝 Text**
 
 - **Qwen3.8-27B** · TensorFold `3.0bpw EXL3 + DFlash2` — 2× DGX Spark → **190 tok/s** ✅ [source](https://x.com/BHCC2025/status/2117272695637443025)
-- **Qwen3.8-27B** · vLLM `NVFP4` — 2× RTX 5090 → **160 tok/s** 📣 [source](https://www.reddit.com/r/LocalLLM/comments/1x5u4yf/comment/pgqv4uy/)
 - **Qwen3.8-Flash-Next** · oMLX `unsloth UD-Q6_K_XL` — Mac Studio M5 Ultra 256GB → **141 tok/s** ✅ [source](https://www.reddit.com/r/LocalLLaMA/comments/1xdp654/)
 - **Qwen3.8-Flash-Next 4/8-bit** · mlx-serve `4/8-bit mixed` — Mac Studio M5 Ultra 256GB → **126 tok/s** ✅ [source](https://x.com/LocalSilicon/status/2106175358160793817)
 - **DeepSeek-V4.1-Flash** · TensorFold — 2× DGX Spark → **95 tok/s** ✅ [source](https://x.com/Urthoo/status/2106426248759005362)
-- **Qwen3.8-Flash-Next** · vLLM `nvidia FP4-Local + MTP 4` — 2× DGX Spark → **95 tok/s** 🏛️ [source](https://github.com/atakann/dgx-spark-recipes/blob/8a15075/recipes/llm/qwen3.8-flash-next-fp4-vllm-tp2.yaml)
 - **DeepSeek-V4.1-Flash-1017** · TensorFold `MiaAI EXL3 2.9bpw+ DSpark` — 2× DGX Spark → **88.7 tok/s** ✅ [source](https://x.com/atasrb/status/2113681338532253775)
 - **GLM-5.3-Flash** · TensorFold `MiaAI_lab EXL3 4 bpw` — 2× DGX Spark → **83 tok/s** ✅ [source](https://x.com/atasrb/status/2117267112464925027)
 - **DeepSeek-V4-Flash (0731 GA)** `FP8` — 2× DGX Spark → **82 tok/s** ✅ [source](https://x.com/MiaAI_lab/status/2083326111144906836)
 - **Ling-3.0-flash** · SGLang `FP8 + FP8 lm_head + MTP3` — 2× DGX Spark → **82 tok/s** ✅ [source](https://x.com/atasrb/status/2116085996965990514)
+- **DeepSeek-V4.1-Flash-1017** · TensorFold `Mia-AiLab EXL3-EAQv1 2.9bpw…` — 2× DGX Spark → **80.7 tok/s** ✅ [source](https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-1017-2x-DGX-Sparks)
+- **DeepSeek-V4.1-Flash-1017** · TensorFold `bertholomus EXL3 2.5bpw` — 2× DGX Spark → **70.5 tok/s** ✅ [source](https://x.com/niklaslenz_ai/status/2114094357020385570)
 - *…and 55 more in the [explorer](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=en).*
 
 ## Tier 4 · $14k–30k
 
-*3–4 Spark clusters, multi-GPU workstations* · 57 recipes
+*3–4 Spark clusters, multi-GPU workstations* · 57 recipes · measured first, then official, then claimed and relayed; fastest first within each level
 
 
 **📝 Text**
@@ -418,29 +426,29 @@ Engine names are normalized (`scripts/normalize_engines.py`); original strings a
 - **Recursive Flint 40B-A2.5B** · llama.cpp `Q8_0 GGUF` — 1× RTX PRO 6000 Blackwell 96GB → **244 tok/s** ✅ [source](https://www.reddit.com/r/nvidia/comments/1xd0f7x/)
 - **Swift-1.5-Qwen3.8-Flash-Next** · ninfer `NVFP4+FP8 · MTP 3` — RTX PRO 6000 Blackwell 96GB @ 600W + 96GB DDR4 + Ryzen 5 56… → **238 tok/s** ✅ [source](https://demietrich.com/blog/q3.8fn_engine_comparison/)
 - **Qwen3.8-Flash-Next** · SGLang (Penny Royal fork) — 1× RTX PRO 6000 Blackwell 96GB → **200 tok/s** ✅ [source](https://x.com/jhsmith409/status/2117236468871569860)
-- **Qwen3.8-Flash-Next v1.1** · TensorFold `bertholomus/Qwen3.8-Flash-N…` — 1× RTX PRO 6000 Blackwell 96GB → **159 tok/s** 📣 [source](https://github.com/bertholomus/Qwen3.8-Flash-Next-NVFP4-Recipe)
-- **Inkling 2 Mini** · vLLM `thinkingmachines/Inkling-2-…` — 1× RTX PRO 6000 Blackwell 96GB → **154.8 tok/s** 📣 [source](https://github.com/sybil-solutions/local-ai-registry/pull/482)
 - **Qwen3.8-Flash-Next** · vLLM `NVFP4 · MTP 2` — RTX PRO 6000 Blackwell 96GB @ 600W + 96GB DDR4 + Ryzen 5 56… → **150 tok/s** ✅ [source](https://demietrich.com/blog/q3.8fn_engine_comparison/)
 - **DeepSeek-V4.1-Flash-1017** · spark-ds41f `1017` — 4× DGX Spark → **136 tok/s** ✅ [source](https://x.com/machigurixmeru/status/2116835181558694130)
-- **Inkling 2 Mini** · MTPLX — Mac Studio M5 Ultra 512GB → **127 tok/s** 📣 [source](https://x.com/LazyLocalLLM/status/2125356291946131583)
+- **DeepSeek-V4.1-Flash-1017** · TensorFold `LakyFx EXL3 3.5bpw` — 3× DGX Spark → **126.1 tok/s** ✅ [source](https://x.com/laky_fx/status/2113654994847117605)
+- **DeepSeek-V4.1-Flash** · TensorFold — 4× DGX Spark → **111 tok/s** ✅ [source](https://x.com/kevintheo/status/2114654160293433558)
+- **Qwen3.8-Flash-Next** · llama.cpp `Unsloth UD-Q4_K_XL · MTP 3` — RTX PRO 6000 Blackwell 96GB @ 600W + 96GB DDR4 + Ryzen 5 56… → **108 tok/s** ✅ [source](https://demietrich.com/blog/q3.8fn_engine_comparison/)
 - *…and 47 more in the [explorer](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=en).*
 
 ## Cost Not Published
 
-Multi-card builds priced per card, Macs whose memory (and so price) is not stated, and other rows without a single published price · 851 recipes. Top text recipes by tok/s:
+Multi-card builds priced per card, Macs whose memory (and so price) is not stated, and other rows without a single published price · 851 recipes. Top text recipes (measured first, then official, then claimed; fastest first within each level):
 
-- **Qwen3.6-35B-A3B** · SGLang `NVFP4` — 1× RTX 5090 → **626 tok/s** 🏛️ [source](https://github.com/jhsmith409/sglang-elsa)
-- **Qwen3.5-2B** · webyIQ `int4 1.1GB` — RTX 5080 → **620 tok/s** 📣 [source](https://www.reddit.com/r/LocalLLM/comments/1xmcqkb/)
 - **Qwen3.8-27B** · TensorFold `z-lab DFlash2` — 1× RTX 5090 → **538.1 tok/s** ✅ [source](https://x.com/BobClawblaw/status/2114570274511405354)
-- **Gemma 4 31B** · Radiance `W4A8 + DFlash2 block-16` — 4× Radeon AI PRO R9700 32GB → **445.8 tok/s** 📣 [source](https://codeberg.org/StillDeadcode/radiance/pulls/248)
 - **LFM3-1.7B** · llama.cpp — RTX 3090 24GB → **384 tok/s** ✅ [source](https://x.com/Layton_Gott/status/2115244678056464384)
-- **Gemma 4 31B** · Radiance `W4A8 + RedHatAI DFlash2` — 4× Radeon AI PRO R9700 32GB → **377.7 tok/s** 📣 [source](https://codeberg.org/StillDeadcode/radiance/pulls/247)
 - **Qwen3.8-Flash-Next** · QEngine `INT4 AutoRound` — 2× RTX 5090 32GB + Threadripper PRO 3975WX + 251GB RAM → **370 tok/s** ✅ [source](https://www.reddit.com/r/LocalLLaMA/comments/1xjx0ez/)
-- **Qwen3.8-Flash-Next** · Basalt `NVIDIA NVFP4` — 1× RTX 5090+ 128GB RAM → **354 tok/s** 🏛️ [source](https://www.reddit.com/r/LocalLLaMA/comments/1xdlunp/)
-- **Qwen3.6-35B-A3B** · Kapitsa `Q4 + KFlash` — MacBook Pro 16 M5 Max 128GB → **346 tok/s** 📣 [source](https://www.reddit.com/r/LocalLLaMA/comments/1xlgu8m/)
-- **Qwen3.8-27B** · YASAKANI `YASAKANI 3/4-bit quality KV` — 1× RTX 5090 32GB → **336.8 tok/s** 📣 [source](https://x.com/niklaslenz_ai/status/2121673267467407435)
-- **LFM3-1.7B** · vLLM `KV` — 1× RTX 5080 16GB + Core i9-9900K + 64GB DDR4 → **332.2 tok/s** 📣 [source](https://github.com/sybil-solutions/local-ai-registry/pull/565)
-- **LFM2.5-24B-A2B** · llama.cpp `Q4_K_M` — 1× RTX 5090 32GB → **308.5 tok/s** 📣 [source](https://llm-speed.com/m/lfm2-5-24b-a2b)
+- **Qwen3.8-Flash-Next** · vLLM `nvidia 4` — 1× RTX PRO 6000 Blackwell 96GB → **287 tok/s** ✅ [source](https://www.reddit.com/r/LocalLLM/comments/1xj9ura/)
+- **Qwen3.8-Flash-Next** · Strata `Q2_0` — RTX 5090 + Ryzen 9 9950X → **270.7 tok/s** ✅ [source](https://github.com/Niko1221/Strata/issues/4166)
+- **Qwen3.8-27B** · TensorFold `MLX 4-bit + z-lab DFlash2` — 1× RTX 5090 32GB → **268.2 tok/s** ✅ [source](https://x.com/niklaslenz_ai/status/2114219401679376809)
+- **Nemotron 3.5 Bolt 74B-A9B** · TensorFold `IQ2_XXS+ LiLiCorr` — 1× RTX 5090 32GB → **265.5 tok/s** ✅ [source](https://x.com/niklaslenz_ai/status/2117321446376534247)
+- **LFM3-1.7B** · llama.cpp `QAD-Q4_0 KV` — RTX 3060 12GB → **244 tok/s** ✅ [source](https://x.com/DogukanUrker/status/2115163944788566445)
+- **Qwen3.8-Flash-Next** · Radiance `qwen3.8-next-flash-fp8-iq4r…` — 4× Radeon AI PRO R9700 32GB+ 122GB RAM → **236 tok/s** ✅ [source](https://www.reddit.com/r/LocalLLaMA/comments/1xe1u1i/)
+- **Qwen3.8-Flash-Next** · Strata `GSQ-RCO + --lookup-chain 3` — 1× RTX PRO 5000 Blackwell 48GB + Threadripper PRO 9975WX + … → **229.7 tok/s** ✅ [source](https://github.com/Niko1221/Strata/pull/5891)
+- **Qwen3.8-Flash-Next** · Strata `NVFP4-GPTQ (Maximilian228/Q…` — 1× RTX PRO 6000 Blackwell WS 96GB (350W cap of 600W) + Wind… → **228 tok/s** ✅ [source](https://github.com/Niko1221/Strata/pull/5597)
+- **Recursive Flint 40B-A2.5B** · llama.cpp `Recursive NVFP4 GGUF` — 1× RTX 5090 32GB → **224.8 tok/s** ✅ [source](https://niklaslenz.com/v2/flint-40b-5090-nvfp4-llamacpp/)
 - *…browse all 851 in the [explorer](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html?lang=en).*
 
 
